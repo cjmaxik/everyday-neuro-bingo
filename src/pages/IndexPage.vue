@@ -23,16 +23,21 @@
 // project-related
 import BingoBlock from '../components/BingoItem.vue'
 
+// sounds
+import kekwaSound from '../assets/KEKWA.mp3'
+import winSound from '../assets/vine-boom.mp3'
+
 // game state
 // TODO: store the state in localStorage for 12 hours
 import { gameStateStore } from '../stores/gameStateStore'
 const store = gameStateStore()
 
+// instantiate sound
+const kekwa = new Audio(kekwaSound)
+const win = new Audio(winSound)
+
 store.generateBoard(new Date().getUTCDate)
 console.log(store.board)
-
-const kekwa = new Audio('../src/assets/KEKWA.mp3')
-const win = new Audio('../src/assets/vine-boom.mp3')
 
 const increment = (index) => {
   if (store.isFree(index)) return
