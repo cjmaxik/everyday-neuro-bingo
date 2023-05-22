@@ -18,7 +18,7 @@
 
 <script setup>
 // vue-related
-import { computed } from 'vue'
+// import { computed } from 'vue'
 
 // project-related
 import BingoBlock from '../components/BingoItem.vue'
