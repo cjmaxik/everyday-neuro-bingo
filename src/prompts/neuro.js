@@ -45,7 +45,7 @@ export default [
   'whats *emote*?',
   'food mentioned', 
   'No~',
-  'slur',
+  'swear word',
   'FUN AI',
   'yandere-sama',
   'admits to murder',
