@@ -31,7 +31,7 @@ export default [
   'mentions Neurocord',
   'chat W\s Neuro',
   'calls some1 else Vedal',
-  'based-sama',
+  'BASED-sama',
   '*roleplays*',
   'bedge time',
   'SWARM mentioned',
