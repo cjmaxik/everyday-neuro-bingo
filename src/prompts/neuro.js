@@ -29,7 +29,7 @@ export default [
   '1984',
   'thanks for bits and ignores message',
   'mentions Neurocord',
-  'chat W\s Neuro',
+  'chat W\'s Neuro',
   'calls some1 else Vedal',
   'BASED-sama',
   '*roleplays*',
