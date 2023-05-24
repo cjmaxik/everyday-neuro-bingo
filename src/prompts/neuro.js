@@ -17,7 +17,7 @@ export default [
   'leaves',
   'cites random link',
   'chat L\'s Neuro',
-  'mentions Anny',
+  'mentions anny',
   'tries to sing',
   'mentions Vedal',
   'mentions random VTuber',
