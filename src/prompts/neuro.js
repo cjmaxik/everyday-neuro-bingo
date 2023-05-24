@@ -36,7 +36,7 @@ export default [
   'bedge time',
   'SWARM mentioned',
   'goes schizo',
-  'call Vedal an AI',
+  'calls Vedal an AI',
   'shames random Twitch viewer',
   '#AD',
   'says how old she is',
