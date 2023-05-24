@@ -46,5 +46,5 @@ export default [
   'FUN AI',
   'admits to murder',
   'rants',
-  'new clone',
+  'new clone'
 ]
