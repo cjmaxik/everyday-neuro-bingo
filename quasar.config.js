@@ -121,7 +121,7 @@ module.exports = configure(function (/* ctx */) {
     // https://v2.quasar.dev/options/animations
     animations: [
       'fadeIn',
-      'fadeOut '
+      'fadeOut'
     ],
 
     // https://v2.quasar.dev/quasar-cli-vite/quasar-config-js#property-sourcefiles
