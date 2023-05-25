@@ -48,7 +48,7 @@ export default [
   'rants',
   'new clone',
   
-  //eg: "I'm from michigen"
+  //eg: "I'm from michigan"
   'claims to not be british',
   'KEKW',
   'Gigachad',
