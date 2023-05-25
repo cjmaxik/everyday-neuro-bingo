@@ -1,5 +1,6 @@
 // vue-related
 import { defineStore } from 'pinia'
+import { useRefHistory, useStorage } from '@vueuse/core'
 
 // project-related
 import seedrandom from 'seedrandom'
@@ -37,19 +38,15 @@ const winningLines = [
   [6, 12, 18, 24, 30, 36, 42]
 ]
 
-/**
- * Return an array
- * @param {Number[]|[]} array
- */
-const returnCheckedBlocks = (array) => array.filter(x => x.tally).map((x) => x.index)
-
-export const gameStateStore = defineStore('gameState', {
+export const gameState = defineStore('gameState', {
   state: () => ({
-    seed: null,
-    bingo: [],
-    board: null,
-    streakCount,
-    winningLines
+    version: useStorage('version', 1),
+    ready: useStorage('ready', false),
+    seed: useStorage('seed', 0),
+    bingo: useStorage('bingo', []),
+    board: useStorage('board', []),
+    streakCount: useStorage('streakCount', streakCount),
+    winningLines: useStorage('winningLines', winningLines)
   }),
 
   getters: {
@@ -59,10 +56,32 @@ export const gameStateStore = defineStore('gameState', {
   },
 
   actions: {
-    generateBoard (seedPhrase) {
-      this.seed = seedrandom(seedPhrase, { state: true }).int32()
-      const seededPrompt = shuffle(neuro, this.seed)
+    clearAll () {
+      this.ready = false
+      this.seed = 0
+      this.bingo = []
+      this.board = []
+      this.streakCount = streakCount
+      this.winningLines = winningLines
+    },
 
+    /**
+     * @param {Integer} seedPhrase Seed
+     * @param {Integer} version Dataset version
+     */
+    generateBoard (seedPhrase, version) {
+      const newSeed = seedrandom(seedPhrase, { state: true }).int32()
+      const seededPrompt = shuffle(neuro, newSeed)
+
+      if (this.ready) {
+        if (this.seed === newSeed) return
+        if (this.version === version) return
+      }
+
+      console.log('Seed has changes - clearing everything...')
+      this.clearAll()
+
+      this.seed = newSeed
       this.board = []
       for (let index = 0; index < boardSize; index++) {
         const free = index === centerBlock
@@ -74,30 +93,42 @@ export const gameStateStore = defineStore('gameState', {
           win: false
         }
       }
+
+      this.ready = true
     },
 
     increment (index) {
       this.board[index].tally++
     },
 
+    decrement (index) {
+      if (this.board[index].tally <= 1) {
+        this.board[index].tally = 0
+      } else {
+        this.board[index].tally--
+      }
+    },
+
     checkForBingo () {
-      const checkedBlocks = returnCheckedBlocks(this.board)
+      const blocksWithTally = this.board.filter(x => x.tally).map((x) => x.index)
 
-      // Skip checks if streak is unobtainable due to low count
-      if (checkedBlocks.length < streakCount) return []
-
-      let winningCombination = winningLines.filter(winner => winner.every(x => checkedBlocks.includes(x))).flat()
+      let winningCombination = winningLines.filter(
+        winner => winner.every(x => blocksWithTally.includes(x))
+      ).flat()
       winningCombination = [...new Set(winningCombination)]
 
       this.bingo = winningCombination.length ? winningCombination : []
 
+      // Update all blocks
       if (this.bingo) {
-        this.bingo.forEach(block => {
-          this.board[block].win = true
+        this.board.forEach(block => {
+          if (this.bingo.includes(block.index)) {
+            block.win = true
+          } else {
+            block.win = false
+          }
         })
       }
-
-      console.log(this.bingo)
 
       return this.bingo
     }

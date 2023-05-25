@@ -2,13 +2,16 @@
 @font-face {
   font-family: FirstCoffee;
   src: url('../assets/FirstCoffee.otf') format("opentype");
+  ascent-override: 120%;
 }
 
 body {
-  font-family: 'FirstCoffee', serif;
-
   @extend .bg-kekwa;
 
   min-width: 750px;
   max-width: 1920px;
+}
+
+body:not(.remove-font) {
+  font-family: 'FirstCoffee', "Roboto", "-apple-system", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }

@@ -1,15 +1,15 @@
 <template>
   <q-page padding class="main">
-    <transition>
-      <div class="bingo-card" v-if="store.board">
+    <transition-group appear enter-active-class="animated fadeIn" leave-active-class="animated fadeOut">
+      <div class="bingo-card" v-if="state.ready">
         <div class="row" v-for="row, key in chunkedBoard" :key="key">
           <div class="col" v-for="block in row" :key="block.index">
-            <BingoBlock :block="block" @increment="increment(block.index)" />
+            <BingoBlock :block="block" @increment="increment(block.index)" @decrement="decrement(block.index)" />
           </div>
         </div>
       </div>
 
-      <div v-else>
+      <div class="absolute-center" v-else>
         <div class="row justify-center items-center">
           <div class="text-center q-pa-xs">
             <img src="../assets/gymbag.png" alt="Loading...">
@@ -17,7 +17,10 @@
           </div>
         </div>
       </div>
-    </transition>
+    </transition-group>
+    <div class="text-center" v-if="state.ready">
+      Hint: Ctrl+click to descrease the tally *wink*
+    </div>
   </q-page>
 </template>
 
@@ -35,8 +38,8 @@ import winAsset from '../assets/vine-boom.mp3'
 
 // game state
 // TODO: store the state in localStorage for 12 hours
-import { gameStateStore } from '../stores/gameStateStore'
-const store = gameStateStore()
+import { gameState } from '../stores/gameState'
+const state = gameState()
 
 // instantiate sound
 const kekwaSound = new Audio(kekwaAsset)
@@ -44,23 +47,33 @@ const winSound = new Audio(winAsset)
 
 // generate board
 // seed - current date in UTC
-store.generateBoard(new Date().getUTCDate)
+const seed = new Date().getUTCDate()
+const version = 1
+state.generateBoard(seed, version)
 
 // data
-const chunkedBoard = computed(() => chunkArray(store.board, store.streakCount))
+const chunkedBoard = computed(() => chunkArray(state.board, state.streakCount))
 
 // game logic
 let previousWin = 0
 const increment = (index) => {
-  store.increment(index)
+  state.increment(index)
+  checkForWin(index)
+}
 
-  const win = store.checkForBingo()
-  if (win.length !== previousWin) {
-    winSound.play()
-    previousWin = win.length
+const decrement = (index) => {
+  state.decrement(index)
+  checkForWin(index, false)
+}
+
+const checkForWin = (index, sound = true) => {
+  const win = state.checkForBingo()
+  if (win.length && win.length !== previousWin) {
+    if (sound) winSound.play()
   }
 
-  if (store.getTally(index) === 1) kekwaSound.play()
+  previousWin = win.length
+  if (state.getTally(index) === 1 && sound) kekwaSound.play()
 }
 </script>
 

@@ -2,7 +2,8 @@
   <div v-if="block.free" :class="{ win: block.win }" class=" bingo-block free" />
 
   <div v-if="!block.free" v-ripple.center :class="{ active: block.tally, win: block.win }"
-    class="bingo-block row justify-center items-center" @click="$emit('increment')">
+    class="bingo-block row justify-center items-center" @click.exact="$emit('increment')"
+    @click.ctrl="$emit('decrement')">
     <div class="text-center q-pa-xs">
       {{ block.text }}
 
@@ -20,7 +21,7 @@ defineProps({
   win: Boolean
 })
 
-defineEmits(['increment'])
+defineEmits(['increment', 'decrement'])
 </script>
 
 <style lang="scss" scoped>
@@ -36,6 +37,8 @@ defineEmits(['increment'])
 
   font-size: 20px;
   line-height: 1.5rem;
+
+  transition: all 0.25s ease;
 
   &:before {
     content: ' ';
@@ -55,13 +58,11 @@ defineEmits(['increment'])
 
 .active.bingo-block {
   &:before {
-    transition: all 0.25s ease;
     opacity: 0.3;
   }
 }
 
 .win.bingo-block {
-  transition: all 0.25s ease;
   background-color: lighten($gymbag, 30%);
   color: white;
 
