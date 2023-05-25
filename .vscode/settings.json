@@ -14,5 +14,8 @@
   ],
   "[vue]": {
     "editor.defaultFormatter": "Vue.volar"
+  },
+  "[scss]": {
+    "editor.defaultFormatter": "vscode.css-language-features"
   }
 }

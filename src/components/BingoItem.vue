@@ -1,64 +1,164 @@
 <template>
-  <div v-if="item.free" class="bingo-card__item free-block" />
+  <div v-if="block.free" :class="{ win: block.win }" class=" bingo-block free" />
 
-  <div v-else class="bingo-card__item" :class="{ active: item.tally }">
-    {{ item.text }}
+  <div v-if="!block.free" v-ripple.center :class="{ active: block.tally, win: block.win }"
+    class="bingo-block row justify-center items-center" @click="$emit('increment')">
+    <div class="text-center q-pa-xs">
+      {{ block.text }}
 
-    <q-badge class="tally">
-      {{ item.tally }}
-    </q-badge>
+      <q-badge class="bingo-tally">
+        {{ block.tally }}
+      </q-badge>
+    </div>
   </div>
 </template>
 
 <script setup>
+
 defineProps({
-  item: Object
+  block: Object,
+  win: Boolean
 })
+
+defineEmits(['increment'])
 </script>
 
 <style lang="scss" scoped>
-.bingo-card__item {
-  display: flex;
-  align-items: center;
-  text-align: center;
-  justify-content: center;
+.bingo-block {
   position: relative;
+
   background-color: white;
-  border-color: #532933;
-  border-width: 3px;
+  border-color: $gymbag;
+  border-width: 2px;
   border-style: solid;
 
-  max-width: 100px;
   height: 100px;
-  max-height: 100px;
 
   font-size: 20px;
+  line-height: 1.5rem;
 
-  text-align: center;
+  &:before {
+    content: ' ';
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+
+    opacity: 0;
+
+    background-image: url('../assets/gymbag.png');
+    @extend .center-image;
+  }
 }
 
-.tally {
+.active.bingo-block {
+  &:before {
+    transition: all 0.25s ease;
+    opacity: 0.3;
+  }
+}
+
+.win.bingo-block {
+  transition: all 0.25s ease;
+  background-color: lighten($gymbag, 30%);
+  color: white;
+
+  &:before:not(.free) {
+    opacity: 0.1;
+  }
+}
+
+.bingo-tally {
   position: absolute;
 
-  bottom: 0px;
+  bottom: 0;
   right: 0;
 
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0;
 
-  background-color: #532933;
+  background-color: $gymbag;
   font-size: 15px;
   padding: 4px 2px 0px 4px;
 }
 
-.active {
-  background-image: url('../assets/gymbag.png');
-  background-size: cover;
+.center-image {
+  background-repeat: no-repeat;
+  background-size: auto 100%;
+  background-position: center;
 }
 
-.free-block {
+.free {
   background-image: url('../assets/vedal.png');
-  background-size: cover;
+  @extend .center-image
+}
+
+/* see MainLayout.vue */
+/* TODO: tidy it up */
+.row {
+  >.col {
+    &:last-child {
+      >.bingo-block {
+        border-right-width: 3px;
+      }
+    }
+
+    &:first-child {
+      >.bingo-block {
+        border-left-width: 3px;
+      }
+    }
+  }
+
+  &:first-child {
+    >.col {
+      &:first-child {
+        .bingo-block {
+          border-top-left-radius: 10px;
+        }
+      }
+
+      &:last-child {
+        .bingo-block {
+          border-top-right-radius: 10px;
+        }
+      }
+    }
+  }
+
+  &:last-child {
+    >.col {
+      &:first-child {
+        .bingo-block {
+          border-bottom-left-radius: 10px;
+        }
+      }
+
+      &:last-child {
+        .bingo-block {
+          border-bottom-right-radius: 10px;
+        }
+      }
+    }
+  }
+}
+
+.bingo-card {
+  >.row {
+    &:first-child {
+      .bingo-block {
+        border-top-width: 3px;
+      }
+    }
+
+    &:last-child {
+      .bingo-block {
+        border-bottom-width: 3px;
+      }
+    }
+  }
 }
 </style>

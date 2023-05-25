@@ -3,6 +3,7 @@ import { defineStore } from 'pinia'
 
 // project-related
 import seedrandom from 'seedrandom'
+import { shuffle } from '../helpers/helpers'
 import neuro from '../prompts/neuro'
 
 // TODO: support more than one size
@@ -23,7 +24,7 @@ const winners = [
   [42, 43, 44, 45, 46, 47, 48],
 
   // columns
-  [0, 7, 14, 21, 22, 35, 42],
+  [0, 7, 14, 21, 28, 35, 42],
   [1, 8, 15, 22, 29, 36, 43],
   [2, 9, 16, 23, 30, 37, 44],
   [3, 10, 17, 24, 31, 38, 45],
@@ -42,46 +43,19 @@ const winners = [
  */
 const returnCheckedBlocks = (array) => array.filter(x => x.tally).map((x) => x.index)
 
-const shuffle = (array, seed) => {
-  let currentIndex = array.length, temporaryValue, randomIndex
-  seed = seed || 1
-  const random = function () {
-    const x = Math.sin(seed++) * 10000
-    return x - Math.floor(x)
-  }
-  // While there remain elements to shuffle...
-  while (currentIndex !== 0) {
-    // Pick a remaining element...
-    randomIndex = Math.floor(random() * currentIndex)
-    currentIndex -= 1
-    // And swap it with the current element.
-    temporaryValue = array[currentIndex]
-    array[currentIndex] = array[randomIndex]
-    array[randomIndex] = temporaryValue
-  }
-  return array
-}
-
 export const gameStateStore = defineStore('gameState', {
   state: () => ({
     seed: null,
-    bingo: false,
-    board: [],
+    bingo: null,
+    board: null,
+    streakCount,
     winners
   }),
 
   getters: {
     getBoardState: (state) => state.board,
-
-    getTally: (state) => {
-      console.log(state)
-      return (index) => state.board[index].tally
-    },
-
-    isFree: (state) => {
-      console.log(state)
-      return (index) => state.board[index].free
-    }
+    getTally: (state) => (index) => state.board[index].tally,
+    isFree: (state) => (index) => state.board[index].free
   },
 
   actions: {
@@ -89,13 +63,15 @@ export const gameStateStore = defineStore('gameState', {
       this.seed = seedrandom(seedPhrase, { state: true }).int32()
       const seededPrompt = shuffle(neuro, this.seed)
 
+      this.board = []
       for (let index = 0; index < boardSize; index++) {
         const free = index === centerBlock
         this.board[index] = {
           index,
           tally: free ? 1 : 0, // center block is free
-          text: free ? '' : seededPrompt[index] || 'FILTERED.',
-          free
+          text: free ? '' : seededPrompt[index] || 'vedalPls',
+          free,
+          win: false
         }
       }
     },
@@ -110,11 +86,16 @@ export const gameStateStore = defineStore('gameState', {
       // Skip checks if streak is unobtainable due to low count
       if (checkedBlocks.length < streakCount) return false
 
-      this.bingo = winners.some(winner => {
-        return winner.every(x => checkedBlocks.includes(x))
-      })
+      const winningCombination = winners.filter(winner => winner.every(x => checkedBlocks.includes(x))).flat()
+      this.bingo = winningCombination.length ? winningCombination : null
 
-      return this.bingo
+      if (this.bingo) {
+        this.bingo.forEach(block => {
+          this.board[block].win = true
+        })
+      }
+
+      return this.bingo !== null
     }
   }
 })
