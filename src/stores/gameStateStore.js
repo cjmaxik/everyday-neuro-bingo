@@ -13,13 +13,13 @@ const centerBlock = Math.floor(boardSize / 2)
 
 // TODO: generate winning lines based on `streakCount`
 // i am lazy
-const winners = [
+const winningLines = [
   // rows
   [0, 1, 2, 3, 4, 5, 6],
   [7, 8, 9, 10, 11, 12, 13],
   [14, 15, 16, 17, 18, 19, 20],
   [21, 22, 23, 24, 25, 26, 27],
-  [22, 29, 30, 31, 32, 33, 34],
+  [28, 29, 30, 31, 32, 33, 34],
   [35, 36, 37, 38, 39, 40, 41],
   [42, 43, 44, 45, 46, 47, 48],
 
@@ -46,10 +46,10 @@ const returnCheckedBlocks = (array) => array.filter(x => x.tally).map((x) => x.i
 export const gameStateStore = defineStore('gameState', {
   state: () => ({
     seed: null,
-    bingo: null,
+    bingo: [],
     board: null,
     streakCount,
-    winners
+    winningLines
   }),
 
   getters: {
@@ -84,10 +84,12 @@ export const gameStateStore = defineStore('gameState', {
       const checkedBlocks = returnCheckedBlocks(this.board)
 
       // Skip checks if streak is unobtainable due to low count
-      if (checkedBlocks.length < streakCount) return false
+      if (checkedBlocks.length < streakCount) return []
 
-      const winningCombination = winners.filter(winner => winner.every(x => checkedBlocks.includes(x))).flat()
-      this.bingo = winningCombination.length ? winningCombination : null
+      let winningCombination = winningLines.filter(winner => winner.every(x => checkedBlocks.includes(x))).flat()
+      winningCombination = [...new Set(winningCombination)]
+
+      this.bingo = winningCombination.length ? winningCombination : []
 
       if (this.bingo) {
         this.bingo.forEach(block => {
@@ -95,7 +97,9 @@ export const gameStateStore = defineStore('gameState', {
         })
       }
 
-      return this.bingo !== null
+      console.log(this.bingo)
+
+      return this.bingo
     }
   }
 })

@@ -43,20 +43,23 @@ const kekwaSound = new Audio(kekwaAsset)
 const winSound = new Audio(winAsset)
 
 // generate board
+// seed - current date in UTC
 store.generateBoard(new Date().getUTCDate)
 
 // data
 const chunkedBoard = computed(() => chunkArray(store.board, store.streakCount))
 
 // game logic
+let previousWin = 0
 const increment = (index) => {
-  if (store.isFree(index)) return
   store.increment(index)
 
   const win = store.checkForBingo()
-  if (!store.bingo) {
-    if (win) winSound.play()
+  if (win.length !== previousWin) {
+    winSound.play()
+    previousWin = win.length
   }
+
   if (store.getTally(index) === 1) kekwaSound.play()
 }
 </script>
