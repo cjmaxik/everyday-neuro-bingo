@@ -1,6 +1,6 @@
 // vue-related
 import { defineStore } from 'pinia'
-import { useRefHistory, useStorage } from '@vueuse/core'
+import { useStorage } from '@vueuse/core'
 
 // project-related
 import seedrandom from 'seedrandom'
