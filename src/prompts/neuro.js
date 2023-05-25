@@ -42,9 +42,18 @@ export default [
   'invents new nickname',
   'whats *emote*?',
   'No~',
-  'swear word',
+  'self censors',
   'FUN AI',
   'admits to murder',
   'rants',
-  'new clone'
+  'new clone',
+  
+  //eg: "I'm from michigen"
+  'claims to not be british',
+  'KEKW',
+  'Gigachad',
+  //eg: Vedal's father is Lebron James.
+  'Yes, X is Y',
+  'denies being an AI'
+  
 ]
