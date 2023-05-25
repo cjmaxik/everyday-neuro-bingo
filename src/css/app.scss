@@ -1,11 +1,14 @@
 // app global css in SCSS form
 @font-face {
   font-family: FirstCoffee;
-  src: url('../assets/First\ Coffee.otf') format("opentype");
+  src: url('../assets/FirstCoffee.otf') format("opentype");
 }
 
 body {
   font-family: 'FirstCoffee', serif;
 
-  background-color: #f2879b;
+  @extend .bg-kekwa;
+
+  min-width: 750px;
+  max-width: 1920px;
 }
