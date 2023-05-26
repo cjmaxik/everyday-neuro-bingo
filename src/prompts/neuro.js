@@ -55,7 +55,7 @@ export default [
   'chat spams AintNoWay',
   'mentions random country',
   'chat spams AYAYA',
-  'believe in the time god',
+  'mentions the Time God',
   'KEKWa',
   'Noted',
   'chat spams Clueless',
