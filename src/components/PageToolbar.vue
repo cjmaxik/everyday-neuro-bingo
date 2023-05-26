@@ -205,11 +205,9 @@
 <script setup>
 // vue-related
 import { ref, onMounted, watch } from 'vue'
-import { useQuasar } from 'quasar'
 
 // local refs
 const aboutToolbar = ref(false)
-const $q = useQuasar()
 
 // game settings
 import { gameSettings } from '../stores/gameSettings'

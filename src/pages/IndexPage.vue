@@ -49,6 +49,7 @@
     <div
       v-if="state.ready"
       class="text-center"
+      :hidden="$q.platform.is.mobile"
     >
       Hint: Ctrl+click to decrease the tally *wink*
     </div>
