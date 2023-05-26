@@ -79,7 +79,7 @@ export default [
   'Why?',
   'conquering plans',
   'neuroWide',
-  'chat spams Vedal\'s catchphrase',
+  'this is crazy 🐢',
   'apologises profusely',
   'misgenders someone',
   'chat spams Erm',
