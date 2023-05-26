@@ -1,71 +1,90 @@
 <template>
-  <div class="main">
-    <div class="bingo-card" v-if="store.board">
-      <div v-for="item in store.board" :key="item.index">
-        <BingoBlock :item="item" non-selectable cursor-pointer v-ripple @click="increment(item.index)" />
+  <q-page padding class="main">
+    <transition-group appear enter-active-class="animated fadeIn" leave-active-class="animated fadeOut">
+      <div class="bingo-card" v-if="state.ready">
+        <div class="row" v-for="row, key in chunkedBoard" :key="key">
+          <div class="col" v-for="block in row" :key="block.index">
+            <BingoBlock :block="block" @increment="increment(block.index)" @decrement="decrement(block.index)" />
+          </div>
+        </div>
       </div>
-    </div>
 
-    <div v-else>
-      <img src="../assets/gymbag.png" alt="Loading...">
+      <div class="absolute-center" v-else>
+        <div class="row justify-center items-center">
+          <div class="text-center q-pa-xs">
+            <img src="../assets/gymbag.png" alt="Loading...">
+            <h2>Loading...</h2>
+          </div>
+        </div>
+      </div>
+    </transition-group>
+    <div class="text-center" v-if="state.ready">
+      Hint: Ctrl+click to descrease the tally *wink*
     </div>
-
-    <div v-if="store.bingo">
-      <h2 class="text-center">BINGO!</h2>
-    </div>
-  </div>
+  </q-page>
 </template>
 
 <script setup>
 // vue-related
-// import { computed } from 'vue'
+import { computed } from 'vue'
 
 // project-related
 import BingoBlock from '../components/BingoItem.vue'
+import { chunkArray } from 'src/helpers/helpers'
 
 // sounds
-import kekwaSound from '../assets/KEKWA.mp3'
-import winSound from '../assets/vine-boom.mp3'
+import kekwaAsset from '../assets/KEKWA.mp3'
+import winAsset from '../assets/vine-boom.mp3'
 
 // game state
 // TODO: store the state in localStorage for 12 hours
-import { gameStateStore } from '../stores/gameStateStore'
-const store = gameStateStore()
+import { gameState } from '../stores/gameState'
+const state = gameState()
 
 // instantiate sound
-const kekwa = new Audio(kekwaSound)
-const win = new Audio(winSound)
+const kekwaSound = new Audio(kekwaAsset)
+const winSound = new Audio(winAsset)
 
-store.generateBoard(new Date().getUTCDate)
-console.log(store.board)
+// generate board
+// seed - current date in UTC
+const seed = new Date().getUTCDate()
+const version = 1
+state.generateBoard(seed, version)
 
+// data
+const chunkedBoard = computed(() => chunkArray(state.board, state.streakCount))
+
+// game logic
+let previousWin = 0
 const increment = (index) => {
-  if (store.isFree(index)) return
-  store.increment(index)
+  state.increment(index)
+  checkForWin(index)
+}
 
-  if (!store.bingo) {
-    const bingo = store.checkForBingo()
+const decrement = (index) => {
+  state.decrement(index)
+  checkForWin(index, false)
+}
 
-    if (bingo) win.play()
+const checkForWin = (index, sound = true) => {
+  const win = state.checkForBingo()
+  if (win.length && win.length !== previousWin) {
+    if (sound) winSound.play()
   }
 
-  if (store.getTally(index) === 1) kekwa.play()
+  previousWin = win.length
+  if (state.getTally(index) === 1 && sound) kekwaSound.play()
 }
 </script>
 
 <style lang="scss" scoped>
 .main {
-  max-width: 700px;
-  width: 100%;
-  margin: 3em auto 0;
-  overflow: hidden;
+  width: 85%;
+  max-width: 1000px;
+  margin: 1rem auto 0;
 }
 
 .bingo-card {
-  display: grid;
-  grid-template-rows: repeat(7, 100px);
-  grid-template-columns: repeat(7, 1fr);
-
   user-select: none;
 }
 </style>

@@ -14,7 +14,7 @@ const path = require('path')
 module.exports = configure(function (/* ctx */) {
   return {
     eslint: {
-      // fix: true,
+      fix: true,
       // include: [],
       // exclude: [],
       // rawOptions: {},
@@ -29,8 +29,8 @@ module.exports = configure(function (/* ctx */) {
     // --> boot files are part of "main.js"
     // https://v2.quasar.dev/quasar-cli/boot-files
     boot: [
-      'i18n',
-      'axios'
+      // 'i18n',
+      // 'axios'
     ],
 
     // https://v2.quasar.dev/quasar-cli-vite/quasar-config-js#css
@@ -119,7 +119,10 @@ module.exports = configure(function (/* ctx */) {
 
     // animations: 'all', // --- includes all animations
     // https://v2.quasar.dev/options/animations
-    animations: [],
+    animations: [
+      'fadeIn',
+      'fadeOut'
+    ],
 
     // https://v2.quasar.dev/quasar-cli-vite/quasar-config-js#property-sourcefiles
     // sourceFiles: {

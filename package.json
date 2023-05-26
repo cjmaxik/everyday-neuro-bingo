@@ -1,7 +1,7 @@
 {
   "name": "everyday-neuro-bingo",
   "version": "0.0.1",
-  "description": "New Bingo card for Neuro-sama each day!",
+  "description": "New Bingo card for Neuro-sama every day!",
   "productName": "Everyday Neuro Bingo",
   "author": "CJMAXiK <me@cjmaxik.ru>",
   "private": true,
@@ -13,14 +13,14 @@
   },
   "dependencies": {
     "@quasar/extras": "^1.0.0",
+    "@vueuse/core": "^10.1.2",
     "axios": "^1.2.1",
     "pinia": "^2.0.11",
     "quasar": "^2.6.0",
     "seedrandom": "^3.0.5",
     "vue": "^3.0.0",
     "vue-i18n": "^9.0.0",
-    "vue-router": "^4.0.0",
-    "vue3-resize-text": "^0.1.0"
+    "vue-router": "^4.0.0"
   },
   "devDependencies": {
     "@intlify/vite-plugin-vue-i18n": "^3.3.1",
