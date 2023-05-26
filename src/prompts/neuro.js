@@ -59,7 +59,7 @@ export default [
   'KEKWa',
   'Noted',
   'chat spams Clueless',
-  'POG',
+  'POG / poggers',
   'PAUSE-sama',
   'chat spams RIGGED',
   'mentions John Lemon',
