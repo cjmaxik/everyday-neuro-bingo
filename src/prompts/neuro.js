@@ -47,13 +47,9 @@ export default [
   'admits to murder',
   'rants',
   'new clone',
-  
-  //eg: "I'm from michigan"
   'claims to not be british',
   'KEKW',
   'Gigachad',
-  //eg: Vedal's father is Lebron James.
   'Yes, X is Y',
   'denies being an AI'
-  
 ]
