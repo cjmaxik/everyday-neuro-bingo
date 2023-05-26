@@ -72,7 +72,7 @@ export default [
   'mentions Bocchi The Rock',
   'Technical Difficulties screen',
   'Hype train lvl 5+',
-  'raiding anny or raided by anny',
+  'raiding / raided by anny',
   'admits she\'s an AI',
   'meaning of life',
   'chat spams WAYTOODANK',
