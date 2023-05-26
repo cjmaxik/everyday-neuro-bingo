@@ -84,7 +84,7 @@ export default [
   'apologises profusely',
   'misgenders someone',
   'chat spams Erm',
-  'rickroll-sama',
+  'rickrolls',
   'chat spams GOODONE',
   'RIP bitrate'
 ]
