@@ -47,7 +47,7 @@ export default [
   'admits to murder',
   'rants',
   'new clone',
-  'claims to not be british',
+  'I am *nation*',
   'KEKW',
   'Gigachad',
   'Yes, X is Y',
