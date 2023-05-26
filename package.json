@@ -1,6 +1,6 @@
 {
   "name": "everyday-neuro-bingo",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "New Bingo card for Neuro-sama every day!",
   "productName": "Everyday Neuro Bingo",
   "author": "CJMAXiK <me@cjmaxik.ru>",
@@ -35,8 +35,7 @@
     "postcss": "^8.4.14"
   },
   "engines": {
-    "node": "^18 || ^16 || ^14.19",
-    "npm": ">= 6.13.4",
-    "yarn": ">= 1.21.1"
+    "node": "^18",
+    "npm": ">= 6.13.4"
   }
 }
