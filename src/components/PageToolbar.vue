@@ -155,6 +155,9 @@
               target="_blank"
               text-color="white"
             />
+          </q-btn-group>
+
+          <q-btn-group spread>
             <q-btn
               ref="noopener noreferrer"
               dense
@@ -215,7 +218,7 @@ import { gameState } from '../stores/gameState'
 const settings = gameSettings()
 const state = gameState()
 
-// Font
+// font
 const updateFont = (removeFont) => {
   if (removeFont) {
     document.body.classList.add('remove-font')

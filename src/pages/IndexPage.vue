@@ -46,19 +46,13 @@
         </div>
       </div>
     </transition-group>
-    <div
-      v-if="state.ready"
-      class="text-center"
-      :hidden="$q.platform.is.mobile"
-    >
-      Hint: Ctrl+click to decrease the tally *wink*
-    </div>
   </q-page>
 </template>
 
 <script setup>
 // vue-related
 import { computed } from 'vue'
+import { useQuasar } from 'quasar'
 
 // project-related
 import BingoBlock from '../components/BingoItem.vue'
@@ -80,6 +74,9 @@ const sounds = {
   win: new Audio(winAsset)
 }
 
+// Quasar object
+const $q = useQuasar()
+
 // generate board
 // seed - current date in UTC
 const seed = new Date().getUTCDate()
@@ -93,6 +90,7 @@ const chunkedBoard = computed(() => chunkArray(state.board, state.streakCount))
 const increment = (index) => {
   state.increment(index)
   checkForWin(index)
+  notifyForUndo(index)
 }
 
 const decrement = (index) => {
@@ -114,6 +112,24 @@ const checkForWin = (index, decrement = false) => {
   if (state.getTally(index) === 1) {
     playSound('kekwa', isSoundActive)
   }
+}
+
+// undo logic
+const notifyForUndo = (index) => {
+  $q.notify({
+    message: 'Made a mistake?',
+    progress: true,
+    color: 'gymbag',
+    actions: [
+      {
+        label: 'Undo',
+        color: 'white',
+        handler: () => {
+          decrement(index)
+        }
+      }
+    ]
+  })
 }
 
 // sound logic
