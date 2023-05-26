@@ -4,7 +4,7 @@ import { useStorage } from '@vueuse/core'
 
 // project-related
 import seedrandom from 'seedrandom'
-import { shuffle } from '../helpers/helpers'
+import { shuffle, deepCopy } from '../helpers/helpers'
 import neuro from '../prompts/neuro'
 
 // TODO: support more than one size
@@ -72,7 +72,8 @@ export const gameState = defineStore('gameState', {
      */
     generateBoard (seedPhrase, version) {
       const newSeed = seedrandom(seedPhrase, { state: true }).int32()
-      const seededPrompt = shuffle(neuro, newSeed)
+      const prompts = deepCopy(neuro)
+      const seededPrompt = shuffle(prompts, newSeed)
 
       if (this.ready) {
         if (

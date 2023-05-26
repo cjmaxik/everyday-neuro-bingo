@@ -56,7 +56,7 @@ import { useQuasar } from 'quasar'
 
 // project-related
 import BingoBlock from '../components/BingoItem.vue'
-import { chunkArray } from 'src/helpers/helpers'
+import { chunkArray, generateSeedPhrase } from 'src/helpers/helpers'
 
 // sounds
 import kekwaAsset from '../assets/KEKWA.mp3'
@@ -79,9 +79,9 @@ const $q = useQuasar()
 
 // generate board
 // seed - current date in UTC
-const seed = new Date().getUTCDate()
+const seedPhrase = generateSeedPhrase()
 const version = 2
-state.generateBoard(seed, version)
+state.generateBoard(seedPhrase, version)
 
 // data
 const chunkedBoard = computed(() => chunkArray(state.board, state.streakCount))
@@ -102,8 +102,6 @@ const checkForWin = (index, decrement = false) => {
   const win = state.checkForBingo()
   const isSoundActive = !settings.disableSound && !decrement
 
-  console.debug(win, state.previousWin)
-
   if (win.length && win.length !== state.previousWin) {
     playSound('win', isSoundActive)
   }
@@ -119,6 +117,7 @@ const notifyForUndo = (index) => {
   $q.notify({
     message: 'Made a mistake?',
     progress: true,
+    group: false,
     color: 'gymbag',
     actions: [
       {
