@@ -40,7 +40,7 @@ const winningLines = [
 
 export const gameState = defineStore('gameState', {
   state: () => ({
-    version: useStorage('version', 1),
+    version: useStorage('version', 2),
     ready: useStorage('ready', false),
     seed: useStorage('seed', 0),
     bingo: useStorage('bingo', []),
@@ -75,14 +75,17 @@ export const gameState = defineStore('gameState', {
       const seededPrompt = shuffle(neuro, newSeed)
 
       if (this.ready) {
-        if (this.seed === newSeed) return
-        if (this.version === version) return
+        if (
+          this.version === version &&
+          this.seed === newSeed
+        ) return
       }
 
       console.log('Seed has changes - clearing everything...')
       this.clearAll()
 
       this.seed = newSeed
+      this.version = version
       this.board = []
       for (let index = 0; index < boardSize; index++) {
         const free = index === centerBlock

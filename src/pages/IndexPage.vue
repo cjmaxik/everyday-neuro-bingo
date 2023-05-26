@@ -82,7 +82,7 @@ const sounds = {
 // generate board
 // seed - current date in UTC
 const seed = new Date().getUTCDate()
-const version = 1
+const version = 2
 state.generateBoard(seed, version)
 
 // data

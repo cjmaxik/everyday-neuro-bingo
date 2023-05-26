@@ -64,6 +64,19 @@
               <q-btn
                 class="full-width"
                 color="red"
+                label="Clear the board"
+                no-caps
+                text-color="white"
+                @click="clearBoard()"
+              />
+            </q-item-section>
+          </q-item>
+
+          <q-item>
+            <q-item-section>
+              <q-btn
+                class="full-width"
+                color="red"
                 label="Clear all data"
                 no-caps
                 text-color="white"
@@ -210,6 +223,13 @@ const updateFont = (removeFont) => {
     document.body.classList.add('remove-font')
   } else {
     document.body.classList.remove('remove-font')
+  }
+}
+
+const clearBoard = () => {
+  if (confirm('Do you really want to clear the board state?')) {
+    state.clearAll()
+    location.reload()
   }
 }
 
