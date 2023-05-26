@@ -77,7 +77,7 @@ export default [
   'meaning of life',
   'chat spams WAYTOODANK',
   'Why?',
-  'world or humankind conquering plan',
+  'conquering plans',
   'neuroWide',
   'chat spams Vedal\'s catchphrase',
   'wholesome-sama',
