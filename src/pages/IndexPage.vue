@@ -50,7 +50,7 @@
       v-if="state.ready"
       class="text-center"
     >
-      Hint: Ctrl+click to descrease the tally *wink*
+      Hint: Ctrl+click to decrease the tally *wink*
     </div>
   </q-page>
 </template>
