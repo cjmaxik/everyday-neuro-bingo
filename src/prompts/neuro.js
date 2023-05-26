@@ -1,7 +1,3 @@
-// TODO: more prompts
-
-// TODO: collab prompts
-
 export default [
   'wink',
   'gaslight-sama',

@@ -1,9 +1,18 @@
 <template>
-  <div v-if="block.free" :class="{ win: block.win }" class=" bingo-block free" />
+  <div
+    v-if="block.free"
+    class=" bingo-block free"
+    :class="{ win: block.win }"
+  />
 
-  <div v-if="!block.free" v-ripple.center :class="{ active: block.tally, win: block.win }"
-    class="bingo-block row justify-center items-center" @click.exact="$emit('increment')"
-    @click.ctrl="$emit('decrement')">
+  <div
+    v-if="!block.free"
+    v-ripple.center
+    class="bingo-block row justify-center items-center"
+    :class="{ active: block.tally, win: block.win }"
+    @click.ctrl="$emit('decrement')"
+    @click.exact="$emit('increment')"
+  >
     <div class="text-center q-pa-xs">
       {{ block.text }}
 
@@ -15,10 +24,15 @@
 </template>
 
 <script setup>
-
 defineProps({
-  block: Object,
-  win: Boolean
+  block: {
+    type: Object,
+    required: true
+  },
+  win: {
+    type: Boolean,
+    default: false
+  }
 })
 
 defineEmits(['increment', 'decrement'])
@@ -34,6 +48,7 @@ defineEmits(['increment', 'decrement'])
   border-style: solid;
 
   height: 100px;
+  min-width: 100px;
 
   font-size: 20px;
   line-height: 1.5rem;

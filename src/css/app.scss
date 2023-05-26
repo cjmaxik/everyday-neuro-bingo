@@ -7,9 +7,6 @@
 
 body {
   @extend .bg-kekwa;
-
-  min-width: 750px;
-  max-width: 1920px;
 }
 
 body:not(.remove-font) {

@@ -1,24 +1,55 @@
 <template>
-  <q-page padding class="main">
-    <transition-group appear enter-active-class="animated fadeIn" leave-active-class="animated fadeOut">
-      <div class="bingo-card" v-if="state.ready">
-        <div class="row" v-for="row, key in chunkedBoard" :key="key">
-          <div class="col" v-for="block in row" :key="block.index">
-            <BingoBlock :block="block" @increment="increment(block.index)" @decrement="decrement(block.index)" />
+  <q-page
+    class="main"
+    padding
+  >
+    <transition-group
+      appear
+      enter-active-class="animated fadeIn"
+      leave-active-class="animated fadeOut"
+    >
+      <div
+        v-if="state.ready"
+        class="bingo-card"
+      >
+        <div
+          v-for="row, key in chunkedBoard"
+          :key="key"
+          class="row"
+        >
+          <div
+            v-for="block in row"
+            :key="block.index"
+            class="col"
+          >
+            <BingoBlock
+              :block="block"
+              @decrement="decrement(block.index)"
+              @increment="increment(block.index)"
+            />
           </div>
         </div>
       </div>
 
-      <div class="absolute-center" v-else>
+      <div
+        v-else
+        class="absolute-center"
+      >
         <div class="row justify-center items-center">
           <div class="text-center q-pa-xs">
-            <img src="../assets/gymbag.png" alt="Loading...">
+            <img
+              alt="Loading..."
+              src="../assets/gymbag.png"
+            >
             <h2>Loading...</h2>
           </div>
         </div>
       </div>
     </transition-group>
-    <div class="text-center" v-if="state.ready">
+    <div
+      v-if="state.ready"
+      class="text-center"
+    >
       Hint: Ctrl+click to descrease the tally *wink*
     </div>
   </q-page>
@@ -36,14 +67,17 @@ import { chunkArray } from 'src/helpers/helpers'
 import kekwaAsset from '../assets/KEKWA.mp3'
 import winAsset from '../assets/vine-boom.mp3'
 
-// game state
-// TODO: store the state in localStorage for 12 hours
+// states
 import { gameState } from '../stores/gameState'
+import { gameSettings } from '../stores/gameSettings'
 const state = gameState()
+const settings = gameSettings()
 
 // instantiate sound
-const kekwaSound = new Audio(kekwaAsset)
-const winSound = new Audio(winAsset)
+const sounds = {
+  kekwa: new Audio(kekwaAsset),
+  win: new Audio(winAsset)
+}
 
 // generate board
 // seed - current date in UTC
@@ -55,7 +89,6 @@ state.generateBoard(seed, version)
 const chunkedBoard = computed(() => chunkArray(state.board, state.streakCount))
 
 // game logic
-let previousWin = 0
 const increment = (index) => {
   state.increment(index)
   checkForWin(index)
@@ -63,23 +96,41 @@ const increment = (index) => {
 
 const decrement = (index) => {
   state.decrement(index)
-  checkForWin(index, false)
+  checkForWin(index, true)
 }
 
-const checkForWin = (index, sound = true) => {
+const checkForWin = (index, decrement = false) => {
   const win = state.checkForBingo()
-  if (win.length && win.length !== previousWin) {
-    if (sound) winSound.play()
+  const isSoundActive = !settings.disableSound && !decrement
+
+  console.debug(win, state.previousWin)
+
+  if (win.length && win.length !== state.previousWin) {
+    playSound('win', isSoundActive)
   }
 
-  previousWin = win.length
-  if (state.getTally(index) === 1 && sound) kekwaSound.play()
+  state.previousWin = win.length
+  if (state.getTally(index) === 1) {
+    playSound('kekwa', isSoundActive)
+  }
+}
+
+// sound logic
+const playSound = (id, isActive) => {
+  if (sounds[id] && isActive) sounds[id].play()
 }
 </script>
 
 <style lang="scss" scoped>
 .main {
-  width: 85%;
+  body.screen--md & {
+    width: 85%;
+  }
+
+  body.screen--xs & {
+    width: 750px;
+  }
+
   max-width: 1000px;
   margin: 1rem auto 0;
 }

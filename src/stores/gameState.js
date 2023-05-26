@@ -46,7 +46,8 @@ export const gameState = defineStore('gameState', {
     bingo: useStorage('bingo', []),
     board: useStorage('board', []),
     streakCount: useStorage('streakCount', streakCount),
-    winningLines: useStorage('winningLines', winningLines)
+    winningLines: useStorage('winningLines', winningLines),
+    previousWin: useStorage('previousWin', 0)
   }),
 
   getters: {

@@ -4,7 +4,8 @@ import { useStorage } from '@vueuse/core'
 
 export const gameSettings = defineStore('gameSettings', {
   state: () => ({
-    removeFont: useStorage('removeFont', false)
+    removeFont: useStorage('removeFont', false),
+    disableSound: useStorage('disableSound', false)
   }),
 
   getters: {
@@ -14,6 +15,7 @@ export const gameSettings = defineStore('gameSettings', {
   actions: {
     clearAll () {
       this.removeFont = false
+      this.disableSound = false
     }
   }
 })
