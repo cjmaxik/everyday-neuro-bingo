@@ -82,7 +82,7 @@ export default [
   'chat spams Vedal\'s catchphrase',
   'wholesome-sama',
   'apologises profusely',
-  'misgenders random person',
+  'misgenders someone',
   'chat spams Erm',
   'rickroll-sama',
   'chat spams GOODONE',
