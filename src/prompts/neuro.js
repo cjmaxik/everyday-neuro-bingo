@@ -53,7 +53,7 @@ export default [
   'claims to stream later',
   'donowalled',
   'mentions turtles',
-  'chat spams AintNoWay',
+  'chat spams NOWAYING',
   'mentions random country',
   'chat spams AYAYA',
   'mentions the Time God',
