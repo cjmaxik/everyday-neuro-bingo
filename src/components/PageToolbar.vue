@@ -116,7 +116,7 @@
         <p>
           Created by <a
             ref="noopener noreferrer"
-            href="https://cjmaxik"
+            href="https://cjmaxik.ru"
             target="_blank"
           >CJMAXiK</a> with the help of <a
             ref="noopener noreferrer"
