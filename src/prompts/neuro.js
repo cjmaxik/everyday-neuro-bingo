@@ -20,7 +20,7 @@ export default [
   'heart',
   'gymbag',
   'spams',
-   //'backslash spam', after debut im positive its not gonna happen anymore (tbd?)
+  'backslash spam', 
   'mentions Filipino boy',
   '1984',
   'mentions Neurocord',
@@ -62,7 +62,7 @@ export default [
   'chat spams Clueless',
   'POG / poggers',
   'chat spams PauseSama',
-  'chat spams Flushed', 
+  'chat spams RIGGED',
   'mentions John Lemon',
   'D',
   'chat spams RIPBOZO',
@@ -99,9 +99,6 @@ export default [
   'chat prays',
   'chat shoots Vedal',
   'mentions Neuro V1',
-  'her blabbering gets faded',
-  'chat spams RIGGED',
-  'someone got bingo before you',
-  '#livestream-chat skull 20+',
-  '#livestream-chat star 20+'
+  //'her blabbering gets faded', (tbd)
+  'chat spams Flushed', 
 ]
