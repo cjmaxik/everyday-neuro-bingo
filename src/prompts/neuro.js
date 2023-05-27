@@ -100,6 +100,7 @@ export default [
   'chat shoots Vedal',
   'mentions Neuro V1',
   'her blabbering gets faded',
+  'chat spams RIGGED',
   'someone got bingo before you',
   '#livestream-chat skull 20+',
   '#livestream-chat star 20+'
