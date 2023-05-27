@@ -47,14 +47,14 @@
       </div>
     </transition-group>
 
-    <q-banner
+    <!-- <q-banner
       v-if="state.ready"
       inline-actions
       rounded
       class="bg-gymbag text-white text-center q-mt-sm"
     >
       <span class="text-h6">Neuro Debut stream today!</span>
-    </q-banner>
+    </q-banner> -->
 
     <div
       v-if="state.ready"
