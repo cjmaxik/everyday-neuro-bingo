@@ -46,6 +46,23 @@
         </div>
       </div>
     </transition-group>
+
+    <q-banner
+      v-if="state.ready"
+      inline-actions
+      rounded
+      class="bg-gymbag text-white text-center q-mt-sm"
+    >
+      <span class="text-h6">Neuro Debut stream today!</span>
+    </q-banner>
+
+    <div
+      v-if="state.ready"
+      class="text-center"
+      :hidden="$q.screen.lt.md"
+    >
+      Ctrl+click to decrease the tally *wink*
+    </div>
   </q-page>
 </template>
 
