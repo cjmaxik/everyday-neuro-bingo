@@ -1,12 +1,12 @@
 export default {
   id: 'anny',
   name: 'anny',
-  color: 'tba',
+  color: '#feb3c8',
 
-  image: 'tba.png',
+  image: 'annystar.png',
 
   sounds: [
-    'tba.mp3'
+    'annyhic.mp3'
   ],
 
   prompts: [
@@ -21,10 +21,14 @@ export default {
     '"we are not dating!"',
 
     // mentions
+    'mentions she is Neuro\'s mom'
 
     // chat related
     'chat spams AnnyLebronJam',
     'chat spams LUBBERS',
     'chat spams BOOBA',
+    
+    //twitch meta
+    'morari drops 50 or more subs',
   ]
 }
