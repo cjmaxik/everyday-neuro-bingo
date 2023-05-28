@@ -27,6 +27,5 @@ export default {
     // chat related
     'chat shoots Tutel',
     'chat demands attention to Neuro',
-    'chat spams KEKW'
   ]
 }
