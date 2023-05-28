@@ -110,12 +110,12 @@ const chunkedBoard = computed(() => chunkArray(state.board, state.streakCount))
 const increment = (block) => {
   state.increment(block.index)
   checkForWin(block)
-  notifyForUndo(block.index)
+  notifyForUndo(block)
 }
 
 const decrement = (block) => {
   state.decrement(block.index)
-  checkForWin(block.index, true)
+  checkForWin(block, true)
 }
 
 const checkForWin = (block, decrement = false) => {
@@ -144,7 +144,7 @@ const playSound = (audio, isActive) => {
 }
 
 // undo logic
-const notifyForUndo = (index) => {
+const notifyForUndo = (block) => {
   $q.notify({
     message: 'Made a mistake?',
     progress: true,
@@ -155,7 +155,7 @@ const notifyForUndo = (index) => {
         label: 'Undo',
         color: 'white',
         handler: () => {
-          decrement(index)
+          decrement(block)
         }
       }
     ]
