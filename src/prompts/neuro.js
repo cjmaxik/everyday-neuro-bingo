@@ -1,10 +1,14 @@
 export default {
   id: 'neuro',
   name: 'Neuro-sama',
+
+  // text color
   color: '#8b3f5e',
 
+  // tally background image
   image: 'gymbag.png',
 
+  // tally sounds, will be chosen at random
   sounds: [
     'KEKWA.mp3',
     'gymbag.mp3'
