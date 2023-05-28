@@ -49,4 +49,39 @@ export const shuffle = (array, seed) => {
  */
 export const deepCopy = (array) => JSON.parse(JSON.stringify(array))
 
+/**
+ *
+ * @param {Object[]} allPrompts
+ * @param {Integer} seed
+ * @param {Integer} boardSize
+ */
+export const generatePrompts = (allPrompts, seed, boardSize) => {
+  const countForParticipiant = Math.floor((boardSize - 1) / allPrompts.length)
+
+  const finalPrompts = []
+  allPrompts.forEach(data => {
+    const prompts = shuffle(data.prompts, seed).slice(0, countForParticipiant)
+
+    prompts.forEach(text => {
+      finalPrompts.push({
+        id: data.participantId,
+        text
+      })
+    })
+  })
+
+  return shuffle(finalPrompts, seed)
+}
+
+/**
+ * Return a random number (inslusive)
+ * @param {Integer} min Min value
+ * @param {Integer} max Max value
+ */
+export const getRandomInt = (min, max) => {
+  min = Math.ceil(min)
+  max = Math.floor(max)
+  return Math.floor(Math.random() * (max - min + 1) + min)
+}
+
 export const generateSeedPhrase = () => ''.concat(new Date().getUTCDate(), new Date().getUTCMonth(), new Date().getUTCFullYear())
