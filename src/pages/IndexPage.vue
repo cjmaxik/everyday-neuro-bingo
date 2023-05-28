@@ -84,11 +84,11 @@ import { gameSettings } from '../stores/gameSettings'
 const props = defineProps({
   type: {
     type: String,
-    default: 'solo'
+    default: 'justChatting'
   }
 })
 
-const streamType = props.type === '' ? 'solo' : props.type
+const streamType = props.type === '' ? 'justChatting' : props.type
 if (!Object.keys(prompts).includes(streamType)) location.replace('/')
 
 const state = gameState()
@@ -150,6 +150,7 @@ const notifyForUndo = (block) => {
     progress: true,
     group: false,
     color: 'gymbag',
+    timeout: 10000,
     actions: [
       {
         label: 'Undo',

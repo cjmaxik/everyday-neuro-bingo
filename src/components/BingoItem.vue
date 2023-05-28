@@ -88,7 +88,7 @@ const participantColor = props.participant?.color ?? '#000'
 
 .active.bingo-block {
   &:before {
-    opacity: 0.3;
+    opacity: 0.2;
   }
 }
 
