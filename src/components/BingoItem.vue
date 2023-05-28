@@ -1,7 +1,7 @@
 <template>
   <div
     v-if="block.free"
-    class=" bingo-block free"
+    class="bingo-block free"
     :class="{ win: block.win }"
   />
 
@@ -14,7 +14,9 @@
     @click.exact="$emit('increment')"
   >
     <div class="text-center q-pa-xs">
-      {{ block.text }}
+      <span>
+        {{ block.text }}
+      </span>
 
       <q-badge class="bingo-tally">
         {{ block.tally }}
@@ -24,7 +26,7 @@
 </template>
 
 <script setup>
-defineProps({
+const props = defineProps({
   block: {
     type: Object,
     required: true
@@ -32,10 +34,19 @@ defineProps({
   win: {
     type: Boolean,
     default: false
+  },
+  participant: {
+    type: Object,
+    required: false,
+    default: null
   }
 })
 
 defineEmits(['increment', 'decrement'])
+
+// css binds
+const tallyImage = props.participant ? `url(/assets/images/${props.participant.id}/${props.participant.image})` : ''
+const participantColor = props.participant?.color ?? '#000'
 </script>
 
 <style lang="scss" scoped>
@@ -55,6 +66,10 @@ defineEmits(['increment', 'decrement'])
 
   transition: all 0.25s ease;
 
+  >div>span {
+    color: v-bind('participantColor')
+  }
+
   &:before {
     content: ' ';
     display: block;
@@ -66,7 +81,7 @@ defineEmits(['increment', 'decrement'])
 
     opacity: 0;
 
-    background-image: url('../assets/gymbag.png');
+    background-image: v-bind('tallyImage');
     @extend .center-image;
   }
 }
