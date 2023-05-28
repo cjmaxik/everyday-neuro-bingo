@@ -46,6 +46,7 @@ export const gameState = defineStore('gameState', {
 
     // game data
     streamType: useStorage('streamType', ''),
+    streamName: '',
     seed: useStorage('seed', 0),
     participants: {},
     board: useStorage('board', []),
@@ -75,14 +76,14 @@ export const gameState = defineStore('gameState', {
     },
 
     /**
-     * @param {Object[]} prompts Prompts
+     * @param {Object[]} streamData Prompts
      * @param {Integer} seedPhrase Seed
      * @param {Integer} version Dataset version
      * @param {String} streamType Type of the stream
+     * @param {String} streamType Name of the stream
     */
-    generateBoard (prompts, seedPhrase, version, streamType) {
+    generateBoard (streamData, seedPhrase, version, streamType, streamName) {
       const newSeed = seedrandom(seedPhrase, { state: true }).int32()
-      const streamData = prompts[streamType]
 
       const participants = {}
       const allPrompts = []
@@ -104,6 +105,7 @@ export const gameState = defineStore('gameState', {
         })
       })
 
+      this.streamName = streamName
       this.participants = participants
 
       // Check if the version, seed and/or stream type has changed

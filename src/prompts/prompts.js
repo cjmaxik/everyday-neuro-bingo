@@ -6,11 +6,17 @@ import neuro from './neuro'
  * 2. Add the route to ../components/StreamTypeLinks.vue
  */
 export default {
-  justChatting: [
-    neuro
-  ],
+  justChatting: {
+    name: 'Just Chatting',
+    participants: [
+      neuro
+    ]
+  },
 
-  filianCollab: [
-    neuro, filian
-  ]
+  filianCollab: {
+    name: 'Neuro x filian collab',
+    participants: [
+      neuro, filian
+    ]
+  }
 }

@@ -1,4 +1,11 @@
 <template>
+  <q-chip
+    :ripple="false"
+    text-color="gymbag"
+  >
+    {{ state.streamName }}
+  </q-chip>
+
   <q-btn-dropdown
     stretch
     flat
@@ -33,7 +40,7 @@
       href="/filianCollab"
     >
       <q-item-section>
-        <q-item-label>with filian</q-item-label>
+        <q-item-label>filian</q-item-label>
       </q-item-section>
     </q-item>
     <q-list />
@@ -41,4 +48,7 @@
 </template>
 
 <script setup>
+// state
+import { gameState } from '../stores/gameState'
+const state = gameState()
 </script>

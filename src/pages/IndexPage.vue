@@ -101,7 +101,8 @@ const $q = useQuasar()
 // seed - current date in UTC
 const seedPhrase = generateSeedPhrase()
 const version = 2
-state.generateBoard(prompts, seedPhrase, version, streamType)
+const stream = prompts[streamType]
+state.generateBoard(stream.participants, seedPhrase, version, streamType, stream.name)
 
 // data
 const chunkedBoard = computed(() => chunkArray(state.board, state.streakCount))
