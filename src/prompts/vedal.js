@@ -25,7 +25,6 @@ export default {
     'mentions programming socks',
 
     // chat related
-    'chat shoots Tutel',
     'chat demands attention to Neuro',
   ]
 }
