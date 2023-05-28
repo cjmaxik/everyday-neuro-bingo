@@ -22,10 +22,11 @@
             :key="block.index"
             class="col"
           >
-            <BingoBlock
+            <BingoItem
               :block="block"
-              @decrement="decrement(block.index)"
-              @increment="increment(block.index)"
+              :participant="state.participants[block.participantId]"
+              @decrement="decrement(block)"
+              @increment="increment(block)"
             />
           </div>
         </div>
@@ -46,6 +47,23 @@
         </div>
       </div>
     </transition-group>
+
+    <!-- <q-banner
+      v-if="state.ready"
+      inline-actions
+      rounded
+      class="bg-gymbag text-white text-center q-mt-sm"
+    >
+      <span class="text-h6">Neuro Debut stream today!</span>
+    </q-banner> -->
+
+    <div
+      v-if="state.ready"
+      class="text-center"
+      :hidden="$q.screen.lt.md"
+    >
+      Ctrl+click to decrease the tally *wink*
+    </div>
   </q-page>
 </template>
 
@@ -55,24 +73,26 @@ import { computed } from 'vue'
 import { useQuasar } from 'quasar'
 
 // project-related
-import BingoBlock from '../components/BingoItem.vue'
-import { chunkArray, generateSeedPhrase } from 'src/helpers/helpers'
-
-// sounds
-import kekwaAsset from '../assets/KEKWA.mp3'
-import winAsset from '../assets/vine-boom.mp3'
+import BingoItem from '../components/BingoItem.vue'
+import { chunkArray, generateSeedPhrase, getRandomInt } from 'src/helpers/helpers'
+import prompts from '../prompts/prompts'
 
 // states
 import { gameState } from '../stores/gameState'
 import { gameSettings } from '../stores/gameSettings'
+
+const props = defineProps({
+  type: {
+    type: String,
+    default: 'solo'
+  }
+})
+
+const streamType = props.type === '' ? 'solo' : props.type
+if (!Object.keys(prompts).includes(streamType)) location.replace('/')
+
 const state = gameState()
 const settings = gameSettings()
-
-// instantiate sound
-const sounds = {
-  kekwa: new Audio(kekwaAsset),
-  win: new Audio(winAsset)
-}
 
 // Quasar object
 const $q = useQuasar()
@@ -81,39 +101,50 @@ const $q = useQuasar()
 // seed - current date in UTC
 const seedPhrase = generateSeedPhrase()
 const version = 2
-state.generateBoard(seedPhrase, version)
+state.generateBoard(prompts, seedPhrase, version, streamType)
 
 // data
 const chunkedBoard = computed(() => chunkArray(state.board, state.streakCount))
 
 // game logic
-const increment = (index) => {
-  state.increment(index)
-  checkForWin(index)
-  notifyForUndo(index)
+const increment = (block) => {
+  state.increment(block.index)
+  checkForWin(block)
+  notifyForUndo(block)
 }
 
-const decrement = (index) => {
-  state.decrement(index)
-  checkForWin(index, true)
+const decrement = (block) => {
+  state.decrement(block.index)
+  checkForWin(block, true)
 }
 
-const checkForWin = (index, decrement = false) => {
+const checkForWin = (block, decrement = false) => {
+  const index = block.index
+  const participantId = block.participantId
+  const sounds = state.participants[participantId].sounds
+
   const win = state.checkForBingo()
   const isSoundActive = !settings.disableSound && !decrement
 
+  const soundsPath = '../assets/sounds'
   if (win.length && win.length !== state.previousWin) {
-    playSound('win', isSoundActive)
+    playSound(`${soundsPath}/vine-boom.mp3`, isSoundActive)
   }
 
   state.previousWin = win.length
   if (state.getTally(index) === 1) {
-    playSound('kekwa', isSoundActive)
+    const randomSound = sounds[getRandomInt(0, sounds.length - 1)]
+    playSound(`${soundsPath}/${participantId}/${randomSound}`, isSoundActive)
   }
 }
 
+// sound logic
+const playSound = (audio, isActive) => {
+  if (isActive) new Audio(audio).play()
+}
+
 // undo logic
-const notifyForUndo = (index) => {
+const notifyForUndo = (block) => {
   $q.notify({
     message: 'Made a mistake?',
     progress: true,
@@ -124,16 +155,11 @@ const notifyForUndo = (index) => {
         label: 'Undo',
         color: 'white',
         handler: () => {
-          decrement(index)
+          decrement(block)
         }
       }
     ]
   })
-}
-
-// sound logic
-const playSound = (id, isActive) => {
-  if (sounds[id] && isActive) sounds[id].play()
 }
 </script>
 

@@ -116,24 +116,28 @@
         <p>
           Created by <a
             ref="noopener noreferrer"
-            href="https://cjmaxik"
+            href="https://cjmaxik.ru"
             target="_blank"
           >CJMAXiK</a> with the help of <a
             ref="noopener noreferrer"
             href="https://discord.gg/neurosama"
             target="_blank"
-          >Neurocord</a>.
-        </p>
-        <p>
-          <a
+          >Neurocord</a> and <a
             ref="noopener noreferrer"
             href="https://github.com/cjmaxik/everyday-neuro-bingo/graphs/contributors"
             target="_blank"
-          >Code contributors</a>.
+          >code contributors</a>.
         </p>
         <hr>
         <p>
-          <span class="text-h6">Follow Neuro-sama:</span>
+          <span class="text-h6">About Neuro-sama</span>
+        </p>
+        <p>
+          Neuro-sama is an AI powered VTuber created by vedal987. She can chat, sing, react to videos, and play games. The
+          VTuber side was made in C# (Unity) but all of the AI is done in Python. Neuro-sama was originally made in 2018
+          as a bot that just played osu, but has been revived in December of 2022 as a VTuber.
+        </p>
+        <p>
           <q-btn-group spread>
             <q-btn
               ref="noopener noreferrer"
