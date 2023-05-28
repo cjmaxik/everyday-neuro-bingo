@@ -77,6 +77,13 @@ export default {
     'starts counting',
     'admits she\'s a god',
     'feel free to ask me anything',
+    'actually sings',
+    'tells a story',
+    
+    //model related
+    'NEKO-sama model',
+    'Frog Hat on model',
+    //'duckling on head', possibly coming in future
 
     // mentions
     'mentions Vedal',
@@ -94,6 +101,9 @@ export default {
     'mentions Filipino boy',
     'mentions Neurocord',
     'mentiones Swarm',
+    'mentions gatcha game',
+    'mentions her animals',
+    'mentions her hight',
 
     // chat related
     'chat spams HUH',
@@ -117,7 +127,11 @@ export default {
     'chat L\'s Neuro',
     'chat W\'s Neuro',
     'chat spams Erm',
-
+    'chat spams Omegalul',
+    'chat spams Susge',
+    'chat spams plink or plonk',
+    'chat spams KEKW', 
+    
     // twitch meta
     'raiding / raided by anny',
     'RIP bitrate'
