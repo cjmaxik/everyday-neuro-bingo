@@ -6,6 +6,10 @@
     fab-mini
     icon="settings"
   >
+    <q-tooltip class="text-body2 bg-gymbag">
+      Settings
+    </q-tooltip>
+
     <q-menu auto-close>
       <q-list
         bordered
@@ -121,5 +125,4 @@ onMounted(() => {
 watch(settings, (settings) => {
   updateFont(settings.removeFont)
 })
-
 </script>

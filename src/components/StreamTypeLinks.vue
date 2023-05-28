@@ -1,17 +1,22 @@
 <template>
-  <q-chip
-    :ripple="false"
-    text-color="gymbag"
-  >
-    {{ state.streamName }}
-  </q-chip>
-
   <q-btn-dropdown
     stretch
     flat
-    label="Change stream"
     no-caps
   >
+    <template #label>
+      <q-chip
+        :ripple="false"
+        text-color="gymbag"
+      >
+        {{ state.streamName }}
+      </q-chip>
+
+      <q-tooltip class="text-body2 bg-gymbag">
+        Change the stream type
+      </q-tooltip>
+    </template>
+
     <q-item-label header>
       Solo
     </q-item-label>
