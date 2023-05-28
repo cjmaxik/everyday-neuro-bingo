@@ -6,10 +6,18 @@
     stretch
     fab-mini
     icon="help"
-    @click="aboutToolbar = true"
-  />
+    @click="openAboutModal = true"
+  >
+    <q-tooltip
+      right
+      anchor="bottom left"
+      class="text-body2 bg-gymbag"
+    >
+      About
+    </q-tooltip>
+  </q-btn>
 
-  <q-dialog v-model="aboutToolbar">
+  <q-dialog v-model="openAboutModal">
     <q-card>
       <q-toolbar>
         <q-avatar>
@@ -126,5 +134,5 @@
 import { ref } from 'vue'
 
 // local refs
-const aboutToolbar = ref(false)
+const openAboutModal = ref(false)
 </script>
