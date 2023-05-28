@@ -84,11 +84,11 @@ import { gameSettings } from '../stores/gameSettings'
 const props = defineProps({
   type: {
     type: String,
-    default: 'solo'
+    default: 'justChatting'
   }
 })
 
-const streamType = props.type === '' ? 'solo' : props.type
+const streamType = props.type === '' ? 'justChatting' : props.type
 if (!Object.keys(prompts).includes(streamType)) location.replace('/')
 
 const state = gameState()
@@ -101,7 +101,8 @@ const $q = useQuasar()
 // seed - current date in UTC
 const seedPhrase = generateSeedPhrase()
 const version = 2
-state.generateBoard(prompts, seedPhrase, version, streamType)
+const stream = prompts[streamType]
+state.generateBoard(stream.participants, seedPhrase, version, streamType, stream.name)
 
 // data
 const chunkedBoard = computed(() => chunkArray(state.board, state.streakCount))
@@ -150,6 +151,7 @@ const notifyForUndo = (block) => {
     progress: true,
     group: false,
     color: 'gymbag',
+    timeout: 10000,
     actions: [
       {
         label: 'Undo',
