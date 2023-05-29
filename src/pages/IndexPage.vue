@@ -57,13 +57,13 @@
       <span class="text-h6">Neuro Debut stream today!</span>
     </q-banner> -->
 
-    <div
+    <!-- <div
       v-if="state.ready"
       class="text-center"
       :hidden="$q.screen.lt.md"
     >
       Ctrl+click to decrease the tally *wink*
-    </div>
+    </div> -->
   </q-page>
 </template>
 
@@ -119,6 +119,8 @@ const decrement = (block) => {
   checkForWin(block, true)
 }
 
+const soundsPath = '../assets/sounds'
+const winSound = new Audio((`${soundsPath}/vine-boom.mp3`))
 const checkForWin = (block, decrement = false) => {
   const index = block.index
   const participantId = block.participantId
@@ -127,21 +129,21 @@ const checkForWin = (block, decrement = false) => {
   const win = state.checkForBingo()
   const isSoundActive = !settings.disableSound && !decrement
 
-  const soundsPath = '../assets/sounds'
   if (win.length && win.length !== state.previousWin) {
-    playSound(`${soundsPath}/vine-boom.mp3`, isSoundActive)
+    playSound(winSound, isSoundActive)
+  } else {
+    if (state.getTally(index) === 1) {
+      const randomSound = sounds[getRandomInt(0, sounds.length - 1)]
+      playSound(randomSound, isSoundActive)
+    }
   }
 
   state.previousWin = win.length
-  if (state.getTally(index) === 1) {
-    const randomSound = sounds[getRandomInt(0, sounds.length - 1)]
-    playSound(`${soundsPath}/${participantId}/${randomSound}`, isSoundActive)
-  }
 }
 
 // sound logic
 const playSound = (audio, isActive) => {
-  if (isActive) new Audio(audio).play()
+  if (isActive) audio.play()
 }
 
 // undo logic

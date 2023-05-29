@@ -90,12 +90,13 @@ export const gameState = defineStore('gameState', {
 
       streamData.forEach(data => {
         // participants
+        const soundsPath = '../assets/sounds'
         participants[data.id] = {
           id: data.id,
           name: data.name,
           color: data.color,
           image: data.image,
-          sounds: data.sounds
+          sounds: data.sounds.map(x => new Audio(`${soundsPath}/${data.id}/${x}`))
         }
 
         // prompts
