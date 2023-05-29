@@ -18,12 +18,17 @@
     </template>
 
     <q-item-label header>
-      Solo
+      Regular streams
     </q-item-label>
 
     <StreamTypeItem
       stream-type="/"
       text="Just Chatting"
+    />
+
+    <StreamTypeItem
+      stream-type="vedalCollab"
+      text="with Vedal"
     />
 
     <q-separator />

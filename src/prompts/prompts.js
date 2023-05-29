@@ -1,4 +1,5 @@
 import neuro from './neuro'
+import vedal from './vedal'
 import filian from './filian'
 import anny from './anny'
 
@@ -11,6 +12,13 @@ export default {
     name: 'Just Chatting',
     participants: [
       neuro
+    ]
+  },
+
+  vedalCollab: {
+    name: 'Neuro and Vedal',
+    participants: [
+      neuro, vedal
     ]
   },
 
