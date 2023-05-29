@@ -154,6 +154,7 @@ const notifyForUndo = (block) => {
     group: false,
     color: 'gymbag',
     timeout: 10000,
+    position: 'bottom-right',
     actions: [
       {
         label: 'Undo',
@@ -181,7 +182,21 @@ const notifyForUndo = (block) => {
   margin: 1rem auto 0;
 }
 
+.gymbag-border {
+  border-width: 2px;
+  border-color: $gymbag;
+  border-style: solid;
+}
+
 .bingo-card {
-  user-select: none;
+  @extend .gymbag-border;
+
+  border-radius: 5px;
+  border-width: 2px;
+  background-color: white;
+
+  .col {
+    @extend .gymbag-border
+  }
 }
 </style>

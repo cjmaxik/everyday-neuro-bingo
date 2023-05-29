@@ -14,7 +14,7 @@
     @click.exact="$emit('increment')"
   >
     <div class="text-center q-pa-xs">
-      <span>
+      <span class="bingo-block-text">
         {{ block.text }}
       </span>
 
@@ -53,11 +53,6 @@ const participantColor = props.participant?.color ?? '#000'
 .bingo-block {
   position: relative;
 
-  background-color: white;
-  border-color: $gymbag;
-  border-width: 2px;
-  border-style: solid;
-
   height: 100px;
   min-width: 100px;
 
@@ -66,7 +61,7 @@ const participantColor = props.participant?.color ?? '#000'
 
   transition: all 0.25s ease;
 
-  >div>span {
+  span.bingo-block-text {
     color: v-bind('participantColor')
   }
 
@@ -80,6 +75,7 @@ const participantColor = props.participant?.color ?? '#000'
     width: 100%;
 
     opacity: 0;
+    transition: all 0.25s ease;
 
     background-image: v-bind('tallyImage');
     @extend .center-image;
@@ -95,6 +91,10 @@ const participantColor = props.participant?.color ?? '#000'
 .win.bingo-block {
   background-color: lighten($gymbag, 30%);
   color: white;
+
+  span.bingo-block-text {
+    color: white;
+  }
 
   &:before:not(.free) {
     opacity: 0.1;
@@ -125,71 +125,5 @@ const participantColor = props.participant?.color ?? '#000'
 .free {
   background-image: url('../assets/vedal.png');
   @extend .center-image
-}
-
-/* see MainLayout.vue */
-/* TODO: tidy it up */
-.row {
-  >.col {
-    &:last-child {
-      >.bingo-block {
-        border-right-width: 3px;
-      }
-    }
-
-    &:first-child {
-      >.bingo-block {
-        border-left-width: 3px;
-      }
-    }
-  }
-
-  &:first-child {
-    >.col {
-      &:first-child {
-        .bingo-block {
-          border-top-left-radius: 10px;
-        }
-      }
-
-      &:last-child {
-        .bingo-block {
-          border-top-right-radius: 10px;
-        }
-      }
-    }
-  }
-
-  &:last-child {
-    >.col {
-      &:first-child {
-        .bingo-block {
-          border-bottom-left-radius: 10px;
-        }
-      }
-
-      &:last-child {
-        .bingo-block {
-          border-bottom-right-radius: 10px;
-        }
-      }
-    }
-  }
-}
-
-.bingo-card {
-  >.row {
-    &:first-child {
-      .bingo-block {
-        border-top-width: 3px;
-      }
-    }
-
-    &:last-child {
-      .bingo-block {
-        border-bottom-width: 3px;
-      }
-    }
-  }
 }
 </style>
