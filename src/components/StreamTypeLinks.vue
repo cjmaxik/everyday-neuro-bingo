@@ -26,6 +26,11 @@
       text="Just Chatting"
     />
 
+    <StreamTypeItem
+      stream-type="vedalCollab"
+      text="with Vedal"
+    />
+
     <q-separator />
 
     <q-item-label header>
