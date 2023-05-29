@@ -120,7 +120,7 @@ const decrement = (block) => {
 }
 
 const soundsPath = '../assets/sounds'
-const winSound = new Audio((`${soundsPath}/vine-boom.mp3`))
+const winSound = new Audio(`${soundsPath}/vine-boom.mp3`)
 const checkForWin = (block, decrement = false) => {
   const index = block.index
   const participantId = block.participantId
