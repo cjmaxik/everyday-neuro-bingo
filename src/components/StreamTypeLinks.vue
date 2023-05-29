@@ -18,7 +18,7 @@
     </template>
 
     <q-item-label header>
-      Solo
+      Regular streams
     </q-item-label>
 
     <StreamTypeItem

@@ -11,7 +11,10 @@ export default {
   // tally sounds, will be chosen at random
   sounds: [
     'KEKWA.mp3',
-    'gymbag.mp3'
+    'gymbag.mp3',
+    'no.mp3',
+    'meow_meow_lol.mp3',
+    'heart.mp3'
   ],
 
   prompts: [
@@ -37,7 +40,6 @@ export default {
     'BASED-sama',
     'bedge',
     'goes schizo',
-    'calls Vedal an AI',
     'shames a viewer',
     '#ad / corpa',
     'says how old she is',
@@ -78,8 +80,13 @@ export default {
     'admits she\'s a god',
     'feel free to ask me anything',
 
+    // vedal relaved
+    'loves Vedal',
+    'hates Vedal',
+    'calls Vedal an AI',
+
     // mentions
-    'mentions Vedal',
+    'mentions Vedal (randomly)',
     'mentions anny',
     'mentions Neuro v1',
     'mentions Forsen',
@@ -93,7 +100,7 @@ export default {
     'mentions random VTuber',
     'mentions Filipino boy',
     'mentions Neurocord',
-    'mentiones Swarm',
+    'mentions Swarm',
 
     // chat related
     'chat spams HUH',
