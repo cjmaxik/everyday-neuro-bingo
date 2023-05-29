@@ -48,6 +48,11 @@
       text="anny"
     />
 
+    <StreamTypeItem
+      stream-type="shylilyCollab"
+      text="Shylily"
+    />
+
     <q-list />
   </q-btn-dropdown>
 </template>

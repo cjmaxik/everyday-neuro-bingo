@@ -25,7 +25,7 @@ export default {
     '"why this doesn\'t work?"',
 
     // neuro related
-    'ignores Neuro',
+    'aignores Neuro',
     'argues with Neuro',
     'gets hit on by Neuro',
     'hates Neuro',
