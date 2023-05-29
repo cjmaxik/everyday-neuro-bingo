@@ -46,7 +46,8 @@ export const gameState = defineStore('gameState', {
 
     // game data
     streamType: useStorage('streamType', ''),
-    streamName: '',
+    streamName: null,
+    freeBlockImage: null,
     seed: useStorage('seed', 0),
     participants: {},
     board: useStorage('board', []),
@@ -76,19 +77,17 @@ export const gameState = defineStore('gameState', {
     },
 
     /**
-     * @param {Object[]} streamData Prompts
+     * @param {Object} streamData Prompts
      * @param {Integer} seedPhrase Seed
      * @param {Integer} version Dataset version
-     * @param {String} streamType Type of the stream
-     * @param {String} streamType Name of the stream
     */
-    generateBoard (streamData, seedPhrase, version, streamType, streamName) {
+    generateBoard (streamData, seedPhrase, version) {
       const newSeed = seedrandom(seedPhrase, { state: true }).int32()
 
       const participants = {}
       const allPrompts = []
 
-      streamData.forEach(data => {
+      streamData.participants.forEach(data => {
         // participants
         const soundsPath = '../assets/sounds'
         participants[data.id] = {
@@ -106,7 +105,8 @@ export const gameState = defineStore('gameState', {
         })
       })
 
-      this.streamName = streamName
+      this.streamName = streamData.name
+      this.freeBlockImage = streamData.image
       this.participants = participants
 
       // Check if the version, seed and/or stream type has changed
@@ -114,7 +114,7 @@ export const gameState = defineStore('gameState', {
         if (
           this.version === version &&
           this.seed === newSeed &&
-          this.streamType === streamType
+          this.streamType === streamData.streamType
         ) return
       }
 
@@ -124,7 +124,7 @@ export const gameState = defineStore('gameState', {
       const seededPrompts = generatePrompts(allPrompts, newSeed, boardSize)
 
       // Push the board
-      this.streamType = streamType
+      this.streamType = streamData.streamType
       this.seed = newSeed
       this.version = version
       this.board = []
@@ -137,7 +137,7 @@ export const gameState = defineStore('gameState', {
           index,
           participantId: free ? null : seededPrompts[promptIndex].id,
           tally: free ? 1 : 0, // center block is free
-          text: free ? '' : seededPrompts[promptIndex].text || 'vedalPls',
+          text: free ? '' : seededPrompts[promptIndex].text || '⚠️⚠️⚠️',
           free,
           win: false
         }

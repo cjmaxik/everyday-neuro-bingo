@@ -25,6 +25,7 @@
             <BingoItem
               :block="block"
               :participant="state.participants[block.participantId]"
+              :free-block-image="state.freeBlockImage"
               @decrement="decrement(block)"
               @increment="increment(block)"
             />
@@ -101,8 +102,8 @@ const $q = useQuasar()
 // seed - current date in UTC
 const seedPhrase = generateSeedPhrase()
 const version = 2
-const stream = prompts[streamType]
-state.generateBoard(stream.participants, seedPhrase, version, streamType, stream.name)
+const streamData = prompts[streamType]
+state.generateBoard(streamData, seedPhrase, version)
 
 // data
 const chunkedBoard = computed(() => chunkArray(state.board, state.streakCount))

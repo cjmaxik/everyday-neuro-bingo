@@ -39,6 +39,11 @@ const props = defineProps({
     type: Object,
     required: false,
     default: null
+  },
+  freeBlockImage: {
+    type: String,
+    required: false,
+    default: '/assets/images/neuro/gymbag.png'
   }
 })
 
@@ -47,6 +52,7 @@ defineEmits(['increment', 'decrement'])
 // css binds
 const tallyImage = props.participant ? `url(/assets/images/${props.participant.id}/${props.participant.image})` : ''
 const participantColor = props.participant?.color ?? '#000'
+const freeBlockImageSrc = `url(${props.freeBlockImage})`
 </script>
 
 <style lang="scss" scoped>
@@ -123,7 +129,7 @@ const participantColor = props.participant?.color ?? '#000'
 }
 
 .free {
-  background-image: url('../assets/vedal.png');
+  background-image: v-bind('freeBlockImageSrc');
   @extend .center-image
 }
 </style>
