@@ -103,6 +103,7 @@ const $q = useQuasar()
 const seedPhrase = generateSeedPhrase()
 const version = 2
 const streamData = prompts[streamType]
+document.title = `${streamData.name} | Everyday Neuro Bingo`
 state.generateBoard(streamData, seedPhrase, version)
 
 // data
