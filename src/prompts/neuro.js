@@ -90,5 +90,7 @@ export default [
   'chat spams Erm',
   'rickrolls',
   'chat spams copypasta',
-  'RIP bitrate'
+  'RIP bitrate',
+  
+  'problem with my AI'
 ]
