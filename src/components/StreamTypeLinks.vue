@@ -21,16 +21,10 @@
       Solo
     </q-item-label>
 
-    <q-item
-      clickable
-      dense
-      tag="a"
-      href="/"
-    >
-      <q-item-section>
-        <q-item-label>Just Chatting</q-item-label>
-      </q-item-section>
-    </q-item>
+    <StreamTypeItem
+      stream-type="/"
+      text="Just Chatting"
+    />
 
     <q-separator />
 
@@ -38,21 +32,24 @@
       Collabs
     </q-item-label>
 
-    <q-item
-      clickable
-      dense
-      tag="a"
-      href="/filianCollab"
-    >
-      <q-item-section>
-        <q-item-label>filian</q-item-label>
-      </q-item-section>
-    </q-item>
+    <StreamTypeItem
+      stream-type="filianCollab"
+      text="filian"
+    />
+
+    <StreamTypeItem
+      stream-type="annyCollab"
+      text="anny"
+    />
+
     <q-list />
   </q-btn-dropdown>
 </template>
 
 <script setup>
+// project-related
+import StreamTypeItem from './StreamTypeItem.vue'
+
 // state
 import { gameState } from '../stores/gameState'
 const state = gameState()

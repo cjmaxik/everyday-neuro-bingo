@@ -1,7 +1,7 @@
 export default {
   id: 'anny',
   name: 'anny',
-  color: '#feb3c8',
+  color: '#f37b97',
 
   image: 'annystar.png',
 
@@ -11,7 +11,7 @@ export default {
 
   prompts: [
     'lewd joke',
-    '"HIC"',
+    '*hic*',
     'makes sussy noise',
     'RIP desk',
     'blames Vedal',
@@ -25,21 +25,19 @@ export default {
     'smooth brain moment',
     '"Neuro is so cute"',
     'leaks something',
-    'roast Vedal',
-    'educate\'s Neuro',
+    'roasts Vedal',
+    'educates Neuro',
     'exposed by Neuro',
     'obvious lie',
-
-    // mentions
-    'mentions she is Neuro\'s mom'
+    'mention she is Neuro\'s mom',
 
     // chat related
-    'chat spams AnnyLebronJam',
+    'chat spams Anny LebronJam',
     'chat spams LUBBERS',
     'chat spams BOOBA',
     'chat dies from cringe',
-    
-    //twitch meta
-    'morari drops 50 or more subs',
+
+    // twitch meta
+    'morari drops 50 or more subs'
   ]
 }
