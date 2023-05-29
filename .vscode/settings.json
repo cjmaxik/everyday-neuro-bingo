@@ -17,5 +17,10 @@
   },
   "[scss]": {
     "editor.defaultFormatter": "vscode.css-language-features"
-  }
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "html.format.wrapAttributes": "force-expand-multiline",
+  "html.format.indentInnerHtml": false
 }

@@ -1,10 +1,8 @@
-# Everyday Neuro Bingo (everyday-neuro-bingo)
-> This website is in a PROTOTYPE state.
->
-> EVERYTHING might break and the code is kinda cringe \**wink\**
+# Everyday Neuro Bingo
 
-New Bingo card for Neuro-sama each day!
+New Bingo card for Neuro-sama every day! Watch Neuro-sama's streams and follow along.
 
+--> Production [Website](https://neuro-bingo.pages.dev/) <--
 --> Discuss in [Neurocord](https://discord.com/channels/574720535888396288/1110199900114780182) <--
 
 ---

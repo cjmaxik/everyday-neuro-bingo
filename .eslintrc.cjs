@@ -17,17 +17,16 @@ module.exports = {
   // Rules order is important, please avoid shuffling them
   extends: [
     // Base ESLint recommended rules
-    // 'eslint:recommended',
+    'eslint:recommended',
 
     // Uncomment any of the lines below to choose desired strictness,
     // but leave only one uncommented!
     // See https://eslint.vuejs.org/rules/#available-rules
-    'plugin:vue/vue3-essential', // Priority A: Essential (Error Prevention)
+    // 'plugin:vue/vue3-essential', // Priority A: Essential (Error Prevention)
     // 'plugin:vue/vue3-strongly-recommended', // Priority B: Strongly Recommended (Improving Readability)
-    // 'plugin:vue/vue3-recommended', // Priority C: Recommended (Minimizing Arbitrary Choices and Cognitive Overhead)
+    'plugin:vue/vue3-recommended', // Priority C: Recommended (Minimizing Arbitrary Choices and Cognitive Overhead)
 
     'standard'
-
   ],
 
   plugins: [
@@ -71,6 +70,22 @@ module.exports = {
     'import/no-extraneous-dependencies': 'off',
 
     'prefer-promise-reject-errors': 'off',
+
+    'vue/attributes-order': ['error', {
+      order: [
+        'DEFINITION',
+        'LIST_RENDERING',
+        'CONDITIONALS',
+        'RENDER_MODIFIERS',
+        'GLOBAL',
+        ['UNIQUE', 'SLOT'],
+        'TWO_WAY_BINDING',
+        'OTHER_DIRECTIVES',
+        'OTHER_ATTR',
+        'EVENTS',
+        'CONTENT'
+      ]
+    }],
 
     // allow debugger during development only
     'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',

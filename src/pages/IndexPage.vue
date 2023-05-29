@@ -1,90 +1,203 @@
 <template>
-  <q-page padding class="main">
-    <transition-group appear enter-active-class="animated fadeIn" leave-active-class="animated fadeOut">
-      <div class="bingo-card" v-if="state.ready">
-        <div class="row" v-for="row, key in chunkedBoard" :key="key">
-          <div class="col" v-for="block in row" :key="block.index">
-            <BingoBlock :block="block" @increment="increment(block.index)" @decrement="decrement(block.index)" />
+  <q-page
+    class="main"
+    padding
+  >
+    <transition-group
+      appear
+      enter-active-class="animated fadeIn"
+      leave-active-class="animated fadeOut"
+    >
+      <div
+        v-if="state.ready"
+        class="bingo-card"
+      >
+        <div
+          v-for="row, key in chunkedBoard"
+          :key="key"
+          class="row"
+        >
+          <div
+            v-for="block in row"
+            :key="block.index"
+            class="col"
+          >
+            <BingoItem
+              :block="block"
+              :participant="state.participants[block.participantId]"
+              :free-block-image="state.freeBlockImage"
+              @decrement="decrement(block)"
+              @increment="increment(block)"
+            />
           </div>
         </div>
       </div>
 
-      <div class="absolute-center" v-else>
+      <div
+        v-else
+        class="absolute-center"
+      >
         <div class="row justify-center items-center">
           <div class="text-center q-pa-xs">
-            <img src="../assets/gymbag.png" alt="Loading...">
+            <img
+              alt="Loading..."
+              src="../assets/gymbag.png"
+            >
             <h2>Loading...</h2>
           </div>
         </div>
       </div>
     </transition-group>
-    <div class="text-center" v-if="state.ready">
-      Hint: Ctrl+click to descrease the tally *wink*
-    </div>
+
+    <!-- <q-banner
+      v-if="state.ready"
+      inline-actions
+      rounded
+      class="bg-gymbag text-white text-center q-mt-sm"
+    >
+      <span class="text-h6">Neuro Debut stream today!</span>
+    </q-banner> -->
+
+    <!-- <div
+      v-if="state.ready"
+      class="text-center"
+      :hidden="$q.screen.lt.md"
+    >
+      Ctrl+click to decrease the tally *wink*
+    </div> -->
   </q-page>
 </template>
 
 <script setup>
 // vue-related
 import { computed } from 'vue'
+import { useQuasar } from 'quasar'
 
 // project-related
-import BingoBlock from '../components/BingoItem.vue'
-import { chunkArray } from 'src/helpers/helpers'
+import BingoItem from '../components/BingoItem.vue'
+import { chunkArray, generateSeedPhrase, getRandomInt } from 'src/helpers/helpers'
+import prompts from '../prompts/prompts'
 
-// sounds
-import kekwaAsset from '../assets/KEKWA.mp3'
-import winAsset from '../assets/vine-boom.mp3'
-
-// game state
-// TODO: store the state in localStorage for 12 hours
+// states
 import { gameState } from '../stores/gameState'
-const state = gameState()
+import { gameSettings } from '../stores/gameSettings'
 
-// instantiate sound
-const kekwaSound = new Audio(kekwaAsset)
-const winSound = new Audio(winAsset)
+const props = defineProps({
+  type: {
+    type: String,
+    default: 'justChatting'
+  }
+})
+
+const streamType = props.type === '' ? 'justChatting' : props.type
+if (!Object.keys(prompts).includes(streamType)) location.replace('/')
+
+const state = gameState()
+const settings = gameSettings()
+
+// Quasar object
+const $q = useQuasar()
 
 // generate board
 // seed - current date in UTC
-const seed = new Date().getUTCDate()
-const version = 1
-state.generateBoard(seed, version)
+const seedPhrase = generateSeedPhrase()
+const version = 2
+const streamData = prompts[streamType]
+state.generateBoard(streamData, seedPhrase, version)
 
 // data
 const chunkedBoard = computed(() => chunkArray(state.board, state.streakCount))
 
 // game logic
-let previousWin = 0
-const increment = (index) => {
-  state.increment(index)
-  checkForWin(index)
+const increment = (block) => {
+  state.increment(block.index)
+  checkForWin(block)
+  notifyForUndo(block)
 }
 
-const decrement = (index) => {
-  state.decrement(index)
-  checkForWin(index, false)
+const decrement = (block) => {
+  state.decrement(block.index)
+  checkForWin(block, true)
 }
 
-const checkForWin = (index, sound = true) => {
+const soundsPath = '../assets/sounds'
+const winSound = new Audio(`${soundsPath}/vine-boom.mp3`)
+const checkForWin = (block, decrement = false) => {
+  const index = block.index
+  const participantId = block.participantId
+  const sounds = state.participants[participantId].sounds
+
   const win = state.checkForBingo()
-  if (win.length && win.length !== previousWin) {
-    if (sound) winSound.play()
+  const isSoundActive = !settings.disableSound && !decrement
+
+  if (win.length && win.length !== state.previousWin) {
+    playSound(winSound, isSoundActive)
+  } else {
+    if (state.getTally(index) === 1) {
+      const randomSound = sounds[getRandomInt(0, sounds.length - 1)]
+      playSound(randomSound, isSoundActive)
+    }
   }
 
-  previousWin = win.length
-  if (state.getTally(index) === 1 && sound) kekwaSound.play()
+  state.previousWin = win.length
+}
+
+// sound logic
+const playSound = (audio, isActive) => {
+  if (isActive) audio.play()
+}
+
+// undo logic
+const notifyForUndo = (block) => {
+  $q.notify({
+    message: 'Made a mistake?',
+    progress: true,
+    group: false,
+    color: 'gymbag',
+    timeout: 10000,
+    position: 'bottom-right',
+    actions: [
+      {
+        label: 'Undo',
+        color: 'white',
+        handler: () => {
+          decrement(block)
+        }
+      }
+    ]
+  })
 }
 </script>
 
 <style lang="scss" scoped>
 .main {
-  width: 85%;
+  body.screen--md & {
+    width: 85%;
+  }
+
+  body.screen--xs & {
+    width: 750px;
+  }
+
   max-width: 1000px;
   margin: 1rem auto 0;
 }
 
+.gymbag-border {
+  border-width: 2px;
+  border-color: $gymbag;
+  border-style: solid;
+}
+
 .bingo-card {
-  user-select: none;
+  @extend .gymbag-border;
+
+  border-radius: 5px;
+  border-width: 2px;
+  background-color: white;
+
+  .col {
+    @extend .gymbag-border
+  }
 }
 </style>

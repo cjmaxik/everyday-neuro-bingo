@@ -1,11 +1,11 @@
+/* eslint-disable no-unreachable */
 // vue-related
 import { defineStore } from 'pinia'
 import { useStorage } from '@vueuse/core'
 
 // project-related
 import seedrandom from 'seedrandom'
-import { shuffle } from '../helpers/helpers'
-import neuro from '../prompts/neuro'
+import { generatePrompts, deepCopy } from '../helpers/helpers'
 
 // TODO: support more than one size
 const streakCount = 7
@@ -40,12 +40,20 @@ const winningLines = [
 
 export const gameState = defineStore('gameState', {
   state: () => ({
-    version: useStorage('version', 1),
+    // application data
+    version: useStorage('version', 2),
     ready: useStorage('ready', false),
+
+    // game data
+    streamType: useStorage('streamType', ''),
+    streamName: null,
+    freeBlockImage: null,
     seed: useStorage('seed', 0),
-    bingo: useStorage('bingo', []),
+    participants: {},
     board: useStorage('board', []),
+    bingo: useStorage('bingo', []),
     streakCount: useStorage('streakCount', streakCount),
+    previousWin: useStorage('previousWin', 0),
     winningLines: useStorage('winningLines', winningLines)
   }),
 
@@ -57,41 +65,84 @@ export const gameState = defineStore('gameState', {
 
   actions: {
     clearAll () {
+      this.version = 2
       this.ready = false
+      this.streamType = ''
       this.seed = 0
-      this.bingo = []
       this.board = []
+      this.bingo = []
       this.streakCount = streakCount
+      this.previousWin = 0
       this.winningLines = winningLines
     },
 
     /**
+     * @param {Object} streamData Prompts
      * @param {Integer} seedPhrase Seed
      * @param {Integer} version Dataset version
-     */
-    generateBoard (seedPhrase, version) {
+    */
+    generateBoard (streamData, seedPhrase, version) {
       const newSeed = seedrandom(seedPhrase, { state: true }).int32()
-      const seededPrompt = shuffle(neuro, newSeed)
 
+      const participants = {}
+      const allPrompts = []
+
+      streamData.participants.forEach(data => {
+        // participants
+        const soundsPath = '../assets/sounds'
+        participants[data.id] = {
+          id: data.id,
+          name: data.name,
+          color: data.color,
+          image: data.image,
+          sounds: data.sounds.map(x => new Audio(`${soundsPath}/${data.id}/${x}`))
+        }
+
+        // prompts
+        allPrompts.push({
+          participantId: data.id,
+          prompts: deepCopy(data.prompts)
+        })
+      })
+
+      this.streamName = streamData.name
+      this.freeBlockImage = streamData.image
+      this.participants = participants
+
+      // Check if the version, seed and/or stream type has changed
       if (this.ready) {
-        if (this.seed === newSeed) return
-        if (this.version === version) return
+        if (
+          this.version === version &&
+          this.seed === newSeed &&
+          this.streamType === streamData.streamType
+        ) return
       }
 
       console.log('Seed has changes - clearing everything...')
       this.clearAll()
 
+      const seededPrompts = generatePrompts(allPrompts, newSeed, boardSize)
+
+      // Push the board
+      this.streamType = streamData.streamType
       this.seed = newSeed
+      this.version = version
       this.board = []
+
+      let promptIndex = 0
       for (let index = 0; index < boardSize; index++) {
         const free = index === centerBlock
+
         this.board[index] = {
           index,
+          participantId: free ? null : seededPrompts[promptIndex].id,
           tally: free ? 1 : 0, // center block is free
-          text: free ? '' : seededPrompt[index] || 'vedalPls',
+          text: free ? '' : seededPrompts[promptIndex].text || '⚠️⚠️⚠️',
           free,
           win: false
         }
+
+        if (!free) promptIndex++
       }
 
       this.ready = true

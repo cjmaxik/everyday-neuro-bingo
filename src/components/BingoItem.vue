@@ -1,11 +1,22 @@
 <template>
-  <div v-if="block.free" :class="{ win: block.win }" class=" bingo-block free" />
+  <div
+    v-if="block.free"
+    class="bingo-block free"
+    :class="{ win: block.win }"
+  />
 
-  <div v-if="!block.free" v-ripple.center :class="{ active: block.tally, win: block.win }"
-    class="bingo-block row justify-center items-center" @click.exact="$emit('increment')"
-    @click.ctrl="$emit('decrement')">
+  <div
+    v-if="!block.free"
+    v-ripple.center
+    class="bingo-block row justify-center items-center"
+    :class="{ active: block.tally, win: block.win }"
+    @click.ctrl="$emit('decrement')"
+    @click.exact="$emit('increment')"
+  >
     <div class="text-center q-pa-xs">
-      {{ block.text }}
+      <span class="bingo-block-text">
+        {{ block.text }}
+      </span>
 
       <q-badge class="bingo-tally">
         {{ block.tally }}
@@ -15,30 +26,50 @@
 </template>
 
 <script setup>
-
-defineProps({
-  block: Object,
-  win: Boolean
+const props = defineProps({
+  block: {
+    type: Object,
+    required: true
+  },
+  win: {
+    type: Boolean,
+    default: false
+  },
+  participant: {
+    type: Object,
+    required: false,
+    default: null
+  },
+  freeBlockImage: {
+    type: String,
+    required: false,
+    default: '/assets/images/neuro/gymbag.png'
+  }
 })
 
 defineEmits(['increment', 'decrement'])
+
+// css binds
+const tallyImage = props.participant ? `url(/assets/images/${props.participant.id}/${props.participant.image})` : ''
+const participantColor = props.participant?.color ?? '#000'
+const freeBlockImageSrc = `url(${props.freeBlockImage})`
 </script>
 
 <style lang="scss" scoped>
 .bingo-block {
   position: relative;
 
-  background-color: white;
-  border-color: $gymbag;
-  border-width: 2px;
-  border-style: solid;
-
   height: 100px;
+  min-width: 100px;
 
   font-size: 20px;
   line-height: 1.5rem;
 
   transition: all 0.25s ease;
+
+  span.bingo-block-text {
+    color: v-bind('participantColor')
+  }
 
   &:before {
     content: ' ';
@@ -50,21 +81,26 @@ defineEmits(['increment', 'decrement'])
     width: 100%;
 
     opacity: 0;
+    transition: all 0.25s ease;
 
-    background-image: url('../assets/gymbag.png');
+    background-image: v-bind('tallyImage');
     @extend .center-image;
   }
 }
 
 .active.bingo-block {
   &:before {
-    opacity: 0.3;
+    opacity: 0.2;
   }
 }
 
 .win.bingo-block {
   background-color: lighten($gymbag, 30%);
   color: white;
+
+  span.bingo-block-text {
+    color: white;
+  }
 
   &:before:not(.free) {
     opacity: 0.1;
@@ -93,73 +129,7 @@ defineEmits(['increment', 'decrement'])
 }
 
 .free {
-  background-image: url('../assets/vedal.png');
+  background-image: v-bind('freeBlockImageSrc');
   @extend .center-image
-}
-
-/* see MainLayout.vue */
-/* TODO: tidy it up */
-.row {
-  >.col {
-    &:last-child {
-      >.bingo-block {
-        border-right-width: 3px;
-      }
-    }
-
-    &:first-child {
-      >.bingo-block {
-        border-left-width: 3px;
-      }
-    }
-  }
-
-  &:first-child {
-    >.col {
-      &:first-child {
-        .bingo-block {
-          border-top-left-radius: 10px;
-        }
-      }
-
-      &:last-child {
-        .bingo-block {
-          border-top-right-radius: 10px;
-        }
-      }
-    }
-  }
-
-  &:last-child {
-    >.col {
-      &:first-child {
-        .bingo-block {
-          border-bottom-left-radius: 10px;
-        }
-      }
-
-      &:last-child {
-        .bingo-block {
-          border-bottom-right-radius: 10px;
-        }
-      }
-    }
-  }
-}
-
-.bingo-card {
-  >.row {
-    &:first-child {
-      .bingo-block {
-        border-top-width: 3px;
-      }
-    }
-
-    &:last-child {
-      .bingo-block {
-        border-bottom-width: 3px;
-      }
-    }
-  }
 }
 </style>
