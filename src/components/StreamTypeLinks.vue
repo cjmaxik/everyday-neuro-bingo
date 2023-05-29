@@ -8,6 +8,7 @@
       <q-chip
         :ripple="false"
         text-color="gymbag"
+        color="white"
       >
         {{ state.streamName }}
       </q-chip>

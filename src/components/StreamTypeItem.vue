@@ -26,5 +26,4 @@ const props = defineProps({
 })
 
 const href = computed(() => props.streamType === '/' ? '/' : `/${props.streamType ?? ''}`)
-console.log(href)
 </script>
