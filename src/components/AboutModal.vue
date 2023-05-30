@@ -53,20 +53,24 @@
         <q-img
           src="https://static-cdn.jtvnw.net/jtv_user_pictures/c53ef9e3-0ee3-4253-8a75-e854ceab5129-profile_banner-480.png"
         >
-          <div class="absolute-bottom-right  text-subtitle2 flex">
-            Neuro-sama is an AI powered VTuber created by vedal987. She can chat, sing, react to videos, and play games.
-            The
-            VTuber side was made in C# (Unity) but all of the AI is done in Python. Neuro-sama was originally made in 2018
-            as a bot that just played osu, but has been revived in December of 2022 as a VTuber.
+          <div class="absolute-bottom-right text-subtitle2 flex text-center">
+            <p>
+              Neuro-sama is an AI-powered VTuber created by vedal987. She can chat, sing, react to videos, and play games.
+            </p>
+
+            <p class="no-margin">
+              The VTuber side was made in C# (Unity) but all of the AI is done in Python. Neuro-sama was originally made
+              in 2018 as a bot that just played osu, but has been revived in December of 2022 as a VTuber.
+            </p>
           </div>
         </q-img>
       </p>
 
       <p v-show="isIndex">
-        Neuro-sama is an AI powered VTuber created by vedal987. She can chat, sing, react to videos, and play games.
-        The
-        VTuber side was made in C# (Unity) but all of the AI is done in Python. Neuro-sama was originally made in 2018
-        as a bot that just played osu, but has been revived in December of 2022 as a VTuber.
+        <span class="text-gymbag text-bold">Neuro-sama</span> is an AI-powered VTuber created by vedal987. She can chat,
+        sing, react to videos, and play games. The VTuber side was made in C# (Unity) but all of the AI is done in Python.
+        Neuro-sama was originally made in 2018 as a bot that just played osu, but has been revived in December of 2022 as
+        a VTuber.
       </p>
 
       <p>
