@@ -7,7 +7,8 @@ export default {
 
   sounds: [
     'meow.mp3',
-    'femboy.mp3'
+    'femboy.mp3',
+    'tequila.mp3'
   ],
 
   prompts: [
