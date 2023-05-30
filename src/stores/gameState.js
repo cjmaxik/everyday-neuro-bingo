@@ -1,6 +1,6 @@
 /* eslint-disable no-unreachable */
 // vue-related
-import { defineStore } from 'pinia'
+import { defineStore, acceptHMRUpdate } from 'pinia'
 import { useLocalStorage } from '@vueuse/core'
 
 // project-related
@@ -182,3 +182,7 @@ export const useGameStateStore = (id) => defineStore(`gameState-${id}`, {
     }
   }
 })()
+
+if (import.meta.hot) {
+  import.meta.hot.accept(acceptHMRUpdate(useGameStateStore, import.meta.hot))
+}

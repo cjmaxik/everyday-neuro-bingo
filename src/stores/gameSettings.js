@@ -1,5 +1,5 @@
 // vue-related
-import { defineStore } from 'pinia'
+import { defineStore, acceptHMRUpdate } from 'pinia'
 import { useLocalStorage } from '@vueuse/core'
 
 export const useGameSettingsStore = defineStore('gameSettings', {
@@ -21,3 +21,7 @@ export const useGameSettingsStore = defineStore('gameSettings', {
     }
   }
 })
+
+if (import.meta.hot) {
+  import.meta.hot.accept(acceptHMRUpdate(useGameSettingsStore, import.meta.hot))
+}
