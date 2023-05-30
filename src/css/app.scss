@@ -21,7 +21,8 @@ body:not(.remove-font) {
 .index {
   @extend .main;
 
-  width: 512px;
+  min-width: 256px;
+  max-width: 512px;
 }
 
 .bingo-page {
