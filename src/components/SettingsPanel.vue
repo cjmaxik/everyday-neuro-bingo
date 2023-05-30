@@ -6,7 +6,10 @@
     fab-mini
     icon="settings"
   >
-    <q-tooltip class="text-body2 bg-gymbag">
+    <q-tooltip
+      class="text-body2 bg-gymbag"
+      anchor="bottom left"
+    >
       Settings
     </q-tooltip>
 
@@ -53,7 +56,7 @@
 
         <q-separator spaced />
 
-        <q-item>
+        <q-item v-show="isBingoPage">
           <q-item-section>
             <q-btn
               class="full-width"
@@ -61,7 +64,7 @@
               label="Clear the board"
               no-caps
               text-color="white"
-              @click="clearBoard()"
+              @click="clearBoard(currentRoute)"
             />
           </q-item-section>
         </q-item>
@@ -84,15 +87,26 @@
 </template>
 
 <script setup>
-
 // vue-related
-import { onMounted, watch } from 'vue'
+import { ref, onMounted, watch } from 'vue'
+import { useRoute, useRouter } from 'vue-router'
 
 // game settings
-import { gameSettings } from '../stores/gameSettings'
-import { gameState } from '../stores/gameState'
-const settings = gameSettings()
-const state = gameState()
+import { useGameStateStore } from '../stores/gameState'
+import { useGameSettingsStore } from '../stores/gameSettings'
+
+// route
+const route = useRoute()
+const router = useRouter()
+const currentRoute = ref(route.path.replace('/', ''))
+const isBingoPage = ref(currentRoute.value !== '')
+
+let state = null
+if (isBingoPage.value) {
+  state = useGameStateStore(currentRoute.value)
+}
+
+const settings = useGameSettingsStore()
 
 // font
 const updateFont = (removeFont) => {
@@ -104,25 +118,37 @@ const updateFont = (removeFont) => {
 }
 
 const clearBoard = () => {
-  if (confirm('Do you really want to clear the board state?')) {
+  if (confirm('Do you really want to clear this board state?')) {
     state.clearAll()
-    location.reload()
+    router.go()
   }
 }
 
 const clearAll = () => {
-  if (confirm('Do you really want to clear all the settings and board state?')) {
+  if (confirm('Do you really want to clear all the settings and all board states?')) {
     settings.clearAll()
-    state.clearAll()
-    location.reload()
+    localStorage.clear()
+    location.replace('/')
   }
 }
 
 onMounted(() => {
-  updateFont(settings.removeFont)
-})
+  watch(settings, (settings) => {
+    updateFont(settings.removeFont)
+  })
 
-watch(settings, (settings) => {
-  updateFont(settings.removeFont)
+  watch(
+    () => route.path, (newRoute) => {
+      currentRoute.value = route.path.replace('/', '')
+
+      if (currentRoute.value !== '') {
+        state = useGameStateStore(currentRoute.value)
+        isBingoPage.value = true
+      } else {
+        state = null
+        isBingoPage.value = false
+      }
+    }
+  )
 })
 </script>

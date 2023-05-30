@@ -1,138 +1,133 @@
 <template>
-  <q-btn
-    dense
-    flat
-    no-caps
-    stretch
-    fab-mini
-    icon="help"
-    @click="openAboutModal = true"
-  >
-    <q-tooltip
-      right
-      anchor="bottom left"
-      class="text-body2 bg-gymbag"
-    >
-      About
-    </q-tooltip>
-  </q-btn>
+  <q-card>
+    <q-toolbar v-show="!isIndex">
+      <q-avatar>
+        <img src="../assets/gymbag.png">
+      </q-avatar>
 
-  <q-dialog v-model="openAboutModal">
-    <q-card>
-      <q-toolbar>
-        <q-avatar>
-          <img src="../assets/gymbag.png">
-        </q-avatar>
+      <q-toolbar-title>
+        Everyday <span class="text-weight-bold">Neuro</span> Bingo
+      </q-toolbar-title>
 
-        <q-toolbar-title>
-          Everyday <span class="text-weight-bold">Neuro</span> Bingo
-        </q-toolbar-title>
-      </q-toolbar>
+      <q-btn
+        v-close-popup
+        flat
+        round
+        dense
+        icon="close"
+      />
+    </q-toolbar>
 
-      <q-card-section>
-        <p>
-          New Bingo card every day! Watch Neuro-sama's streams and follow along.
-        </p>
-        <p>
-          Created by <a
-            ref="noopener noreferrer"
-            href="https://cjmaxik.ru"
-            target="_blank"
-          >CJMAXiK</a> with the help of <a
-            ref="noopener noreferrer"
-            href="https://discord.gg/neurosama"
-            target="_blank"
-          >Neurocord</a> and <a
-            ref="noopener noreferrer"
-            href="https://github.com/cjmaxik/everyday-neuro-bingo/graphs/contributors"
-            target="_blank"
-          >code contributors</a>.
-        </p>
-        <hr>
-        <p>
-          <span class="text-h6">About Neuro-sama</span>
-        </p>
-        <p>
-          Neuro-sama is an AI powered VTuber created by vedal987. She can chat, sing, react to videos, and play games. The
-          VTuber side was made in C# (Unity) but all of the AI is done in Python. Neuro-sama was originally made in 2018
-          as a bot that just played osu, but has been revived in December of 2022 as a VTuber.
-        </p>
-        <p>
-          <q-btn-group spread>
-            <q-btn
-              ref="noopener noreferrer"
-              dense
-              href="https://www.twitch.tv/vedal987?ref=neuro-bingo"
-              label="Twitch"
-              no-caps
-              style="background-color: #6441a5;"
-              target="_blank"
-              text-color="white"
-            />
-            <q-btn
-              ref="noopener noreferrer"
-              dense
-              href="https://www.youtube.com/@Neurosama?ref=neuro-bingo"
-              label="YouTube"
-              no-caps
-              style="background-color: #c4302b;"
-              target="_blank"
-              text-color="white"
-            />
-          </q-btn-group>
-
-          <q-btn-group spread>
-            <q-btn
-              ref="noopener noreferrer"
-              dense
-              href="https://twitter.com/NeurosamaAI?ref=neuro-bingo"
-              label="@NeurosamaAI"
-              no-caps
-              style="background-color: #00acee;"
-              target="_blank"
-              text-color="white"
-            />
-            <q-btn
-              ref="noopener noreferrer"
-              dense
-              href="https://twitter.com/Vedal987?ref=neuro-bingo"
-              label="@vedal987"
-              no-caps
-              style="background-color: #1DA1F2;"
-              target="_blank"
-              text-color="white"
-            />
-          </q-btn-group>
-        </p>
-      </q-card-section>
-
-      <q-card-actions
-        align="right"
-        class="text-primary"
-      >
-        <q-btn
+    <q-card-section>
+      <p>
+        New Bingo card every day! <br v-show="$q.screen.lt.sm">Watch Neuro-sama's streams and follow along. Share your
+        cards on <a
           ref="noopener noreferrer"
-          flat
-          href="https://github.com/cjmaxik/everyday-neuro-bingo"
-          label="Source code"
-          no-caps
+          href="https://discord.gg/neurosama"
           target="_blank"
-        />
-        <q-btn
-          v-close-popup
-          flat
-          label="Close"
-          no-caps
-        />
-      </q-card-actions>
-    </q-card>
-  </q-dialog>
+        >Neurocord</a> in <span class="text-bold">#livestream-chat</span> channel.
+      </p>
+      <p>
+        Created by <a
+          ref="noopener noreferrer"
+          href="https://cjmaxik.ru"
+          target="_blank"
+        >CJMAXiK</a> with the help of <a
+          ref="noopener noreferrer"
+          href="https://discord.gg/neurosama"
+          target="_blank"
+        >Neurocord</a> and <a
+          ref="noopener noreferrer"
+          href="https://github.com/cjmaxik/everyday-neuro-bingo/graphs/contributors"
+          target="_blank"
+        >code contributors</a>. <br v-show="!isIndex">Source code is available <a
+          ref="noopener noreferrer"
+          href="https://github.com/cjmaxik/everyday-neuro-bingo"
+          target="_blank"
+        >on GitHub</a>.
+      </p>
+
+      <hr v-show="isIndex">
+
+      <p v-show="!isIndex">
+        <q-img src="/assets/images/banner.png">
+          <div class="absolute-bottom-right text-subtitle2 flex text-center">
+            <p>
+              Neuro-sama is an AI-powered VTuber created by vedal987. She can chat, sing, react to videos, and play games.
+            </p>
+
+            <p class="no-margin">
+              The VTuber side was made in C# (Unity) but all of the AI is done in Python. Neuro-sama was originally made
+              in 2018 as a bot that just played osu, but has been revived in December of 2022 as a VTuber.
+            </p>
+          </div>
+        </q-img>
+      </p>
+
+      <p v-show="isIndex">
+        <span class="text-gymbag text-bold">Neuro-sama</span> is an AI-powered VTuber created by vedal987. She can chat,
+        sing, react to videos, and play games. The VTuber side was made in C# (Unity) but all of the AI is done in Python.
+        Neuro-sama was originally made in 2018 as a bot that just played osu, but has been revived in December of 2022 as
+        a VTuber.
+      </p>
+
+      <p>
+        <q-btn-group spread>
+          <q-btn
+            ref="noopener noreferrer"
+            dense
+            href="https://www.twitch.tv/vedal987?ref=neuro-bingo"
+            label="Twitch"
+            no-caps
+            style="background-color: #6441a5;"
+            target="_blank"
+            text-color="white"
+          />
+          <q-btn
+            ref="noopener noreferrer"
+            dense
+            href="https://www.youtube.com/@Neurosama?ref=neuro-bingo"
+            label="YouTube"
+            no-caps
+            style="background-color: #c4302b;"
+            target="_blank"
+            text-color="white"
+          />
+        </q-btn-group>
+
+        <q-btn-group spread>
+          <q-btn
+            ref="noopener noreferrer"
+            dense
+            href="https://twitter.com/NeurosamaAI?ref=neuro-bingo"
+            label="@NeurosamaAI"
+            no-caps
+            style="background-color: #00acee;"
+            target="_blank"
+            text-color="white"
+          />
+          <q-btn
+            ref="noopener noreferrer"
+            dense
+            href="https://twitter.com/Vedal987?ref=neuro-bingo"
+            label="@vedal987"
+            no-caps
+            style="background-color: #1DA1F2;"
+            target="_blank"
+            text-color="white"
+          />
+        </q-btn-group>
+      </p>
+    </q-card-section>
+  </q-card>
 </template>
 
 <script setup>
-// vue-related
-import { ref } from 'vue'
-
-// local refs
-const openAboutModal = ref(false)
+defineProps({
+  isIndex: {
+    type: Boolean,
+    required: false,
+    default: false
+  }
+})
 </script>

@@ -1,0 +1,36 @@
+{
+  "name": "Everyday Neuro Bingo",
+  "short_name": "Neuro Bingo",
+  "description": "New Bingo card for Neuro-sama every day!",
+  "theme_color": "#532933",
+  "background_color": "#532933",
+  "display": "standalone",
+  "scope": "/",
+  "start_url": "/",
+  "icons": [
+    {
+      "src": "icons/favicon-128x128.png",
+      "sizes": "128x128"
+    },
+    {
+      "src": "icons/favicon-128x128.png",
+      "sizes": "128x128"
+    },
+    {
+      "src": "icons/favicon-96x96.png",
+      "sizes": "96x96"
+    },
+    {
+      "src": "icons/favicon-32x32.png",
+      "sizes": "32x32"
+    },
+    {
+      "src": "icons/favicon-16x16.png",
+      "sizes": "16x16"
+    },
+    {
+      "src": "favicon.ico",
+      "sizes": "256x256"
+    }
+  ]
+}
