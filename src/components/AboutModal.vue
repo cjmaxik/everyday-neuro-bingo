@@ -50,9 +50,7 @@
       <hr v-show="isIndex">
 
       <p v-show="!isIndex">
-        <q-img
-          src="https://static-cdn.jtvnw.net/jtv_user_pictures/c53ef9e3-0ee3-4253-8a75-e854ceab5129-profile_banner-480.png"
-        >
+        <q-img src="/assets/images/banner.png">
           <div class="absolute-bottom-right text-subtitle2 flex text-center">
             <p>
               Neuro-sama is an AI-powered VTuber created by vedal987. She can chat, sing, react to videos, and play games.
