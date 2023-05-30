@@ -1,62 +1,44 @@
 <template>
-  <q-btn-dropdown
-    stretch
-    flat
-    no-caps
-  >
-    <template #label>
-      <q-chip
-        :ripple="false"
-        text-color="gymbag"
-        color="white"
-      >
-        {{ state.streamName }}
-      </q-chip>
+  <div class="bg-white">
+    <q-list
+      bordered
+      separator
+      class="q-mt-sm text-center text-h6"
+    >
+      <q-item-label header>
+        Regular streams
+      </q-item-label>
 
-      <q-tooltip class="text-body2 bg-gymbag">
-        Change the stream type
-      </q-tooltip>
-    </template>
+      <StreamTypeItem
+        to="justChatting"
+        text="Just Chatting"
+      />
 
-    <q-item-label header>
-      Regular streams
-    </q-item-label>
+      <StreamTypeItem
+        to="vedalCollab"
+        text="Stream with Vedal"
+      />
 
-    <StreamTypeItem
-      stream-type="/"
-      text="Just Chatting"
-    />
+      <q-separator />
 
-    <StreamTypeItem
-      stream-type="vedalCollab"
-      text="with Vedal"
-    />
+      <q-item-label header>
+        Collabs
+      </q-item-label>
 
-    <q-separator />
+      <StreamTypeItem
+        to="filianCollab"
+        text="Collab with filian"
+      />
 
-    <q-item-label header>
-      Collabs
-    </q-item-label>
-
-    <StreamTypeItem
-      stream-type="filianCollab"
-      text="filian"
-    />
-
-    <StreamTypeItem
-      stream-type="annyCollab"
-      text="anny"
-    />
-
-    <q-list />
-  </q-btn-dropdown>
+      <StreamTypeItem
+        to="annyCollab"
+        text="Collab with anny"
+      />
+    </q-list>
+  </div>
 </template>
 
 <script setup>
 // project-related
 import StreamTypeItem from './StreamTypeItem.vue'
-
-// state
-import { gameState } from '../stores/gameState'
-const state = gameState()
 </script>

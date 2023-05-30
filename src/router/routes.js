@@ -1,13 +1,18 @@
 
 const routes = [
   {
-    path: '/:type?',
+    path: '/',
     component: () => import('layouts/MainLayout.vue'),
     children: [
       {
-        path: '',
+        path: '/',
+        component: () => import('src/pages/IndexPage.vue')
+      },
+
+      {
+        path: '/:type',
         props: true,
-        component: () => import('pages/IndexPage.vue')
+        component: () => import('src/pages/BingoPage.vue')
       }
     ]
   },

@@ -1,21 +1,20 @@
 <template>
   <q-item
     clickable
-    dense
-    tag="a"
-    :href="href"
+    :to="to"
+    exact
   >
-    <q-item-section>
-      <q-item-label>{{ text }}</q-item-label>
+    <q-item-section class="text-gymbag">
+      <q-item-label>
+        {{ text }}
+      </q-item-label>
     </q-item-section>
   </q-item>
 </template>
 
 <script setup>
-import { computed } from 'vue'
-
 const props = defineProps({
-  streamType: {
+  to: {
     type: String,
     required: true
   },
@@ -25,5 +24,4 @@ const props = defineProps({
   }
 })
 
-const href = computed(() => props.streamType === '/' ? '/' : `/${props.streamType ?? ''}`)
 </script>

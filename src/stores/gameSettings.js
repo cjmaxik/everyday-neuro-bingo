@@ -1,11 +1,13 @@
 // vue-related
 import { defineStore } from 'pinia'
-import { useStorage } from '@vueuse/core'
+import { useLocalStorage } from '@vueuse/core'
 
-export const gameSettings = defineStore('gameSettings', {
+export const useGameSettingsStore = defineStore('gameSettings', {
   state: () => ({
-    removeFont: useStorage('removeFont', false),
-    disableSound: useStorage('disableSound', false)
+    removeFont: useLocalStorage('removeFont', false),
+    disableSound: useLocalStorage('disableSound', false),
+
+    streamName: ''
   }),
 
   getters: {

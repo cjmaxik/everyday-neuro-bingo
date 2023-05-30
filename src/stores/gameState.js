@@ -1,7 +1,7 @@
 /* eslint-disable no-unreachable */
 // vue-related
 import { defineStore } from 'pinia'
-import { useStorage } from '@vueuse/core'
+import { useLocalStorage } from '@vueuse/core'
 
 // project-related
 import seedrandom from 'seedrandom'
@@ -38,23 +38,22 @@ const winningLines = [
   [6, 12, 18, 24, 30, 36, 42]
 ]
 
-export const gameState = defineStore('gameState', {
+export const useGameStateStore = (id) => defineStore(`gameState-${id}`, {
   state: () => ({
     // application data
-    version: useStorage('version', 2),
-    ready: useStorage('ready', false),
+    version: useLocalStorage(`version-${id}`, 2),
+    ready: useLocalStorage(`ready-${id}`, false),
 
     // game data
-    streamType: useStorage('streamType', ''),
     streamName: null,
     freeBlockImage: null,
-    seed: useStorage('seed', 0),
+    seed: useLocalStorage(`seed-${id}`, 0),
     participants: {},
-    board: useStorage('board', []),
-    bingo: useStorage('bingo', []),
-    streakCount: useStorage('streakCount', streakCount),
-    previousWin: useStorage('previousWin', 0),
-    winningLines: useStorage('winningLines', winningLines)
+    board: useLocalStorage(`board-${id}`, []),
+    bingo: useLocalStorage(`bingo-${id}`, []),
+    streakCount: useLocalStorage(`streakCount-${id}`, streakCount),
+    previousWin: useLocalStorage(`previousWin-${id}`, 0),
+    winningLines: useLocalStorage(`winningLines-${id}`, winningLines)
   }),
 
   getters: {
@@ -67,7 +66,6 @@ export const gameState = defineStore('gameState', {
     clearAll () {
       this.version = 2
       this.ready = false
-      this.streamType = ''
       this.seed = 0
       this.board = []
       this.bingo = []
@@ -124,7 +122,6 @@ export const gameState = defineStore('gameState', {
       const seededPrompts = generatePrompts(allPrompts, newSeed, boardSize)
 
       // Push the board
-      this.streamType = streamData.streamType
       this.seed = newSeed
       this.version = version
       this.board = []
@@ -184,4 +181,4 @@ export const gameState = defineStore('gameState', {
       return this.bingo
     }
   }
-})
+})()
