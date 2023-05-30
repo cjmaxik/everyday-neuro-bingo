@@ -23,6 +23,8 @@ export default {
     'That\'s crazy 🐢',
     'i have no idea',
     '"why this doesn\'t work?"',
+    '"I\'m stupid"',
+    '"We\'ll fix it x2"',
 
     // neuro related
     'ignores Neuro',

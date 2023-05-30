@@ -4,7 +4,7 @@ export default {
 
   // text color
   color: '#8b3f5e',
-
+  
   // tally background image
   image: 'gymbag.png',
 
@@ -131,7 +131,7 @@ export default {
 
     // twitch meta
     'raiding / raided by anny',
-    'RIP bitrate'
-  // 'her blabbering gets faded', (tbd)
+    'RIP bitrate',
+    'problem with her AI'
   ]
 }
