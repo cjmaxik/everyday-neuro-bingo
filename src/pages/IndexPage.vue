@@ -8,11 +8,9 @@
       rounded
       class="bg-gymbag text-white text-center q-mt-sm"
     >
-      <p class="text-h5">
-        Welcome to Everyday <span class="text-weight-bold">Neuro</span> Bingo!
-      </p>
-
-      Please choose the stream type
+      <span class="text-h5">
+        Welcome to <br v-show="$q.screen.lt.sm">Everyday <span class="text-weight-bold">Neuro</span> Bingo!
+      </span>
     </q-banner>
 
     <StreamTypeLinks />

@@ -1,28 +1,21 @@
 <template>
   <q-toolbar class="bg-gymbag">
-    <q-btn
-      flat
-      round
-      dense
-      to="/"
-    >
-      <template #default>
-        <q-avatar>
-          <img src="../assets/gymbag.png">
-        </q-avatar>
-      </template>
-    </q-btn>
-
     <transition name="fade">
       <q-btn
-        v-show="$q.screen.gt.xs"
         flat
         no-caps
         no-wrap
-        class="q-ml-xs"
+        padding="xs"
         to="/"
       >
-        <q-toolbar-title shrink>
+        <q-avatar>
+          <img src="../assets/gymbag.png">
+        </q-avatar>
+
+        <q-toolbar-title
+          v-show="$q.screen.gt.xs"
+          shrink
+        >
           Everyday <span class="text-weight-bold">Neuro</span> Bingo
         </q-toolbar-title>
       </q-btn>
@@ -30,12 +23,12 @@
 
     <transition name="fade">
       <q-chip
-        v-if="settings.streamName !== null"
+        v-show="settings.streamName"
         :ripple="false"
         text-color="gymbag"
         color="white"
       >
-        {{ settings.streamName }}
+        {{ realStreamName }}
       </q-chip>
     </transition>
 
@@ -43,20 +36,19 @@
 
     <SettingsPanel />
 
-    <transition name="fade">
-      <q-separator
-        :v-show="settings.streamName"
-        vertical
-      />
-    </transition>
+    <q-separator
+      v-show="settings.streamName"
+      vertical
+    />
 
-    <transition name="fade">
-      <AboutModalItem :v-show="settings.streamName" />
-    </transition>
+    <AboutModalItem v-if="settings.streamName" />
   </q-toolbar>
 </template>
 
 <script setup>
+// vue related
+import { ref, watch } from 'vue'
+
 // project-related
 import SettingsPanel from './SettingsPanel.vue'
 import AboutModalItem from '../components/AboutModalItem.vue'
@@ -64,4 +56,17 @@ import AboutModalItem from '../components/AboutModalItem.vue'
 // settings store
 import { useGameSettingsStore } from 'src/stores/gameSettings'
 const settings = useGameSettingsStore()
+
+const realStreamName = ref(settings.streamName)
+watch(settings, (settings) => {
+  if (settings.streamName) {
+    realStreamName.value = settings.streamName
+  }
+})
 </script>
+
+<style>
+.q-chip {
+  user-select: none;
+}
+</style>

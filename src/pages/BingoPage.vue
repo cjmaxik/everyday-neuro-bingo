@@ -61,7 +61,7 @@
 
 <script setup>
 // vue-related
-import { computed } from 'vue'
+import { computed, onBeforeUnmount } from 'vue'
 import { useQuasar } from 'quasar'
 
 // project-related
@@ -95,8 +95,12 @@ const seedPhrase = generateSeedPhrase()
 const version = 2
 const streamData = prompts[streamType]
 
-document.title = `${streamData.name} | Everyday Neuro Bingo`
+// page title
 settings.streamName = streamData.name
+document.title = `${streamData.name} | Everyday Neuro Bingo`
+onBeforeUnmount(() => {
+  document.title = 'Everyday Neuro Bingo'
+})
 
 state.generateBoard(streamData, seedPhrase, version)
 
@@ -173,6 +177,7 @@ const notifyForUndo = (block) => {
 
 .bingo-card {
   @extend .gymbag-border;
+  user-select: none;
 
   border-radius: 5px;
   border-width: 2px;

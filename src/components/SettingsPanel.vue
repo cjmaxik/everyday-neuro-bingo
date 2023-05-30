@@ -6,7 +6,10 @@
     fab-mini
     icon="settings"
   >
-    <q-tooltip class="text-body2 bg-gymbag">
+    <q-tooltip
+      class="text-body2 bg-gymbag"
+      anchor="bottom left"
+    >
       Settings
     </q-tooltip>
 
@@ -53,7 +56,7 @@
 
         <q-separator spaced />
 
-        <q-item>
+        <q-item v-show="isBingoPage">
           <q-item-section>
             <q-btn
               class="full-width"
@@ -61,7 +64,6 @@
               label="Clear the board"
               no-caps
               text-color="white"
-              :disable="!isBingoPage"
               @click="clearBoard(currentRoute)"
             />
           </q-item-section>
@@ -137,7 +139,6 @@ onMounted(() => {
 
   watch(
     () => route.path, (newRoute) => {
-      console.log(newRoute)
       currentRoute.value = route.path.replace('/', '')
 
       if (currentRoute.value !== '') {
