@@ -13,7 +13,7 @@
 </template>
 
 <script setup>
-const props = defineProps({
+defineProps({
   to: {
     type: String,
     required: true
@@ -23,5 +23,4 @@ const props = defineProps({
     required: true
   }
 })
-
 </script>
