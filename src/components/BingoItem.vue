@@ -68,7 +68,7 @@ const freeBlockImageSrc = `url(${props.freeBlockImage})`
   transition: all 0.25s ease;
 
   span.bingo-block-text {
-    color: v-bind('participantColor')
+    color: v-bind('participantColor');
   }
 
   &:before {

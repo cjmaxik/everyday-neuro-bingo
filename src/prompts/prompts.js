@@ -2,6 +2,7 @@ import neuro from './neuro'
 import vedal from './vedal'
 import filian from './filian'
 import anny from './anny'
+import neuroCollab from './neuroCollab'
 
 const assetsRoute = '/assets/images'
 
@@ -22,7 +23,7 @@ export default {
     name: 'Neuro and Vedal',
     image: `${assetsRoute}/vedal/neuro-vedal.png`,
     participants: [
-      neuro, vedal
+      neuroCollab('Vedal'), vedal
     ]
   },
 
@@ -30,7 +31,7 @@ export default {
     name: 'Neuro x filian collab',
     image: `${assetsRoute}/filian/cupsama.png`,
     participants: [
-      neuro, filian
+      neuroCollab('filian'), filian
     ]
   },
 
@@ -38,7 +39,7 @@ export default {
     name: 'Neuro x anny collab',
     image: `${assetsRoute}/anny/tehepero.png`,
     participants: [
-      neuro, anny
+      neuroCollab('anny'), anny
     ]
   }
 }
