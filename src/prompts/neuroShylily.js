@@ -33,12 +33,12 @@ export default {
     'shames Lily',
     'calls Lily an AI',
     'invents new nickname for Lily',
-    'rizzes Lily',
+    'W RIZZ',
     'gaslights Lily',
     'calls Lily short',
 
     // mentions
-    'mentions Vedal (randomly)',
+    'randomly mentions Vedal',
     'mentions random VTuber',
     'mentions Swarm',
 

@@ -27,6 +27,7 @@ export default {
 
   prompts: [
     'womp womp',
+    'sub machine gun',
     'wymp wymp',
     'stinky orcat',
     'life advice',
@@ -36,6 +37,10 @@ export default {
     'mentions shrimps',
     'poop soup story',
     'uses voice chager',
+    'lewd joke',
+    'dies from laughter',
+    'OWLPLS',
+    'mentions Numi',
 
     // Neuro related
     'gaslights Neuro',
