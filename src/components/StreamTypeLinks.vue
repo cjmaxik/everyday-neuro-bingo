@@ -38,6 +38,7 @@
       <StreamTypeItem
         to="shylilyCollab"
         text="Collab with Shylily"
+        is-new
       />
     </q-list>
   </div>
