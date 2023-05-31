@@ -38,14 +38,16 @@ export default {
     'uses voice chager',
 
     // Neuro related
-    'Neuro calls Lily short',
-    'Neuro says Lily is an AI',
+    'gaslights Neuro',
+    'W RIZZ',
 
     // chat related
     'chat spams AYO',
     'chat spams womp womp',
     'chat spams BOOBA',
     'chat spams SNIFFA',
+    'chat L\'s Lily',
+    'chat W\'s Lily',
 
     // twitch meta
     'Pierre donates with a joke'

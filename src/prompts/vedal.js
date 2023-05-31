@@ -28,7 +28,7 @@ export default {
     '"We\'ll fix it x2"',
 
     // neuro related
-    'aignores Neuro',
+    'ignores Neuro',
     'argues with Neuro',
     'gets hit on by Neuro',
     'hates Neuro',

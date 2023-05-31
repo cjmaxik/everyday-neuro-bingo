@@ -35,6 +35,7 @@ export default {
     'invents new nickname for Lily',
     'rizzes Lily',
     'gaslights Lily',
+    'calls Lily short',
 
     // mentions
     'mentions Vedal (randomly)',
