@@ -56,21 +56,33 @@ export const deepCopy = (array) => JSON.parse(JSON.stringify(array))
  * @param {Integer} boardSize
  */
 export const generatePrompts = (allPrompts, seed, boardSize) => {
-  const countForParticipiant = Math.floor((boardSize - 1) / allPrompts.length)
+  const participantsCount = allPrompts.length
+  const countForParticipiant = Math.floor((boardSize - 1) / participantsCount)
 
-  const finalPrompts = []
-  allPrompts.forEach(data => {
+  let finalPrompts = []
+  finalPrompts = Array.from(new Array(participantsCount), () => [])
+
+  allPrompts.forEach((data, index) => {
     const prompts = shuffle(data.prompts, seed).slice(0, countForParticipiant)
 
     prompts.forEach(text => {
-      finalPrompts.push({
+      finalPrompts[index].push({
         id: data.participantId,
         text
       })
     })
   })
 
-  return shuffle(finalPrompts, seed)
+  if (participantsCount > 1) return transposeForBoard(finalPrompts).flat()
+  return shuffle(finalPrompts.flat(), seed)
+}
+
+export const transposeForBoard = (array) => {
+  const transposedArray = array[0].map((_, colIndex) => array.map(row => row[colIndex])).flat()
+
+  return transposedArray
+    .splice(0, transposedArray.length / 2)
+    .concat(transposedArray.reverse())
 }
 
 /**
