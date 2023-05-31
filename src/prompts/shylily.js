@@ -48,27 +48,6 @@ export default {
     'chat spams SNIFFA',
 
     // twitch meta
-    'Pierre donates with a joke',
-
-    'filler',
-    'filler',
-    'filler',
-    'filler',
-    'filler',
-    'filler',
-    'filler',
-    'filler',
-    'filler',
-    'filler',
-    'filler',
-    'filler',
-    'filler',
-    'filler',
-    'filler',
-    'filler',
-    'filler',
-    'filler',
-    'filler',
-    'filler'
+    'Pierre donates with a joke'
   ]
 }

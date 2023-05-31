@@ -1,10 +1,10 @@
 export default {
-  id: 'neuroshylily',
+  id: 'neuroShylily',
   name: 'Neuro-sama',
 
   // text color
   color: '#8b3f5e',
-  
+
   // tally background image
   image: 'gymbag.png',
 
@@ -27,7 +27,7 @@ export default {
     '#ad / corpa',
     'rants',
     'apologises profusely',
-    
+
     // Shylily related
     'misgenders Lily',
     'shames Lily',

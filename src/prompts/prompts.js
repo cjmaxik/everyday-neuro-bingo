@@ -2,6 +2,8 @@ import neuro from './neuro'
 import vedal from './vedal'
 import filian from './filian'
 import anny from './anny'
+
+import neuroShylily from './neuroShylily'
 import shylily from './shylily'
 
 const assetsRoute = '/assets/images'
@@ -47,7 +49,7 @@ export default {
     name: 'Neuro x Shylily collab',
     image: `${assetsRoute}/shylily/lily.png`,
     participants: [
-      neuro, shylily
+      neuroShylily, shylily
     ]
   }
 }
