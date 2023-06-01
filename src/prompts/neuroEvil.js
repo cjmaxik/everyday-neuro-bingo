@@ -4,8 +4,11 @@ export default {
   id: 'neuroEvil',
   name: neuro.name,
   assetsFolder: neuro.id,
-  color: neuro.color,
-  image: neuro.image,
+
+  // eyes color
+  color: '#5a9ea9',
+
+  image: 'neuroEvil.png',
   sounds: neuro.sounds,
 
   prompts: [
@@ -18,12 +21,13 @@ export default {
     'claims to stream later',
     'fact of the day',
     'meow',
+    'noted',
 
     // Evil related
     'misgenders Evil',
     'shames Evil',
     'calls Evil a human',
-    'invents new nickname for Evil',
+    'invents nickname for Evil',
 
     // mentions
     'mentions random VTuber',

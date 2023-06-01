@@ -6,6 +6,9 @@ import anny from './anny'
 import neuroShylily from './neuroShylily'
 import shylily from './shylily'
 
+import neuroEvil from './neuroEvil'
+import evilsama from './evilsama'
+
 const assetsRoute = '/assets/images'
 
 /**
@@ -26,6 +29,14 @@ export default {
     image: `${assetsRoute}/vedal/neuro-vedal.png`,
     participants: [
       neuro, vedal
+    ]
+  },
+
+  evilNeuro: {
+    name: 'Neuro x Evil Neuro',
+    image: `${assetsRoute}/evilsama/evilship.png`,
+    participants: [
+      neuroEvil, evilsama
     ]
   },
 

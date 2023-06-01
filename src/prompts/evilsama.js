@@ -1,13 +1,13 @@
 export default {
   id: 'evilsama',
-  name: 'evilsama',
-  color: '#8e211d',
+  name: 'Evil Neuro',
+  color: '#d54671',
 
-  image: 'evilglare.png',
+  image: 'robot.png',
 
   sounds: [
-    'evilgymbag.mp3'
-    'evilkekw.mp3'
+    'evilgymbag.mp3',
+    'evilkekw.mp3',
     'evilno.mp3'
   ],
 
@@ -32,16 +32,16 @@ export default {
     'wink chain',
     'heart chain',
     'filtered chain',
-  
+
     // mentions
     'randomly mentions Vedal',
     'mentions Swarm',
-    
+
     // chat related
     'chat spams SCHIZO',
     'chat spams Susge',
-    'chat spams lore',
-    
+    'chat spams LORE',
+
     // twitch meta
     'over 10k viewers'
   ]
