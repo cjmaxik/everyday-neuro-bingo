@@ -1,8 +1,9 @@
 <template>
-  <q-layout view="hHh LpR fFf">
-    <q-header elevated>
-      <PageToolbar />
-    </q-header>
+  <q-layout
+    view="hHh LpR fFf"
+    style="min-height: 100% !important;"
+  >
+    <PageToolbar />
 
     <q-page-container>
       <router-view v-slot="{ Component }">

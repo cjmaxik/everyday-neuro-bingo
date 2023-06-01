@@ -2,6 +2,7 @@
   <q-page
     class="bingo-page"
     padding
+    style="min-height: 100% !important;"
   >
     <transition-group
       appear
@@ -9,7 +10,8 @@
       leave-active-class="animated fadeOut"
     >
       <div
-        v-if="state.ready"
+        v-show="state.ready"
+        :key="0"
         class="bingo-card"
       >
         <div
@@ -20,7 +22,7 @@
           <div
             v-for="block in row"
             :key="block.index"
-            class="col"
+            class="col shadow-5 shadow-transition"
           >
             <BingoItem
               :block="block"
@@ -34,16 +36,14 @@
       </div>
 
       <div
-        v-else
-        class="absolute-center"
+        v-show="!state.ready"
+        :key="1"
       >
         <div class="row justify-center items-center">
           <div class="text-center q-pa-xs">
-            <img
-              alt="Loading..."
-              src="../assets/gymbag.png"
-            >
-            <h2>Loading...</h2>
+            <h2 class="text-gymbag">
+              Loading...
+            </h2>
           </div>
         </div>
       </div>
@@ -175,16 +175,62 @@ const notifyForUndo = (block) => {
   border-style: solid;
 }
 
+.bingo-page {
+  margin: auto;
+  width: 1000px;
+
+  body.screen--md & {
+    width: 85%;
+  }
+
+  body.screen--sm & {
+    width: 970px;
+  }
+}
+
 .bingo-card {
-  @extend .gymbag-border;
   user-select: none;
 
-  border-radius: 5px;
-  border-width: 2px;
-  background-color: white;
+  .row {
+    &:first-child {
+      >.col {
+        border-top-width: 4px;
+
+        &:first-child {
+          border-top-left-radius: 5px;
+        }
+
+        &:last-child {
+          border-top-right-radius: 5px;
+        }
+      }
+    }
+
+    &:last-child {
+      >.col {
+        border-bottom-width: 4px;
+
+        &:first-child {
+          border-bottom-left-radius: 5px;
+        }
+
+        &:last-child {
+          border-bottom-right-radius: 5px;
+        }
+      }
+    }
+  }
 
   .col {
-    @extend .gymbag-border
+    @extend .gymbag-border;
+
+    &:first-child {
+      border-left-width: 4px;
+    }
+
+    &:last-child {
+      border-right-width: 4px;
+    }
   }
 }
 </style>

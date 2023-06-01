@@ -14,28 +14,14 @@ body:not(.remove-font) {
 }
 
 .main {
-  margin: 1rem auto 0;
+  margin: auto;
 }
 
 .index {
-  @extend .main;
+  margin: auto;
 
   min-width: 256px;
   max-width: 512px;
-}
-
-.bingo-page {
-  @extend .main;
-
-  width: 1000px;
-
-  body.screen--md & {
-    width: 85%;
-  }
-
-  body.screen--sm & {
-    width: 970px;
-  }
 }
 
 .fade-enter-active,

@@ -1,48 +1,50 @@
 <template>
-  <q-toolbar class="bg-gymbag">
-    <transition name="fade">
-      <q-btn
-        flat
-        no-caps
-        no-wrap
-        padding="xs"
-        to="/"
-      >
-        <q-avatar>
-          <img src="../assets/gymbag.png">
-        </q-avatar>
-
-        <q-toolbar-title
-          v-show="$q.screen.gt.xs"
-          shrink
+  <q-header elevated>
+    <q-toolbar class="bg-gymbag">
+      <transition name="fade">
+        <q-btn
+          flat
+          no-caps
+          no-wrap
+          padding="xs"
+          to="/"
         >
-          Everyday <span class="text-weight-bold">Neuro</span> Bingo
-        </q-toolbar-title>
-      </q-btn>
-    </transition>
+          <q-avatar>
+            <img src="../assets/gymbag.png">
+          </q-avatar>
 
-    <transition name="fade">
-      <q-chip
+          <q-toolbar-title
+            v-show="$q.screen.gt.xs"
+            shrink
+          >
+            Everyday <span class="text-weight-bold">Neuro</span> Bingo
+          </q-toolbar-title>
+        </q-btn>
+      </transition>
+
+      <transition name="fade">
+        <q-chip
+          v-show="settings.streamName"
+          :ripple="false"
+          text-color="gymbag"
+          color="white"
+        >
+          {{ realStreamName }}
+        </q-chip>
+      </transition>
+
+      <q-space />
+
+      <SettingsPanel />
+
+      <q-separator
         v-show="settings.streamName"
-        :ripple="false"
-        text-color="gymbag"
-        color="white"
-      >
-        {{ realStreamName }}
-      </q-chip>
-    </transition>
+        vertical
+      />
 
-    <q-space />
-
-    <SettingsPanel />
-
-    <q-separator
-      v-show="settings.streamName"
-      vertical
-    />
-
-    <AboutModalItem v-if="settings.streamName" />
-  </q-toolbar>
+      <AboutModalItem v-if="settings.streamName" />
+    </q-toolbar>
+  </q-header>
 </template>
 
 <script setup>
