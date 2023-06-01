@@ -22,7 +22,7 @@ export default {
     // Evil related
     'misgenders Evil',
     'shames Evil',
-    'calls Evil an AI',
+    'calls Evil a human',
     'invents new nickname for Evil',
 
     // mentions
