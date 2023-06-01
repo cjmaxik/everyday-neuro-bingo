@@ -3,7 +3,7 @@ export default {
   name: 'evilsama',
   color: '#8e211d',
 
-  image: 'evilship.png',
+  image: 'evilglare.png',
 
   sounds: [
     'evilgymbag.mp3'
