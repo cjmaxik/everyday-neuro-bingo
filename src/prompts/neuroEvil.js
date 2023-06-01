@@ -13,9 +13,9 @@ export default {
     'problem with her AI',
     'UwU',
     'KEKW',
-    'BASED-sama',
-    'apologises profusely',
-    '#ad / corpa',
+    'stares',
+    'no~',
+    'claims to stream later',
     'fact of the day',
     'meow',
 
