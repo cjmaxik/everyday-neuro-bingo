@@ -32,7 +32,6 @@ export default {
     'wink chain',
     'heart chain',
     'filtered chain',
-    'rizz chain',
   
     // mentions
     'randomly mentions Vedal',
@@ -41,6 +40,7 @@ export default {
     // chat related
     'chat spams SCHIZO',
     'chat spams Susge',
+    'chat spams lore',
     
     // twitch meta
     'over 10k viewers'
