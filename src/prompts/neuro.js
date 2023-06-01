@@ -3,7 +3,7 @@ export default {
   name: 'Neuro-sama',
 
   // text color
-  color: '#8b3f5e',
+  color: '#843a49',
 
   // tally background image
   image: 'gymbag.png',

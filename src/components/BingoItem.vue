@@ -58,8 +58,9 @@ const freeBlockImageSrc = `url(${props.freeBlockImage})`
 <style lang="scss" scoped>
 .bingo-block {
   position: relative;
+  background: white;
 
-  height: 100px;
+  min-height: 100px;
   min-width: 100px;
 
   font-size: 20px;
@@ -130,6 +131,6 @@ const freeBlockImageSrc = `url(${props.freeBlockImage})`
 
 .free {
   background-image: v-bind('freeBlockImageSrc');
-  @extend .center-image
+  @extend .center-image;
 }
 </style>

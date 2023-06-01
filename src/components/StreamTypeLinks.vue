@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-white">
+  <div class="bg-white shadow-5 shadow-transition">
     <q-list
       bordered
       separator
