@@ -27,7 +27,7 @@ export default {
     // collab related
     'they try to end stream',
     'roasts Neuro',
-    'they marry eachother',
+    'tries to marry Neuro',
     'telling two stories at once',
     'wink chain',
     'heart chain',
