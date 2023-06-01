@@ -50,7 +50,7 @@ const props = defineProps({
 defineEmits(['increment', 'decrement'])
 
 // css binds
-const tallyImage = props.participant ? `url(/assets/images/${props.participant.id}/${props.participant.image})` : ''
+const tallyImage = props.participant ? `url(${props.participant.image})` : ''
 const participantColor = props.participant?.color ?? '#000'
 const freeBlockImageSrc = `url(${props.freeBlockImage})`
 </script>

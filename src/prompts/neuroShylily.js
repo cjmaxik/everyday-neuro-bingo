@@ -1,10 +1,12 @@
 export default {
-  id: 'neuroshylily',
+  id: 'neuroShylily',
   name: 'Neuro-sama',
 
   // text color
   color: '#8b3f5e',
-  
+
+  assetsFolder: 'neuro',
+
   // tally background image
   image: 'gymbag.png',
 
@@ -18,7 +20,7 @@ export default {
   ],
 
   prompts: [
-    'makes sussy noise',
+    'womp womp',
     'funny joke',
     'tries to leave',
     '1984',
@@ -27,17 +29,18 @@ export default {
     '#ad / corpa',
     'rants',
     'apologises profusely',
-    
+
     // Shylily related
     'misgenders Lily',
     'shames Lily',
     'calls Lily an AI',
     'invents new nickname for Lily',
-    'rizzes Lily',
+    'W RIZZ',
     'gaslights Lily',
+    'calls Lily short',
 
     // mentions
-    'mentions Vedal (randomly)',
+    'randomly mentions Vedal',
     'mentions random VTuber',
     'mentions Swarm',
 
