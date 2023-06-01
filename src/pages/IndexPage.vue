@@ -2,11 +2,12 @@
   <q-page
     class="index"
     padding
+    style="min-height: 100% !important;"
   >
     <q-banner
       inline-actions
       rounded
-      class="bg-gymbag text-white text-center q-mt-sm"
+      class="bg-gymbag text-white text-center"
     >
       <span class="text-h5">
         Welcome to <br v-show="$q.screen.lt.sm">Everyday <span class="text-weight-bold">Neuro</span> Bingo!
