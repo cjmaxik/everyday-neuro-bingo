@@ -1,23 +1,12 @@
+import neuro from './neuro'
+
 export default {
   id: 'neuroShylily',
-  name: 'Neuro-sama',
-
-  // text color
-  color: '#8b3f5e',
-
-  assetsFolder: 'neuro',
-
-  // tally background image
-  image: 'gymbag.png',
-
-  // tally sounds, will be chosen at random
-  sounds: [
-    'KEKWA.mp3',
-    'gymbag.mp3',
-    'no.mp3',
-    'meow_meow_lol.mp3',
-    'heart.mp3'
-  ],
+  name: neuro.name,
+  assetsFolder: neuro.id,
+  color: neuro.color,
+  image: neuro.image,
+  sounds: neuro.sounds,
 
   prompts: [
     'womp womp',

@@ -4,17 +4,20 @@ export default {
 
   // text color
   color: '#8b3f5e',
-  
+
   // tally background image
   image: 'gymbag.png',
 
   // tally sounds, will be chosen at random
   sounds: [
-    'KEKWA.mp3',
     'gymbag.mp3',
-    'no.mp3',
+    'heart.mp3',
+    'KEKWA.mp3',
+    'meow.mp3',
     'meow_meow_lol.mp3',
-    'heart.mp3'
+    'no.mp3',
+    'pog.mp3',
+    'wink.mp3'
   ],
 
   prompts: [
@@ -86,7 +89,7 @@ export default {
     'calls Vedal an AI',
 
     // mentions
-    'mentions Vedal (randomly)',
+    'randomly mentions Vedal',
     'mentions anny',
     'mentions Neuro v1',
     'mentions Forsen',
