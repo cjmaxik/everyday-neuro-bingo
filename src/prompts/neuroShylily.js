@@ -20,7 +20,7 @@ export default {
   ],
 
   prompts: [
-    'makes sussy noise',
+    'womp womp',
     'funny joke',
     'tries to leave',
     '1984',
