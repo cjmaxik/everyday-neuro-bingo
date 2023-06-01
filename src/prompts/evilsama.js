@@ -6,9 +6,9 @@ export default {
   image: 'evilship.png',
 
   sounds: [
-    'evilsound1.mp3'
-    'evilsound2.mp3'
-    'evilsound3.mp3'
+    'evilgymbag.mp3'
+    'evilkekw.mp3'
+    'evilno.mp3'
   ],
 
   prompts: [
