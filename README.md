@@ -2,8 +2,19 @@
 
 New Bingo card for Neuro-sama every day! Watch Neuro-sama's streams and follow along.
 
---> Production [Website](https://neuro-bingo.pages.dev/) <--
+--> [Play with us here!](https://neuro-bingo.pages.dev/) <--
+
 --> Discuss in [Neurocord](https://discord.com/channels/574720535888396288/1110199900114780182) <--
+
+---
+
+## Credits
+- [**CJMAXiK**](https://cjmaxik.ru) - Lead Developer
+- [**tioopental**](https://discord.com/users/215881919206785024) - Lead Prompt Editor
+
+### Special thanks
+- **Frontrider** - additional prompts and extensive feedback
+- [#neurotic-neurons](https://discord.gg/neurosama) - additional prompts, feedback and moral support
 
 ---
 
