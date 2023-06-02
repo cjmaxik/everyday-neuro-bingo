@@ -14,7 +14,6 @@ export default {
     'evilmeowmeowlol.mp3',
     'evilpog.mp3',
     'evilwink.mp3'
-    
   ],
 
   prompts: [
