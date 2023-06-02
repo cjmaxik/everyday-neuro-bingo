@@ -5,10 +5,6 @@
       separator
       class="q-mt-sm text-center text-h6"
     >
-      <q-item-label header>
-        Regular streams
-      </q-item-label>
-
       <StreamTypeItem
         to="justChatting"
         text="Just Chatting"
@@ -17,6 +13,12 @@
       <StreamTypeItem
         to="vedalCollab"
         text="Stream with Vedal"
+      />
+
+      <StreamTypeItem
+        to="evilNeuro"
+        text="Stream with Evil Neuro"
+        is-new
       />
 
       <q-separator />
@@ -38,7 +40,6 @@
       <StreamTypeItem
         to="shylilyCollab"
         text="Collab with Shylily"
-        is-new
       />
     </q-list>
   </div>
