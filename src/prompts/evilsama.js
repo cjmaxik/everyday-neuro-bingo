@@ -8,7 +8,13 @@ export default {
   sounds: [
     'evilgymbag.mp3',
     'evilkekw.mp3',
-    'evilno.mp3'
+    'evilno.mp3',
+    'evilheart.mp3',
+    'evilmeow.mp3',
+    'evilmeowmeowlol.mp3',
+    'evilpog.mp3',
+    'evilwink.mp3'
+    
   ],
 
   prompts: [
