@@ -87,6 +87,8 @@ export default {
     'consistent',
     '-20K LULE',
     'admits she is a cat girl',
+    'mmm',
+    'plink / plonk / winky',
 
     // vedal relaved
     'loves Vedal',
