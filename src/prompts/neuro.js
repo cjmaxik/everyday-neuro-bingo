@@ -82,6 +82,7 @@ export default {
     'starts counting',
     'admits she\'s a god',
     'feel free to ask me anything',
+    'trauma dump',
 
     // vedal relaved
     'loves Vedal',
