@@ -33,3 +33,142 @@ body:not(.remove-font) {
 .fade-leave-to {
   opacity: 0;
 }
+
+.center-image {
+  background-repeat: no-repeat;
+  background-size: auto 100%;
+  background-position: center;
+}
+
+// bingo page
+.gymbag-border {
+  border-width: 2px;
+  border-color: $gymbag;
+  border-style: solid;
+}
+
+.bingo-page {
+  margin: auto;
+  width: 1000px;
+
+  body.screen--md & {
+    width: 85%;
+  }
+
+  body.screen--sm & {
+    width: 970px;
+  }
+}
+
+.bingo-card {
+  user-select: none;
+
+  .row {
+    &:first-child {
+      >.col {
+        border-top-width: 4px;
+
+        &:first-child {
+          border-top-left-radius: 5px;
+        }
+
+        &:last-child {
+          border-top-right-radius: 5px;
+        }
+      }
+    }
+
+    &:last-child {
+      >.col {
+        border-bottom-width: 4px;
+
+        &:first-child {
+          border-bottom-left-radius: 5px;
+        }
+
+        &:last-child {
+          border-bottom-right-radius: 5px;
+        }
+      }
+    }
+  }
+
+  .col {
+    @extend .gymbag-border;
+
+    &:first-child {
+      border-left-width: 4px;
+    }
+
+    &:last-child {
+      border-right-width: 4px;
+    }
+  }
+}
+
+// bingo block
+.bingo-block {
+  position: relative;
+  background: white;
+
+  min-height: 100px;
+  min-width: 100px;
+
+  font-size: 20px;
+  line-height: 1.5rem;
+
+  transition: all 0.25s ease;
+
+  &:before {
+    content: ' ';
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+
+    opacity: 0;
+    transition: all 0.25s ease;
+
+    @extend .center-image;
+  }
+
+  &.win {
+    background-color: lighten($gymbag, 30%);
+    color: white;
+
+    span.bingo-block-text {
+      color: white;
+    }
+
+    &:before:not(.free) {
+      opacity: 0.1;
+    }
+  }
+
+  &.active {
+    &:before {
+      opacity: 0.2;
+    }
+  }
+
+  &.free {
+    @extend .center-image;
+  }
+
+  .bingo-tally {
+    position: absolute;
+
+    bottom: 0;
+    right: 0;
+
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+
+    background-color: $gymbag;
+    font-size: 15px;
+    padding: 4px 2px 0px 4px;
+  }
+}

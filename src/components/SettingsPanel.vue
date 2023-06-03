@@ -54,6 +54,22 @@
           </q-item-section>
         </q-item>
 
+        <q-item
+          v-ripple
+          tag="label"
+        >
+          <q-item-section
+            side
+            top
+          >
+            <q-checkbox v-model="settings.hideTally" />
+          </q-item-section>
+
+          <q-item-section @click="settings.hideTally = !settings.hideTally">
+            <q-item-label>Hide tally</q-item-label>
+          </q-item-section>
+        </q-item>
+
         <q-separator spaced />
 
         <q-item v-show="isBingoPage">

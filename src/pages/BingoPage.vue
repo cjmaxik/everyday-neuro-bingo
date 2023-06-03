@@ -24,12 +24,19 @@
             :key="block.index"
             class="col shadow-5 shadow-transition"
           >
-            <BingoItem
+            <FreeBlockItem
+              v-if="block.free"
+              :free-block-image="state.freeBlockImage"
+              :win="block.win"
+            />
+
+            <BingoBlockItem
+              v-else
               :block="block"
               :participant="state.participants[block.participantId]"
-              :free-block-image="state.freeBlockImage"
-              @decrement="decrement(block)"
+              :hide-tally="settings.hideTally"
               @increment="increment(block)"
+              @decrement="decrement(block)"
             />
           </div>
         </div>
@@ -48,14 +55,6 @@
         </div>
       </div>
     </transition-group>
-
-    <!-- <div
-      v-if="state.ready"
-      class="text-center"
-      :hidden="$q.screen.lt.md"
-    >
-      Ctrl+click to decrease the tally *wink*
-    </div> -->
   </q-page>
 </template>
 
@@ -65,7 +64,9 @@ import { computed, onBeforeUnmount } from 'vue'
 import { useQuasar } from 'quasar'
 
 // project-related
-import BingoItem from '../components/BingoItem.vue'
+import FreeBlockItem from 'src/components/bingo/FreeBlockItem.vue'
+import BingoBlockItem from '../components/bingo/BingoBlockItem.vue'
+
 import { chunkArray, generateSeedPhrase, getRandomInt } from 'src/helpers/helpers'
 import prompts from '../prompts/prompts'
 
@@ -73,6 +74,7 @@ import prompts from '../prompts/prompts'
 import { useGameStateStore } from '../stores/gameState'
 import { useGameSettingsStore } from '../stores/gameSettings'
 
+// props
 const props = defineProps({
   type: {
     type: String,
@@ -167,70 +169,3 @@ const notifyForUndo = (block) => {
   })
 }
 </script>
-
-<style lang="scss" scoped>
-.gymbag-border {
-  border-width: 2px;
-  border-color: $gymbag;
-  border-style: solid;
-}
-
-.bingo-page {
-  margin: auto;
-  width: 1000px;
-
-  body.screen--md & {
-    width: 85%;
-  }
-
-  body.screen--sm & {
-    width: 970px;
-  }
-}
-
-.bingo-card {
-  user-select: none;
-
-  .row {
-    &:first-child {
-      >.col {
-        border-top-width: 4px;
-
-        &:first-child {
-          border-top-left-radius: 5px;
-        }
-
-        &:last-child {
-          border-top-right-radius: 5px;
-        }
-      }
-    }
-
-    &:last-child {
-      >.col {
-        border-bottom-width: 4px;
-
-        &:first-child {
-          border-bottom-left-radius: 5px;
-        }
-
-        &:last-child {
-          border-bottom-right-radius: 5px;
-        }
-      }
-    }
-  }
-
-  .col {
-    @extend .gymbag-border;
-
-    &:first-child {
-      border-left-width: 4px;
-    }
-
-    &:last-child {
-      border-right-width: 4px;
-    }
-  }
-}
-</style>
