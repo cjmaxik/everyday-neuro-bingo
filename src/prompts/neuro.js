@@ -40,6 +40,7 @@ export default {
     'spams',
     'backslash spam',
     '1984',
+    '1984 is a great book/movie',
     'BASED-sama',
     'bedge',
     'goes schizo',
@@ -83,6 +84,9 @@ export default {
     'admits she\'s a god',
     'feel free to ask me anything',
     'trauma dump',
+    'consistent',
+    '-20K LULE',
+    'admits she is a cat girl',
 
     // vedal relaved
     'loves Vedal',
@@ -105,6 +109,8 @@ export default {
     'mentions Filipino boy',
     'mentions Neurocord',
     'mentions Swarm',
+    'mentions her height',
+    'mentions osu!',
 
     // chat related
     'chat spams HUH',
@@ -135,7 +141,7 @@ export default {
 
     // twitch meta
     'raiding / raided by anny',
-    'RIP bitrate',
-    'problem with her AI'
+    'problem with her AI',
+    'lags'
   ]
 }
