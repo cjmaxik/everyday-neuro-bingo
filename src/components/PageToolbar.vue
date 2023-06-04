@@ -1,7 +1,11 @@
 <template>
   <q-header elevated>
     <q-toolbar class="bg-gymbag">
-      <transition name="fade">
+      <transition
+        appear
+        enter-active-class="animated fadeIn"
+        leave-active-class="animated fadeOut"
+      >
         <q-btn
           flat
           no-caps
@@ -10,7 +14,7 @@
           to="/"
         >
           <q-avatar>
-            <img src="../assets/gymbag.png">
+            <img src="/assets/images/gymbag.png">
           </q-avatar>
 
           <q-toolbar-title
@@ -22,7 +26,11 @@
         </q-btn>
       </transition>
 
-      <transition name="fade">
+      <transition
+        appear
+        enter-active-class="animated fadeIn"
+        leave-active-class="animated fadeOut"
+      >
         <q-chip
           v-show="settings.streamName"
           :ripple="false"
@@ -37,12 +45,9 @@
 
       <SettingsPanel />
 
-      <q-separator
-        v-show="settings.streamName"
-        vertical
-      />
+      <q-separator vertical />
 
-      <AboutModalItem v-if="settings.streamName" />
+      <AboutModalItem />
     </q-toolbar>
   </q-header>
 </template>
@@ -61,6 +66,7 @@ const settings = useGameSettingsStore()
 
 const realStreamName = ref(settings.streamName)
 watch(settings, (settings) => {
+  // leave as is! prevents animation jump
   if (settings.streamName) {
     realStreamName.value = settings.streamName
   }

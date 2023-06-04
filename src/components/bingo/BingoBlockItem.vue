@@ -11,12 +11,18 @@
         {{ block.text }}
       </span>
 
-      <q-badge
-        v-show="!hideTally"
-        class="bingo-tally"
+      <transition
+        appear
+        enter-active-class="animated fadeIn"
+        leave-active-class="animated fadeOut"
       >
-        {{ block.tally }}
-      </q-badge>
+        <q-badge
+          v-show="block.tally !== 0 && !hideTally"
+          class="bingo-tally"
+        >
+          {{ block.tally }}
+        </q-badge>
+      </transition>
     </div>
   </div>
 </template>
