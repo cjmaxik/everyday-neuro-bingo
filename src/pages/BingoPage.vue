@@ -2,7 +2,6 @@
   <q-page
     class="bingo-page"
     padding
-    style="min-height: 100% !important;"
   >
     <transition-group
       appear
@@ -48,6 +47,10 @@
       >
         <div class="row justify-center items-center">
           <div class="text-center q-pa-xs">
+            <img
+              src="/assets/images/gymbag.png"
+              alt="Loading..."
+            >
             <h2 class="text-gymbag">
               Loading...
             </h2>

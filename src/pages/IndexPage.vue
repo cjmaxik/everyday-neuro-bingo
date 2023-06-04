@@ -2,7 +2,6 @@
   <q-page
     class="index"
     padding
-    style="min-height: 100% !important;"
   >
     <q-banner
       inline-actions

@@ -2,7 +2,7 @@
   <q-card>
     <q-toolbar v-show="!isIndex">
       <q-avatar>
-        <img src="../assets/gymbag.png">
+        <img src="/assets/images/gymbag.png">
       </q-avatar>
 
       <q-toolbar-title>

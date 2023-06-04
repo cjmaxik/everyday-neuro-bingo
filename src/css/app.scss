@@ -5,6 +5,12 @@
   ascent-override: 120%;
 }
 
+// @see https://github.com/vuejs/core/issues/8409
+* {
+  transition-duration: 0s;
+  animation-duration: 0s;
+}
+
 body {
   @extend .bg-kekwa;
 }
@@ -22,16 +28,6 @@ body:not(.remove-font) {
 
   min-width: 256px;
   max-width: 512px;
-}
-
-.fade-enter-active,
-.fade-leave-active {
-  transition: opacity 0.25s ease;
-}
-
-.fade-enter-from,
-.fade-leave-to {
-  opacity: 0;
 }
 
 .center-image {
