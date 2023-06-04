@@ -1,8 +1,5 @@
 <template>
-  <q-layout
-    view="hHh LpR fFf"
-    style="min-height: 100% !important;"
-  >
+  <q-layout view="hHh LpR fFf">
     <PageToolbar />
 
     <q-page-container>

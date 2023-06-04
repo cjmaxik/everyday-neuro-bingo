@@ -2,7 +2,6 @@
   <q-page
     class="bingo-page"
     padding
-    style="min-height: 100% !important;"
   >
     <transition-group
       appear
