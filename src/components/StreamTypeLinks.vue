@@ -18,7 +18,6 @@
       <StreamTypeItem
         to="evilNeuro"
         text="Stream with Evil Neuro"
-        is-new
       />
 
       <q-separator />

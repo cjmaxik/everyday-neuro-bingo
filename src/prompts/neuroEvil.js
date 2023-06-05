@@ -4,9 +4,7 @@ export default {
   id: 'neuroEvil',
   name: neuro.name,
   assetsFolder: neuro.id,
-
-  // eyes color
-  color: '#5a9ea9',
+  color: neuro.color,
 
   image: 'neuroEvil.png',
   sounds: neuro.sounds,

@@ -58,6 +58,7 @@ body:not(.remove-font) {
 
 .bingo-card {
   user-select: none;
+  cursor: pointer;
 
   .row {
     &:first-child {
