@@ -26,7 +26,7 @@ export default {
 
   vedalCollab: {
     name: 'Neuro and Vedal',
-    image: `${assetsRoute}/vedal/neuro-vedal.png`,
+    image: `${assetsRoute}/vedal/neuroVedal2.png`,
     participants: [
       neuro, vedal
     ]
@@ -34,7 +34,7 @@ export default {
 
   evilNeuro: {
     name: 'Neuro x Evil Neuro',
-    image: `${assetsRoute}/evilsama/evilship.png`,
+    image: `${assetsRoute}/evilsama/evilNeuro2.png`,
     participants: [
       neuroEvil, evilsama
     ]

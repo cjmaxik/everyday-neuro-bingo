@@ -30,5 +30,3 @@ import { useGameSettingsStore } from 'src/stores/gameSettings'
 const settings = useGameSettingsStore()
 settings.streamName = null
 </script>
-
-<style lang="scss" scoped></style>

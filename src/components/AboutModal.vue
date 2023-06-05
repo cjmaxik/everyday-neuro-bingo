@@ -49,7 +49,7 @@
       </ul>
 
       <p>
-        Full credits and the source code - <a
+        Includes image and audio assets from various community members.<br>Source code - <a
           ref="noopener noreferrer"
           href="https://github.com/cjmaxik/everyday-neuro-bingo"
           target="_blank"
