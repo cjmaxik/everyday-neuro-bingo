@@ -7,7 +7,6 @@ export default {
 
   sounds: [
     'hic.mp3',
-    'long_ayaya.mp3',
     'mhm.mp3',
     'nya_uwu.mp3',
     'rawr.mp3',

@@ -23,6 +23,6 @@ export default {
     // anny related
     '"You\'re not my mom"',
     'calls anny "mom"',
-    'hits on anny',
+    'hits on anny'
   ]
 }
