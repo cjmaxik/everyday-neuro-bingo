@@ -18,7 +18,10 @@
         bordered
         padding
       >
-        <q-item-label header>
+        <q-item-label
+          header
+          class="text-center"
+        >
           Settings
         </q-item-label>
 
@@ -34,7 +37,9 @@
           </q-item-section>
 
           <q-item-section @click="settings.removeFont = !settings.removeFont">
-            <q-item-label>Default font</q-item-label>
+            <q-item-label class="q-pr-sm">
+              Default font
+            </q-item-label>
           </q-item-section>
         </q-item>
 
@@ -50,7 +55,9 @@
           </q-item-section>
 
           <q-item-section @click="settings.disableSound = !settings.disableSound">
-            <q-item-label>Disable sound</q-item-label>
+            <q-item-label class="q-pr-sm">
+              Disable sound
+            </q-item-label>
           </q-item-section>
         </q-item>
 
@@ -66,7 +73,9 @@
           </q-item-section>
 
           <q-item-section @click="settings.hideTally = !settings.hideTally">
-            <q-item-label>Hide tally</q-item-label>
+            <q-item-label class="q-pr-sm">
+              Hide tally
+            </q-item-label>
           </q-item-section>
         </q-item>
 
@@ -168,3 +177,9 @@ onMounted(() => {
   )
 })
 </script>
+
+<style lang="scss" scoped>
+.q-item__section--side {
+  padding-right: 0;
+}
+</style>

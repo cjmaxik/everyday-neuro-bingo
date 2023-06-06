@@ -5,7 +5,7 @@
         <img src="/assets/images/gymbag.png">
       </q-avatar>
 
-      <q-toolbar-title>
+      <q-toolbar-title class="text-center">
         Everyday <span class="text-weight-bold">Neuro</span> Bingo
       </q-toolbar-title>
 

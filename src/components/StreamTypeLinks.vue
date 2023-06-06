@@ -25,7 +25,8 @@
         group="collab"
         label="Collabs"
         header-class="text-gymbag text-subtitle1"
-        dense-toggle
+        toggle
+        expand-icon-class="collab-toggle"
       >
         <StreamTypeItem
           to="evilNeuro"
@@ -58,11 +59,3 @@
 // project-related
 import StreamTypeItem from './StreamTypeItem.vue'
 </script>
-
-<style lang="scss">
-.q-item__section--side {
-  position: absolute;
-  right: 1rem;
-  top: 0.7rem;
-}
-</style>
