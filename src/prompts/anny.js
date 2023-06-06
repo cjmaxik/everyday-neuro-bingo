@@ -6,7 +6,14 @@ export default {
   image: 'annystar.png',
 
   sounds: [
-    'annyhic.mp3'
+    'hic.mp3',
+    'long_ayaya.mp3',
+    'mhm.mp3',
+    'nya_uwu.mp3',
+    'rawr.mp3',
+    'uwu.mp3',
+    'uwu_nya.mp3',
+    'yiff_yiff_yiff.mp3'
   ],
 
   prompts: [
