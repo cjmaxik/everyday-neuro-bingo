@@ -16,6 +16,12 @@
       />
 
       <StreamTypeItem
+        to="familyStream"
+        text="Family stream"
+        is-new
+      />
+
+      <StreamTypeItem
         to="evilNeuro"
         text="Stream with Evil Neuro"
       />

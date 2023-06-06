@@ -9,6 +9,10 @@ import shylily from './shylily'
 import neuroEvil from './neuroEvil'
 import evilsama from './evilsama'
 
+import annyFamily from './family/anny'
+import neuroFamily from './family/neuro'
+import vedalFamily from './family/vedal'
+
 const assetsRoute = '/assets/images'
 
 /**
@@ -61,6 +65,14 @@ export default {
     image: `${assetsRoute}/shylily/lily.png`,
     participants: [
       neuroShylily, shylily
+    ]
+  },
+
+  familyStream: {
+    name: 'Family stream',
+    image: `${assetsRoute}/family/family.png`,
+    participants: [
+      neuroFamily, vedalFamily, annyFamily
     ]
   }
 }
