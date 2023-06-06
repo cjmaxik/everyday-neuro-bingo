@@ -13,6 +13,8 @@ import annyFamily from './family/anny'
 import neuroFamily from './family/neuro'
 import vedalFamily from './family/vedal'
 
+import evilsamaSolo from './evilsamaSolo'
+
 const assetsRoute = '/assets/images'
 
 /**
@@ -41,6 +43,14 @@ export default {
     image: `${assetsRoute}/evilsama/evilNeuro2.png`,
     participants: [
       neuroEvil, evilsama
+    ]
+  },
+
+  evilNeuroSolo: {
+    name: 'Evil Neuro solo',
+    image: `${assetsRoute}/evilsama/evilNeuro2.png`,
+    participants: [
+      evilsamaSolo
     ]
   },
 

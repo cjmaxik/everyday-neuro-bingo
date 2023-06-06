@@ -21,6 +21,12 @@
         is-new
       />
 
+      <StreamTypeItem
+        to="evilNeuroSolo"
+        text="Evil Neuro solo"
+        is-new
+      />
+
       <q-expansion-item
         group="collab"
         label="Collabs"
