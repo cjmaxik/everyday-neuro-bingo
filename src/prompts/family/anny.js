@@ -11,7 +11,7 @@ export default {
     'dies from laughter',
     '"fkin"',
     'cries',
-    '',
+    'gets one OneGuy\'ed',
 
     // neuro related
     '"Neuro is so cute"',
