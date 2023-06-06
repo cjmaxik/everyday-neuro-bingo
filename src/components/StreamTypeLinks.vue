@@ -7,7 +7,7 @@
     >
       <StreamTypeItem
         to="justChatting"
-        text="Just Chatting"
+        text="Chill stream"
       />
 
       <StreamTypeItem
@@ -21,31 +21,35 @@
         is-new
       />
 
-      <StreamTypeItem
-        to="evilNeuro"
-        text="Stream with Evil Neuro"
-      />
+      <q-expansion-item
+        group="collab"
+        label="Collabs"
+        header-class="text-gymbag text-subtitle1"
+        dense-toggle
+      >
+        <StreamTypeItem
+          to="evilNeuro"
+          text="Evil Neuro"
+        />
 
-      <q-separator />
+        <q-separator />
+        <StreamTypeItem
+          to="filianCollab"
+          text="filian"
+        />
+        <q-separator />
 
-      <q-item-label header>
-        Collabs
-      </q-item-label>
+        <StreamTypeItem
+          to="annyCollab"
+          text="anny"
+        />
+        <q-separator />
 
-      <StreamTypeItem
-        to="filianCollab"
-        text="Collab with filian"
-      />
-
-      <StreamTypeItem
-        to="annyCollab"
-        text="Collab with anny"
-      />
-
-      <StreamTypeItem
-        to="shylilyCollab"
-        text="Collab with Shylily"
-      />
+        <StreamTypeItem
+          to="shylilyCollab"
+          text="Shylily"
+        />
+      </q-expansion-item>
     </q-list>
   </div>
 </template>
@@ -54,3 +58,11 @@
 // project-related
 import StreamTypeItem from './StreamTypeItem.vue'
 </script>
+
+<style lang="scss">
+.q-item__section--side {
+  position: absolute;
+  right: 1rem;
+  top: 0.7rem;
+}
+</style>

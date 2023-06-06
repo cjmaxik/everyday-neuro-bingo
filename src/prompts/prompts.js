@@ -21,7 +21,7 @@ const assetsRoute = '/assets/images'
  */
 export default {
   justChatting: {
-    name: 'Just Chatting',
+    name: 'Chill stream',
     image: `${assetsRoute}/neuro/neuro.png`,
     participants: [
       neuro
@@ -37,7 +37,7 @@ export default {
   },
 
   evilNeuro: {
-    name: 'Neuro x Evil Neuro',
+    name: 'Neuro x Evil Neuro collab',
     image: `${assetsRoute}/evilsama/evilNeuro2.png`,
     participants: [
       neuroEvil, evilsama
