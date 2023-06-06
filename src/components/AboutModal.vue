@@ -28,10 +28,10 @@
         >Neurocord</a> in <span class="text-bold">#livestream-chat</span> channel.
       </p>
 
-      <p>
+      <p class="no-margin">
         Brought to you by:
       </p>
-      <ul class="text-left">
+      <ul class="text-left q-mt-none">
         <li>
           <a
             ref="noopener noreferrer"
