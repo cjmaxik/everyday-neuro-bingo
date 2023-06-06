@@ -1,12 +1,9 @@
 import neuro from './neuro'
 
 export default {
+  ...neuro,
+
   id: 'neuroShylily',
-  name: neuro.name,
-  assetsFolder: neuro.id,
-  color: neuro.color,
-  image: neuro.image,
-  sounds: neuro.sounds,
 
   prompts: [
     'womp womp',

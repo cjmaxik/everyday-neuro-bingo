@@ -1,13 +1,10 @@
 import neuro from './neuro'
 
 export default {
-  id: 'neuroEvil',
-  name: neuro.name,
-  assetsFolder: neuro.id,
-  color: neuro.color,
+  ...neuro,
 
+  id: 'neuroEvil',
   image: 'neuroEvil.png',
-  sounds: neuro.sounds,
 
   prompts: [
     'FUN AI',
