@@ -12,7 +12,7 @@ export default {
     'rawr.mp3',
     'uwu.mp3',
     'uwu_nya.mp3',
-    'yiff_yiff_yiff.mp3'
+    'iif_iff_iff.mp3'
   ],
 
   prompts: [
