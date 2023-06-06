@@ -20,7 +20,8 @@ export default {
     'meow_meow_lol.mp3',
     'no.mp3',
     'pog.mp3',
-    'wink.mp3'
+    'wink.mp3',
+    'aaah_goodbye.mp3'
   ],
 
   prompts: [

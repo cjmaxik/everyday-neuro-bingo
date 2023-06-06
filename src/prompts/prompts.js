@@ -9,6 +9,10 @@ import shylily from './shylily'
 import neuroEvil from './neuroEvil'
 import evilsama from './evilsama'
 
+import annyFamily from './family/anny'
+import neuroFamily from './family/neuro'
+import vedalFamily from './family/vedal'
+
 const assetsRoute = '/assets/images'
 
 /**
@@ -17,7 +21,7 @@ const assetsRoute = '/assets/images'
  */
 export default {
   justChatting: {
-    name: 'Just Chatting',
+    name: 'Chill stream',
     image: `${assetsRoute}/neuro/neuro.png`,
     participants: [
       neuro
@@ -33,7 +37,7 @@ export default {
   },
 
   evilNeuro: {
-    name: 'Neuro x Evil Neuro',
+    name: 'Neuro x Evil Neuro collab',
     image: `${assetsRoute}/evilsama/evilNeuro2.png`,
     participants: [
       neuroEvil, evilsama
@@ -61,6 +65,14 @@ export default {
     image: `${assetsRoute}/shylily/lily.png`,
     participants: [
       neuroShylily, shylily
+    ]
+  },
+
+  familyStream: {
+    name: 'Family stream',
+    image: `${assetsRoute}/family/family.png`,
+    participants: [
+      neuroFamily, vedalFamily, annyFamily
     ]
   }
 }
