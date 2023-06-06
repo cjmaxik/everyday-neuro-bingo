@@ -10,7 +10,6 @@ export default {
     'L take',
     'merch or plush AD',
     '"WHAT DO YOU MEAN?"',
-    'tutel model gets tiny',
     '"that\'s crazy"',
     'not gonna sing',
 
@@ -23,6 +22,9 @@ export default {
     // anny related
     'teases anny',
     'shames anny',
-    'roasts anny'
+    'roasts anny',
+    
+    // chat related
+    'chat spams no latency'
   ]
 }
