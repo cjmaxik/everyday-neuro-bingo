@@ -5,6 +5,9 @@ export default {
   // text color
   color: '#843a49',
 
+  // assets folder
+  assetsFolder: 'neuro',
+
   // tally background image
   image: 'gymbag.png',
 

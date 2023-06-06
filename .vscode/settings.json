@@ -22,5 +22,6 @@
     "editor.defaultFormatter": "vscode.json-language-features"
   },
   "html.format.wrapAttributes": "force-expand-multiline",
-  "html.format.indentInnerHtml": false
+  "html.format.indentInnerHtml": false,
+  "eslint.format.enable": true
 }
