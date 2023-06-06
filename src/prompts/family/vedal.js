@@ -9,7 +9,7 @@ export default {
     'GIGACHAD take',
     'L take',
     'merch or plush AD',
-    '"WHAT DO YOU MEAN?',
+    '"WHAT DO YOU MEAN?"',
     'tutel model gets tiny',
     '"that\'s crazy"',
     'not gonna sing',
