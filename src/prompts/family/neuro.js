@@ -11,7 +11,7 @@ export default {
     'KEKWa',
     'misgenders someone',
     'trauma dump',
-    'calls someone an AI',
+    'calls one of them an AI',
     'tries to leave',
     'donowalls',
 
