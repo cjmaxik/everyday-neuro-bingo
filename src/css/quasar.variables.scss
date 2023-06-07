@@ -32,18 +32,24 @@ $warning: #F2C037;
 
 $breakpoint-xs: 699px;
 
-.bg-gymbag {
-  background-color: $gymbag !important;
-}
+$new-colors: (
+  "gymbag": $gymbag,
+  "kekwa": $kekwa,
+  "wink": $wink,
+  "filtered": $filtered
+);
 
-.bg-kekwa {
-  background-color: $kekwa !important;
-}
+@each $name,
+$color in $new-colors {
+  .bg-#{$name} {
+    background-color: $color !important;
+  }
 
-.text-gymbag {
-  color: $gymbag !important;
-}
+  .bg-#{$name}-half {
+    background-color: rgba($color: $color, $alpha: 0.5);
+  }
 
-.text-kekwa {
-  color: $kekwa !important;
+  .text-#{$name} {
+    color: $color !important;
+  }
 }
