@@ -96,6 +96,8 @@ export const useGameStateStore = (id) => defineStore(`gameState-${id}`, {
           sounds: data.sounds.map(x => new Audio(`${assetsPath}/sounds/${data.assetsFolder ?? data.id}/${x}`))
         }
 
+        console.debug(`${data.name} has ${data.prompts.length} prompts.`)
+
         // prompts
         allPrompts.push({
           participantId: data.id,
@@ -108,12 +110,14 @@ export const useGameStateStore = (id) => defineStore(`gameState-${id}`, {
       this.participants = participants
 
       // Check if the version, seed and/or stream type has changed
-      if (this.ready) {
-        if (
-          this.version === version &&
-          this.seed === newSeed &&
-          this.streamType === streamData.streamType
-        ) return
+      if (process.env.NODE_ENV !== 'development') {
+        if (this.ready) {
+          if (
+            this.version === version &&
+            this.seed === newSeed &&
+            this.streamType === streamData.streamType
+          ) return
+        }
       }
 
       console.log('Seed has changes - clearing everything...')
