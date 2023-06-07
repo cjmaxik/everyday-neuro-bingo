@@ -1,4 +1,4 @@
-import neuro from '../neuro'
+import neuro from 'src/prompts/neuro'
 
 export default {
   ...neuro,

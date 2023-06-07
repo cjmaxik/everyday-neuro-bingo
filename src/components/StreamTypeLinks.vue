@@ -11,18 +11,18 @@
       />
 
       <StreamTypeItem
-        to="vedalCollab"
-        text="Stream with Vedal"
+        to="devStream"
+        text="Dev stream"
       />
 
       <StreamTypeItem
-        to="familyStream"
+        to="familyCollab"
         text="Family stream"
         is-new
       />
 
       <StreamTypeItem
-        to="evilNeuroSolo"
+        to="evilNeuro"
         text="Evil Neuro solo"
         is-new
       />
@@ -35,7 +35,7 @@
         expand-icon-class="collab-toggle"
       >
         <StreamTypeItem
-          to="evilNeuro"
+          to="evilCollab"
           text="Evil Neuro"
         />
 

@@ -1,13 +1,26 @@
-import evil from './evilsama'
-
 export default {
-  ...evil,
+  id: 'evilNeuro',
+  name: 'Evil Neuro',
+  color: '#000',
 
-  assetsFolder: 'evilsama',
+  image: 'robot.png',
+
+  sounds: [
+    'aaand.mp3',
+    'doom_doom_doom.mp3',
+    'heart.mp3',
+    'noise.mp3',
+    'noise2.mp3',
+    'oh_okay.mp3',
+    'owo.mp3',
+    'twitchy.mp3',
+    'uwoh.mp3',
+    'wink.mp3'
+  ],
 
   prompts: [
-    '',
-    '',
+    'aw shucks',
+    'describing her evil plan',
     '',
     '',
     '',

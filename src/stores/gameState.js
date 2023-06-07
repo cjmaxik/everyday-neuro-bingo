@@ -85,9 +85,9 @@ export const useGameStateStore = (id) => defineStore(`gameState-${id}`, {
       const participants = {}
       const allPrompts = []
 
+      const assetsPath = '/assets'
       streamData.participants.forEach(data => {
         // participants
-        const assetsPath = '/assets'
         participants[data.id] = {
           id: data.id,
           name: data.name,
@@ -104,7 +104,7 @@ export const useGameStateStore = (id) => defineStore(`gameState-${id}`, {
       })
 
       this.streamName = streamData.name
-      this.freeBlockImage = streamData.image
+      this.freeBlockImage = `${assetsPath}/images/${streamData.image}`
       this.participants = participants
 
       // Check if the version, seed and/or stream type has changed
