@@ -42,7 +42,7 @@ export default {
 
   evilNeuro: {
     name: 'Evil Neuro solo',
-    image: 'evilNeuro/evilNeuro2.png',
+    image: 'evilNeuro/evilNeuro.png',
     participants: [
       evilNeuro
     ]
