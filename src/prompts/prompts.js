@@ -8,16 +8,16 @@ import evilNeuro from './evilNeuro'
  * Collabs
  *
  * NOTE: If you use a separate prompt file for Neuro, create a folder
- * in 'neuroCollabs' for the collab and have all participants there,
+ * in this for the collab and have all participants there,
  * create an '{x}Collab.js' there for stream data and import it here.
- * See 'neuroCollabs/family/familyCollab.js' for the example
+ * See 'family/familyCollab.js' for the example
  */
 import vedal from './vedal'
 import filian from './filian'
 import anny from './anny'
-import familyCollab from './neuroCollabs/family/familyCollab'
-import evilCollab from './neuroCollabs/evil/evilCollab'
-import shylilyCollab from './neuroCollabs/shylily/shylilyCollab'
+import familyCollab from './family/familyCollab'
+import evilCollab from './evil/evilCollab'
+import shylilyCollab from './shylily/shylilyCollab'
 
 /**
  * 1. The object key is the route path
