@@ -73,6 +73,10 @@ export default {
     'admits she is a cat girl',
     'mmm',
     'donowalls LomiBox specifically',
+    'barks',
+    'cat story',
+    'admits she\'s evil',
+    'denies being evil',
     
     // emote prompts
     'wink',
@@ -98,7 +102,6 @@ export default {
     // mentions
     'randomly mentions Vedal',
     'mentions anny',
-    'mentions Neuro v1',
     'mentions Forsen',
     'mentions Abandoned Archive',
     'mentions Bocchi The Rock',
