@@ -35,11 +35,11 @@ export default {
     'shames a viewer',
     'donowalls',
     'tries to sing',
-    'mentions OSU!',
+    'mentions osu!',
     'KEKW',
 
     // evil prompts
-    'aw shucks',
+    '"aw shucks"',
     'describes her evil plan',
     'tin cans',
     'denies being evil',
@@ -49,7 +49,7 @@ export default {
     'wholesome moment',
     '"GOOD THOUGHTS"',
     'mentions China',
-    'mentions hiyori',
+    'mentions Hiyori Momose',
     'stares',
     'women joke',
 
@@ -77,6 +77,6 @@ export default {
     'chat spams Susge',
     'chat spams monkaW',
     'chat prays',
-    'chat spams That\'s evil copypasta'
+    'chat spams "That\'s evil" copypasta'
   ]
 }
