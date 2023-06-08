@@ -77,6 +77,7 @@ export default {
     'cat story',
     'admits she\'s evil',
     'denies being evil',
+    'talks about nightmares',
     
     // emote prompts
     'wink',
