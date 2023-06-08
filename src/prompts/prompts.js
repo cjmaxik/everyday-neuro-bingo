@@ -1,52 +1,60 @@
+/**
+ * Solo streams
+ */
 import neuro from './neuro'
+import evilNeuro from './evilNeuro'
+
+/**
+ * Collabs
+ *
+ * NOTE: If you use a separate prompt file for Neuro, create a folder
+ * in this for the collab and have all participants there,
+ * create an '{x}Collab.js' there for stream data and import it here.
+ * See 'family/familyCollab.js' for the example
+ */
 import vedal from './vedal'
 import filian from './filian'
 import anny from './anny'
-
-import neuroShylily from './neuroShylily'
-import shylily from './shylily'
-
-import neuroEvil from './neuroEvil'
-import evilsama from './evilsama'
-
-import annyFamily from './family/anny'
-import neuroFamily from './family/neuro'
-import vedalFamily from './family/vedal'
-
-const assetsRoute = '/assets/images'
+import familyCollab from './family/familyCollab'
+import evilCollab from './evil/evilCollab'
+import shylilyCollab from './shylily/shylilyCollab'
 
 /**
- * 1. The array name is the route path
+ * 1. The object key is the route path
  * 2. Add the route to ../components/StreamTypeLinks.vue
  */
 export default {
   justChatting: {
     name: 'Chill stream',
-    image: `${assetsRoute}/neuro/neuro.png`,
+    image: 'neuro/neuro.png',
     participants: [
       neuro
     ]
   },
 
-  vedalCollab: {
+  devStream: {
     name: 'Neuro and Vedal',
-    image: `${assetsRoute}/vedal/neuroVedal2.png`,
+    image: 'vedal/neuroVedal2.png',
     participants: [
       neuro, vedal
     ]
   },
 
   evilNeuro: {
-    name: 'Neuro x Evil Neuro collab',
-    image: `${assetsRoute}/evilsama/evilNeuro2.png`,
+    name: 'Evil Neuro solo',
+    image: 'evilNeuro/evilNeuro.png',
     participants: [
-      neuroEvil, evilsama
+      evilNeuro
     ]
   },
 
+  familyCollab,
+
+  evilCollab,
+
   filianCollab: {
     name: 'Neuro x filian collab',
-    image: `${assetsRoute}/filian/cupsama.png`,
+    image: 'filian/cupsama.png',
     participants: [
       neuro, filian
     ]
@@ -54,25 +62,11 @@ export default {
 
   annyCollab: {
     name: 'Neuro x anny collab',
-    image: `${assetsRoute}/anny/tehepero.png`,
+    image: 'anny/tehepero.png',
     participants: [
       neuro, anny
     ]
   },
 
-  shylilyCollab: {
-    name: 'Neuro x Shylily collab',
-    image: `${assetsRoute}/shylily/lily.png`,
-    participants: [
-      neuroShylily, shylily
-    ]
-  },
-
-  familyStream: {
-    name: 'Family stream',
-    image: `${assetsRoute}/family/family.png`,
-    participants: [
-      neuroFamily, vedalFamily, annyFamily
-    ]
-  }
+  shylilyCollab
 }

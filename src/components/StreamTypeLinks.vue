@@ -1,24 +1,15 @@
 <template>
   <div class="bg-white shadow-5 shadow-transition">
     <q-list
-      bordered
       separator
       class="q-mt-sm text-center text-h6"
     >
       <StreamTypeItem
-        to="justChatting"
-        text="Chill stream"
-      />
-
-      <StreamTypeItem
-        to="vedalCollab"
-        text="Stream with Vedal"
-      />
-
-      <StreamTypeItem
-        to="familyStream"
-        text="Family stream"
-        is-new
+        v-for="(stream, index) in regularStreams"
+        :key="index"
+        :to="stream.to"
+        :text="stream.text"
+        :featured="stream.isFeatured"
       />
 
       <q-expansion-item
@@ -28,28 +19,19 @@
         toggle
         expand-icon-class="collab-toggle"
       >
-        <StreamTypeItem
-          to="evilNeuro"
-          text="Evil Neuro"
-        />
-
-        <q-separator />
-        <StreamTypeItem
-          to="filianCollab"
-          text="filian"
-        />
-        <q-separator />
-
-        <StreamTypeItem
-          to="annyCollab"
-          text="anny"
-        />
-        <q-separator />
-
-        <StreamTypeItem
-          to="shylilyCollab"
-          text="Shylily"
-        />
+        <div class="row">
+          <div
+            v-for="(stream, index) in collabStreams"
+            :key="index"
+            class="col-6 collabs"
+          >
+            <StreamTypeItem
+              :to="stream.to"
+              :text="stream.text"
+              :featured="stream.isFeatured"
+            />
+          </div>
+        </div>
       </q-expansion-item>
     </q-list>
   </div>
@@ -58,4 +40,28 @@
 <script setup>
 // project-related
 import StreamTypeItem from './StreamTypeItem.vue'
+
+const regularStreams = [
+  { to: 'evilNeuro', text: 'Evil Neuro solo', isFeatured: true },
+  { to: 'justChatting', text: 'Chill stream' },
+  { to: 'devStream', text: 'Dev stream' },
+  { to: 'familyCollab', text: 'Family stream' }
+]
+
+const collabStreams = [
+  { to: 'evilCollab', text: 'Evil Neuro' },
+  { to: 'filianCollab', text: 'filian' },
+  { to: 'annyCollab', text: 'anny' },
+  { to: 'shylilyCollab', text: 'Shylily' }
+]
 </script>
+
+<style lang="scss">
+.collabs {
+  border-top: 1px solid rgba(0, 0, 0, 0.12);
+
+  &:nth-child(odd) {
+    border-right: 1px solid rgba(0, 0, 0, 0.12);
+  }
+}
+</style>

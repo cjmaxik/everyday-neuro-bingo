@@ -3,17 +3,18 @@
     clickable
     :to="to"
     exact
+    :class="{ 'bg-kekwa-half': featured }"
   >
     <q-item-section class="text-gymbag">
+      <q-item-label
+        v-show="featured"
+        caption
+      >
+        Featured
+      </q-item-label>
+
       <q-item-label>
         {{ text }}
-
-        <q-badge
-          v-show="isNew"
-          color="gymbag"
-        >
-          NEW!
-        </q-badge>
       </q-item-label>
     </q-item-section>
   </q-item>
@@ -29,7 +30,7 @@ defineProps({
     type: String,
     required: true
   },
-  isNew: {
+  featured: {
     type: Boolean,
     default: false
   }

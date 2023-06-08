@@ -85,9 +85,9 @@ export const useGameStateStore = (id) => defineStore(`gameState-${id}`, {
       const participants = {}
       const allPrompts = []
 
+      const assetsPath = '/assets'
       streamData.participants.forEach(data => {
         // participants
-        const assetsPath = '/assets'
         participants[data.id] = {
           id: data.id,
           name: data.name,
@@ -95,6 +95,8 @@ export const useGameStateStore = (id) => defineStore(`gameState-${id}`, {
           image: `${assetsPath}/images/${data.assetsFolder ?? data.id}/${data.image}`,
           sounds: data.sounds.map(x => new Audio(`${assetsPath}/sounds/${data.assetsFolder ?? data.id}/${x}`))
         }
+
+        console.debug(`${data.name} has ${data.prompts.length} prompts.`)
 
         // prompts
         allPrompts.push({
@@ -104,16 +106,18 @@ export const useGameStateStore = (id) => defineStore(`gameState-${id}`, {
       })
 
       this.streamName = streamData.name
-      this.freeBlockImage = streamData.image
+      this.freeBlockImage = `${assetsPath}/images/${streamData.image}`
       this.participants = participants
 
       // Check if the version, seed and/or stream type has changed
-      if (this.ready) {
-        if (
-          this.version === version &&
-          this.seed === newSeed &&
-          this.streamType === streamData.streamType
-        ) return
+      if (process.env.NODE_ENV !== 'development') {
+        if (this.ready) {
+          if (
+            this.version === version &&
+            this.seed === newSeed &&
+            this.streamType === streamData.streamType
+          ) return
+        }
       }
 
       console.log('Seed has changes - clearing everything...')

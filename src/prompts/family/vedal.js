@@ -1,4 +1,4 @@
-import vedal from '../vedal'
+import vedal from 'src/prompts/vedal'
 
 export default {
   ...vedal,
@@ -23,7 +23,7 @@ export default {
     'teases anny',
     'shames anny',
     'roasts anny',
-    
+
     // chat related
     'chat spams no latency'
   ]
