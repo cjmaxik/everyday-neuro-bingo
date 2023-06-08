@@ -33,9 +33,10 @@ export default {
     'misgenders someone',
     'admits she\'s a god',
     'shames a viewer',
-    '',
-    '',
-    '',
+    'donowalls',
+    'tries to sing',
+    'mentions OSU!',
+    'KEKW',
 
     // evil prompts
     'aw shucks',
@@ -46,21 +47,21 @@ export default {
     'sussy sound',
     'random sound',
     'wholesome moment',
-    '',
-    '',
-    '',
-    '',
-    '',
-    '',
-    '',
+    '"GOOD THOUGHTS"',
+    'mentions China',
+    'mentions hiyori',
+    'stares',
+    'women joke',
+
+    // anny related
+    'denies anny being her mom',
+    'roasts anny',
 
     // neuro related
     'loves Neuro',
     'hates Neuro',
     'calls Neuro a human',
-    '',
-    '',
-    '',
+    'asks who Neuro is',
 
     // vedal relaved
     'loves Vedal',
@@ -75,6 +76,7 @@ export default {
     'chat spams SCHIZO',
     'chat spams Susge',
     'chat spams monkaW',
-    'chat prays'
+    'chat prays',
+    'chat spams That\'s evil copypasta'
   ]
 }
