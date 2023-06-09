@@ -7,7 +7,19 @@
     @click.exact="$emit('increment')"
   >
     <div class="text-center q-pa-xs">
-      <span class="bingo-block-text">
+      <span
+        v-if="withEmote !== null"
+        class="bingo-block-text"
+      >
+        {{ withEmote.text }} <img
+          :src="withEmote.emoteSrc"
+          :alt="withEmote.emoteName"
+        ></span>
+
+      <span
+        v-else
+        class="bingo-block-text"
+      >
         {{ block.text }}
       </span>
 
@@ -28,6 +40,12 @@
 </template>
 
 <script setup>
+// vue related
+import { computed } from 'vue'
+
+// project related
+import { generateEmote } from 'src/helpers/emotes'
+
 const props = defineProps({
   block: {
     type: Object,
@@ -40,6 +58,9 @@ const props = defineProps({
   },
   hideTally: {
     type: Boolean
+  },
+  staticEmotes: {
+    type: Boolean
   }
 })
 
@@ -48,6 +69,27 @@ defineEmits(['increment', 'decrement'])
 // CSS binds
 const tallyImage = props.participant ? `url(${props.participant.image})` : ''
 const participantColor = props.participant?.color ?? '#000'
+
+const withEmote = computed(() => {
+  const regex = /:(\w+):/g
+
+  if (props.block.text.includes(':')) {
+    const emoteData = regex.exec(props.block.text)
+    if (!emoteData) return null
+
+    const emoteName = emoteData[1]
+    const emoteSrc = generateEmote(emoteName, props.staticEmotes)
+    if (!emoteSrc) return null
+
+    return {
+      text: props.block.text.replace(emoteData[0], ''),
+      emoteSrc,
+      emoteName
+    }
+  }
+
+  return null
+})
 </script>
 
 <style lang="scss" scoped>

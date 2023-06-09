@@ -34,6 +34,7 @@
               :block="block"
               :participant="state.participants[block.participantId]"
               :hide-tally="settings.hideTally"
+              :static-emotes="settings.staticEmotes"
               @increment="increment(block)"
               @decrement="decrement(block)"
             />

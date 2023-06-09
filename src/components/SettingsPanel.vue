@@ -79,6 +79,24 @@
           </q-item-section>
         </q-item>
 
+        <q-item
+          v-ripple
+          tag="label"
+        >
+          <q-item-section
+            side
+            top
+          >
+            <q-checkbox v-model="settings.staticEmotes" />
+          </q-item-section>
+
+          <q-item-section @click="settings.staticEmotes = !settings.staticEmotes">
+            <q-item-label class="q-pr-sm">
+              Static emotes
+            </q-item-label>
+          </q-item-section>
+        </q-item>
+
         <q-separator spaced />
 
         <q-item v-show="isBingoPage">
@@ -158,7 +176,16 @@ const clearAll = () => {
 }
 
 onMounted(() => {
-  watch(settings, (settings) => {
+  settings.$subscribe((mutation, state) => {
+    // import { MutationType } from 'pinia'
+    console.log(mutation.type) // 'direct' | 'patch object' | 'patch function'
+    // same as cartStore.$id
+    console.log(mutation.storeId) // 'cart'
+    // only available with mutation.type === 'patch object'
+    console.log(state) // patch object passed to cartStore.$patch()
+  })
+
+  watch(settings, (newSettings, oldSettings) => {
     updateFont(settings.removeFont)
   })
 
