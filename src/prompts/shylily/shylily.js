@@ -49,8 +49,8 @@ export default {
     // chat related
     'chat spams AYO',
     'chat spams womp womp',
-    'chat spams BOOBA',
-    'chat spams SNIFFA',
+    'chat spams :BOOBA:',
+    'chat spams :SNIFFA:',
     'chat L\'s Lily',
     'chat W\'s Lily',
 

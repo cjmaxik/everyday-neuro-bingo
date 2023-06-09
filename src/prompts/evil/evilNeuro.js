@@ -32,8 +32,8 @@ export default {
     'mentions Swarm',
 
     // chat related
-    'chat spams SCHIZO',
-    'chat spams Susge',
+    'chat spams :SCHIZO:',
+    'chat spams :Susge:',
     'chat spams LORE',
 
     // twitch meta

@@ -38,12 +38,12 @@ export default {
     'mention she is Neuro\'s mom',
 
     // chat related
-    'chat spams Anny LebronJam',
-    'chat spams LUBBERS',
-    'chat spams BOOBA',
+    'chat spams :AnnyLebronJam:',
+    'chat spams :LUBBERS:',
+    'chat spams :BOOBA:',
     'chat dies from cringe',
 
     // twitch meta
-    'morari drops 50 or more subs'
+    'morari drops 100 or more subs'
   ]
 }

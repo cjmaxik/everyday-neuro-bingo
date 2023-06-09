@@ -39,7 +39,7 @@ export default {
     // chat related
     'chat L\'s Vedal',
     'chat shoots Vedal',
-    'chat spams vedalPls',
+    'chat spams :vedalPls:',
     'chat spams ZERO LATENCY',
     'argues with chat'
   ]
