@@ -29,9 +29,9 @@ export default {
     'mentions Swarm',
 
     // chat related
-    'chat spams Clueless',
-    'chat spams PauseSama',
-    'chat spams aware',
+    'chat spams :Clueless:',
+    'chat spams :PauseSama:',
+    'chat spams :Aware:',
     'chat L\'s Neuro',
     'chat W\'s Neuro'
   ]

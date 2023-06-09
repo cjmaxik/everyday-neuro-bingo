@@ -7,8 +7,7 @@
  *
  * Notes:
  * - You can only add emotes at the end of the prompt
- * - Remove `_static` from the URL if found.
- * - If the emote is static, use `static: true` to indicate that.
+ * - If the emote is static, use `_static` at the end of ID to indicate that.
  * - If the emote is not on 7tv, consider adding it there.
  */
 
@@ -20,14 +19,18 @@ const apiUrl = 'https://cdn.7tv.app/emote'
  * @param {String} name
  * @param {Boolean} isStatic
  */
-export const generateEmote = (name, isStatic = false) => {
-  const emote = emotes[name]
+export const generateEmote = (name) => {
+  let emote = emotes[name]
   if (!emote) return null
 
-  let src = `${apiUrl}/${emote.id}/1x.webp`
-  if (isStatic && !emote.static) {
-    src = `${apiUrl}/${emote.id}/1x_static.png`
-  }
+  const staticEmote = emote.includes('_static')
+  emote = emote.replace('_static', '')
 
-  return src
+  const animated = `${apiUrl}/${emote}/1x.webp`
+  const Static = staticEmote ? animated : `${apiUrl}/${emote}/1x_static.webp`
+
+  return {
+    animated,
+    Static
+  }
 }

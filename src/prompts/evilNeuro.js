@@ -69,13 +69,13 @@ export default {
     'calls Vedal an AI',
 
     // chat related
-    'chat spams HUH',
-    'chat spams Clueless',
-    'chat spams Classic',
-    'chat spams Aware',
-    'chat spams SCHIZO',
-    'chat spams Susge',
-    'chat spams monkaW',
+    'chat spams :HUH:',
+    'chat spams :Clueless:',
+    'chat spams :Classic:',
+    'chat spams :Aware:',
+    'chat spams :SCHIZO:',
+    'chat spams :Susge:',
+    'chat spams :monkaW:',
     'chat prays',
     'chat spams "That\'s evil" copypasta'
   ]
