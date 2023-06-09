@@ -117,7 +117,7 @@ export default {
     'mentions Swarm',
     'mentions her height',
     'mentions osu!',
-    'mentions evil neuro',
+    'mentions Evil Neuro',
 
     // chat related
     'chat spams HUH',
