@@ -7,8 +7,27 @@
     @click.exact="$emit('increment')"
   >
     <div class="text-center q-pa-xs">
-      <span class="bingo-block-text">
-        {{ block.text }}
+      <span
+        v-if="emotes !== 'text' && withEmote !== null"
+        class="bingo-block-text"
+      >
+        {{ withEmote.text }}
+
+        <div class="bingo-emotes">
+          <img
+            v-for="({ src, name }, index) in withEmote.emotes"
+            :key="index"
+            :src="src"
+            :alt="name"
+          >
+        </div>
+      </span>
+
+      <span
+        v-else
+        class="bingo-block-text"
+      >
+        {{ baseText }}
       </span>
 
       <transition
@@ -28,6 +47,12 @@
 </template>
 
 <script setup>
+// vue related
+import { computed } from 'vue'
+
+// project related
+import { generateEmote } from 'src/helpers/emotes'
+
 const props = defineProps({
   block: {
     type: Object,
@@ -40,6 +65,10 @@ const props = defineProps({
   },
   hideTally: {
     type: Boolean
+  },
+  emotes: {
+    type: String,
+    default: 'animated'
   }
 })
 
@@ -48,6 +77,41 @@ defineEmits(['increment', 'decrement'])
 // CSS binds
 const tallyImage = props.participant ? `url(${props.participant.image})` : ''
 const participantColor = props.participant?.color ?? '#000'
+
+const baseText = computed(() => {
+  return props.block.text
+    .replaceAll(':', '')
+    // very long text cases
+    .replace('neuroplushsittingverycomfortablewhilesheroastsaporowithherfriends', 'neuroPlush with Poro')
+    .replace('reallyGunPull vedalPls', '')
+})
+
+const withEmote = computed(() => {
+  if (!props.block.text.includes(':')) return null
+  const regex = /:(\w+)+:/gmi
+
+  let emoteData
+  let text = props.block.text
+
+  const emotes = []
+  while ((emoteData = regex.exec(props.block.text)) !== null) {
+    const emoteName = emoteData[1]
+    const emoteSrc = generateEmote(emoteName, props.emotes === 'static')
+    if (!emoteSrc) return null
+
+    text = text.replace(emoteData[0], '').trim()
+
+    emotes.push({
+      src: emoteSrc,
+      name: emoteName
+    })
+  }
+
+  return {
+    text,
+    emotes
+  }
+})
 </script>
 
 <style lang="scss" scoped>

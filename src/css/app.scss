@@ -107,7 +107,7 @@ body:not(.remove-font) {
   position: relative;
   background: white;
 
-  min-height: 100px;
+  height: 100px;
   min-width: 100px;
 
   font-size: 20px;
@@ -170,6 +170,12 @@ body:not(.remove-font) {
     background-color: $gymbag;
     font-size: 15px;
     padding: 4px 2px 0px 4px;
+  }
+
+  .bingo-emotes {
+    :not(:last-child) {
+      margin-right: 5px;
+    }
   }
 }
 

@@ -19,6 +19,9 @@ import familyCollab from './family/familyCollab'
 import evilCollab from './evil/evilCollab'
 import shylilyCollab from './shylily/shylilyCollab'
 
+// tests
+import emoteTest from './emoteTest'
+
 /**
  * 1. The object key is the route path
  * 2. Add the route to ../components/StreamTypeLinks.vue
@@ -68,5 +71,14 @@ export default {
     ]
   },
 
-  shylilyCollab
+  shylilyCollab,
+
+  // TEST BOARDS
+  emoteTest: {
+    name: 'Emote test',
+    image: 'vedal/vedal.png',
+    participants: [
+      emoteTest
+    ]
+  }
 }
