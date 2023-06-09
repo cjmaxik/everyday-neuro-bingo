@@ -78,7 +78,7 @@ export default {
     'admits she\'s evil',
     'denies being evil',
     'talks about nightmares',
-    
+
     // emote prompts
     'wink',
     'plink / plonk / winky',
@@ -142,7 +142,7 @@ export default {
     'chat spams POG / poggers',
     'chat spams KEKW',
     'chat spams hiyori',
-    'chat spams neurofumosittingverycomfortablewhilesheroastsaporowithherfriends', 
+    'chat spams neurofumosittingverycomfortablewhilesheroastsaporowithherfriends',
     'chat prays',
     'chat shoots Vedal',
     'chat L\'s Neuro',
@@ -151,7 +151,6 @@ export default {
     // twitch meta
     'raiding / raided by anny',
     'problem with her AI',
-    'lags',
     'shames a viewer'
   ]
 }
