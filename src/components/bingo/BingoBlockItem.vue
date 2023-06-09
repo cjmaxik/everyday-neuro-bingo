@@ -14,12 +14,15 @@
         {{ withEmote.text }}
 
         <div class="bingo-emotes">
-          <img
-            v-for="({ src, name }, index) in withEmote.emotes"
+          <span
+            v-for="(emote, index) in withEmote.emotes"
             :key="index"
-            :src="src"
-            :alt="name"
           >
+            <img
+              :src="emotes === 'animated' ? emote.src.animated : emote.src.Static"
+              :alt="emote.name"
+            >
+          </span>
         </div>
       </span>
 
@@ -84,6 +87,7 @@ const baseText = computed(() => {
     // very long text cases
     .replace('neuroplushsittingverycomfortablewhilesheroastsaporowithherfriends', 'neuroPlush with Poro')
     .replace('reallyGunPull vedalPls', '')
+    .replace('AnnyLebronJam', 'Anny LebronJam')
 })
 
 const withEmote = computed(() => {
@@ -96,7 +100,7 @@ const withEmote = computed(() => {
   const emotes = []
   while ((emoteData = regex.exec(props.block.text)) !== null) {
     const emoteName = emoteData[1]
-    const emoteSrc = generateEmote(emoteName, props.emotes === 'static')
+    const emoteSrc = generateEmote(emoteName)
     if (!emoteSrc) return null
 
     text = text.replace(emoteData[0], '').trim()
