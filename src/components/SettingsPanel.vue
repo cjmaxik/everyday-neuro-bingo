@@ -5,6 +5,7 @@
     flat
     fab-mini
     icon="settings"
+    @click="openSettingsModal = true"
   >
     <q-tooltip
       class="text-body2 bg-gymbag"
@@ -12,121 +13,84 @@
     >
       Settings
     </q-tooltip>
-
-    <q-menu auto-close>
-      <q-list
-        bordered
-        padding
-      >
-        <q-item-label
-          header
-          class="text-center"
-        >
-          Settings
-        </q-item-label>
-
-        <q-item
-          v-ripple
-          tag="label"
-        >
-          <q-item-section
-            side
-            top
-          >
-            <q-checkbox v-model="settings.removeFont" />
-          </q-item-section>
-
-          <q-item-section @click="settings.removeFont = !settings.removeFont">
-            <q-item-label class="q-pr-sm">
-              Default font
-            </q-item-label>
-          </q-item-section>
-        </q-item>
-
-        <q-item
-          v-ripple
-          tag="label"
-        >
-          <q-item-section
-            side
-            top
-          >
-            <q-checkbox v-model="settings.disableSound" />
-          </q-item-section>
-
-          <q-item-section @click="settings.disableSound = !settings.disableSound">
-            <q-item-label class="q-pr-sm">
-              Disable sound
-            </q-item-label>
-          </q-item-section>
-        </q-item>
-
-        <q-item
-          v-ripple
-          tag="label"
-        >
-          <q-item-section
-            side
-            top
-          >
-            <q-checkbox v-model="settings.hideTally" />
-          </q-item-section>
-
-          <q-item-section @click="settings.hideTally = !settings.hideTally">
-            <q-item-label class="q-pr-sm">
-              Hide tally
-            </q-item-label>
-          </q-item-section>
-        </q-item>
-
-        <q-item
-          v-ripple
-          tag="label"
-        >
-          <q-item-section
-            side
-            top
-          >
-            <q-checkbox v-model="settings.staticEmotes" />
-          </q-item-section>
-
-          <q-item-section @click="settings.staticEmotes = !settings.staticEmotes">
-            <q-item-label class="q-pr-sm">
-              Static emotes
-            </q-item-label>
-          </q-item-section>
-        </q-item>
-
-        <q-separator spaced />
-
-        <q-item v-show="isBingoPage">
-          <q-item-section>
-            <q-btn
-              class="full-width"
-              color="red"
-              label="Clear the board"
-              no-caps
-              text-color="white"
-              @click="clearBoard(currentRoute)"
-            />
-          </q-item-section>
-        </q-item>
-
-        <q-item>
-          <q-item-section>
-            <q-btn
-              class="full-width"
-              color="red"
-              label="Clear all data"
-              no-caps
-              text-color="white"
-              @click="clearAll()"
-            />
-          </q-item-section>
-        </q-item>
-      </q-list>
-    </q-menu>
   </q-btn>
+
+  <q-dialog
+    v-model="openSettingsModal"
+    position="right"
+  >
+    <q-card>
+      <q-card-section>
+        <q-item tag="label">
+          <q-checkbox
+            v-model="settings.removeFont"
+            label="Default font"
+            keep-color
+          />
+        </q-item>
+
+        <q-item tag="label">
+          <q-checkbox
+            v-model="settings.disableSound"
+            label="Disable sound"
+            keep-color
+          />
+        </q-item>
+
+        <q-item tag="label">
+          <q-checkbox
+            v-model="settings.hideTally"
+            label="Hide tally"
+            keep-color
+          />
+        </q-item>
+      </q-card-section>
+
+      <q-separator />
+
+      <q-card-section>
+        <q-item>
+          <q-item-section class="text-center">
+            <q-item-label class="q-pb-sm">
+              Emotes
+            </q-item-label>
+
+            <q-btn-toggle
+              v-model="settings.emotes"
+              toggle-color="gymbag"
+              no-caps
+              :options="[
+                { label: 'Animated', value: 'animated' },
+                { label: 'Static', value: 'static' },
+                { label: 'Text', value: 'text' }
+              ]"
+            />
+          </q-item-section>
+        </q-item>
+      </q-card-section>
+
+      <q-separator />
+
+      <q-card-actions vertical>
+        <q-btn
+          v-show="isBingoPage"
+          color="negative"
+          label="Clear the board"
+          no-caps
+          text-color="white"
+          @click="clearBoard(currentRoute)"
+        />
+
+        <q-btn
+          color="negative"
+          label="Clear all data"
+          no-caps
+          text-color="white"
+          @click="clearAll()"
+        />
+      </q-card-actions>
+    </q-card>
+  </q-dialog>
 </template>
 
 <script setup>
@@ -150,6 +114,8 @@ if (isBingoPage.value) {
 }
 
 const settings = useGameSettingsStore()
+
+const openSettingsModal = ref(false)
 
 // font
 const updateFont = (removeFont) => {
@@ -176,21 +142,12 @@ const clearAll = () => {
 }
 
 onMounted(() => {
-  settings.$subscribe((mutation, state) => {
-    // import { MutationType } from 'pinia'
-    console.log(mutation.type) // 'direct' | 'patch object' | 'patch function'
-    // same as cartStore.$id
-    console.log(mutation.storeId) // 'cart'
-    // only available with mutation.type === 'patch object'
-    console.log(state) // patch object passed to cartStore.$patch()
-  })
-
-  watch(settings, (newSettings, oldSettings) => {
+  watch(settings, (settings) => {
     updateFont(settings.removeFont)
   })
 
   watch(
-    () => route.path, (newRoute) => {
+    () => route.path, (_newRoute) => {
       currentRoute.value = route.path.replace('/', '')
 
       if (currentRoute.value !== '') {
@@ -204,9 +161,3 @@ onMounted(() => {
   )
 })
 </script>
-
-<style lang="scss" scoped>
-.q-item__section--side {
-  padding-right: 0;
-}
-</style>

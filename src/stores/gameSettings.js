@@ -7,7 +7,7 @@ export const useGameSettingsStore = defineStore('gameSettings', {
     removeFont: useLocalStorage('removeFont', false),
     disableSound: useLocalStorage('disableSound', false),
     hideTally: useLocalStorage('hideTally', false),
-    staticEmotes: useLocalStorage('staticEmotes', false),
+    emotes: useLocalStorage('emotes', 'animated'),
 
     streamName: ''
   }),

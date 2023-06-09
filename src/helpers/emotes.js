@@ -2,50 +2,31 @@
  * HOW TO USE:
  * 1. Wrap the emote name in `:`, like `:KEKW:`
  * 2. Go to https://7tv.app/emotes and search for an emote
- * 3. Right-click on the smallest one and copy image URL
+ * 3. Copy the emote ID (random text at the end of URL)
+ * 4. Paste the info in `emotesList.js`
  *
  * Notes:
+ * - You can only add emotes at the end of the prompt
  * - Remove `_static` from the URL if found.
  * - If the emote is static, use `static: true` to indicate that.
  * - If the emote is not on 7tv, consider adding it there.
  */
 
+import emotes from './emotesList'
 const apiUrl = 'https://cdn.7tv.app/emote'
 
-const emotes = {
-  neurofumosittingverycomfortablewhilesheroastsaporowithherfriends: {
-    src: '646746a7739d3ac2510924ca'
-  },
-  RIGGED: {
-    src: '644f1ea78729e1f4d784bba8'
-  },
-  SCHIZO: {
-    src: '61b670a76906591ea6f2005b'
-  },
-  monkaW: {
-    src: '60aef3e4b74ea8ff797ae5ac',
-    static: true
-  },
-  PauseSama: {
-    src: '642f5401339a2c2d2e641cdf',
-    static: true
-  },
-  aware: {
-    src: '6145e8b10969108b671957ec'
-  },
-  Susge: {
-    src: '60b0c36388e8246a4b120d7e',
-    static: true
-  }
-}
-
+/**
+ * Generate an emote from the list
+ * @param {String} name
+ * @param {Boolean} isStatic
+ */
 export const generateEmote = (name, isStatic = false) => {
   const emote = emotes[name]
   if (!emote) return null
 
-  let src = `${apiUrl}/${emote.src}/1x.webp`
+  let src = `${apiUrl}/${emote.id}/1x.webp`
   if (isStatic && !emote.static) {
-    src = `${apiUrl}/${emote.src}/1x_static.png`
+    src = `${apiUrl}/${emote.id}/1x_static.png`
   }
 
   return src

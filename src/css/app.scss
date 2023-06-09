@@ -171,6 +171,12 @@ body:not(.remove-font) {
     font-size: 15px;
     padding: 4px 2px 0px 4px;
   }
+
+  .bingo-emotes {
+    :not(:last-child) {
+      margin-right: 5px;
+    }
+  }
 }
 
 .collab-toggle {

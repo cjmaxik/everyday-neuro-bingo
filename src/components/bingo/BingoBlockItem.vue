@@ -8,19 +8,26 @@
   >
     <div class="text-center q-pa-xs">
       <span
-        v-if="withEmote !== null"
+        v-if="emotes !== 'text' && withEmote !== null"
         class="bingo-block-text"
       >
-        {{ withEmote.text }} <img
-          :src="withEmote.emoteSrc"
-          :alt="withEmote.emoteName"
-        ></span>
+        {{ withEmote.text }}
+
+        <div class="bingo-emotes">
+          <img
+            v-for="({ src, name }, index) in withEmote.emotes"
+            :key="index"
+            :src="src"
+            :alt="name"
+          >
+        </div>
+      </span>
 
       <span
         v-else
         class="bingo-block-text"
       >
-        {{ block.text }}
+        {{ baseText }}
       </span>
 
       <transition
@@ -59,8 +66,9 @@ const props = defineProps({
   hideTally: {
     type: Boolean
   },
-  staticEmotes: {
-    type: Boolean
+  emotes: {
+    type: String,
+    default: 'animated'
   }
 })
 
@@ -70,25 +78,39 @@ defineEmits(['increment', 'decrement'])
 const tallyImage = props.participant ? `url(${props.participant.image})` : ''
 const participantColor = props.participant?.color ?? '#000'
 
+const baseText = computed(() => {
+  return props.block.text
+    .replaceAll(':', '')
+    // very long text cases
+    .replace('neuroplushsittingverycomfortablewhilesheroastsaporowithherfriends', 'neuroPlush with Poro')
+    .replace('reallyGunPull vedalPls', '')
+})
+
 const withEmote = computed(() => {
-  const regex = /:(\w+):/g
+  if (!props.block.text.includes(':')) return null
+  const regex = /:(\w+)+:/gmi
 
-  if (props.block.text.includes(':')) {
-    const emoteData = regex.exec(props.block.text)
-    if (!emoteData) return null
+  let emoteData
+  let text = props.block.text
 
+  const emotes = []
+  while ((emoteData = regex.exec(props.block.text)) !== null) {
     const emoteName = emoteData[1]
-    const emoteSrc = generateEmote(emoteName, props.staticEmotes)
+    const emoteSrc = generateEmote(emoteName, props.emotes === 'static')
     if (!emoteSrc) return null
 
-    return {
-      text: props.block.text.replace(emoteData[0], ''),
-      emoteSrc,
-      emoteName
-    }
+    text = text.replace(emoteData[0], '').trim()
+
+    emotes.push({
+      src: emoteSrc,
+      name: emoteName
+    })
   }
 
-  return null
+  return {
+    text,
+    emotes
+  }
 })
 </script>
 
