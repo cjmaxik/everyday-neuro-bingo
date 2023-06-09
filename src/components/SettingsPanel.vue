@@ -127,6 +127,7 @@ const updateFont = (removeFont) => {
 }
 
 const clearBoard = () => {
+  openSettingsModal.value = false
   if (confirm('Do you really want to clear this board state?')) {
     state.clearAll()
     router.go()
@@ -134,6 +135,7 @@ const clearBoard = () => {
 }
 
 const clearAll = () => {
+  openSettingsModal.value = false
   if (confirm('Do you really want to clear all the settings and all board states?')) {
     settings.clearAll()
     localStorage.clear()
