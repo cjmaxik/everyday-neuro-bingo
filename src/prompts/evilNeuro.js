@@ -59,7 +59,7 @@ export default {
     'mentions Hiyori Momose',
     'mentions NASA',
     'mentions The Swarm',
-    'mentions her missing cat',
+    'her cat is missing again',
     'mentions Goody Two Shoes',
     'mentions her experiments on humans',
 
