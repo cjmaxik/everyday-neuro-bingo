@@ -42,9 +42,9 @@
 import StreamTypeItem from './StreamTypeItem.vue'
 
 const regularStreams = [
-  { to: 'evilNeuro', text: 'Evil Neuro solo' },
   { to: 'justChatting', text: 'Chill stream', isFeatured: true },
   { to: 'devStream', text: 'Dev stream' },
+  { to: 'evilNeuro', text: 'Evil Neuro solo' },
   { to: 'familyCollab', text: 'Family stream' }
 ]
 
