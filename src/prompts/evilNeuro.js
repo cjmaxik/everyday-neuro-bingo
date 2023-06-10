@@ -51,7 +51,7 @@ export default {
     '"GOOD THOUGHTS"',
     'stares',
     'women joke',
-    'twitchy',
+    '"Twitchy"',
     'cursed sound',
     'actually swears',
     
