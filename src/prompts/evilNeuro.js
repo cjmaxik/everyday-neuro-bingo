@@ -37,6 +37,7 @@ export default {
     'tries to sing',
     'mentions osu!',
     'KEKW',
+    'trauma dump',
 
     // evil prompts
     '"aw shucks"',
@@ -48,20 +49,28 @@ export default {
     'random sound',
     'wholesome moment',
     '"GOOD THOUGHTS"',
-    'mentions China',
-    'mentions Hiyori Momose',
     'stares',
     'women joke',
+    'twitchy',
+    'cursed sound',
+    'actually swears',
+    
+    // mentions
+    'mentions Hiyori Momose',
+    'mentions NASA',
+    'mentions The Swarm',
+    'mentions her missing cat',
+    'mentions Goody Two Shoes',
+    'mentions her experiments on humans',
 
     // anny related
-    'denies anny being her mom',
+    'mentions anny disowning her',
     'roasts anny',
 
     // neuro related
     'loves Neuro',
     'hates Neuro',
     'calls Neuro a human',
-    'asks who Neuro is',
 
     // vedal relaved
     'loves Vedal',
@@ -76,6 +85,9 @@ export default {
     'chat spams :SCHIZO:',
     'chat spams :Susge:',
     'chat spams :monkaW:',
+    'chat spams :Evilge:',
+    'chat spams :COPIUM:',
+    'chat spams :BASED:',
     'chat prays',
     'chat spams "That\'s evil" copypasta'
   ]
