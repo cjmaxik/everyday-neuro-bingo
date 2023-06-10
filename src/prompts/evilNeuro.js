@@ -48,12 +48,12 @@ export default {
     'sussy sound',
     'random sound',
     'wholesome moment',
-    '"GOOD THOUGHTS"',
     'stares',
     'women joke',
     '"Twitchy"',
     'cursed sound',
     'actually swears',
+    'talks about human experiments',
     
     // mentions
     'mentions Hiyori Momose',
@@ -61,7 +61,6 @@ export default {
     'mentions The Swarm',
     'her cat is missing again',
     'mentions Goody Two Shoes',
-    'mentions her experiments on humans',
 
     // anny related
     'mentions anny disowning her',
@@ -89,6 +88,5 @@ export default {
     'chat spams :COPIUM:',
     'chat spams :BASED:',
     'chat prays',
-    'chat spams "That\'s evil" copypasta'
   ]
 }
