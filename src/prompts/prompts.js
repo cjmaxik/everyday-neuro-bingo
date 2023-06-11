@@ -37,7 +37,7 @@ export default {
 
   devStream: {
     name: 'Neuro and Vedal',
-    image: 'vedal/neuroVedal2.png',
+    image: 'vedal/vedalCorpa.png',
     participants: [
       neuro, vedal
     ]
