@@ -78,6 +78,7 @@ export default {
     'admits she\'s evil',
     'denies being evil',
     'talks about nightmares',
+    '"I don\'t speak X language"',
 
     // emote prompts
     // NOTE: do not use inline emotes here - Neuro spells them out as text!
@@ -144,6 +145,8 @@ export default {
     'chat spams :KEKW:',
     'chat spams :hiyori:',
     'chat spams :neuroplushsittingverycomfortablewhilesheroastsaporowithherfriends:',
+    'chat spams :NOOOO:',
+    'chat spams :monkaTOS:',
     'chat prays',
     'chat shoots Vedal :reallyGunPull: :vedalPls:',
     'chat L\'s Neuro',
