@@ -54,7 +54,7 @@ export default {
     'cursed sound',
     'actually swears',
     'talks about human experiments',
-    
+
     // mentions
     'mentions Hiyori Momose',
     'mentions NASA',
@@ -87,6 +87,6 @@ export default {
     'chat spams :Evilge:',
     'chat spams :COPIUM:',
     'chat spams :BASED:',
-    'chat prays',
+    'chat prays'
   ]
 }

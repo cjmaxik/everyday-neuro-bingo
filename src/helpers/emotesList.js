@@ -18,7 +18,8 @@ const animatedEmotes = {
   Aware: '6145e8b10969108b671957ec',
   AnnyLebronJam: '63b062b36fddd93053cc5eaf',
   LUBBERS: '61dbaa5d57c70f633ebd72cb',
-  BOOBA: '60aea4074b1ea4526d3c97a9'
+  BOOBA: '60aea4074b1ea4526d3c97a9',
+  COPIUM: '60ae4ec30e35477634988c18'
 }
 
 // static emotes only!
@@ -34,7 +35,9 @@ const staticEmotes = {
   Susge: '60b0c36388e8246a4b120d7e_static',
   POG: '603eaaa9115b55000d7282d8_static',
   poggers: '60af1ba684a2b8e655387bba_static',
-  KEKW: '60a487509485e7cf2f5a6fa7_static'
+  KEKW: '60a487509485e7cf2f5a6fa7_static',
+  Evilge: '628e74a1ce2df92d9564b98f_static',
+  BASED: '6043181d1d4963000d9dae39_static'
 }
 
 export default {
