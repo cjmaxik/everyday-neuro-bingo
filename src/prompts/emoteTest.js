@@ -3,7 +3,7 @@
  * Available ONLY via direct link (see `prompts.js`)
  */
 
-import neuro from './evilNeuro'
+import neuro from './neuro'
 
 export default {
   ...neuro,

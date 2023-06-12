@@ -19,7 +19,9 @@ const animatedEmotes = {
   AnnyLebronJam: '63b062b36fddd93053cc5eaf',
   LUBBERS: '61dbaa5d57c70f633ebd72cb',
   BOOBA: '60aea4074b1ea4526d3c97a9',
-  COPIUM: '60ae4ec30e35477634988c18'
+  COPIUM: '60ae4ec30e35477634988c18',
+  monkaTOS: '60aea4c0f39a7552b6139da4',
+  NOOOO: '60ae65b29627f9aff4fd8bef'
 }
 
 // static emotes only!
