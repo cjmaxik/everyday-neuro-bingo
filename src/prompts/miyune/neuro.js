@@ -6,14 +6,13 @@ export default {
   prompts: [
     'tin cans',
     'gaslight-sama',
-    '',
-    '',
-    '',
-    '',
-    '',
-    '',
-    '',
-    '',
+    'filtered',
+    'W RIZZ',
+    'goes schizo',
+    '#ad / corpa',
+    'no~',
+    'rants',
+    'leaves',
 
     // Miyu related
     'calls Miyu a (space) gremlin',
@@ -23,16 +22,15 @@ export default {
     'loves Miyu',
     'hates Miyu',
     'keeps Miyu as a pet',
+    'misgenders Miyu',
+    'invents Miyu new nickname',
 
     // chat related
-    '',
-    '',
-    '',
-    '',
-    '',
-    '',
-
-    // twitch meta
-    ''
+    'chat spams :HUH:',
+    'chat spams :RIGGED:',
+    'chat spams :SCHIZO:',
+    'chat spams :Erm:',
+    'chat spams :Susge:',
+    'chat spams :NOOOO:',
   ]
 }
