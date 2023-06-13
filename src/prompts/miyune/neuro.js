@@ -14,7 +14,6 @@ export default {
     '',
     '',
     '',
-    '',
 
     // Miyu related
     'calls Miyu a (space) gremlin',
@@ -23,6 +22,7 @@ export default {
     'tries to destroy Miyu',
     'loves Miyu',
     'hates Miyu',
+    'keeps Miyu as a pet',
 
     // chat related
     '',
