@@ -23,7 +23,7 @@ export default {
     'hates Miyu',
     'keeps Miyu as a pet',
     'misgenders Miyu',
-    'invents Miyu new nickname',
+    'invents new nickname for Miyu',
 
     // chat related
     'chat spams :HUH:',
@@ -31,6 +31,6 @@ export default {
     'chat spams :SCHIZO:',
     'chat spams :Erm:',
     'chat spams :Susge:',
-    'chat spams :NOOOO:',
+    'chat spams :NOOOO:'
   ]
 }

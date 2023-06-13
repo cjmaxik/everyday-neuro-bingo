@@ -52,7 +52,8 @@ const collabStreams = [
   { to: 'evilCollab', text: 'Evil Neuro' },
   { to: 'filianCollab', text: 'filian' },
   { to: 'annyCollab', text: 'anny' },
-  { to: 'shylilyCollab', text: 'Shylily' }
+  { to: 'shylilyCollab', text: 'Shylily' },
+  { to: 'miyuneCollab', text: 'Miyune' }
 ]
 </script>
 
