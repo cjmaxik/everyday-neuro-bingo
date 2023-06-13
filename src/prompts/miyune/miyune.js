@@ -10,9 +10,9 @@ export default {
   ],
 
   prompts: [
-    '',
-    '',
-    '',
+    'dies from laughter',
+    'NOOO~',
+    'deez nuts joke',
     '',
     '',
     '',

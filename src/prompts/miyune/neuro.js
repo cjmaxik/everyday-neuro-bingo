@@ -4,12 +4,8 @@ export default {
   ...neuro,
 
   prompts: [
-    '',
-    '',
-    '',
-    '',
-    '',
-    '',
+    'tin cans',
+    'gaslight-sama',
     '',
     '',
     '',
@@ -21,8 +17,12 @@ export default {
     '',
 
     // Miyu related
-    '',
-    '',
+    'calls Miyu a (space) gremlin',
+    'asks to sing together',
+    'donowalls Miyu',
+    'tries to destroy Miyu',
+    'loves Miyu',
+    'hates Miyu',
 
     // chat related
     '',
