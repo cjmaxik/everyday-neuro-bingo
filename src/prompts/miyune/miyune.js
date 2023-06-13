@@ -1,9 +1,9 @@
 export default {
   id: 'miyune',
   name: 'Miyune',
-  color: '#',
+  color: '#007caa',
 
-  image: '',
+  image: 'invader.png',
 
   sounds: [
     ''
