@@ -6,7 +6,9 @@ export default {
   image: 'invader.png',
 
   sounds: [
-    ''
+    'laugh.mp3',
+    'oniichan.mp3',
+    'stoopid.mp3'
   ],
 
   prompts: [
