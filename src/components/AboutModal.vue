@@ -49,7 +49,8 @@
       </ul>
 
       <p>
-        Includes image and audio assets from various community members.<br>Source code - <a
+        Includes art by Rune, 2Pfrog, niceaccoun, lingyou, anny, Beyumi, M3gur3n, and other distinguished
+        artists.<br>Source code is available on <a
           ref="noopener noreferrer"
           href="https://github.com/cjmaxik/everyday-neuro-bingo"
           target="_blank"
