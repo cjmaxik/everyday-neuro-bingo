@@ -42,8 +42,8 @@
 import StreamTypeItem from './StreamTypeItem.vue'
 
 const regularStreams = [
-  { to: 'devStream', text: 'Dev stream', isFeatured: true },
   { to: 'justChatting', text: 'Chill stream' },
+  { to: 'devStream', text: 'Dev stream' },
   { to: 'evilNeuro', text: 'Evil Neuro solo' },
   { to: 'familyCollab', text: 'Family stream' }
 ]
