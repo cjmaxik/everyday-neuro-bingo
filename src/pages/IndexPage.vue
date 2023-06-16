@@ -15,6 +15,19 @@
 
     <StreamTypeLinks />
 
+    <q-banner
+      inline-actions
+      rounded
+      class="bg-gymbag text-white text-center q-mt-sm"
+    >
+      <span>
+        <p class="text-weight-bold text-h6 no-margin">
+          bingo.neuro.fun
+        </p>
+        <p class="no-margin">New domain! Update your bookmarks!</p>
+      </span>
+    </q-banner>
+
     <div class="q-pt-sm text-center">
       <AboutModal :is-index="true" />
     </div>
