@@ -22,7 +22,7 @@
     >
       <span>
         <p class="text-weight-bold text-h6 no-margin">
-          bingo.neuro.fun
+          bingo.nuero.fun
         </p>
         <p class="no-margin">New domain! Update your bookmarks!</p>
       </span>
