@@ -51,7 +51,7 @@ body:not(.remove-font) {
     overflow: auto;
 
     .bingo-block {
-      line-height: 3.5vh;
+      line-height: max(3.5vh, 20px);
     }
 
     @media(min-width: $breakpoint-md-min) {
