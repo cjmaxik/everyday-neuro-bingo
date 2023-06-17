@@ -51,7 +51,7 @@ body:not(.remove-font) {
     overflow: auto;
 
     @media(min-width: $breakpoint-md-min) {
-      font-size: 2vw !important;
+      font-size: 2vw;
     }
   }
 
@@ -64,7 +64,9 @@ body:not(.remove-font) {
     background: white;
     min-height: 100px;
     min-width: 128px;
-    line-height: 3vh;
+
+    line-height: max(3vh, 20px);
+
     font-size-adjust: 0.75;
     transition: all 0.25s ease;
 
