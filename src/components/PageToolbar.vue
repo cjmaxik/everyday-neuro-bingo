@@ -1,53 +1,42 @@
 <template>
   <q-header elevated>
     <q-toolbar class="bg-gymbag">
-      <transition
-        appear
-        enter-active-class="animated fadeIn"
-        leave-active-class="animated fadeOut"
+      <q-btn
+        flat
+        no-caps
+        no-wrap
+        padding="xs"
+        to="/"
       >
-        <q-btn
-          flat
-          no-caps
-          no-wrap
-          padding="xs"
-          to="/"
-        >
-          <q-avatar square>
-            <img src="/icons/android-chrome-192x192.png">
-          </q-avatar>
+        <q-avatar square>
+          <img src="/icons/android-chrome-192x192.png">
+        </q-avatar>
 
+        <DefaultTransition>
           <q-toolbar-title
             v-show="$q.screen.gt.xs"
             shrink
           >
             Everyday <span class="text-weight-bold">Neuro</span> Bingo
           </q-toolbar-title>
-        </q-btn>
-      </transition>
+        </DefaultTransition>
+      </q-btn>
 
-      <transition
-        appear
-        enter-active-class="animated fadeIn"
-        leave-active-class="animated fadeOut"
-      >
+      <DefaultTransition>
         <q-chip
           v-show="settings.streamName"
           :ripple="false"
           text-color="gymbag"
           color="white"
+          style="user-select: none;"
         >
           {{ realStreamName }}
         </q-chip>
-      </transition>
+      </DefaultTransition>
 
       <q-space />
 
-      <transition
-        appear
-        enter-active-class="animated fadeIn"
-        leave-active-class="animated fadeOut"
-      >
+      <DefaultTransition>
         <q-btn
           v-show="settings.streamName && $q.fullscreen.isCapable"
           stretch
@@ -64,18 +53,14 @@
             Fullscreen board
           </q-tooltip>
         </q-btn>
-      </transition>
+      </DefaultTransition>
 
-      <transition
-        appear
-        enter-active-class="animated fadeIn"
-        leave-active-class="animated fadeOut"
-      >
+      <DefaultTransition>
         <q-separator
           v-show="settings.streamName && $q.fullscreen.isCapable"
           vertical
         />
-      </transition>
+      </DefaultTransition>
 
       <SettingsPanel />
 
@@ -114,9 +99,3 @@ const goFullscreen = () => {
   $q.fullscreen.toggle(document.querySelector('div.bingo-card'))
 }
 </script>
-
-<style>
-.q-chip {
-  user-select: none;
-}
-</style>

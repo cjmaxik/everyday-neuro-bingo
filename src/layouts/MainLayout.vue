@@ -4,17 +4,12 @@
 
     <q-page-container>
       <router-view v-slot="{ Component }">
-        <transition
-          enter-active-class="animated fadeIn"
-          leave-active-class="animated fadeOut"
-          mode="out-in"
-          duration="50"
-        >
+        <DefaultTransition>
           <component
             :is="Component"
             padding
           />
-        </transition>
+        </DefaultTransition>
       </router-view>
     </q-page-container>
   </q-layout>
@@ -24,5 +19,3 @@
 // project-related
 import PageToolbar from '../components/PageToolbar.vue'
 </script>
-
-<style scoped></style>

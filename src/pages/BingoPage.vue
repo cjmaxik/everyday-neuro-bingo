@@ -18,10 +18,11 @@
           v-for="block in state.board"
           :key="block.index"
         >
-          <FreeBlockItem
+          <div
             v-if="block.free"
-            :free-block-image="state.freeBlockImage"
-            :win="block.win"
+            class="bingo-block free"
+            :class="{ win: block.win }"
+            :style="{ backgroundImage: `url(${state.freeBlockImage ?? '/assets/iamges/gymbag.png'})` }"
           />
 
           <BingoBlockItem
@@ -30,6 +31,7 @@
             :participant="state.participants[block.participantId]"
             :hide-tally="settings.hideTally"
             :emotes="settings.emotes"
+            :class="`${block.participantId}-block`"
             @increment="increment(block)"
             @decrement="decrement(block)"
           />
@@ -58,12 +60,11 @@
 
 <script setup>
 // vue-related
-import { onBeforeUnmount } from 'vue'
+import { onBeforeUnmount, onMounted } from 'vue'
 import { useQuasar } from 'quasar'
 
 // project-related
-import FreeBlockItem from 'src/components/bingo/FreeBlockItem.vue'
-import BingoBlockItem from '../components/bingo/BingoBlockItem.vue'
+import BingoBlockItem from '../components/BingoBlockItem.vue'
 
 import { generateSeedPhrase, getRandomInt } from 'src/helpers/helpers'
 import prompts from '../prompts/prompts'
@@ -92,7 +93,7 @@ const $q = useQuasar()
 // generate board
 // seed - current date in UTC
 const seedPhrase = generateSeedPhrase()
-const version = 2
+const version = 3
 const streamData = prompts[streamType]
 
 // page title
@@ -104,11 +105,33 @@ onBeforeUnmount(() => {
 
 state.generateBoard(streamData, seedPhrase, version)
 
+// styles
+onMounted(async () => {
+  document.getElementById('participantsStyles')?.remove()
+
+  const style = document.createElement('style')
+  style.id = 'participantsStyles'
+
+  for (const id in state.participants) {
+    const participant = state.participants[id]
+    style.innerHTML += `
+      .${participant.id}-block {
+        --tally-image: url(${participant.image ?? '/assets/iamges/gymbag.png'});
+        --text-color: ${participant.color ?? '#000'};
+      }
+    `
+  }
+
+  document.getElementsByTagName('head')[0].appendChild(style)
+})
+
 // game logic
 const increment = (block) => {
-  state.increment(block.index)
-  checkForWin(block)
-  notifyForUndo(block)
+  const hasUpdated = state.increment(block.index, settings.hideTally)
+  if (hasUpdated) {
+    checkForWin(block)
+    notifyForUndo(block)
+  }
 }
 
 const decrement = (block) => {

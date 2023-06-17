@@ -74,6 +74,7 @@ body:not(.remove-font) {
     transition: all 0.25s ease;
 
     &:before {
+      background-image: var(--tally-image);
       content: " ";
       display: block;
       position: absolute;
@@ -84,6 +85,10 @@ body:not(.remove-font) {
       opacity: 0;
       transition: all 0.25s ease;
       @extend .center-image;
+    }
+
+    span.bingo-block-text {
+      color: var(--text-color)
     }
 
     &.win {
@@ -179,4 +184,12 @@ body:not(.remove-font) {
   position: absolute;
   right: 1rem;
   top: 0.7rem;
+}
+
+.collabs>a {
+  border-top: 1px solid rgba(0, 0, 0, 0.12);
+
+  &:nth-child(odd) {
+    border-right: 1px solid rgba(0, 0, 0, 0.12);
+  }
 }

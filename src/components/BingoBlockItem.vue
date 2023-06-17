@@ -15,7 +15,7 @@
 
         <div class="bingo-emotes">
           <span
-            v-for="(emote, index) in withEmote.emotes"
+            v-for="( emote, index ) in withEmote.emotes "
             :key="index"
           >
             <img
@@ -33,18 +33,14 @@
         {{ baseText }}
       </span>
 
-      <transition
-        appear
-        enter-active-class="animated fadeIn"
-        leave-active-class="animated fadeOut"
-      >
+      <DefaultTransition>
         <q-badge
           v-show="block.tally !== 0 && !hideTally"
           class="bingo-tally"
         >
           {{ block.tally }}
         </q-badge>
-      </transition>
+      </DefaultTransition>
     </div>
   </div>
 </template>
@@ -76,10 +72,6 @@ const props = defineProps({
 })
 
 defineEmits(['increment', 'decrement'])
-
-// CSS binds
-const tallyImage = props.participant ? `url(${props.participant.image})` : ''
-const participantColor = props.participant?.color ?? '#000'
 
 const baseText = computed(() => {
   return props.block.text
@@ -117,20 +109,3 @@ const withEmote = computed(() => {
   }
 })
 </script>
-
-<style lang="scss" scoped>
-// Variables here only.
-// See ../css/app.css for the whole CSS
-
-.bingo-block {
-  &:not(.win) {
-    span.bingo-block-text {
-      color: v-bind('participantColor')
-    }
-  }
-
-  &:before {
-    background-image: v-bind('tallyImage');
-  }
-}
-</style>
