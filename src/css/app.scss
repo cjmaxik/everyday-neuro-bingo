@@ -44,6 +44,8 @@ body:not(.remove-font) {
 }
 
 .bingo-card {
+  overflow: auto;
+
   display: grid;
   grid-template-columns: repeat(7, 1fr);
   grid-template-rows: repeat(7, 1fr);
@@ -54,8 +56,6 @@ body:not(.remove-font) {
 
   width: 1024px;
   height: 100%;
-
-  background-color: red;
 
   user-select: none;
 
