@@ -57,14 +57,14 @@
 
 <script setup>
 // vue-related
-import { computed, onBeforeUnmount } from 'vue'
+import { onBeforeUnmount } from 'vue'
 import { useQuasar } from 'quasar'
 
 // project-related
 import FreeBlockItem from 'src/components/bingo/FreeBlockItem.vue'
 import BingoBlockItem from '../components/bingo/BingoBlockItem.vue'
 
-import { chunkArray, generateSeedPhrase, getRandomInt } from 'src/helpers/helpers'
+import { generateSeedPhrase, getRandomInt } from 'src/helpers/helpers'
 import prompts from '../prompts/prompts'
 
 // states
@@ -102,9 +102,6 @@ onBeforeUnmount(() => {
 })
 
 state.generateBoard(streamData, seedPhrase, version)
-
-// data
-const chunkedBoard = computed(() => chunkArray(state.board, state.streakCount))
 
 // game logic
 const increment = (block) => {
