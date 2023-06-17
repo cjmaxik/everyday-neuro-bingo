@@ -11,35 +11,29 @@
       <div
         v-show="state.ready"
         :key="0"
-        class="bingo-card"
+        class="bingo-card shadow-5"
+        :class="{ fullscreen: $q.fullscreen.isActive }"
       >
-        <div
-          v-for="row, key in chunkedBoard"
-          :key="key"
-          class="row"
+        <template
+          v-for="block in state.board"
+          :key="block.index"
         >
-          <div
-            v-for="block in row"
-            :key="block.index"
-            class="col shadow-5 shadow-transition"
-          >
-            <FreeBlockItem
-              v-if="block.free"
-              :free-block-image="state.freeBlockImage"
-              :win="block.win"
-            />
+          <FreeBlockItem
+            v-if="block.free"
+            :free-block-image="state.freeBlockImage"
+            :win="block.win"
+          />
 
-            <BingoBlockItem
-              v-else
-              :block="block"
-              :participant="state.participants[block.participantId]"
-              :hide-tally="settings.hideTally"
-              :emotes="settings.emotes"
-              @increment="increment(block)"
-              @decrement="decrement(block)"
-            />
-          </div>
-        </div>
+          <BingoBlockItem
+            v-else
+            :block="block"
+            :participant="state.participants[block.participantId]"
+            :hide-tally="settings.hideTally"
+            :emotes="settings.emotes"
+            @increment="increment(block)"
+            @decrement="decrement(block)"
+          />
+        </template>
       </div>
 
       <div
@@ -64,14 +58,14 @@
 
 <script setup>
 // vue-related
-import { computed, onBeforeUnmount } from 'vue'
+import { onBeforeUnmount } from 'vue'
 import { useQuasar } from 'quasar'
 
 // project-related
 import FreeBlockItem from 'src/components/bingo/FreeBlockItem.vue'
 import BingoBlockItem from '../components/bingo/BingoBlockItem.vue'
 
-import { chunkArray, generateSeedPhrase, getRandomInt } from 'src/helpers/helpers'
+import { generateSeedPhrase, getRandomInt } from 'src/helpers/helpers'
 import prompts from '../prompts/prompts'
 
 // states
@@ -109,9 +103,6 @@ onBeforeUnmount(() => {
 })
 
 state.generateBoard(streamData, seedPhrase, version)
-
-// data
-const chunkedBoard = computed(() => chunkArray(state.board, state.streakCount))
 
 // game logic
 const increment = (block) => {

@@ -17,7 +17,7 @@
         label="Collabs"
         header-class="text-gymbag text-subtitle1"
         toggle
-        expand-icon-class="collab-toggle"
+        expand-icon-class="collab-toggle text-gymbag"
       >
         <div class="row">
           <div
