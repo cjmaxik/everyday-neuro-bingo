@@ -12,10 +12,11 @@
         v-show="state.ready"
         :key="0"
         class="bingo-card shadow-5"
+        :class="{ fullscreen: $q.fullscreen.isActive }"
       >
         <template
-          v-for="block, key in state.board"
-          :key="key"
+          v-for="block in state.board"
+          :key="block.index"
         >
           <FreeBlockItem
             v-if="block.free"
