@@ -8,7 +8,8 @@ export default {
   sounds: [
     'meow.mp3',
     'femboy.mp3',
-    'tequila.mp3'
+    'tequila.mp3',
+    'ayaya.mp3'
   ],
 
   prompts: [
@@ -19,7 +20,7 @@ export default {
     'femboy noises',
     'leaks something',
     'gets competitive',
-    'That\'s crazy 🐢',
+    'That\'s crazy :Tutel:',
     'i have no idea',
     '"why X doesn\'t work?"',
     '"I\'m stupid"',

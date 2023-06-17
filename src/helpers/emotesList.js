@@ -39,7 +39,8 @@ const staticEmotes = {
   poggers: '60af1ba684a2b8e655387bba_static',
   KEKW: '60a487509485e7cf2f5a6fa7_static',
   Evilge: '628e74a1ce2df92d9564b98f_static',
-  BASED: '6043181d1d4963000d9dae39_static'
+  BASED: '6043181d1d4963000d9dae39_static',
+  Tutel: '621d5384af1b8e166ce359b8_static'
 }
 
 export default {
