@@ -50,6 +50,10 @@ body:not(.remove-font) {
   &.fullscreen {
     overflow: auto;
 
+    .bingo-block {
+      line-height: 3.5vh;
+    }
+
     @media(min-width: $breakpoint-md-min) {
       font-size: 2vw;
     }
@@ -65,9 +69,8 @@ body:not(.remove-font) {
     min-height: 100px;
     min-width: 128px;
 
-    line-height: max(3vh, 20px);
+    line-height: min(3vh, 20px);
 
-    font-size-adjust: 0.75;
     transition: all 0.25s ease;
 
     &:before {
@@ -170,4 +173,10 @@ body:not(.remove-font) {
       }
     }
   }
+}
+
+.collab-toggle {
+  position: absolute;
+  right: 1rem;
+  top: 0.7rem;
 }
