@@ -1,8 +1,5 @@
 <template>
-  <q-page
-    class="index"
-    padding
-  >
+  <q-page class="index">
     <q-banner
       inline-actions
       rounded

@@ -43,144 +43,98 @@ body:not(.remove-font) {
   border-style: solid;
 }
 
-.bingo-page {
-  margin: auto;
-  width: 1000px;
-
-  body.screen--md & {
-    width: 85%;
-  }
-
-  body.screen--sm & {
-    width: 970px;
-  }
-}
-
 .bingo-card {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-template-rows: repeat(7, 1fr);
+  grid-column-gap: 0;
+  grid-row-gap: 0;
+
+  margin: auto;
+
+  width: 1024px;
+  height: 100%;
+
+  background-color: red;
+
   user-select: none;
 
-  .row {
-    &:first-child {
-      >.col {
-        border-top-width: 4px;
+  .bingo-block {
+    position: relative;
+    background: white;
 
-        &:first-child {
-          border-top-left-radius: 5px;
-        }
+    min-height: 100px;
+    min-width: 100px;
 
-        &:last-child {
-          border-top-right-radius: 5px;
-        }
-      }
-    }
+    font-size: 20px;
+    line-height: 1.5rem;
+    font-size-adjust: 0.75;
 
-    &:last-child {
-      >.col {
-        border-bottom-width: 4px;
-
-        &:first-child {
-          border-bottom-left-radius: 5px;
-        }
-
-        &:last-child {
-          border-bottom-right-radius: 5px;
-        }
-      }
-    }
-  }
-
-  .col {
-    @extend .gymbag-border;
-
-    &:first-child {
-      border-left-width: 4px;
-    }
-
-    &:last-child {
-      border-right-width: 4px;
-    }
-  }
-}
-
-// bingo block
-.bingo-block {
-  position: relative;
-  background: white;
-
-  height: 100px;
-  min-width: 100px;
-
-  font-size: 20px;
-  line-height: 1.5rem;
-
-  transition: all 0.25s ease;
-
-  &:before {
-    content: ' ';
-    display: block;
-    position: absolute;
-    left: 0;
-    top: 0;
-    height: 100%;
-    width: 100%;
-
-    opacity: 0;
     transition: all 0.25s ease;
 
-    @extend .center-image;
-  }
+    @extend .gymbag-border;
 
-  &.win {
-    background-color: lighten($gymbag, 30%);
-    color: white;
-
-    span.bingo-block-text {
-      color: white;
-    }
-
-    &:before:not(.free) {
-      opacity: 0.1;
-    }
-  }
-
-  &.active {
     &:before {
-      opacity: 0.2;
+      content: ' ';
+      display: block;
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 100%;
+      width: 100%;
+
+      opacity: 0;
+      transition: all 0.25s ease;
+
+      @extend .center-image;
+    }
+
+    &.win {
+      background-color: lighten($gymbag, 30%);
+      color: white;
+
+      span.bingo-block-text {
+        color: white;
+      }
+
+      &:before:not(.free) {
+        opacity: 0.1;
+      }
+    }
+
+    &.active {
+      &:before {
+        opacity: 0.2;
+      }
+    }
+
+    &.free {
+      @extend .center-image;
+    }
+
+    &:not(.free) {
+      cursor: pointer;
+    }
+
+    .bingo-tally {
+      position: absolute;
+
+      bottom: 0;
+      right: 0;
+
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+      border-bottom-left-radius: 0;
+
+      background-color: $gymbag;
+      font-size: 15px;
+      padding: 4px 2px 0px 4px;
+    }
+
+    .bingo-emotes {
+      :not(:last-child) {
+        margin-right: 5px;
+      }
     }
   }
-
-  &.free {
-    @extend .center-image;
-  }
-
-  &:not(.free) {
-    cursor: pointer;
-  }
-
-  .bingo-tally {
-    position: absolute;
-
-    bottom: 0;
-    right: 0;
-
-    border-top-right-radius: 0;
-    border-bottom-right-radius: 0;
-    border-bottom-left-radius: 0;
-
-    background-color: $gymbag;
-    font-size: 15px;
-    padding: 4px 2px 0px 4px;
-  }
-
-  .bingo-emotes {
-    :not(:last-child) {
-      margin-right: 5px;
-    }
-  }
-}
-
-.collab-toggle {
-  position: absolute;
-  right: 1rem;
-  top: 0.7rem;
 }

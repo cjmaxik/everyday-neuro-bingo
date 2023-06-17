@@ -13,8 +13,8 @@
           padding="xs"
           to="/"
         >
-          <q-avatar>
-            <img src="/assets/images/gymbag.png">
+          <q-avatar square>
+            <img src="/icons/android-chrome-192x192.png">
           </q-avatar>
 
           <q-toolbar-title
@@ -43,6 +43,40 @@
 
       <q-space />
 
+      <transition
+        appear
+        enter-active-class="animated fadeIn"
+        leave-active-class="animated fadeOut"
+      >
+        <q-btn
+          v-show="settings.streamName && $q.fullscreen.isCapable"
+          stretch
+          dense
+          flat
+          fab-mini
+          :icon="$q.fullscreen.isActive ? 'fullscreen_exit' : 'fullscreen'"
+          @click="goFullscreen()"
+        >
+          <q-tooltip
+            class="text-body2 bg-gymbag"
+            anchor="bottom left"
+          >
+            Fullscreen board
+          </q-tooltip>
+        </q-btn>
+      </transition>
+
+      <transition
+        appear
+        enter-active-class="animated fadeIn"
+        leave-active-class="animated fadeOut"
+      >
+        <q-separator
+          v-show="settings.streamName && $q.fullscreen.isCapable"
+          vertical
+        />
+      </transition>
+
       <SettingsPanel />
 
       <q-separator vertical />
@@ -55,6 +89,7 @@
 <script setup>
 // vue related
 import { ref, watch } from 'vue'
+import { useQuasar } from 'quasar'
 
 // project-related
 import SettingsPanel from './SettingsPanel.vue'
@@ -71,6 +106,13 @@ watch(settings, (settings) => {
     realStreamName.value = settings.streamName
   }
 })
+
+// fullscreen stuff
+const $q = useQuasar()
+
+const goFullscreen = () => {
+  $q.fullscreen.toggle(document.querySelector('div.bingo-card'))
+}
 </script>
 
 <style>

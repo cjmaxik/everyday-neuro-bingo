@@ -11,35 +11,28 @@
       <div
         v-show="state.ready"
         :key="0"
-        class="bingo-card"
+        class="bingo-card shadow-5"
       >
-        <div
-          v-for="row, key in chunkedBoard"
+        <template
+          v-for="block, key in state.board"
           :key="key"
-          class="row"
         >
-          <div
-            v-for="block in row"
-            :key="block.index"
-            class="col shadow-5 shadow-transition"
-          >
-            <FreeBlockItem
-              v-if="block.free"
-              :free-block-image="state.freeBlockImage"
-              :win="block.win"
-            />
+          <FreeBlockItem
+            v-if="block.free"
+            :free-block-image="state.freeBlockImage"
+            :win="block.win"
+          />
 
-            <BingoBlockItem
-              v-else
-              :block="block"
-              :participant="state.participants[block.participantId]"
-              :hide-tally="settings.hideTally"
-              :emotes="settings.emotes"
-              @increment="increment(block)"
-              @decrement="decrement(block)"
-            />
-          </div>
-        </div>
+          <BingoBlockItem
+            v-else
+            :block="block"
+            :participant="state.participants[block.participantId]"
+            :hide-tally="settings.hideTally"
+            :emotes="settings.emotes"
+            @increment="increment(block)"
+            @decrement="decrement(block)"
+          />
+        </template>
       </div>
 
       <div

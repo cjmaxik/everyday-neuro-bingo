@@ -8,8 +8,12 @@
           enter-active-class="animated fadeIn"
           leave-active-class="animated fadeOut"
           mode="out-in"
+          duration="50"
         >
-          <component :is="Component" />
+          <component
+            :is="Component"
+            padding
+          />
         </transition>
       </router-view>
     </q-page-container>
