@@ -1,0 +1,23 @@
+{
+    "name": "Everyday Neuro Bingo",
+    "short_name": "Neuro Bingo",
+    "description": "New Bingo card for Neuro-sama every day!",
+    "id": "/",
+    "start_url": "/",
+    "icons": [
+        {
+            "src": "/icons/android-chrome-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "/icons/android-chrome-256x256.png",
+            "sizes": "256x256",
+            "type": "image/png"
+        }
+    ],
+    "theme_color": "#843a49",
+    "background_color": "#843a49",
+    "display": "standalone",
+    "orientation": "any"
+}
