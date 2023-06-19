@@ -1,4 +1,4 @@
-const routes = [
+export default [
   {
     path: '/',
     component: () => import('layouts/MainLayout.vue'),
@@ -23,5 +23,3 @@ const routes = [
     component: () => import('pages/ErrorNotFound.vue')
   }
 ]
-
-export default routes

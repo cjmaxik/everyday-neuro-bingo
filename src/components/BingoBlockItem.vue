@@ -7,31 +7,27 @@
     @click.exact="$emit('increment')"
   >
     <div class="text-center q-pa-xs">
-      <span
-        v-if="emotes !== 'text' && withEmote !== null"
-        class="bingo-block-text"
-      >
-        {{ withEmote.text }}
+      <div class="bingo-block-text">
+        <template v-if="emotes !== 'text' && withEmotes !== null">
+          {{ withEmotes.text }}
 
-        <div class="bingo-emotes">
-          <span
-            v-for="( emote, index ) in withEmote.emotes "
-            :key="index"
-          >
-            <img
-              :src="emotes === 'animated' ? emote.src.animated : emote.src.static"
-              :alt="emote.name"
+          <div class="bingo-emotes">
+            <template
+              v-for="emote in withEmotes.emotes"
+              :key="emote.name"
             >
-          </span>
-        </div>
-      </span>
+              <img
+                :src="emotes === 'animated' ? emote.src.animated : emote.src.static"
+                :alt="emote.name"
+              >
+            </template>
+          </div>
+        </template>
 
-      <span
-        v-else
-        class="bingo-block-text"
-      >
-        {{ baseText }}
-      </span>
+        <template v-else>
+          {{ baseText }}
+        </template>
+      </div>
 
       <DefaultTransition>
         <q-badge
@@ -75,7 +71,7 @@ defineEmits(['increment', 'decrement'])
 
 const baseText = computed(() => prepareBaseText(props.block.text))
 
-const withEmote = computed(() => {
+const withEmotes = computed(() => {
   if (!props.block.text.includes(':')) return null
   const regex = /:(\w+)+:/gmi
 
@@ -84,16 +80,11 @@ const withEmote = computed(() => {
 
   const emotes = []
   while ((emoteData = regex.exec(props.block.text)) !== null) {
-    const emoteName = emoteData[1]
-    const emoteSrc = generateEmote(emoteName)
-    if (!emoteSrc) return null
+    const emote = generateEmote(emoteData[1])
+    if (!emote) return null
 
     text = text.replace(emoteData[0], '').trim()
-
-    emotes.push({
-      src: emoteSrc,
-      name: emoteName
-    })
+    emotes.push(emote)
   }
 
   return {

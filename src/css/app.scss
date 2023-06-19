@@ -87,7 +87,7 @@ body:not(.remove-font) {
       @extend .center-image;
     }
 
-    span.bingo-block-text {
+    .bingo-block-text {
       color: var(--text-color)
     }
 
@@ -95,7 +95,7 @@ body:not(.remove-font) {
       background-color: lighten($gymbag, 30%);
       color: white;
 
-      span.bingo-block-text {
+      .bingo-block-text {
         color: white;
       }
 

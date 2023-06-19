@@ -13,6 +13,9 @@
  * - Add `// overriden` at the end of the line to indicate the override (just a visual cue).
  */
 
+/**
+ * Emote list
+ */
 export default {
   AnnyLebronJam: '63b062b36fddd93053cc5eaf',
   Aware: '6145e8b10969108b671957ec_50', // overridden

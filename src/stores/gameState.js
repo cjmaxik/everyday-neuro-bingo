@@ -1,4 +1,3 @@
-/* eslint-disable no-unreachable */
 // vue-related
 import { defineStore, acceptHMRUpdate } from 'pinia'
 import { useLocalStorage } from '@vueuse/core'
@@ -7,11 +6,14 @@ import { useLocalStorage } from '@vueuse/core'
 import seedrandom from 'seedrandom'
 import { generatePrompts, deepCopy, winningLines } from '../helpers/helpers'
 
-// TODO: support more than one size
 const streakCount = 7
 const boardSize = Math.pow(streakCount, 2)
 const centerBlock = Math.floor(boardSize / 2)
 
+/**
+ * Generates the game state store
+ * @param {string} id Store ID
+ */
 export const useGameStateStore = (id) => defineStore(`gameState-${id}`, {
   state: () => ({
     // application data
@@ -48,8 +50,8 @@ export const useGameStateStore = (id) => defineStore(`gameState-${id}`, {
 
     /**
      * @param {Object} streamData Prompts
-     * @param {Integer} seedPhrase Seed
-     * @param {Integer} version Dataset version
+     * @param {number} seedPhrase Seed
+     * @param {number} version Dataset version
     */
     generateBoard (streamData, seedPhrase, version) {
       const newSeed = seedrandom(seedPhrase, { state: true }).int32()

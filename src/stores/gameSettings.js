@@ -2,6 +2,9 @@
 import { defineStore, acceptHMRUpdate } from 'pinia'
 import { useLocalStorage } from '@vueuse/core'
 
+/**
+ * Generates the game settings store
+ */
 export const useGameSettingsStore = defineStore('gameSettings', {
   state: () => ({
     removeFont: useLocalStorage('removeFont', false),
