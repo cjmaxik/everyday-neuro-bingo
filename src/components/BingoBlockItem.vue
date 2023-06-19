@@ -19,7 +19,7 @@
             :key="index"
           >
             <img
-              :src="emotes === 'animated' ? emote.src.animated : emote.src.Static"
+              :src="emotes === 'animated' ? emote.src.animated : emote.src.static"
               :alt="emote.name"
             >
           </span>
@@ -50,7 +50,7 @@
 import { computed } from 'vue'
 
 // project related
-import { generateEmote } from 'src/helpers/emotes'
+import { generateEmote, prepareBaseText } from 'src/helpers/emotes'
 
 const props = defineProps({
   block: {
@@ -73,14 +73,7 @@ const props = defineProps({
 
 defineEmits(['increment', 'decrement'])
 
-const baseText = computed(() => {
-  return props.block.text
-    .replaceAll(':', '')
-    // very long text cases
-    .replace('neuroplushsittingverycomfortablewhilesheroastsaporowithherfriends', 'neuroPlush with Poro')
-    .replace('reallyGunPull vedalPls', '')
-    .replace('AnnyLebronJam', 'Anny LebronJam')
-})
+const baseText = computed(() => prepareBaseText(props.block.text))
 
 const withEmote = computed(() => {
   if (!props.block.text.includes(':')) return null
