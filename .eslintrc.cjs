@@ -51,7 +51,6 @@ module.exports = {
 
   // add your custom rules here
   rules: {
-
     // allow async-await
     'generator-star-spacing': 'off',
     // allow paren-less arrow functions
@@ -89,6 +88,10 @@ module.exports = {
 
     // allow debugger during development only
     'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
-    'no-unused-vars': process.env.NODE_ENV === 'production' ? 'error' : 'off'
+    'no-unused-vars': process.env.NODE_ENV === 'production' ? 'error' : 'off',
+
+    'padding-line-between-statements': ['error',
+      { blankLine: 'always', prev: '*', next: 'return' }
+    ]
   }
 }
