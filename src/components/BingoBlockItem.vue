@@ -17,7 +17,7 @@
               :key="emote.name"
             >
               <img
-                :src="emotes === 'animated' ? emote.src.animated : emote.src.static"
+                :src="(emotes === 'animated' && focusedPage) ? emote.src.animated : emote.src.static"
                 :alt="emote.name"
               >
             </template>
@@ -44,6 +44,7 @@
 <script setup>
 // vue related
 import { computed } from 'vue'
+import { useWindowFocus } from '@vueuse/core'
 
 // project related
 import { generateEmote, prepareBaseText } from 'src/helpers/emotes'
@@ -68,6 +69,8 @@ const props = defineProps({
 })
 
 defineEmits(['increment', 'decrement'])
+
+const focusedPage = useWindowFocus()
 
 const baseText = computed(() => prepareBaseText(props.block.text))
 
