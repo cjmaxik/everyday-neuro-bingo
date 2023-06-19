@@ -1,13 +1,17 @@
 // vue-related
 import { defineStore, acceptHMRUpdate } from 'pinia'
-import { useLocalStorage } from '@vueuse/core'
+import { useLocalStorage, usePreferredReducedMotion } from '@vueuse/core'
+const preferredMotion = usePreferredReducedMotion()
 
+/**
+ * Generates the game settings store
+ */
 export const useGameSettingsStore = defineStore('gameSettings', {
   state: () => ({
     removeFont: useLocalStorage('removeFont', false),
     disableSound: useLocalStorage('disableSound', false),
     hideTally: useLocalStorage('hideTally', true),
-    emotes: useLocalStorage('emotes', 'animated'),
+    emotes: useLocalStorage('emotes', preferredMotion.value === 'reduce' ? 'static' : 'animated'),
 
     streamName: ''
   }),

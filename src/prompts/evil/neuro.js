@@ -32,7 +32,7 @@ export default {
     // chat related
     'chat spams Clueless',
     'chat spams PauseSama',
-    'chat spams aware',
+    'chat spams Aware',
     'chat L\'s Neuro',
     'chat W\'s Neuro',
     'chat spams Classic'

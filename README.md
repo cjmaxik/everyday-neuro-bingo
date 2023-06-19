@@ -2,7 +2,7 @@
 
 New Bingo card for Neuro-sama every day! Watch Neuro-sama's streams and follow along.
 
---> [Play with us here!](https://neuro-bingo.pages.dev/) <--
+--> [Play with us here!](https://bingo.nuero.fun/) <--
 
 --> Discuss in [Neurocord](https://discord.com/channels/574720535888396288/1110199900114780182) <--
 

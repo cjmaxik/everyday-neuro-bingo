@@ -19,18 +19,18 @@
         toggle
         expand-icon-class="collab-toggle"
       >
-        <div class="row">
-          <div
+        <div class="collabs row">
+          <template
             v-for="(stream, index) in collabStreams"
             :key="index"
-            class="col-6 collabs"
           >
             <StreamTypeItem
               :to="stream.to"
               :text="stream.text"
               :featured="stream.isFeatured"
+              class="col-6 col-grow"
             />
-          </div>
+          </template>
         </div>
       </q-expansion-item>
     </q-list>
@@ -42,27 +42,17 @@
 import StreamTypeItem from './StreamTypeItem.vue'
 
 const regularStreams = [
-  { to: 'devStream', text: 'Dev stream', isFeatured: true },
   { to: 'justChatting', text: 'Chill stream' },
+  { to: 'devStream', text: 'Dev stream' },
   { to: 'evilNeuro', text: 'Evil Neuro solo' },
   { to: 'familyCollab', text: 'Family stream' }
 ]
 
 const collabStreams = [
   { to: 'evilCollab', text: 'Evil Neuro' },
-  { to: 'filianCollab', text: 'filian' },
   { to: 'annyCollab', text: 'anny' },
+  { to: 'filianCollab', text: 'filian' },
   { to: 'shylilyCollab', text: 'Shylily' },
   { to: 'miyuneCollab', text: 'Miyune' }
 ]
 </script>
-
-<style lang="scss">
-.collabs {
-  border-top: 1px solid rgba(0, 0, 0, 0.12);
-
-  &:nth-child(odd) {
-    border-right: 1px solid rgba(0, 0, 0, 0.12);
-  }
-}
-</style>

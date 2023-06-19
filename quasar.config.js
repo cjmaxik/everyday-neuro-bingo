@@ -28,6 +28,7 @@ module.exports = configure(function (/* ctx */) {
     // --> boot files are part of "main.js"
     // https://v2.quasar.dev/quasar-cli/boot-files
     boot: [
+      'defaultTransition'
       // 'i18n',
       // 'axios'
     ],
@@ -106,7 +107,9 @@ module.exports = configure(function (/* ctx */) {
 
       // Quasar plugins
       plugins: [
-        'Notify'
+        'Notify',
+        'AppFullscreen',
+        'AppVisibility'
       ]
     },
 

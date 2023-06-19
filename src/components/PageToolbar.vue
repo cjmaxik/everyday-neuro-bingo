@@ -1,47 +1,66 @@
 <template>
   <q-header elevated>
     <q-toolbar class="bg-gymbag">
-      <transition
-        appear
-        enter-active-class="animated fadeIn"
-        leave-active-class="animated fadeOut"
+      <q-btn
+        flat
+        no-caps
+        no-wrap
+        padding="xs"
+        to="/"
       >
-        <q-btn
-          flat
-          no-caps
-          no-wrap
-          padding="xs"
-          to="/"
-        >
-          <q-avatar>
-            <img src="/assets/images/gymbag.png">
-          </q-avatar>
+        <q-avatar square>
+          <img src="/icons/android-chrome-192x192.png">
+        </q-avatar>
 
+        <DefaultTransition>
           <q-toolbar-title
             v-show="$q.screen.gt.xs"
             shrink
           >
             Everyday <span class="text-weight-bold">Neuro</span> Bingo
           </q-toolbar-title>
-        </q-btn>
-      </transition>
+        </DefaultTransition>
+      </q-btn>
 
-      <transition
-        appear
-        enter-active-class="animated fadeIn"
-        leave-active-class="animated fadeOut"
-      >
+      <DefaultTransition>
         <q-chip
           v-show="settings.streamName"
           :ripple="false"
           text-color="gymbag"
           color="white"
+          style="user-select: none;"
         >
           {{ realStreamName }}
         </q-chip>
-      </transition>
+      </DefaultTransition>
 
       <q-space />
+
+      <DefaultTransition>
+        <q-btn
+          v-show="settings.streamName && $q.fullscreen.isCapable"
+          stretch
+          dense
+          flat
+          fab-mini
+          :icon="$q.fullscreen.isActive ? 'fullscreen_exit' : 'fullscreen'"
+          @click="goFullscreen()"
+        >
+          <q-tooltip
+            class="text-body2 bg-gymbag"
+            anchor="bottom left"
+          >
+            Fullscreen board
+          </q-tooltip>
+        </q-btn>
+      </DefaultTransition>
+
+      <DefaultTransition>
+        <q-separator
+          v-show="settings.streamName && $q.fullscreen.isCapable"
+          vertical
+        />
+      </DefaultTransition>
 
       <SettingsPanel />
 
@@ -55,6 +74,7 @@
 <script setup>
 // vue related
 import { ref, watch } from 'vue'
+import { useQuasar } from 'quasar'
 
 // project-related
 import SettingsPanel from './SettingsPanel.vue'
@@ -71,10 +91,11 @@ watch(settings, (settings) => {
     realStreamName.value = settings.streamName
   }
 })
-</script>
 
-<style>
-.q-chip {
-  user-select: none;
+// fullscreen stuff
+const $q = useQuasar()
+
+const goFullscreen = () => {
+  $q.fullscreen.toggle(document.querySelector('div.bingo-card'))
 }
-</style>
+</script>

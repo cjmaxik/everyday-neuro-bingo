@@ -134,7 +134,7 @@ export default {
     'chat spams :SoCute:',
     'chat spams :WAYTOODANK:',
     'chat spams copypasta',
-    'chat spams :aware:',
+    'chat spams :Aware:',
     'chat spams :nuero: :nwero:',
     'chat spams :SCHIZO:',
     'chat spams :Flushed:',
@@ -148,7 +148,7 @@ export default {
     'chat spams :NOOOO:',
     'chat spams :monkaTOS:',
     'chat prays',
-    'chat shoots Vedal :reallyGunPull: :vedalPls:',
+    'chat spams :reallyGunPull: :vedalPls:',
     'chat L\'s Neuro',
     'chat W\'s Neuro',
 

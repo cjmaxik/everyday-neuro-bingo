@@ -1,7 +1,7 @@
 // app global css in SCSS form
 @font-face {
   font-family: FirstCoffee;
-  src: url('/assets/fonts/FirstCoffee.otf') format("opentype");
+  src: url("/assets/fonts/FirstCoffee.otf") format("opentype");
   ascent-override: 120%;
 }
 
@@ -16,7 +16,7 @@ body {
 }
 
 body:not(.remove-font) {
-  font-family: 'FirstCoffee', "Roboto", "-apple-system", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "FirstCoffee", "Roboto", "-apple-system", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 .main {
@@ -25,7 +25,6 @@ body:not(.remove-font) {
 
 .index {
   margin: auto;
-
   min-width: 256px;
   max-width: 512px;
 }
@@ -37,144 +36,146 @@ body:not(.remove-font) {
 }
 
 // bingo page
-.gymbag-border {
-  border-width: 2px;
-  border-color: $gymbag;
-  border-style: solid;
-}
+.bingo-card .bingo-block {
 
-.bingo-page {
-  margin: auto;
-  width: 1000px;
-
-  body.screen--md & {
-    width: 85%;
-  }
-
-  body.screen--sm & {
-    width: 970px;
+  &.free,
+  &:before {
+    background-repeat: no-repeat;
+    background-size: auto 100%;
+    background-position: center;
   }
 }
 
 .bingo-card {
-  user-select: none;
+  &.fullscreen {
+    overflow: auto;
 
-  .row {
-    &:first-child {
-      >.col {
-        border-top-width: 4px;
-
-        &:first-child {
-          border-top-left-radius: 5px;
-        }
-
-        &:last-child {
-          border-top-right-radius: 5px;
-        }
-      }
+    .bingo-block {
+      line-height: max(3.5vh, 20px);
     }
 
-    &:last-child {
-      >.col {
-        border-bottom-width: 4px;
-
-        &:first-child {
-          border-bottom-left-radius: 5px;
-        }
-
-        &:last-child {
-          border-bottom-right-radius: 5px;
-        }
-      }
+    @media(min-width: $breakpoint-md-min) {
+      font-size: 2vw;
     }
   }
 
-  .col {
-    @extend .gymbag-border;
+  .bingo-block {
+    border-width: 2px;
+    border-color: $gymbag;
+    border-style: solid;
 
-    &:first-child {
+    position: relative;
+    background: white;
+    min-height: 100px;
+    min-width: 128px;
+
+    line-height: min(3vh, 20px);
+
+    transition: all 0.25s ease;
+
+    &:before {
+      background-image: var(--tally-image);
+      content: " ";
+      display: block;
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 100%;
+      width: 100%;
+      opacity: 0;
+      transition: all 0.25s ease;
+      @extend .center-image;
+    }
+
+    .bingo-block-text {
+      color: var(--text-color)
+    }
+
+    &.win {
+      background-color: lighten($gymbag, 30%);
+      color: white;
+
+      .bingo-block-text {
+        color: white;
+      }
+
+      &:before:not(.free) {
+        opacity: 0.1;
+      }
+    }
+
+    &.active:before {
+      opacity: 0.2;
+    }
+
+    &:not(.free) {
+      cursor: pointer;
+    }
+
+    .bingo-tally {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+      border-bottom-left-radius: 0;
+      background-color: $gymbag;
+      font-size: 15px;
+      padding: 4px 2px 0px 4px;
+    }
+
+    .bingo-emotes :not(:last-child) {
+      margin-right: 5px;
+    }
+
+    &:nth-child(-n+7) {
+      border-top-width: 4px;
+    }
+
+    &:nth-last-child(-n+7),
+    &:nth-child(43) {
+      border-bottom-width: 4px;
+    }
+
+    &:nth-child(7n-6) {
       border-left-width: 4px;
     }
 
-    &:last-child {
+    &:nth-child(7n) {
       border-right-width: 4px;
     }
   }
-}
 
-// bingo block
-.bingo-block {
-  position: relative;
-  background: white;
-
-  height: 100px;
-  min-width: 100px;
-
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-template-rows: repeat(7, 1fr);
+  grid-column-gap: 0;
+  grid-row-gap: 0;
+  margin: auto;
+  width: 1024px;
+  height: 100%;
+  user-select: none;
   font-size: 20px;
-  line-height: 1.5rem;
 
-  transition: all 0.25s ease;
+  &:not(.bingo-card.fullscreen) {
+    border-radius: 10px;
 
-  &:before {
-    content: ' ';
-    display: block;
-    position: absolute;
-    left: 0;
-    top: 0;
-    height: 100%;
-    width: 100%;
+    .bingo-block {
+      &:first-child {
+        border-top-left-radius: 10px;
+      }
 
-    opacity: 0;
-    transition: all 0.25s ease;
+      &:nth-child(7) {
+        border-top-right-radius: 10px;
+      }
 
-    @extend .center-image;
-  }
+      &:nth-child(43) {
+        border-bottom-left-radius: 10px;
+      }
 
-  &.win {
-    background-color: lighten($gymbag, 30%);
-    color: white;
-
-    span.bingo-block-text {
-      color: white;
-    }
-
-    &:before:not(.free) {
-      opacity: 0.1;
-    }
-  }
-
-  &.active {
-    &:before {
-      opacity: 0.2;
-    }
-  }
-
-  &.free {
-    @extend .center-image;
-  }
-
-  &:not(.free) {
-    cursor: pointer;
-  }
-
-  .bingo-tally {
-    position: absolute;
-
-    bottom: 0;
-    right: 0;
-
-    border-top-right-radius: 0;
-    border-bottom-right-radius: 0;
-    border-bottom-left-radius: 0;
-
-    background-color: $gymbag;
-    font-size: 15px;
-    padding: 4px 2px 0px 4px;
-  }
-
-  .bingo-emotes {
-    :not(:last-child) {
-      margin-right: 5px;
+      &:last-child {
+        border-bottom-right-radius: 10px;
+      }
     }
   }
 }
@@ -183,4 +184,12 @@ body:not(.remove-font) {
   position: absolute;
   right: 1rem;
   top: 0.7rem;
+}
+
+.collabs>a {
+  border-top: 1px solid rgba(0, 0, 0, 0.12);
+
+  &:nth-child(odd) {
+    border-right: 1px solid rgba(0, 0, 0, 0.12);
+  }
 }
