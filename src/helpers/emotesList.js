@@ -45,8 +45,8 @@ export default {
   reallyGunPull: '6397e6789b33c1d4937155e6_48', // overridden
   RIGGED: '644f1ea78729e1f4d784bba8',
   RIPBOZO: '60dbea82e3e5887a4a95e1db',
-  SCHIZO: '61b670a76906591ea6f2005b',
-  SNIFFA: '60be7f41ae67b5b98b425a70',
+  SCHIZO: '61b670a76906591ea6f2005b_7', // overridden
+  SNIFFA: '60be7f41ae67b5b98b425a70_10', // overridden
   SoCute: '631210ee113e0e8575d2d130_2', // overridden
   Susge: '60b0c36388e8246a4b120d7e',
   Tutel: '621d5384af1b8e166ce359b8',
