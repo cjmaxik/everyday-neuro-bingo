@@ -29,7 +29,7 @@ import emoteTest from './emoteTest'
  */
 export default {
   justChatting: {
-    name: 'Chill stream',
+    name: 'Regular stream',
     image: 'neuro/neuro.png',
     participants: [
       neuro
