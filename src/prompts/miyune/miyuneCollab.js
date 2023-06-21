@@ -3,7 +3,7 @@ import miyune from './miyune'
 
 export default {
   name: 'Neuro x Miyune collab',
-  image: 'miyune/kabedon.png',
+  image: 'miyune/colorSwap.png',
   participants: [
     neuro, miyune
   ]

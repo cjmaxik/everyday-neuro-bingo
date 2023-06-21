@@ -11,7 +11,7 @@ export default {
     'goes schizo',
     '#ad / corpa',
     'no~',
-    'rants',
+    'meow~',
     'leaves',
 
     // Miyu related
