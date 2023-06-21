@@ -18,7 +18,7 @@ import anny from './anny'
 import familyCollab from './family/familyCollab'
 import evilCollab from './evil/evilCollab'
 import shylilyCollab from './shylily/shylilyCollab'
-import miyuneCollab from './miyune/miyuneCollab'
+import xMiyune from './miyune/miyuneCollab'
 
 // tests
 import emoteTest from './emoteTest'
@@ -74,7 +74,7 @@ export default {
 
   shylilyCollab,
 
-  miyuneCollab,
+  xMiyune,
 
   // TEST BOARDS
   emoteTest: {

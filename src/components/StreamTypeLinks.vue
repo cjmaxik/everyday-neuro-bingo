@@ -42,7 +42,7 @@
 import StreamTypeItem from './StreamTypeItem.vue'
 
 const mainBlock = [
-  { to: 'miyuneCollab', text: 'Miyune on the Moon', isFeatured: true },
+  { to: 'xMiyune', text: 'Miyune on the Moon', isFeatured: true },
   { to: 'justChatting', text: 'Regular Neuro streams' },
   { to: 'devStream', text: 'Streams with Vedal' },
   { to: 'evilNeuro', text: 'Evil Neuro solo' }
