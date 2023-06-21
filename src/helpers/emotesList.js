@@ -39,6 +39,7 @@ export default {
   NOWAYING: '63c8a6c330027778647b3de8_25', // overridden
   nuero: '641b51662632d8d9a76e4bc3',
   nwero: '64599803b33f908e9145b9d8',
+  o7: '61de32c05001b6b33b2e32c8',
   PauseSama: '642f5401339a2c2d2e641cdf',
   POG: '603eaaa9115b55000d7282d8',
   poggers: '60af1ba684a2b8e655387bba',

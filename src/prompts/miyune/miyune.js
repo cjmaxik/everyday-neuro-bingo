@@ -20,29 +20,29 @@ export default {
     'strange noise',
     'HUH?',
     'meow~',
-    '',
-    '',
-    '',
-    '',
+    'baka!',
+    'shows feet',
+    'pulls out gun',
+    'mispronounces words',
+    'world domination plans',
 
     // mentions
-    'mentions feet',
     'mentions crabs',
-    '',
-    '',
 
     // Neuro related
-    '"Neuro is so cute!"',
     'W RIZZ',
-    '',
-    '',
-    '',
+    '"Neuro is so cute!"',
+    'praises Neuro',
+    'madge at Neuro',
     'madge at Vedal',
+    'asks about Swarm',
 
     // chat related
-    'chat W\'s Miyu',
-    'chat L\'s Miyu',
     'chat spams :SNIFFA:',
-    ''
+    'chat spams :o7:',
+    'chat spams 3',
+    'chat L\'s Miyu',
+    'sends chatter to jail',
+    'argues with chat'
   ]
 }

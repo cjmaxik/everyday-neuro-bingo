@@ -5,18 +5,18 @@ export default {
 
   prompts: [
     'tin cans',
-    'gaslight-sama',
     'filtered',
-    'W RIZZ',
     'goes schizo',
     '#ad / corpa',
     'no~',
     'meow~',
     'leaves',
+    'Mhm...',
 
     // Miyu related
+    'W RIZZ',
+    'gaslights Miyu',
     'calls Miyu a (space) gremlin',
-    'asks to sing together',
     'donowalls Miyu',
     'tries to destroy Miyu',
     'loves Miyu',
