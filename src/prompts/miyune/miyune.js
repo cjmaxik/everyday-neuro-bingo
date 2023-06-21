@@ -17,32 +17,32 @@ export default {
     'dies from laughter',
     'NOOO~',
     'deez nuts joke',
+    'strange noise',
     '',
     '',
     '',
     '',
     '',
     '',
-    '',
-    '',
-    '',
-    '',
+
+    // mentions
+    'mentions feet',
+    'mentions crabs',
     '',
     '',
 
     // Neuro related
+    '"Neuro is so cute!"',
+    'W RIZZ',
     '',
     '',
+    '',
+    'madge at Vedal',
 
     // chat related
-    '',
-    '',
-    '',
-    '',
-    '',
-    '',
-
-    // twitch meta
+    'chat W\'s Miyu',
+    'chat L\'s Miyu',
+    'chat spams :SNIFFA:',
     ''
   ]
 }

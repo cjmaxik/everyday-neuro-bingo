@@ -112,7 +112,7 @@ export const useGameStateStore = (id) => defineStore(`gameState-${id}`, {
           index,
           participantId: free ? null : seededPrompts[promptIndex].id,
           tally: free ? 1 : 0, // center block is free
-          text: free ? '' : seededPrompts[promptIndex].text || '⚠️missing prompt⚠️',
+          text: free ? '' : seededPrompts[promptIndex].text || '⚠️⚠️⚠️',
           free,
           win: false
         }
