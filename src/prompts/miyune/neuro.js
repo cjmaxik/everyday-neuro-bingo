@@ -16,14 +16,14 @@ export default {
     // Miyu related
     'W RIZZ',
     'gaslights Miyu',
-    'calls Miyu a (space) gremlin',
+    'calls Miyu a\xa0(space) gremlin',
     'donowalls Miyu',
     'tries to destroy Miyu',
     'loves Miyu',
     'hates Miyu',
-    'keeps Miyu as a pet',
+    'keeps Miyu as\xa0a pet',
     'misgenders Miyu',
-    'invents new nickname for Miyu',
+    'invents new nickname for\xa0Miyu',
 
     // chat related
     'chat spams :HUH:',

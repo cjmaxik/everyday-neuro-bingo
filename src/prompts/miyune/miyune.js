@@ -31,7 +31,7 @@ export default {
 
     // Neuro related
     'W RIZZ',
-    '"Neuro is so cute!"',
+    '"Neuro is so\xa0cute!"',
     'praises Neuro',
     'madge at Neuro',
     'madge at Vedal',
