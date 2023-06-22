@@ -5,32 +5,28 @@
       class="q-mt-sm text-center text-h6"
     >
       <StreamTypeItem
-        v-for="(stream, index) in mainBlock"
-        :key="index"
+        v-for="stream in mainBlock"
+        :key="stream.to"
         :to="stream.to"
         :text="stream.text"
-        :featured="stream.isFeatured"
+        :featured="stream.to === featured"
       />
 
       <q-expansion-item
         group="collab"
         label="Collabs"
-        header-class="text-gymbag text-subtitle1"
+        header-class="text-gymbag"
         toggle
         expand-icon-class="collab-toggle"
       >
         <div class="collabs row">
-          <template
-            v-for="(stream, index) in collabBlock"
-            :key="index"
-          >
-            <StreamTypeItem
-              :to="stream.to"
-              :text="stream.text"
-              :featured="stream.isFeatured"
-              class="col-6 col-grow"
-            />
-          </template>
+          <StreamTypeItem
+            v-for="stream in collabBlock"
+            :key="stream.to"
+            :to="stream.to"
+            :text="stream.text"
+            class="col-6 col-grow"
+          />
         </div>
       </q-expansion-item>
     </q-list>
@@ -41,18 +37,21 @@
 // project-related
 import StreamTypeItem from './StreamTypeItem.vue'
 
+const featured = 'xMiyune'
+
 const mainBlock = [
-  { to: 'xMiyune', text: 'Miyune on the Moon', isFeatured: true },
-  { to: 'justChatting', text: 'Regular Neuro streams' },
-  { to: 'devStream', text: 'Streams with Vedal' },
-  { to: 'evilNeuro', text: 'Evil Neuro solo' }
+  { to: 'xMiyune', text: 'Interstellar\xa0Sleepover! feat\xa0Miyune' },
+  { to: 'neuro', text: 'Neuro-sama solo' },
+  { to: 'xVedal', text: 'Streams with Vedal' },
+  { to: 'evil', text: 'Evil Neuro solo' }
 ]
 
 const collabBlock = [
-  { to: 'evilCollab', text: 'Evil Neuro' },
-  { to: 'annyCollab', text: 'anny' },
-  { to: 'filianCollab', text: 'filian' },
-  { to: 'shylilyCollab', text: 'Shylily' },
-  { to: 'familyCollab', text: 'Family stream' }
+  { to: 'xEvil', text: 'Evil Neuro' },
+  { to: 'xAnny', text: 'anny' },
+  { to: 'xMiyune', text: 'Miyune' },
+  { to: 'xFilian', text: 'filian' },
+  { to: 'xShylily', text: 'Shylily' },
+  { to: 'family', text: 'Family' }
 ]
 </script>

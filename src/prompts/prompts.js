@@ -15,9 +15,9 @@ import evilNeuro from './evilNeuro'
 import vedal from './vedal'
 import filian from './filian'
 import anny from './anny'
-import familyCollab from './family/familyCollab'
-import evilCollab from './evil/evilCollab'
-import shylilyCollab from './shylily/shylilyCollab'
+import family from './family/familyCollab'
+import xEvil from './evil/evilCollab'
+import xShylily from './shylily/shylilyCollab'
 import xMiyune from './miyune/miyuneCollab'
 
 // tests
@@ -28,15 +28,15 @@ import emoteTest from './emoteTest'
  * 2. Add the route to ../components/StreamTypeLinks.vue
  */
 export default {
-  justChatting: {
-    name: 'Regular stream',
+  neuro: {
+    name: 'Neuro-sama solo',
     image: 'neuro/neuro.png',
     participants: [
       neuro
     ]
   },
 
-  devStream: {
+  xVedal: {
     name: 'Neuro and Vedal',
     image: 'vedal/vedalCorpa.png',
     participants: [
@@ -44,7 +44,7 @@ export default {
     ]
   },
 
-  evilNeuro: {
+  evil: {
     name: 'Evil Neuro solo',
     image: 'evilNeuro/evilNeuro.png',
     participants: [
@@ -52,11 +52,11 @@ export default {
     ]
   },
 
-  familyCollab,
+  family,
 
-  evilCollab,
+  xEvil,
 
-  filianCollab: {
+  xFilian: {
     name: 'Neuro x filian collab',
     image: 'filian/cupsama.png',
     participants: [
@@ -64,7 +64,7 @@ export default {
     ]
   },
 
-  annyCollab: {
+  xAnny: {
     name: 'Neuro x anny collab',
     image: 'anny/tehepero.png',
     participants: [
@@ -72,7 +72,7 @@ export default {
     ]
   },
 
-  shylilyCollab,
+  xShylily,
 
   xMiyune,
 

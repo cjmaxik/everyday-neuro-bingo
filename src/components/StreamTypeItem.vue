@@ -7,7 +7,7 @@
   >
     <q-item-section class="text-gymbag">
       <q-item-label
-        v-show="featured"
+        v-if="featured"
         caption
       >
         Featured
