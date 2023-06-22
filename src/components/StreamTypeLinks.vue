@@ -37,13 +37,12 @@
 // project-related
 import StreamTypeItem from './StreamTypeItem.vue'
 
-const featured = 'xMiyune'
+const featured = 'evil'
 
 const mainBlock = [
-  { to: 'xMiyune', text: 'Interstellar\xa0Sleepover! feat\xa0Miyune' },
+  { to: 'evil', text: 'Evil Neuro solo' },
   { to: 'neuro', text: 'Neuro-sama solo' },
-  { to: 'xVedal', text: 'Streams with Vedal' },
-  { to: 'evil', text: 'Evil Neuro solo' }
+  { to: 'xVedal', text: 'Streams with Vedal' }
 ]
 
 const collabBlock = [
