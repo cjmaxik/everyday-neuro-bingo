@@ -35,18 +35,18 @@ body:not(.remove-font) {
   background-position: center;
 }
 
-// bingo page
-.bingo-card .bingo-block {
-
-  &.free,
-  &:before {
-    background-repeat: no-repeat;
-    background-size: auto 100%;
-    background-position: center;
-  }
-}
-
 .bingo-card {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-template-rows: repeat(7, 1fr);
+  grid-column-gap: 0;
+  grid-row-gap: 0;
+  margin: auto;
+  width: 1024px;
+  height: 100%;
+  user-select: none;
+  font-size: 20px;
+
   &.fullscreen {
     overflow: auto;
 
@@ -71,11 +71,12 @@ body:not(.remove-font) {
 
     line-height: min(3vh, 20px);
 
-    transition: all 0.25s ease;
+    transition: background-color .25s ease;
 
     &:before {
+      @extend .center-image;
       background-image: var(--tally-image);
-      content: " ";
+      content: "";
       display: block;
       position: absolute;
       left: 0;
@@ -106,6 +107,10 @@ body:not(.remove-font) {
 
     &.active:before {
       opacity: 0.2;
+    }
+
+    &.free {
+      @extend .center-image;
     }
 
     &:not(.free) {
@@ -145,17 +150,6 @@ body:not(.remove-font) {
       border-right-width: 4px;
     }
   }
-
-  display: grid;
-  grid-template-columns: repeat(7, 1fr);
-  grid-template-rows: repeat(7, 1fr);
-  grid-column-gap: 0;
-  grid-row-gap: 0;
-  margin: auto;
-  width: 1024px;
-  height: 100%;
-  user-select: none;
-  font-size: 20px;
 
   &:not(.bingo-card.fullscreen) {
     border-radius: 10px;
