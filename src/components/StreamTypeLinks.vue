@@ -5,7 +5,7 @@
       class="q-mt-sm text-center text-h6"
     >
       <StreamTypeItem
-        v-for="(stream, index) in regularStreams"
+        v-for="(stream, index) in mainBlock"
         :key="index"
         :to="stream.to"
         :text="stream.text"
@@ -21,7 +21,7 @@
       >
         <div class="collabs row">
           <template
-            v-for="(stream, index) in collabStreams"
+            v-for="(stream, index) in collabBlock"
             :key="index"
           >
             <StreamTypeItem
@@ -41,17 +41,18 @@
 // project-related
 import StreamTypeItem from './StreamTypeItem.vue'
 
-const regularStreams = [
-  { to: 'justChatting', text: 'Chill stream' },
-  { to: 'devStream', text: 'Dev stream' },
-  { to: 'evilNeuro', text: 'Evil Neuro solo' },
-  { to: 'familyCollab', text: 'Family stream' }
+const mainBlock = [
+  { to: 'xMiyune', text: 'Miyune on the Moon', isFeatured: true },
+  { to: 'justChatting', text: 'Regular Neuro streams' },
+  { to: 'devStream', text: 'Streams with Vedal' },
+  { to: 'evilNeuro', text: 'Evil Neuro solo' }
 ]
 
-const collabStreams = [
+const collabBlock = [
   { to: 'evilCollab', text: 'Evil Neuro' },
   { to: 'annyCollab', text: 'anny' },
   { to: 'filianCollab', text: 'filian' },
-  { to: 'shylilyCollab', text: 'Shylily' }
+  { to: 'shylilyCollab', text: 'Shylily' },
+  { to: 'familyCollab', text: 'Family stream' }
 ]
 </script>

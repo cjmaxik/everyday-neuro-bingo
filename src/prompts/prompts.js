@@ -18,6 +18,7 @@ import anny from './anny'
 import familyCollab from './family/familyCollab'
 import evilCollab from './evil/evilCollab'
 import shylilyCollab from './shylily/shylilyCollab'
+import xMiyune from './miyune/miyuneCollab'
 
 // tests
 import emoteTest from './emoteTest'
@@ -28,7 +29,7 @@ import emoteTest from './emoteTest'
  */
 export default {
   justChatting: {
-    name: 'Chill stream',
+    name: 'Regular stream',
     image: 'neuro/neuro.png',
     participants: [
       neuro
@@ -72,6 +73,8 @@ export default {
   },
 
   shylilyCollab,
+
+  xMiyune,
 
   // TEST BOARDS
   emoteTest: {
