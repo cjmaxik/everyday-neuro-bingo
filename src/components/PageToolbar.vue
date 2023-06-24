@@ -25,10 +25,10 @@
       <DefaultTransition>
         <q-chip
           v-show="settings.streamName"
-          :ripple="false"
-          text-color="gymbag"
           color="white"
+          :ripple="false"
           style="user-select: none;"
+          text-color="gymbag"
         >
           {{ realStreamName }}
         </q-chip>
@@ -39,16 +39,16 @@
       <DefaultTransition>
         <q-btn
           v-show="settings.streamName && $q.fullscreen.isCapable"
-          stretch
           dense
-          flat
           fab-mini
+          flat
           :icon="$q.fullscreen.isActive ? 'fullscreen_exit' : 'fullscreen'"
+          stretch
           @click="goFullscreen()"
         >
           <q-tooltip
-            class="text-body2 bg-gymbag"
             anchor="bottom left"
+            class="text-body2 bg-gymbag"
           >
             Fullscreen board
           </q-tooltip>

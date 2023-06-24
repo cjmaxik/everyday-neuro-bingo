@@ -1,31 +1,31 @@
 <template>
   <div class="bg-white shadow-5 shadow-transition">
     <q-list
-      separator
       class="q-mt-sm text-center text-h6"
+      separator
     >
       <StreamTypeItem
         v-for="stream in mainBlock"
         :key="stream.to"
-        :to="stream.to"
-        :text="stream.text"
         :featured="stream.to === featured"
+        :text="stream.text"
+        :to="stream.to"
       />
 
       <q-expansion-item
-        group="collab"
-        label="Collabs"
-        header-class="text-gymbag"
-        toggle
         expand-icon-class="collab-toggle"
+        group="collab"
+        header-class="text-gymbag"
+        label="Collabs"
+        toggle
       >
         <div class="collabs row">
           <StreamTypeItem
             v-for="stream in collabBlock"
             :key="stream.to"
-            :to="stream.to"
-            :text="stream.text"
             class="col-6 col-grow"
+            :text="stream.text"
+            :to="stream.to"
           />
         </div>
       </q-expansion-item>

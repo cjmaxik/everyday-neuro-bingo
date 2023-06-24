@@ -1,9 +1,9 @@
 <template>
   <q-item
-    clickable
-    :to="to"
-    exact
     :class="{ 'bg-kekwa-half': featured }"
+    clickable
+    exact
+    :to="to"
   >
     <q-item-section class="text-gymbag">
       <q-item-label

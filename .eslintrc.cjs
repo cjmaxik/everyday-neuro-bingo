@@ -83,7 +83,8 @@ module.exports = {
         'OTHER_ATTR',
         'EVENTS',
         'CONTENT'
-      ]
+      ],
+      alphabetical: true
     }],
 
     // allow debugger during development only

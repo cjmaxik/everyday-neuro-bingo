@@ -1,17 +1,17 @@
 <template>
   <q-btn
     dense
+    fab-mini
     flat
+    icon="help"
     no-caps
     stretch
-    fab-mini
-    icon="help"
     @click="openAboutModal = true"
   >
     <q-tooltip
-      right
       anchor="bottom left"
       class="text-body2 bg-gymbag"
+      right
     >
       About
     </q-tooltip>

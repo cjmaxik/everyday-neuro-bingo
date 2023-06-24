@@ -6,10 +6,10 @@
   <transition
     v-else
     appear
+    :duration="70"
     enter-active-class="animated fadeIn"
     leave-active-class="animated fadeOut"
     mode="out-in"
-    :duration="70"
   >
     <slot />
   </transition>

@@ -28,12 +28,12 @@
           <BingoBlockItem
             v-else
             :block="block"
-            :participant="state.participants[block.participantId]"
-            :hide-tally="settings.hideTally"
-            :emotes="settings.emotes"
             :class="`${block.participantId}-block`"
-            @increment="increment(block)"
+            :emotes="settings.emotes"
+            :hide-tally="settings.hideTally"
+            :participant="state.participants[block.participantId]"
             @decrement="decrement(block)"
+            @increment="increment(block)"
           />
         </template>
       </div>
@@ -45,8 +45,8 @@
         <div class="row justify-center items-center">
           <div class="text-center q-pa-xs">
             <img
-              src="/assets/images/gymbag.png"
               alt="Loading..."
+              src="/assets/images/gymbag.png"
             >
             <h2 class="text-gymbag">
               Loading...

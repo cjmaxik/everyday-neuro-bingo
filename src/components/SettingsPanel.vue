@@ -1,15 +1,15 @@
 <template>
   <q-btn
-    stretch
     dense
-    flat
     fab-mini
+    flat
     icon="settings"
+    stretch
     @click="openSettingsModal = true"
   >
     <q-tooltip
-      class="text-body2 bg-gymbag"
       anchor="bottom left"
+      class="text-body2 bg-gymbag"
     >
       Settings
     </q-tooltip>
@@ -24,24 +24,24 @@
         <q-item tag="label">
           <q-checkbox
             v-model="settings.removeFont"
-            label="Default font"
             keep-color
+            label="Default font"
           />
         </q-item>
 
         <q-item tag="label">
           <q-checkbox
             v-model="settings.disableSound"
-            label="Disable sound"
             keep-color
+            label="Disable sound"
           />
         </q-item>
 
         <q-item tag="label">
           <q-checkbox
             v-model="settings.hideTally"
-            label="Hide tally"
             keep-color
+            label="Hide tally"
           />
         </q-item>
       </q-card-section>
@@ -57,13 +57,13 @@
 
             <q-btn-toggle
               v-model="settings.emotes"
-              toggle-color="gymbag"
               no-caps
               :options="[
                 { label: 'Animated', value: 'animated' },
                 { label: 'Static', value: 'static' },
                 { label: 'Text', value: 'text' }
               ]"
+              toggle-color="gymbag"
             />
           </q-item-section>
         </q-item>

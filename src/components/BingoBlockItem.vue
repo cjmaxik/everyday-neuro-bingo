@@ -17,8 +17,8 @@
               :key="emote.name"
             >
               <img
-                :src="(emotes === 'animated' && focusedPage) ? emote.src.animated : emote.src.static"
                 :alt="emote.name"
+                :src="(emotes === 'animated' && focusedPage) ? emote.src.animated : emote.src.static"
               >
             </template>
           </div>

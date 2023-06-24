@@ -15,11 +15,11 @@
       <q-btn
         class="q-mt-xl"
         color="white"
-        text-color="gymbag"
-        unelevated
-        to="/"
         label="Go Home"
         no-caps
+        text-color="gymbag"
+        to="/"
+        unelevated
       />
     </div>
   </div>
