@@ -11,23 +11,16 @@
 
       <q-btn
         v-close-popup
-        flat
-        round
         dense
+        flat
         icon="close"
+        round
       />
     </q-toolbar>
 
-    <q-card-section>
-      <p>
-        New Bingo card every day! <br v-show="$q.screen.lt.sm">Watch Neuro-sama's streams and follow along. Share your
-        cards on <a
-          ref="noopener noreferrer"
-          href="https://discord.gg/neurosama"
-          target="_blank"
-        >Neurocord</a> in <span class="text-bold">#livestream-chat</span> channel.
-      </p>
+    <HowToPlayPanel v-if="!isIndex" />
 
+    <q-card-section>
       <p class="no-margin">
         Brought to you by:
       </p>
@@ -49,7 +42,7 @@
       </ul>
 
       <p>
-        Includes art by Rune, 2Pfrog, niceaccoun, lingyou, anny, Beyumi, M3gur3n, Kaz, shouu_kyun and other distinguished
+        Includes art by Rune, 2Pfrog, niceaccoun, lingyou, anny, Beyumi, M3gur3n, Kaz, shouu_kyun, and other distinguished
         artists.<br>Source code is available on <a
           ref="noopener noreferrer"
           href="https://github.com/cjmaxik/everyday-neuro-bingo"
@@ -57,20 +50,9 @@
         >GitHub</a>.
       </p>
 
-      <hr v-show="isIndex">
+      <hr>
 
-      <p v-show="!isIndex">
-        <q-img src="/assets/images/banner.png">
-          <div class="absolute-bottom-right text-subtitle2 flex text-center">
-            <p>
-              <span class="text-bold">Neuro-sama</span> is an AI-powered VTuber created by vedal987. She can
-              chat, sing, react to videos, and play games.
-            </p>
-          </div>
-        </q-img>
-      </p>
-
-      <p v-show="isIndex">
+      <p class="text-center">
         <span class="text-gymbag text-bold">Neuro-sama</span> is an AI-powered VTuber created by vedal987. She can chat,
         sing, react to videos, and play games.
       </p>
@@ -127,10 +109,11 @@
 </template>
 
 <script setup>
+import HowToPlayPanel from './HowToPlayPanel.vue'
+
 defineProps({
   isIndex: {
     type: Boolean,
-    required: false,
     default: false
   }
 })
