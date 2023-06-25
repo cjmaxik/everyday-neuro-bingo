@@ -28,8 +28,8 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Install Quasar CLI
-        run: npm i -g @quasar/cli
+      - name: Install the sarif
+        run: npm install @microsoft/eslint-formatter-sarif@2.1.7
 
       - name: Install the app
         run: npm i
