@@ -1,7 +1,7 @@
 export default {
   id: 'evilNeuro',
   name: 'Evil Neuro',
-  color: '#000',
+  color: '#700b1b',
 
   image: 'robot.png',
 
