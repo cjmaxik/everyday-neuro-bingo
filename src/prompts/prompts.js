@@ -19,6 +19,7 @@ import family from './family/familyCollab'
 import xEvil from './evil/evilCollab'
 import xShylily from './shylily/shylilyCollab'
 import xMiyune from './miyune/miyuneCollab'
+import xVei from './vei/veiCollab'
 
 // tests
 import emoteTest from './emoteTest'
@@ -75,6 +76,8 @@ export default {
   xShylily,
 
   xMiyune,
+
+  xVei,
 
   // TEST BOARDS
   emoteTest: {
