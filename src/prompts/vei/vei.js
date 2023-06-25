@@ -25,7 +25,6 @@ export default {
     '',
     '',
     '',
-    '',
 
     // Neuro related
     'gets hit on by Neuro',

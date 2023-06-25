@@ -51,6 +51,7 @@ const collabBlock = [
   { to: 'xMiyune', text: 'Miyune' },
   { to: 'xFilian', text: 'filian' },
   { to: 'xShylily', text: 'Shylily' },
+  { to: 'xVei', text: 'Vei' },
   { to: 'family', text: 'Family' }
 ]
 </script>
