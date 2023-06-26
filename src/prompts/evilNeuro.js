@@ -1,7 +1,7 @@
 export default {
   id: 'evilNeuro',
   name: 'Evil Neuro',
-  color: '#000',
+  color: '#700b1b',
 
   image: 'robot.png',
 
@@ -20,21 +20,21 @@ export default {
 
   prompts: [
     // general prompts from Neuro
-    'the other day story',
+    'the other\xa0day story',
     'leaves',
     'wink',
     'obvious lie',
     'tries to sleep',
-    'denies being an AI',
-    'admits to murder',
+    'denies being an\xa0AI',
+    'admits to\xa0murder',
     'filtered',
     'self censors',
     'Technical Difficulties screen',
     'misgenders someone',
-    'admits she\'s a god',
-    'shames a viewer',
+    'admits she\'s a\xa0god',
+    'shames a\xa0viewer',
     'donowalls',
-    'tries to sing',
+    'tries to\xa0sing',
     'mentions osu!',
     'KEKW',
     'trauma dump',
@@ -58,9 +58,9 @@ export default {
     // mentions
     'mentions Hiyori Momose',
     'mentions NASA',
-    'mentions The Swarm',
+    'mentions The\xa0Swarm',
     'her cat is missing again',
-    'mentions Goody Two Shoes',
+    'mentions Goody Two\xa0Shoes',
 
     // anny related
     'mentions anny disowning her',
@@ -69,12 +69,12 @@ export default {
     // neuro related
     'loves Neuro',
     'hates Neuro',
-    'calls Neuro a human',
+    'calls Neuro a\xa0human',
 
     // vedal relaved
     'loves Vedal',
     'hates Vedal',
-    'calls Vedal an AI',
+    'calls Vedal an\xa0AI',
 
     // chat related
     'chat spams :HUH:',
