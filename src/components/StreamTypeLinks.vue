@@ -7,7 +7,7 @@
       <StreamTypeItem
         v-for="stream in mainBlock"
         :key="stream.to"
-        :featured="stream.to === featured"
+        :featured="featured && stream.to === featured"
         :text="stream.text"
         :to="stream.to"
       />
@@ -37,12 +37,12 @@
 // project-related
 import StreamTypeItem from './StreamTypeItem.vue'
 
-const featured = 'evil'
+const featured = null
 
 const mainBlock = [
-  { to: 'evil', text: 'Evil Neuro solo' },
   { to: 'neuro', text: 'Neuro-sama solo' },
-  { to: 'xVedal', text: 'Streams with Vedal' }
+  { to: 'xVedal', text: 'Streams with Vedal' },
+  { to: 'evil', text: 'Evil Neuro solo' }
 ]
 
 const collabBlock = [
