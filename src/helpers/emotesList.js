@@ -28,6 +28,7 @@ export default {
   Erm: '6457cd665e44c83ed95b5139',
   Evilge: '628e74a1ce2df92d9564b98f',
   Flushed: '60e08f3ff6ce8aae54fb8f26',
+  FRICK: '64988b773b4504dd621da976',
   hiyori: '647a9bd60c7cd505faf3580d',
   HUH: '618302fe8d50b5f26ee7b9bc',
   KEKW: '60a487509485e7cf2f5a6fa7',
