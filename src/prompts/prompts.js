@@ -38,7 +38,7 @@ export default {
 
   neuRandom: {
     name: 'Neuro-sama solo (random board)',
-    image: 'neuro/neuro.png',
+    image: 'neuro/random/neuro{x}.png',
     participants: [
       neuro
     ],

@@ -96,8 +96,12 @@ export const useGameStateStore = (id) => defineStore(`gameState-${id}`, {
       })
 
       this.streamName = streamData.name
-      this.freeBlockImage = `${assetsPath}/images/${streamData.image}`
       this.participants = participants
+
+      if (streamData.image.includes('{x}')) {
+        streamData.image = streamData.image.replace('{x}', newSeed % 10)
+      }
+      this.freeBlockImage = `${assetsPath}/images/${streamData.image}`
 
       // Check if the version, seed and/or stream type has changed
       if (process.env.NODE_ENV !== 'development') {
