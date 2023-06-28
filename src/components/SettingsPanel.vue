@@ -71,6 +71,14 @@
 
       <q-separator />
 
+      <q-card-section
+        v-if="isBingoPage"
+        class="text-center no-padding"
+        style="padding-top: 8px !important;"
+      >
+        <span>Current seed: {{ state.seed }}</span>
+      </q-card-section>
+
       <q-card-actions vertical>
         <q-btn
           v-show="isBingoPage"
