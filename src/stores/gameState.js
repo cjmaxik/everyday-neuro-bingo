@@ -99,7 +99,7 @@ export const useGameStateStore = (id) => defineStore(`gameState-${id}`, {
       this.participants = participants
 
       if (streamData.image.includes('{x}')) {
-        streamData.image = streamData.image.replace('{x}', newSeed % 10)
+        streamData.image = streamData.image.replace('{x}', Math.abs(newSeed % 10))
       }
       this.freeBlockImage = `${assetsPath}/images/${streamData.image}`
 
