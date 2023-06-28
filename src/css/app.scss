@@ -35,6 +35,12 @@ body:not(.remove-font) {
   background-position: center;
 }
 
+.random-info {
+  margin: auto;
+  width: 1024px;
+  margin-top: 20px;
+}
+
 .bingo-card {
   display: grid;
   grid-template-columns: repeat(7, 1fr);

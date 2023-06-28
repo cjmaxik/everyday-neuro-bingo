@@ -49,12 +49,28 @@
               src="/assets/images/gymbag.png"
             >
             <h2 class="text-gymbag">
-              Loading...
+              Stay tuned...
             </h2>
           </div>
         </div>
       </div>
     </transition-group>
+
+    <q-banner
+      v-if="streamData.random"
+      class="random-info bg-primary text-white text-center shadow-5"
+      padding
+      rounded
+    >
+      <p>
+        <strong>NOTE:</strong> This is a randomized board created specifically for you. It is based on your current
+        browser, supported languages, and current date. If you have any issues with the board (namely, that it changes
+        after every page reload), please reach out in the "Everyday Neuro Bingo" discussion of Neurocord.
+      </p>
+      <p class="no-margin">
+        Everyday Neuro Bingo website does not collect your data. Everything is stored on your device.
+      </p>
+    </q-banner>
   </q-page>
 </template>
 
@@ -66,7 +82,7 @@ import { useQuasar } from 'quasar'
 // project-related
 import BingoBlockItem from '../components/BingoBlockItem.vue'
 
-import { generateSeedPhrase, getRandomInt } from 'src/helpers/helpers'
+import { getRandomInt } from 'src/helpers/helpers'
 import prompts from '../prompts/prompts'
 
 // states
@@ -90,9 +106,6 @@ const settings = useGameSettingsStore()
 // Quasar object
 const $q = useQuasar()
 
-// generate board
-// seed - current date in UTC
-const seedPhrase = generateSeedPhrase()
 const version = 3
 const streamData = prompts[streamType]
 
@@ -103,7 +116,7 @@ onBeforeUnmount(() => {
   document.title = 'Everyday Neuro Bingo'
 })
 
-state.generateBoard(streamData, seedPhrase, version)
+state.generateBoard(streamData, version)
 
 // styles
 onMounted(async () => {

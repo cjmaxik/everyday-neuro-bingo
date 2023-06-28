@@ -37,9 +37,10 @@
 // project-related
 import StreamTypeItem from './StreamTypeItem.vue'
 
-const featured = null
+const featured = 'neuRandom'
 
 const mainBlock = [
+  { to: 'neuRandom', text: 'Neuro-sama solo (random board)' },
   { to: 'neuro', text: 'Neuro-sama solo' },
   { to: 'xVedal', text: 'Streams with Vedal' },
   { to: 'evil', text: 'Evil Neuro solo' }
