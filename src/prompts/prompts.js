@@ -36,6 +36,15 @@ export default {
     ]
   },
 
+  neuRandom: {
+    name: 'Neuro-sama\'s random board',
+    image: 'neuro/random/neuro{x}.png',
+    participants: [
+      neuro
+    ],
+    random: true
+  },
+
   xVedal: {
     name: 'Neuro and Vedal',
     image: 'vedal/vedalCorpa.png',
