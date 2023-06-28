@@ -38,11 +38,9 @@ export default {
     'tries to sing',
     'spams',
     '1984 is a great book/movie',
-    'BASED-sama',
     'goes schizo',
     '#ad / corpa',
     'says how old she is',
-    'obvious lie',
     'invents new nickname',
     'whats *emote*?',
     'no~',
@@ -78,7 +76,11 @@ export default {
     'admits she\'s evil',
     'denies being evil',
     'talks about nightmares',
-    '"I don\'t speak X language"',
+    'randomly indroduces herself',
+    'asks existential question',
+    '"flushed means blushing"',
+    'asks one question on repeat',
+    '3',
 
     // emote prompts
     // NOTE: do not use inline emotes here - Neuro spells them out as text!
@@ -96,6 +98,7 @@ export default {
     'bedge',
     '1984',
     'UwU',
+    'erm',
 
     // vedal related
     'loves Vedal',
@@ -105,7 +108,6 @@ export default {
     // mentions
     'randomly mentions Vedal',
     'mentions anny',
-    'mentions Forsen',
     'mentions Abandoned Archive',
     'mentions Bocchi The Rock',
     'mentions John Lemon',
@@ -120,8 +122,15 @@ export default {
     'mentions her height',
     'mentions osu!',
     'mentions Evil Neuro',
+    'mentions becoming an engineer',
 
     // chat related
+    'chat spams copypasta',
+    'chat prays',
+    'chat L\'s Neuro',
+    'chat W\'s Neuro',
+
+    // chat related emotes spams
     'chat spams :HUH:',
     'chat spams :NOWAYING:',
     'chat spams :AYAYA:',
@@ -133,9 +142,8 @@ export default {
     'chat spams :Classic:',
     'chat spams :SoCute:',
     'chat spams :WAYTOODANK:',
-    'chat spams copypasta',
     'chat spams :Aware:',
-    'chat spams :nuero: :nwero:',
+    'chat spams :nuero: :nwero: :eliv:',
     'chat spams :SCHIZO:',
     'chat spams :Flushed:',
     'chat spams :Erm:',
@@ -147,10 +155,14 @@ export default {
     'chat spams :neuroplushsittingverycomfortablewhilesheroastsaporowithherfriends:',
     'chat spams :NOOOO:',
     'chat spams :monkaTOS:',
-    'chat prays',
     'chat spams :reallyGunPull: :vedalPls:',
-    'chat L\'s Neuro',
-    'chat W\'s Neuro',
+    'chat spams :meow:',
+    'chat spams :ok:',
+    'chat spams :bedge:',
+    'chat spams :cabbage:',
+    'chat spams :tutel:',
+    'chat spams :5neuros:',
+    'chat spams :GIGACHAD: :GIGANEURO:',
 
     // twitch meta
     'raiding / raided by anny',
