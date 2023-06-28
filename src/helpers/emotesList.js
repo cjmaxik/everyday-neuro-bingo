@@ -17,22 +17,29 @@
  * Emote list
  */
 export default {
+  '5neuros': '646bc5a60dd3d2547286c413',
   AnnyLebronJam: '63b062b36fddd93053cc5eaf',
   Aware: '6145e8b10969108b671957ec_50', // overridden
   AYAYA: '60cb2e0194befb7c93dbe281',
   BASED: '6043181d1d4963000d9dae39',
+  Bedge: '60ae8d9ff39a7552b658b60d',
   BOOBA: '60aea4074b1ea4526d3c97a9_30', // overridden
+  cabbage: '648310557adff20811b17377',
   Classic: '630db7e07b84e74996da9552',
   Clueless: '60b14a737a157a7f3360fb32',
   COPIUM: '60ae4ec30e35477634988c18',
+  eliv: '6498874220093dc8244b3a43',
   Erm: '6457cd665e44c83ed95b5139',
   Evilge: '628e74a1ce2df92d9564b98f',
   Flushed: '60e08f3ff6ce8aae54fb8f26',
   FRICK: '64988b773b4504dd621da976',
+  GIGACHAD: '60ae958e229664e8667aea38_20', // overridden
+  GIGANEURO: '6499d70f20093dc8244b8063_50', // overridden
   hiyori: '647a9bd60c7cd505faf3580d',
   HUH: '618302fe8d50b5f26ee7b9bc',
   KEKW: '60a487509485e7cf2f5a6fa7',
   LUBBERS: '61dbaa5d57c70f633ebd72cb',
+  meow: '60aecb385174a619dbc175be',
   monkaTOS: '60aea4c0f39a7552b6139da4',
   monkaW: '60aef3e4b74ea8ff797ae5ac',
   neuroplushsittingverycomfortablewhilesheroastsaporowithherfriends: '647395df55b41edda8c738c1',
@@ -41,6 +48,7 @@ export default {
   nuero: '641b51662632d8d9a76e4bc3',
   nwero: '64599803b33f908e9145b9d8',
   o7: '61de32c05001b6b33b2e32c8',
+  ok: '6268904f4f54759b7184fa72',
   PauseSama: '642f5401339a2c2d2e641cdf',
   POG: '603eaaa9115b55000d7282d8',
   poggers: '60af1ba684a2b8e655387bba',
