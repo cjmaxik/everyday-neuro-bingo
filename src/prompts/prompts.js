@@ -3,7 +3,7 @@
  */
 import neuro from './neuro'
 import evilNeuro from './evilNeuro'
-import minecraftNeuro from './gamerNeuro/minecraftNeuro'
+import minecraftNeuro from './minecraftNeuro'
 
 /**
  * Collabs
@@ -80,7 +80,7 @@ export default {
 
   minecraftNeuro: {
     name: 'Neuro-sama plays Minecraft',
-    image: 'gamerNeuro/minecraft/minecraftskin.png',
+    image: 'minecraftNeuro/minecraftskin.png',
     participants: [
       minecraftNeuro
     ]
