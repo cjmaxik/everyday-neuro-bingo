@@ -30,7 +30,7 @@ import emoteTest from './emoteTest'
 export default {
   neuro: {
     name: 'Neuro-sama solo',
-    image: 'neuro/neuro.png',
+    image: 'neuro/random/neuro{x}.png',
     participants: [
       neuro
     ],
