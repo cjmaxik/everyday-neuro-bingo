@@ -1,7 +1,7 @@
+import neuro from './neuro'
+
 export default {
-  id: 'minecraftNeuro',
-  name: 'Minecraft Neuro',
-  color: '#843a49',
+  ...neuro,
 
   image: 'neurolava.png',
 
