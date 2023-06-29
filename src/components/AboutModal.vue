@@ -42,8 +42,8 @@
       </ul>
 
       <p>
-        Includes art by Rune, 2Pfrog, niceaccoun, lingyou, anny, Beyumi, M3gur3n, Kaz, shouu_kyun, dmaxcustom, and other
-        distinguished&nbsp;artists.<br>Source code is available on <a
+        Includes art by Rune, 2Pfrog, niceaccoun, lingyou, anny, Beyumi, M3gur3n, Kaz, shouu_kyun, dmaxcustom,
+        MapleNephthys, Bungee and other distinguished&nbsp;artists.<br>Source code is available on <a
           ref="noopener noreferrer"
           href="https://github.com/cjmaxik/everyday-neuro-bingo"
           target="_blank"
