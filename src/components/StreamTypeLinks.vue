@@ -43,6 +43,7 @@ const mainBlock = [
   { to: 'neuro', text: 'Neuro-sama solo' },
   { to: 'xVedal', text: 'Streams with Vedal' },
   { to: 'evil', text: 'Evil Neuro solo' }
+  { to: 'minecraftNeuro', text: 'Neuro plays minecraft' }
 ]
 
 const collabBlock = [

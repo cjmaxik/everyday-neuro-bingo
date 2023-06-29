@@ -3,6 +3,7 @@
  */
 import neuro from './neuro'
 import evilNeuro from './evilNeuro'
+import minecraftNeuro from './gamerNeuro/minecraftNeuro'
 
 /**
  * Collabs
@@ -76,6 +77,14 @@ export default {
   xShylily,
 
   xMiyune,
+
+  minecraftNeuro: {
+    name: 'Neuro-sama plays Minecraft',
+    image: 'gamerNeuro/minecraft/minecraftskin.png',
+    participants: [
+      minecraftNeuro
+    ]
+  },
 
   // TEST BOARDS
   emoteTest: {
