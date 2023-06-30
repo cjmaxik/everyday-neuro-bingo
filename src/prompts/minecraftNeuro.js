@@ -3,8 +3,6 @@ import neuro from './neuro'
 export default {
   ...neuro,
 
-  image: 'neurolava.png',
-
   sounds: [
     'bedrockismineable.mp3'
   ],
