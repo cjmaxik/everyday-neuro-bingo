@@ -6,9 +6,9 @@
   "author": "CJMAXiK <me@cjmaxik.ru>",
   "private": true,
   "scripts": {
-    "lint": "eslint --ext .js,.vue ./",
     "dev": "quasar dev",
     "build": "quasar build",
+    "lint": "eslint --ext .js,.vue ./",
     "lint-fix": "eslint --ext .js,.vue ./ --fix"
   },
   "dependencies": {
