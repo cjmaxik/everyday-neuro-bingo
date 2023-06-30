@@ -4,7 +4,10 @@ export default {
   ...neuro,
 
   sounds: [
-    'bedrockismineable.mp3'
+    'bedrockismineable.mp3',
+    'diggingisfun.mp3',
+    'fallingintolava.mp3',
+    'minecraftisfun.mp3'
   ],
 
   prompts: [
@@ -19,9 +22,8 @@ export default {
     'rants',
     'wot? / what?',
     'D',
-    'Technical Difficulties screen',
+    'any kind of tech\xa0issue',
     'feel free to ask me anything',
-    'donowalls LomiBox specifically',
     'randomly indroduces herself',
     'asks existential question',
     '"flushed means blushing"',
@@ -33,6 +35,7 @@ export default {
     '',
     '',
     '',
+    '',
 
     // minecraft prompts
     'dies in lava',
@@ -40,13 +43,13 @@ export default {
     'digs straight\xa0down',
     'drowns',
     'destroys diamond\xa0ore',
-    'gets /kill\'ed',
+    'gets killed by Vedal',
     'mines bedrock',
-    'obsessively mines obsidian barehandedly',
+    'obsessively hand-mines obsidian',
     'dies from hostile\xa0mob',
-    '',
-    '',
-    '',
+    'accidental Nether trip', 
+    'attempts to dig\xa0the\xa0sky', 
+    'throws away rare item',
     '',
     '',
 
