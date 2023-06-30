@@ -28,14 +28,14 @@
         <li>
           <a
             ref="noopener noreferrer"
-            href="https://cjmaxik.ru"
+            href="https://cjmaxik.ru?ref=neuro-bingo"
             target="_blank"
           >CJMAXiK</a> - Lead Developer
         </li>
         <li>
           <a
             ref="noopener noreferrer"
-            href="https://discord.com/users/215881919206785024"
+            href="https://discord.com/users/215881919206785024?ref=neuro-bingo"
             target="_blank"
           >tioopental</a> - Lead Prompt Editor
         </li>
@@ -45,7 +45,7 @@
         Includes art by Rune, 2Pfrog, niceaccoun, lingyou, anny, Beyumi, M3gur3n, Kaz, shouu_kyun, dmaxcustom,
         MapleNephthys, Bungee and other distinguished&nbsp;artists.<br>Source code is available on <a
           ref="noopener noreferrer"
-          href="https://github.com/cjmaxik/everyday-neuro-bingo"
+          href="https://github.com/cjmaxik/everyday-neuro-bingo?ref=neuro-bingo"
           target="_blank"
         >GitHub</a>.
       </p>
@@ -53,7 +53,11 @@
       <hr>
 
       <p class="text-center">
-        <span class="text-gymbag text-bold">Neuro-sama</span> is an AI-powered VTuber created by vedal987. She can chat,
+        <span class="text-gymbag text-bold">Neuro-sama</span> is an AI-powered VTuber created by <a
+          ref="noopener noreferrer"
+          href="https://vedal.xyz/?ref=neuro-bingo"
+          target="_blank"
+        >Vedal</a>. She can chat,
         sing, react to videos, and play games.
       </p>
 
