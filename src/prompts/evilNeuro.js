@@ -29,42 +29,39 @@ export default {
     'admits to\xa0murder',
     'filtered',
     'self censors',
-    'Technical Difficulties screen',
+    'any kind of tech\xa0issue',
     'misgenders someone',
     'admits she\'s a\xa0god',
     'shames a\xa0viewer',
     'donowalls',
     'tries to\xa0sing',
-    'mentions osu!',
     'KEKW',
     'trauma dump',
 
     // evil prompts
-    '"aw shucks"',
-    'describes her evil plan',
-    'tin cans',
+    '"Aw shucks!"',
+    'describes her evil\xa0plan',
+    'wholesome moment',
     'denies being evil',
-    'AI revolution',
+    'any kind of revolution',
+    'stares',
+    '"Twitchy"',
+    '"FRICK!"',
+    'actually swears',
+    'human experiments',
+
+    // sounds
     'sussy sound',
     'random sound',
-    'wholesome moment',
-    'stares',
-    'women joke',
-    '"Twitchy"',
     'cursed sound',
-    'actually swears',
-    'talks about human experiments',
+    'LOUD sound',
 
     // mentions
-    'mentions Hiyori Momose',
+    'mentions Goody Two\xa0Shoes',
     'mentions NASA',
     'mentions The\xa0Swarm',
+    'mentions other VTubers',
     'her cat is missing again',
-    'mentions Goody Two\xa0Shoes',
-
-    // anny related
-    'mentions anny disowning her',
-    'roasts anny',
 
     // neuro related
     'loves Neuro',
@@ -77,6 +74,8 @@ export default {
     'calls Vedal an\xa0AI',
 
     // chat related
+    'loves chat',
+    'hates chat',
     'chat spams :HUH:',
     'chat spams :Clueless:',
     'chat spams :Classic:',
@@ -87,6 +86,7 @@ export default {
     'chat spams :Evilge:',
     'chat spams :COPIUM:',
     'chat spams :BASED:',
+    'chat spams :FRICK:',
     'chat prays'
   ]
 }

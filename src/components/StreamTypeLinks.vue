@@ -37,7 +37,7 @@
 // project-related
 import StreamTypeItem from './StreamTypeItem.vue'
 
-const featured = null
+const featured = 'neuro'
 
 const mainBlock = [
   { to: 'neuro', text: 'Neuro-sama solo' },

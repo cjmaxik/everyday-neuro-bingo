@@ -4,7 +4,13 @@ import { useLocalStorage } from '@vueuse/core'
 
 // project-related
 import seedrandom from 'seedrandom'
-import { generatePrompts, deepCopy, winningLines } from '../helpers/helpers'
+import {
+  generatePrompts,
+  deepCopy,
+  winningLines,
+  generateDailySeed,
+  generateBrowserSeed
+} from '../helpers/helpers'
 
 const streakCount = 7
 const boardSize = Math.pow(streakCount, 2)
@@ -49,12 +55,22 @@ export const useGameStateStore = (id) => defineStore(`gameState-${id}`, {
     },
 
     /**
-     * @param {Object} streamData Prompts
-     * @param {number} seedPhrase Seed
+     * @typedef StreamData
+     * @type {Object}
+     * @property {string} image
+     * @property {string} name
+     * @property {ParticipantData[]} participants
+     * @property {boolean?} random
+     */
+
+    /**
+     * @param {StreamData} streamData Prompts
      * @param {number} version Dataset version
     */
-    generateBoard (streamData, seedPhrase, version) {
+    generateBoard (streamData, version) {
+      const seedPhrase = streamData.random ? generateBrowserSeed() : generateDailySeed()
       const newSeed = seedrandom(seedPhrase, { state: true }).int32()
+      console.log('Random board?', streamData.random, seedPhrase, newSeed)
 
       const participants = {}
       const allPrompts = []
@@ -80,8 +96,12 @@ export const useGameStateStore = (id) => defineStore(`gameState-${id}`, {
       })
 
       this.streamName = streamData.name
-      this.freeBlockImage = `${assetsPath}/images/${streamData.image}`
       this.participants = participants
+
+      if (streamData.image.includes('{x}')) {
+        streamData.image = streamData.image.replace('{x}', Math.abs(newSeed % 10))
+      }
+      this.freeBlockImage = `${assetsPath}/images/${streamData.image}`
 
       // Check if the version, seed and/or stream type has changed
       if (process.env.NODE_ENV !== 'development') {

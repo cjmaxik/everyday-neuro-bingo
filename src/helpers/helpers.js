@@ -128,7 +128,21 @@ export const getRandomInt = (min, max) => {
  * Generates seed phrase based on a current date in UTC timezone
  * @returns {string} Seed phrase
  */
-export const generateSeedPhrase = () => ''.concat(new Date().getUTCDate(), new Date().getUTCMonth(), new Date().getUTCFullYear())
+export const generateDailySeed = () => ''.concat(
+  new Date().getUTCDate(),
+  new Date().getUTCMonth(),
+  new Date().getUTCFullYear()
+)
+
+/**
+ * Generates seed phrase based on a browser + current date in UTC timezone
+ * @returns {string} Seed phrase
+ */
+export const generateBrowserSeed = () => ''.concat(
+  window.navigator?.userAgent ?? 'The Swarm',
+  window.navigator?.languages.toString() ?? 'en-US',
+  new Date().getUTCDate()
+).replaceAll(' ', '')
 
 /**
  * Winning lines for the board
