@@ -39,7 +39,7 @@ export default {
     // minecraft prompts
     'dies in lava',
     'dies from a fall\xa0damage',
-    'mines straight\xa0down',
+    'digs straight\xa0down',
     'drowns',
     'destroys diamond\xa0ore',
     'gets /kill\'ed',
@@ -63,7 +63,7 @@ export default {
     'chat spams :neuroLava:',
     'chat spams :NOOOO:',
     'chat spams :SCHIZO:',
-    'chat spams saved',
+    'chat spams SAVED',
 
     // twitch meta
     'shames a viewer'
