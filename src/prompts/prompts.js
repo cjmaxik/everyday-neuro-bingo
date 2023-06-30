@@ -78,7 +78,7 @@ export default {
 
   xMiyune,
 
-  minecraftNeuro: {
+  miNeuro: {
     name: 'Neuro-sama plays Minecraft',
     image: 'minecraftNeuro/minecraftskin.png',
     participants: [
