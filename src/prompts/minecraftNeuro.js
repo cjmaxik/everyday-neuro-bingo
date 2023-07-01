@@ -1,7 +1,8 @@
 import neuro from './neuro'
 
 export default {
-  //...neuro,
+  ...neuro,
+
   image: 'minehead.png',
 
   sounds: [
