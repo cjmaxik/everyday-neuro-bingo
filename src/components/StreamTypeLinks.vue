@@ -7,6 +7,7 @@
       <StreamTypeItem
         v-for="stream in mainBlock"
         :key="stream.to"
+        :color="stream.color"
         :featured="featured && stream.to === featured"
         :text="stream.text"
         :to="stream.to"
@@ -24,6 +25,7 @@
             v-for="stream in collabBlock"
             :key="stream.to"
             class="col-6 col-grow"
+            :color="stream.color"
             :text="stream.text"
             :to="stream.to"
           />
@@ -35,22 +37,6 @@
 
 <script setup>
 // project-related
-import StreamTypeItem from './StreamTypeItem.vue'
-
-const featured = 'neuro'
-
-const mainBlock = [
-  { to: 'neuro', text: 'Neuro-sama solo' },
-  { to: 'xVedal', text: 'Streams with Vedal' },
-  { to: 'evil', text: 'Evil Neuro solo' }
-]
-
-const collabBlock = [
-  { to: 'xEvil', text: 'Evil Neuro' },
-  { to: 'xAnny', text: 'anny' },
-  { to: 'xMiyune', text: 'Miyune' },
-  { to: 'xFilian', text: 'filian' },
-  { to: 'xShylily', text: 'Shylily' },
-  { to: 'family', text: 'Family' }
-]
+import StreamTypeItem from 'components/StreamTypeItem.vue'
+import { featured, mainBlock, collabBlock } from 'prompts/indexMenu'
 </script>

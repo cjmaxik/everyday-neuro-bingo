@@ -12,7 +12,7 @@ New Bingo card for Neuro-sama every day! Watch Neuro-sama's streams and follow a
 - [**CJMAXiK**](https://cjmaxik.ru?ref=neuro-bingo) - Lead Developer
 - [**tioopental**](https://discord.com/users/215881919206785024?ref=neuro-bingo) - Lead Prompt Editor
 
-Includes art by Rune, 2Pfrog, niceaccoun, lingyou, anny, Beyumi, M3gur3n, Kaz, shouu_kyun, dmaxcustom, MapleNephthys, Bungee, mmeizterr, and other distinguished artists.
+Includes art by Rune, 2Pfrog, niceaccoun, lingyou, anny, Beyumi, M3gur3n, Kaz, shouu_kyun, dmaxcustom, MapleNephthys, Bungee, why, mmeizterr, and other distinguished artists.
 
 ### Special thanks
 - **Frontrider** - additional prompts and extensive feedback
