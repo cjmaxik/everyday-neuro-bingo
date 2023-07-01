@@ -83,7 +83,8 @@ export default {
     image: 'minecraftNeuro/minecraftskin.png',
     participants: [
       minecraftNeuro
-    ]
+    ],
+    random: true
   },
 
   // TEST BOARDS
