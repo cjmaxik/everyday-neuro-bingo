@@ -4,10 +4,10 @@ export default {
   ...neuro,
 
   sounds: [
-    'bedrockismineable.mp3',
-    'diggingisfun.mp3',
-    'fallingintolava.mp3',
-    'minecraftisfun.mp3'
+    'minecraft/bedrockismineable.mp3',
+    'minecraft/diggingisfun.mp3',
+    'minecraft/fallingintolava.mp3',
+    'minecraft/minecraftisfun.mp3'
   ],
 
   prompts: [
