@@ -46,22 +46,23 @@ export default {
     'dies from a fall\xa0damage',
     'digs straight\xa0down',
     'drowns',
-    'destroys diamond\xa0ore',
     'gets killed by Vedal',
     'mines bedrock',
-    'obsessively hand-mines obsidian',
     'dies from hostile\xa0mob',
     'accidental Nether trip',
     'attempts to dig\xa0the\xa0sky',
     'throws away rare item',
-    '',
-    '',
+
+    // hand-minable stuff
+    'hand-mines obsidian',
+    'hand-mines diamond ore',
+    'hand-mines gold ore',
+    'hand-mines furnace',
 
     // mentions
     'randomly mentions Vedal',
     'mentions random VTuber',
     'mentions Swarm',
-    '',
 
     // chat related
     'chat spams :Classic:',
