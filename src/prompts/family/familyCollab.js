@@ -4,7 +4,7 @@ import anny from './anny'
 
 export default {
   name: 'Family stream',
-  image: 'family/family.png',
+  image: 'family/familyDinner.png',
   participants: [
     neuro, vedal, anny
   ]
