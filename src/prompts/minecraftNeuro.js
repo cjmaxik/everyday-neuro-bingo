@@ -3,13 +3,15 @@ import neuro from './neuro'
 export default {
   ...neuro,
 
+  assetsFolder: 'neuro/minecraft',
+
   image: 'minehead.png',
 
   sounds: [
-    'minecraft/bedrockismineable.mp3',
-    'minecraft/diggingisfun.mp3',
-    'minecraft/fallingintolava.mp3',
-    'minecraft/minecraftisfun.mp3'
+    'bedrockismineable.mp3',
+    'diggingisfun.mp3',
+    'fallingintolava.mp3',
+    'minecraftisfun.mp3'
   ],
 
   prompts: [
