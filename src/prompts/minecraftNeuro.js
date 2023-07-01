@@ -17,34 +17,35 @@ export default {
   prompts: [
     // general prompts from Neuro
     'funny joke',
-    'filtered',
+    'Filtered.',
     'spams',
     'goes schizo',
     '#ad / corpa',
-    'whats *emote*?',
+    'what is *emote*?',
     'no~',
     'rants',
-    'wot? / what?',
+    'what?',
     'D',
     'any kind of tech\xa0issue',
-    'feel free to ask me anything',
+    'apologises profusely',
     'randomly indroduces herself',
     'asks existential question',
     '"flushed means blushing"',
     'asks one question on repeat',
     '3',
-    'donowalled',
+    'donowalls someone',
     'KEKW',
-    '',
-    '',
-    '',
-    '',
-    '',
+    'the other day story',
+    'trauma dump',
+    'consistent',
+    'new clone / restarts',
+    'talks about nightmares',
+    'shames a viewer',
 
     // minecraft prompts
     'dies in lava',
     'dies from a fall\xa0damage',
-    'digs straight\xa0down',
+    'digs straight down',
     'drowns',
     'gets killed by Vedal',
     'mines bedrock',
@@ -52,6 +53,7 @@ export default {
     'accidental Nether trip',
     'attempts to dig\xa0the\xa0sky',
     'throws away rare item',
+    'Minecraft lags',
 
     // hand-minable stuff
     'hand-mines obsidian',
@@ -69,9 +71,6 @@ export default {
     'chat spams :neuroLava:',
     'chat spams :NOOOO:',
     'chat spams :SCHIZO:',
-    'chat spams SAVED',
-
-    // twitch meta
-    'shames a viewer'
+    'chat spams SAVED'
   ]
 }
