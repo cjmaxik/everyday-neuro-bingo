@@ -80,7 +80,7 @@ export default {
 
   miNeuro: {
     name: 'Neuro-sama plays Minecraft',
-    image: 'neuro/minecraft/minecraftskin.png',
+    image: 'neuro/minecraft/neuroLava.png',
     participants: [
       minecraftNeuro
     ],
