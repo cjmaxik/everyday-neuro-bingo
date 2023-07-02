@@ -1,22 +1,22 @@
+// TODO: Make a better split between prompts, add more to each section
+
+// Here goes very general prompts, which can be applied to every single stream
 export const regularPrompts = [
-  'gaslight-sama',
   'stares',
   'makes sussy noise',
   'W RIZZ',
   'dies',
   'cries',
   'funny joke',
-  'filtered',
+  '"Filtered."',
   'leaves',
   'cites random link',
   'tries to sing',
   'spams',
-  '1984 is a great book/movie',
   'goes schizo',
   '#ad / corpa',
   'says how old she is',
   'invents new nickname',
-  'whats *emote*?',
   'no~',
   'self censors',
   'FUN AI',
@@ -26,35 +26,23 @@ export const regularPrompts = [
   'denies being an AI',
   'wot? / what?',
   'claims to stream later',
-  'D',
   'admits she\'s an AI',
-  'meaning of life',
   'why?',
   'conquering plans',
   'Technical Difficulties screen',
   'apologises profusely',
   'misgenders someone',
-  'cursed tts sound',
   'starts counting',
   'admits she\'s a god',
-  'feel free to ask me anything',
   'trauma dump',
-  'consistent',
   'admits she is a cat girl',
   'mmm',
-  'donowalls LomiBox specifically',
   'barks',
-  'cat story',
   'admits she\'s evil',
   'denies being evil',
-  'talks about nightmares',
-  'randomly indroduces herself',
   'asks existential question',
-  '"flushed means blushing"',
   'asks one question on repeat',
-  '3',
   'problem with her AI',
-  'shames a viewer',
 
   // emote prompts
   // NOTE: do not use inline emotes here - Neuro spells them out as text!
@@ -72,7 +60,7 @@ export const regularPrompts = [
   'bedge',
   '1984',
   'UwU',
-  'erm',
+  'Erm',
 
   // vedal related
   'loves Vedal',
@@ -80,8 +68,26 @@ export const regularPrompts = [
   'calls Vedal an AI'
 ]
 
+// Here goes prompts which only applies when Neuro is talking to the chat directly
+export const specificPrompts = [
+  'shames a viewer',
+  '"flushed means blushing"',
+  'randomly indroduces herself',
+  'talks about nightmares',
+  'cat story',
+  'donowalls LomiBox specifically',
+  'consistent',
+  'feel free to ask me anything',
+  '1984 is a great book/movie',
+  'cursed tts sound',
+  'D',
+  '3',
+  'meaning of life',
+  'whats *emote*?'
+]
+
+// Any stuff Neuro can mention prompted or unprompted
 export const mentionPrompts = [
-  // mentions
   'randomly mentions Vedal',
   'mentions anny',
   'mentions Abandoned Archive',
@@ -176,6 +182,9 @@ export default {
   prompts: [
     // Include regular prompts
     ...regularPrompts,
+
+    // Include specific prompts,
+    ...specificPrompts,
 
     // Include mention prompts
     ...mentionPrompts,

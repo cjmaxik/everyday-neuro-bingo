@@ -1,15 +1,20 @@
-import neuro, { regularPrompts, mentionPrompts, chatPrompts } from 'prompts/neuro'
+import neuro, {
+  regularPrompts,
+  specificPrompts,
+  mentionPrompts,
+  chatPrompts
+} from 'prompts/neuro'
 
-const neuroOne = {
+const regularNeuro = {
   ...neuro,
-  name: 'Neuro One',
-  prompts: regularPrompts.slice(0, regularPrompts.length / 2)
+  name: 'Neuro Regular',
+  prompts: regularPrompts
 }
 
-const neuroTwo = {
+const specificNeuro = {
   ...neuro,
-  name: 'Neuro Two',
-  prompts: regularPrompts.slice(regularPrompts.length / 2, regularPrompts.length)
+  name: 'Neuro Specific',
+  prompts: specificPrompts
 }
 
 const mentions = {
@@ -28,7 +33,6 @@ const chat = {
   id: 'chat',
   name: 'Chat',
   color: '#9146FF',
-
   image: 'chat.png',
 
   prompts: chatPrompts
@@ -38,7 +42,7 @@ export default {
   name: 'Split board testing',
   image: 'neuro/random/neuro{x}.png',
   participants: [
-    neuroOne, mentions, neuroTwo, chat
+    regularNeuro, mentions, specificNeuro, chat
   ],
   random: true
 }
