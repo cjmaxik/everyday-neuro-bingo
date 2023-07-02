@@ -1,7 +1,7 @@
 // see `./emotes.md` for details
 
 import emotes from './emotesList.json'
-const assetsURL = '/assets/images/emotes/'
+const assetsURL = '/assets/images/emotes'
 
 /**
  * @typedef Emote Emote object with URLs

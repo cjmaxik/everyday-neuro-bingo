@@ -3,7 +3,7 @@ const path = require('path')
 const axios = require('axios').default
 
 const emotes = require('../src/helpers/emotesList.json')
-const assetsPath = path.resolve(__dirname, '../public/assets/images/emotes/')
+const assetsPath = path.resolve(__dirname, '../public/assets/images/emotes')
 const apiUrl = 'https://wsrv.nl/?url=cdn.7tv.app/emote'
 
 const downloadEmote = (name) => {
