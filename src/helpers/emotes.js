@@ -1,7 +1,7 @@
-// see `./emotesList.js` for details
+// see `./emotes.md` for details
 
-import emotes from './emotesList'
-const apiUrl = 'https://wsrv.nl/?url=cdn.7tv.app/emote'
+import emotes from './emotesList.json'
+const assetsURL = '/assets/images/emotes/'
 
 /**
  * @typedef Emote Emote object with URLs
@@ -18,24 +18,14 @@ const apiUrl = 'https://wsrv.nl/?url=cdn.7tv.app/emote'
  * @returns {(Emote|null)} Emote object or null
  */
 export const generateEmote = (name) => {
-  let emoteId = emotes[name]
+  const emoteId = emotes[name]
   if (!emoteId) return null
-
-  let page = -1
-  if (emoteId.includes('_')) {
-    const emoteWithPage = emoteId.split('_')
-
-    emoteId = emoteWithPage[0]
-    page = emoteWithPage[1]
-  }
-
-  const url = `${apiUrl}/${emoteId}/1x.webp`
 
   return {
     name,
     src: {
-      animated: `${url}&n=-1`,
-      static: `${url}&page=${page}`
+      animated: `${assetsURL}/${name}_a.webp`,
+      static: `${assetsURL}/${name}_s.webp`
     }
   }
 }

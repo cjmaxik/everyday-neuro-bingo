@@ -6,14 +6,16 @@
   "author": "CJMAXiK <me@cjmaxik.ru>",
   "private": true,
   "scripts": {
-    "dev": "quasar dev",
+    "dev": "npm run emotePrep && quasar dev",
     "build": "quasar build",
+    "emotePrep": "node ./scripts/emotePrep.js",
     "lint": "eslint --ext .js,.vue ./",
     "lint-fix": "eslint --ext .js,.vue ./ --fix"
   },
   "dependencies": {
     "@quasar/extras": "^1.0.0",
     "@vueuse/core": "^10.1.2",
+    "axios": "^1.4.0",
     "pinia": "^2.0.11",
     "quasar": "^2.12.1",
     "seedrandom": "^3.0.5",
