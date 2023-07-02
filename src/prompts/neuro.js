@@ -168,16 +168,18 @@ export default {
 
   // tally sounds, will be chosen at random
   sounds: [
-    'gymbag.mp3',
-    'heart.mp3',
-    'KEKWA.mp3',
-    'meow.mp3',
-    'meow_meow_lol.mp3',
-    'no.mp3',
-    'pog.mp3',
-    'wink.mp3',
-    'aaah_goodbye.mp3'
-  ],
+    'gymbag',
+    'heart',
+    'KEKWA',
+    'meow',
+    'meow_meow_lol',
+    'no',
+    'pog',
+    'wink',
+    'aaah_goodbye',
+    'erm',
+    'ermErm'
+  ].map(x => `${x}.mp3`),
 
   prompts: [
     // Include regular prompts
