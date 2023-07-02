@@ -7,7 +7,7 @@ export const featured = 'nuero'
 
 // Main block, always visible
 export const mainBlock = [
-  { to: 'nuero', text: 'Split board testing' },
+  { to: 'nuero', text: 'More Random Neuro' },
   { to: 'neuro', text: 'Neuro-sama solo' },
   { to: 'xVedal', text: 'Streams with Vedal', color: '#266941' },
   { to: 'evil', text: 'Evil Neuro solo', color: '#700b1b' },

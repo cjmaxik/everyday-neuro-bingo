@@ -7,13 +7,19 @@ import neuro, {
 
 const regularNeuro = {
   ...neuro,
+
+  id: 'regularNeuro',
   name: 'Neuro Regular',
+
   prompts: regularPrompts
 }
 
 const specificNeuro = {
   ...neuro,
+
+  id: 'specificNeuro',
   name: 'Neuro Specific',
+
   prompts: specificPrompts
 }
 
@@ -39,7 +45,7 @@ const chat = {
 }
 
 export default {
-  name: 'Split board testing',
+  name: 'More Random Neuro',
   image: 'neuro/random/neuro{x}.png',
   participants: [
     regularNeuro, mentions, specificNeuro, chat
