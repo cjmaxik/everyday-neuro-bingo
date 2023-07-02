@@ -3,14 +3,15 @@
  */
 
 // Highlighted option
-export const featured = 'miNeuro'
+export const featured = 'nuero'
 
 // Main block, always visible
 export const mainBlock = [
-  { to: 'miNeuro', text: 'Neuro plays Minecraft' },
+  { to: 'nuero', text: 'Split board testing' },
   { to: 'neuro', text: 'Neuro-sama solo' },
   { to: 'xVedal', text: 'Streams with Vedal', color: '#266941' },
-  { to: 'evil', text: 'Evil Neuro solo', color: '#700b1b' }
+  { to: 'evil', text: 'Evil Neuro solo', color: '#700b1b' },
+  { to: 'miNeuro', text: 'Neuro plays Minecraft' }
 ]
 
 // Collabs block, under expandable element
