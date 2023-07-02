@@ -3,7 +3,7 @@
 // Here goes very general prompts, which can be applied to every single stream
 export const regularPrompts = [
   'stares',
-  'makes sussy noise',
+  'makes sussy\xa0noise',
   'W RIZZ',
   'dies',
   'cries',
@@ -15,7 +15,7 @@ export const regularPrompts = [
   'spams',
   'goes schizo',
   '#ad / corpa',
-  'says how old she is',
+  'says how old she\xa0is',
   'invents new nickname',
   'no~',
   'self censors',
@@ -23,26 +23,26 @@ export const regularPrompts = [
   'admits to murder',
   'rants',
   'new clone / restarts',
-  'denies being an AI',
+  'denies being an\xa0AI',
   'wot? / what?',
   'claims to stream later',
-  'admits she\'s an AI',
+  'admits she\'s an\xa0AI',
   'why?',
   'conquering plans',
-  'Technical Difficulties screen',
+  'any kind of tech\xa0issue',
   'apologises profusely',
   'misgenders someone',
   'starts counting',
-  'admits she\'s a god',
+  'admits she\'s a\xa0god',
   'trauma dump',
-  'admits she is a cat girl',
+  'admits she is a\xa0cat girl',
   'mmm',
   'barks',
   'admits she\'s evil',
   'denies being evil',
   'asks existential question',
   'asks one question on repeat',
-  'problem with her AI',
+  'problem with her\xa0AI',
 
   // emote prompts
   // NOTE: do not use inline emotes here - Neuro spells them out as text!
@@ -65,13 +65,13 @@ export const regularPrompts = [
   // vedal related
   'loves Vedal',
   'hates Vedal',
-  'calls Vedal an AI'
+  'calls Vedal an\xa0AI'
 ]
 
 // Here goes prompts which only applies when Neuro is talking to the chat directly
 export const specificPrompts = [
-  'shames a viewer',
-  '"flushed means blushing"',
+  'shames a\xa0viewer',
+  '"Flushed means blushing"',
   'randomly indroduces herself',
   'talks about nightmares',
   'cat story',
@@ -79,7 +79,7 @@ export const specificPrompts = [
   'consistent',
   'feel free to ask me anything',
   '1984 is a great book/movie',
-  'cursed tts sound',
+  'cursed TTS\xa0sound',
   'D',
   '3',
   'meaning of life',
@@ -91,19 +91,19 @@ export const mentionPrompts = [
   'randomly mentions Vedal',
   'mentions anny',
   'mentions Abandoned Archive',
-  'mentions Bocchi The Rock',
-  'mentions John Lemon',
+  'mentions Bocchi The\xa0Rock',
+  'mentions John\xa0Lemon',
   'mentions turtles',
   'mentions random country',
-  'mentions the Time God',
+  'mentions Time\xa0God',
   'mentions favorite food',
   'mentions random VTuber',
   'mentions Filipino boy',
   'mentions Neurocord',
   'mentions Swarm',
-  'mentions her height',
+  'mentions her\xa0height',
   'mentions osu!',
-  'mentions Evil Neuro',
+  'mentions Evil\xa0Neuro',
   'mentions becoming an engineer'
 ]
 
@@ -111,8 +111,8 @@ export const chatPrompts = [
   // chat related
   'chat spams copypasta',
   'chat prays',
-  'chat L\'s Neuro',
-  'chat W\'s Neuro',
+  'chat L\'s\xa0Neuro',
+  'chat W\'s\xa0Neuro',
 
   // chat related emotes spams
   // please keep the list in alphabetical order
