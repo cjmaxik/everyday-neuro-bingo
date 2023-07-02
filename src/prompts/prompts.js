@@ -1,9 +1,10 @@
 /**
  * Solo streams
  */
-import neuro from './neuro'
-import evilNeuro from './evilNeuro'
-import minecraftNeuro from './minecraftNeuro'
+import neuro from 'prompts/neuro'
+import evilNeuro from 'prompts/evilNeuro'
+import minecraftNeuro from 'prompts/minecraftNeuro'
+import nuero from 'prompts/nuero'
 
 /**
  * Collabs
@@ -13,16 +14,16 @@ import minecraftNeuro from './minecraftNeuro'
  * create an '{x}Collab.js' there for stream data and import it here.
  * See 'family/familyCollab.js' for the example
  */
-import vedal from './vedal'
-import filian from './filian'
-import anny from './anny'
-import family from './family/familyCollab'
-import xEvil from './evil/evilCollab'
-import xShylily from './shylily/shylilyCollab'
-import xMiyune from './miyune/miyuneCollab'
+import vedal from 'prompts/vedal'
+import filian from 'prompts/filian'
+import anny from 'prompts/anny'
+import family from 'prompts/family/familyCollab'
+import xEvil from 'prompts/evil/evilCollab'
+import xShylily from 'prompts/shylily/shylilyCollab'
+import xMiyune from 'prompts/miyune/miyuneCollab'
 
 // tests
-import emoteTest from './emoteTest'
+import emoteTest from 'prompts/emoteTest'
 
 /**
  * 1. The object key is the route path
@@ -94,5 +95,8 @@ export default {
     participants: [
       emoteTest
     ]
-  }
+  },
+
+  // Split board testing
+  nuero
 }

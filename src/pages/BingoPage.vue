@@ -62,13 +62,9 @@
       padding
       rounded
     >
-      <p>
-        <strong>NOTE:</strong> This is a randomized board created specifically for you. It is based on your current
-        browser, supported languages, and current date. If you have any issues with the board (namely, that it changes
-        after every page reload), please reach out in the "Everyday Neuro Bingo" discussion of Neurocord.
-      </p>
       <p class="no-margin">
-        Everyday Neuro Bingo website does not collect your data. Everything is stored on your device.
+        This is a randomized board created specifically for you.<br>If you have any issues with the board, please reach
+        out to us in the "Everyday Neuro Bingo" discussion of Neurocord.
       </p>
     </q-banner>
   </q-page>
