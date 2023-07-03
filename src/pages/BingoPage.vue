@@ -190,6 +190,10 @@ const notifyForUndo = (block) => {
         handler: () => {
           decrement(block)
         }
+      },
+      {
+        icon: 'close',
+        color: 'white'
       }
     ]
   })
