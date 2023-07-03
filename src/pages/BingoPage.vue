@@ -10,7 +10,7 @@
     >
       <div
         v-show="!state.ready"
-        :key="1"
+        :key="0"
         class="absolute-top"
       >
         <div class="row justify-center items-center">
@@ -29,7 +29,7 @@
 
       <div
         v-show="state.ready"
-        :key="0"
+        :key="1"
         class="bingo-card shadow-5"
         :class="{ fullscreen: $q.fullscreen.isActive }"
       >
@@ -57,18 +57,6 @@
         </template>
       </div>
     </transition-group>
-
-    <q-banner
-      v-if="state.ready && state.random"
-      class="random-info bg-primary text-white text-center shadow-5"
-      padding
-      rounded
-    >
-      <p class="no-margin">
-        This is a randomized board created specifically for you.<br>If you have any issues with the board, please reach
-        out to us in the "Everyday Neuro Bingo" discussion of Neurocord.
-      </p>
-    </q-banner>
   </q-page>
 </template>
 
