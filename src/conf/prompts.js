@@ -15,6 +15,7 @@ export default {
   xMiyune: () => import('prompts/xMiyune/xMiyune'),
   xFilian: () => import('prompts/xFilian/xFilian'),
   xShylily: () => import('prompts/xShylily/xShylily'),
+  xNumi: () => import('prompts/xNumi/xNumi'),
   family: () => import('prompts/family/family'),
 
   // Tests
