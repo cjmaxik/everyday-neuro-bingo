@@ -74,7 +74,7 @@
 
 <script setup>
 // vue-related
-import { onBeforeMount, onBeforeUnmount, onMounted } from 'vue'
+import { onBeforeMount, onBeforeUnmount } from 'vue'
 import { useQuasar } from 'quasar'
 
 // project-related
@@ -82,8 +82,6 @@ import BingoBlockItem from 'components/BingoBlockItem.vue'
 
 import { getRandomInt } from 'helpers/helpers'
 import prompts from 'conf/prompts'
-
-console.log(prompts)
 
 // states
 import { useGameStateStore } from 'stores/gameState'
