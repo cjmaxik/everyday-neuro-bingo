@@ -3,11 +3,12 @@
  * Available ONLY via direct link (see `prompts.js`)
  */
 
-import neuro from './neuro'
-import emotesList from 'src/helpers/emotesList'
+import neuro from 'prompts/characters/neuro'
+import emotesList from 'helpers/emotesList.json'
 
 const prepareEmotes = () => {
   const emotes = []
+
   for (const key in emotesList) {
     emotes.push(`:${key}:`)
   }
@@ -18,7 +19,7 @@ const prepareEmotes = () => {
 const prompts = prepareEmotes()
 // const prompts = neuro.prompts.filter(x => x.includes(':'))
 
-export default {
+const emoteTest = {
   ...neuro,
 
   name: 'Emote test',
@@ -27,4 +28,12 @@ export default {
     ...prompts,
     length: 48
   })
+}
+
+export default {
+  name: 'Emote test',
+  image: 'vedal/vedal.png',
+  participants: [
+    emoteTest
+  ]
 }

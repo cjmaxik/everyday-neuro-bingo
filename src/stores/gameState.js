@@ -28,6 +28,7 @@ export const useGameStateStore = (id) => defineStore(`gameState-${id}`, {
 
     // game data
     streamName: null,
+    random: null,
     freeBlockImage: null,
     seed: useLocalStorage(`seed-${id}`, 0),
     participants: {},
@@ -45,8 +46,9 @@ export const useGameStateStore = (id) => defineStore(`gameState-${id}`, {
 
   actions: {
     clearAll () {
-      this.version = 3
       this.ready = false
+
+      this.version = 3
       this.seed = 0
       this.board = []
       this.bingo = []
@@ -68,14 +70,23 @@ export const useGameStateStore = (id) => defineStore(`gameState-${id}`, {
      * @param {number} version Dataset version
     */
     generateBoard (streamData, version) {
+      console.group('Initializing random seed...')
+
       const seedPhrase = streamData.random ? generateBrowserSeed() : generateDailySeed()
       const newSeed = seedrandom(seedPhrase, { state: true }).int32()
-      console.log('Random board?', streamData.random, seedPhrase, newSeed)
+
+      console.debug('Random board?', !!streamData.random)
+      console.debug('Seed phrase -', seedPhrase)
+      console.debug('Seed -', newSeed)
+
+      console.groupEnd()
 
       const participants = {}
       const allPrompts = []
 
       const assetsPath = '/assets'
+
+      console.group('Initializing prompts...')
       streamData.participants.forEach(data => {
         // participants
         participants[data.id] = {
@@ -86,7 +97,7 @@ export const useGameStateStore = (id) => defineStore(`gameState-${id}`, {
           sounds: data.sounds.map(x => new Audio(`${assetsPath}/sounds/${data.assetsFolder ?? data.id}/${x}`))
         }
 
-        console.debug(`${data.name} has ${data.prompts.length} prompts.`)
+        console.debug(`${data.name} - ${data.prompts.length} prompts.`)
 
         // prompts
         allPrompts.push({
@@ -94,8 +105,10 @@ export const useGameStateStore = (id) => defineStore(`gameState-${id}`, {
           prompts: deepCopy(data.prompts)
         })
       })
+      console.groupEnd()
 
       this.streamName = streamData.name
+      this.random = streamData.random
       this.participants = participants
 
       if (streamData.image.includes('{x}')) {
