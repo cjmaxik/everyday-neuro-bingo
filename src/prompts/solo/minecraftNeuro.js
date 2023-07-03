@@ -80,6 +80,5 @@ export default {
   image: 'neuro/minecraft/neuroLava.png',
   participants: [
     minecraftNeuro
-  ],
-  random: true
+  ]
 }

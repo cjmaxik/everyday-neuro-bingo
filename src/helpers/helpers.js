@@ -125,16 +125,6 @@ export const getRandomInt = (min, max) => {
 }
 
 /**
- * Generates seed phrase based on a current date in UTC timezone
- * @returns {string} Seed phrase
- */
-export const generateDailySeed = () => ''.concat(
-  new Date().getUTCDate(),
-  new Date().getUTCMonth(),
-  new Date().getUTCFullYear()
-)
-
-/**
  * Generates seed phrase based on a browser + current date in UTC timezone
  * @returns {string} Seed phrase
  */

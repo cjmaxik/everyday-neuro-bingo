@@ -11,8 +11,8 @@
       </p>
 
       <p>
-        You don't win anything by playing this Bingo. It's just for fun. All the viewers have the same board (unless
-        stated otherwise). If you are not sure if the prompt needs to be marked out, ask your fellow viewers.
+        You don't win anything by playing this Bingo. It's just for fun. Your board is randomly generated specifically for
+        you. If you are not sure if the prompt needs to be marked out, ask your fellow viewers.
       </p>
 
       <p>

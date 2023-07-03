@@ -8,7 +8,6 @@ import {
   generatePrompts,
   deepCopy,
   winningLines,
-  generateDailySeed,
   generateBrowserSeed
 } from '../helpers/helpers'
 
@@ -28,7 +27,6 @@ export const useGameStateStore = (id) => defineStore(`gameState-${id}`, {
 
     // game data
     streamName: null,
-    random: null,
     freeBlockImage: null,
     seed: useLocalStorage(`seed-${id}`, 0),
     participants: {},
@@ -72,10 +70,9 @@ export const useGameStateStore = (id) => defineStore(`gameState-${id}`, {
     generateBoard (streamData, version) {
       console.group('Initializing random seed...')
 
-      const seedPhrase = streamData.random ? generateBrowserSeed() : generateDailySeed()
+      const seedPhrase = generateBrowserSeed()
       const newSeed = seedrandom(seedPhrase, { state: true }).int32()
 
-      console.debug('Random board?', !!streamData.random)
       console.debug('Seed phrase -', seedPhrase)
       console.debug('Seed -', newSeed)
 
@@ -108,7 +105,6 @@ export const useGameStateStore = (id) => defineStore(`gameState-${id}`, {
       console.groupEnd()
 
       this.streamName = streamData.name
-      this.random = streamData.random
       this.participants = participants
 
       if (streamData.image.includes('{x}')) {

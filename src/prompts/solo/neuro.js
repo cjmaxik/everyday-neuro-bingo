@@ -49,6 +49,5 @@ export default {
   image: 'neuro/random/neuro{x}.png',
   participants: [
     regularNeuro, mentions, specificNeuro, chat
-  ],
-  random: true
+  ]
 }
