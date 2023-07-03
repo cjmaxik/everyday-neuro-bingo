@@ -28,6 +28,7 @@ export const useGameStateStore = (id) => defineStore(`gameState-${id}`, {
 
     // game data
     streamName: null,
+    random: null,
     freeBlockImage: null,
     seed: useLocalStorage(`seed-${id}`, 0),
     participants: {},
@@ -45,8 +46,9 @@ export const useGameStateStore = (id) => defineStore(`gameState-${id}`, {
 
   actions: {
     clearAll () {
-      this.version = 3
       this.ready = false
+
+      this.version = 3
       this.seed = 0
       this.board = []
       this.bingo = []
@@ -96,6 +98,7 @@ export const useGameStateStore = (id) => defineStore(`gameState-${id}`, {
       })
 
       this.streamName = streamData.name
+      this.random = streamData.random
       this.participants = participants
 
       if (streamData.image.includes('{x}')) {

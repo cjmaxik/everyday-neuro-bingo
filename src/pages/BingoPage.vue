@@ -59,7 +59,7 @@
     </transition-group>
 
     <q-banner
-      v-if="streamData.random"
+      v-if="state.ready && state.random"
       class="random-info bg-primary text-white text-center shadow-5"
       padding
       rounded
@@ -104,10 +104,12 @@ const settings = useGameSettingsStore()
 // Quasar object
 const $q = useQuasar()
 
+// Init data
 const version = 3
 const streamData = prompts[streamType]
 
 onBeforeMount(() => {
+  // Load stream data
   streamData().then(module => {
     const data = module?.default
 
