@@ -62,6 +62,24 @@
         />
       </DefaultTransition>
 
+      <q-btn
+        dense
+        fab-mini
+        flat
+        :icon="$q.dark.isActive ? 'light_mode' : 'dark_mode'"
+        stretch
+        @click="$q.dark.toggle()"
+      >
+        <q-tooltip
+          anchor="bottom left"
+          class="text-body2 bg-gymbag"
+        >
+          {{ $q.dark.isActive ? 'Light theme' : 'Dark theme' }}
+        </q-tooltip>
+      </q-btn>
+
+      <q-separator vertical />
+
       <SettingsPanel />
 
       <q-separator vertical />

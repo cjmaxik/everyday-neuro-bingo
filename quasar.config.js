@@ -115,7 +115,8 @@ module.exports = configure(function (/* ctx */) {
       plugins: [
         'Notify',
         'AppFullscreen',
-        'AppVisibility'
+        'AppVisibility',
+        'Dark'
       ]
     },
 
