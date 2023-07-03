@@ -192,7 +192,7 @@ const notifyForUndo = (block) => {
         }
       },
       {
-        icon: 'close',
+        label: 'Dismiss',
         color: 'white'
       }
     ]
