@@ -1,6 +1,6 @@
-import neuro from './neuro'
+import neuro from 'prompts/characters/neuro'
 
-export default {
+const minecraftNeuro = {
   ...neuro,
 
   assetsFolder: 'neuro/minecraft',
@@ -73,4 +73,13 @@ export default {
     'chat spams :SCHIZO:',
     'chat spams SAVED'
   ]
+}
+
+export default {
+  name: 'Neuro-sama plays Minecraft',
+  image: 'neuro/minecraft/neuroLava.png',
+  participants: [
+    minecraftNeuro
+  ],
+  random: true
 }

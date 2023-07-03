@@ -80,6 +80,7 @@ module.exports = configure(function (/* ctx */) {
       // viteVuePluginOptions: {},
 
       alias: {
+        conf: path.join(__dirname, './src/conf'),
         prompts: path.join(__dirname, './src/prompts'),
         helpers: path.join(__dirname, './src/helpers')
       },

@@ -14,6 +14,7 @@
       />
 
       <q-expansion-item
+        v-if="collabBlock.length"
         expand-icon-class="collab-toggle"
         group="collab"
         header-class="text-gymbag"
@@ -38,5 +39,5 @@
 <script setup>
 // project-related
 import StreamTypeItem from 'components/StreamTypeItem.vue'
-import { featured, mainBlock, collabBlock } from 'prompts/indexMenu'
+import { featured, mainBlock, collabBlock } from 'conf/indexMenu'
 </script>

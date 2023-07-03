@@ -3,7 +3,7 @@ import neuro, {
   specificPrompts,
   mentionPrompts,
   chatPrompts
-} from 'prompts/neuro'
+} from 'prompts/characters/neuro'
 
 const regularNeuro = {
   ...neuro,
@@ -45,7 +45,7 @@ const chat = {
 }
 
 export default {
-  name: 'More Random Neuro',
+  name: 'Neuro-sama solo',
   image: 'neuro/random/neuro{x}.png',
   participants: [
     regularNeuro, mentions, specificNeuro, chat
