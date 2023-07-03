@@ -79,6 +79,8 @@ module.exports = configure(function (/* ctx */) {
       // extendViteConf (viteConf) {},
       // viteVuePluginOptions: {},
 
+      sourcemap: process.env.NODE_ENV === 'production' ? 'false' : 'inline',
+
       alias: {
         conf: path.join(__dirname, './src/conf'),
         prompts: path.join(__dirname, './src/prompts'),
