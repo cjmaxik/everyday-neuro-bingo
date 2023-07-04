@@ -3,7 +3,7 @@
  * Available ONLY via direct link (see `prompts.js`)
  */
 
-import neuro from 'prompts/characters/neuro'
+import neuro from 'characters/neuro'
 import emotesList from 'helpers/emotesList.json'
 
 const prepareEmotes = () => {

@@ -77,12 +77,17 @@ export const deepCopy = (array) => JSON.parse(JSON.stringify(array))
 export const generatePrompts = (allPrompts, seed, boardSize) => {
   const participantsCount = allPrompts.length
   const countForParticipiant = Math.floor((boardSize - 1) / participantsCount)
+  console.debug(`Expecting ${countForParticipiant} prompts for each participant...`)
 
   let finalPrompts = []
   finalPrompts = Array.from(new Array(participantsCount), () => [])
 
   allPrompts.forEach((data, index) => {
     const prompts = shuffle(data.prompts, seed).slice(0, countForParticipiant)
+
+    if (prompts.length < countForParticipiant) {
+      throw Error(`Not enough propmts for ${data.participantId}`)
+    }
 
     prompts.forEach(text => {
       finalPrompts[index].push({

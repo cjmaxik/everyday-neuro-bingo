@@ -1,4 +1,4 @@
-import anny from 'prompts/characters/anny'
+import anny from 'characters/anny'
 
 export default {
   ...anny,

@@ -1,5 +1,5 @@
 import neuro from './neuro'
-import shylily from 'prompts/characters/shylily'
+import shylily from 'characters/shylily'
 
 export default {
   name: 'Neuro x Shylily collab',

@@ -1,4 +1,4 @@
-import evilNeuro from 'prompts/characters/evilNeuro'
+import evilNeuro from 'characters/evilNeuro'
 
 export default {
   ...evilNeuro,

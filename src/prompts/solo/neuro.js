@@ -1,47 +1,41 @@
-import neuro, {
-  regularPrompts,
-  specificPrompts,
-  mentionPrompts,
-  chatPrompts
-} from 'prompts/characters/neuro'
+import * as neuro from 'characters/neuro'
+import chatBase from 'characters/chat'
 
 const regularNeuro = {
-  ...neuro,
+  ...neuro.base,
 
   id: 'regularNeuro',
   name: 'Neuro Regular',
 
-  prompts: regularPrompts
+  prompts: neuro.regularPrompts
 }
 
 const specificNeuro = {
-  ...neuro,
+  ...neuro.base,
 
   id: 'specificNeuro',
   name: 'Neuro Specific',
 
-  prompts: specificPrompts
+  prompts: neuro.specificPrompts
 }
 
 const mentions = {
-  ...neuro,
+  ...neuro.base,
 
   id: 'mentions',
   color: '#420069',
   name: 'Neuro Mentions',
 
-  prompts: mentionPrompts
+  prompts: neuro.mentionPrompts
 }
 
 const chat = {
-  ...neuro,
+  ...chatBase,
 
-  id: 'chat',
-  name: 'Chat',
-  color: '#9146FF',
-  image: 'chat.png',
-
-  prompts: chatPrompts
+  prompts: [
+    ...neuro.chatPrompts,
+    ...chatBase.prompts
+  ]
 }
 
 export default {

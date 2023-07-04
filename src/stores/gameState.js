@@ -84,6 +84,7 @@ export const useGameStateStore = (id) => defineStore(`gameState-${id}`, {
       const assetsPath = '/assets'
 
       console.group('Initializing prompts...')
+
       streamData.participants.forEach(data => {
         // participants
         participants[data.id] = {
@@ -134,6 +135,7 @@ export const useGameStateStore = (id) => defineStore(`gameState-${id}`, {
       this.board = []
 
       let promptIndex = 0
+
       for (let index = 0; index < boardSize; index++) {
         const free = index === centerBlock
 
