@@ -51,7 +51,7 @@ const chat = {
 
 export default {
   name: 'Vedal Space Program',
-  image: 'vedal/vedalKsp.png',
+  image: 'vedal/vedalSpaceProgram.png',
   participants: [
     neuroKsp, chat,
     ksp, vedalKsp
