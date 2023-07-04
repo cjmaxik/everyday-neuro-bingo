@@ -18,7 +18,7 @@ export const regularPrompts = [
   '"Shut up!"',
   '#ad / corpa',
   'cringe joke',
-  'femboy noises',
+  'tutel noises',
   'leaks something',
   'gets competitive',
   'That\'s crazy :Tutel:',
