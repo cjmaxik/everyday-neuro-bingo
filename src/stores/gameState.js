@@ -9,7 +9,7 @@ import {
   deepCopy,
   winningLines,
   generateBrowserSeed
-} from '../helpers/helpers'
+} from 'helpers/helpers'
 
 const streakCount = 7
 const boardSize = Math.pow(streakCount, 2)
@@ -59,7 +59,9 @@ export const useGameStateStore = (id) => defineStore(`gameState-${id}`, {
      * @type {Object}
      * @property {string} image
      * @property {string} name
-     * @property {ParticipantData[]} participants
+     * @property {Object} participants
+     * @property {string} participants.participantId
+     * @property {Array<string>} participants.prompts
      * @property {boolean?} random
      */
 

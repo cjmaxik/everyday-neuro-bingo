@@ -2,6 +2,7 @@
  * 1. The object key is the route path
  * 2. Add the route to ./indexMenu.js
  */
+
 export default {
   // Solo streams
   neuro: () => import('prompts/solo/neuro'),

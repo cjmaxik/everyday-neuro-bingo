@@ -107,8 +107,8 @@ import { ref, onMounted, watch } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 
 // game settings
-import { useGameStateStore } from '../stores/gameState'
-import { useGameSettingsStore } from '../stores/gameSettings'
+import { useGameStateStore } from 'stores/gameState'
+import { useGameSettingsStore } from 'stores/gameSettings'
 
 // route
 const route = useRoute()

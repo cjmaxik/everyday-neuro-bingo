@@ -47,7 +47,7 @@ import { computed } from 'vue'
 import { useWindowFocus } from '@vueuse/core'
 
 // project related
-import { generateEmote, prepareBaseText } from 'src/helpers/emotes'
+import { generateEmote, prepareBaseText } from 'helpers/emotes'
 
 const props = defineProps({
   block: {
