@@ -15,9 +15,6 @@
   "[vue]": {
     "editor.defaultFormatter": "Vue.volar"
   },
-  "[js]": {
-    "editor.defaultFormatter": "Vue.volar"
-  },
   "[scss]": {
     "editor.defaultFormatter": "vscode.css-language-features"
   },
@@ -26,5 +23,8 @@
   },
   "html.format.wrapAttributes": "force-expand-multiline",
   "html.format.indentInnerHtml": false,
-  "eslint.format.enable": true
+  "eslint.format.enable": true,
+  "[javascript]": {
+    "editor.defaultFormatter": "Vue.volar"
+  }
 }

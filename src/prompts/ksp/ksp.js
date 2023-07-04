@@ -23,12 +23,14 @@ const ksp = {
   name: 'KSP',
   color: '#0504c2',
 
+  image: '../vedal/ksp/kerbal.png',
+
   prompts: [
     'Neuro mentions Miyu',
     'Neuro says in\u2011game\xa0name',
     'Neuro wants to go to space',
     'rocket blows up on the pad',
-    'rocket blows up in mid-air',
+    'The Kraken strikes',
     'game crashed / froze',
     'faulty staging',
     'fuel runs off',
