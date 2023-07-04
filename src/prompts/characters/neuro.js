@@ -1,3 +1,32 @@
+export const base = {
+  id: 'neuro',
+  name: 'Neuro-sama',
+
+  // text color
+  color: '#843a49',
+
+  // assets folder
+  assetsFolder: 'neuro',
+
+  // tally background image
+  image: 'gymbag.png',
+
+  // tally sounds, will be chosen at random
+  sounds: [
+    'gymbag',
+    'heart',
+    'KEKWA',
+    'meow',
+    'meow_meow_lol',
+    'no',
+    'pog',
+    'wink',
+    'aaah_goodbye',
+    'erm',
+    'ermErm'
+  ].map(x => `${x}.mp3`)
+}
+
 // TODO: Make a better split between prompts, add more to each section
 
 // Here goes very general prompts, which can be applied to every single stream
@@ -112,74 +141,11 @@ export const chatPrompts = [
   'chat spams copypasta',
   'chat prays',
   'chat L\'s\xa0Neuro',
-  'chat W\'s\xa0Neuro',
-
-  // chat related emotes spams
-  // please keep the list in alphabetical order
-  'chat spams :5neuros:',
-  'chat spams :Aware:',
-  'chat spams :AYAYA:',
-  'chat spams :Bedge:',
-  'chat spams :cabbage:',
-  'chat spams :Classic:',
-  'chat spams :Clueless:',
-  'chat spams :Erm:',
-  'chat spams :Flushed:',
-  'chat spams :GIGACHAD: :GIGANEURO:',
-  'chat spams :hiyori:',
-  'chat spams :HUH:',
-  'chat spams :KEKW:',
-  'chat spams :meow:',
-  'chat spams :monkaTOS:',
-  'chat spams :monkaW:',
-  'chat spams :neuroplushsittingverycomfortablewhilesheroastsaporowithherfriends:',
-  'chat spams :NOOOO:',
-  'chat spams :NOWAYING:',
-  'chat spams :nuero: :nwero: :eliv:',
-  'chat spams :ok:',
-  'chat spams :PauseSama:',
-  'chat spams :POG: :poggers:',
-  'chat spams :reallyGunPull: :vedalPls:',
-  'chat spams :RIGGED:',
-  'chat spams :RIPBOZO:',
-  'chat spams :SCHIZO:',
-  'chat spams :SNIFFA:',
-  'chat spams :SoCute:',
-  'chat spams :Susge:',
-  'chat spams :Tutel:',
-  'chat spams :WAYTOODANK:',
-
-  // twitch meta
-  'raiding / raided by anny'
+  'chat W\'s\xa0Neuro'
 ]
 
 export default {
-  id: 'neuro',
-  name: 'Neuro-sama',
-
-  // text color
-  color: '#843a49',
-
-  // assets folder
-  assetsFolder: 'neuro',
-
-  // tally background image
-  image: 'gymbag.png',
-
-  // tally sounds, will be chosen at random
-  sounds: [
-    'gymbag',
-    'heart',
-    'KEKWA',
-    'meow',
-    'meow_meow_lol',
-    'no',
-    'pog',
-    'wink',
-    'aaah_goodbye',
-    'erm',
-    'ermErm'
-  ].map(x => `${x}.mp3`),
+  ...base,
 
   prompts: [
     // Include regular prompts

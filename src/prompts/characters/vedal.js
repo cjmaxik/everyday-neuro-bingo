@@ -1,3 +1,18 @@
+export const base = {
+  id: 'vedal',
+  name: 'Vedal',
+  color: '#266941',
+
+  image: 'tutel.png',
+
+  sounds: [
+    'meow.mp3',
+    'femboy.mp3',
+    'tequila.mp3',
+    'ayaya.mp3'
+  ]
+}
+
 export const regularPrompts = [
   '"WHAT?"',
   '"Shut up!"',
@@ -27,25 +42,14 @@ export const regularPrompts = [
 // chat related
 export const chatPrompts = [
   'chat L\'s Vedal',
-  'chat shoots Vedal',
   'chat spams :vedalPls:',
   'chat spams ZERO LATENCY',
+  'chat spams :ICANT:',
   'argues with chat'
 ]
 
 export default {
-  id: 'vedal',
-  name: 'Vedal',
-  color: '#266941',
-
-  image: 'tutel.png',
-
-  sounds: [
-    'meow.mp3',
-    'femboy.mp3',
-    'tequila.mp3',
-    'ayaya.mp3'
-  ],
+  ...base,
 
   prompts: [
     ...regularPrompts,

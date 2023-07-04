@@ -29,8 +29,8 @@
       "helpers/*": [
         "src/helpers/*"
       ],
-      "propmts": [
-        "src/propmts/*"
+      "prompts": [
+        "src/prompts/*"
       ],
       "conf": [
         "src/conf/*"

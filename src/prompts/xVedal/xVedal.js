@@ -8,6 +8,8 @@ import vedalBase, {
   chatPrompts as vedalChat
 } from 'prompts/characters/vedal'
 
+import chatBase from 'prompts/characters/chat'
+
 const neuro = {
   ...neuroBase,
   prompts: neuroPrompts
@@ -19,11 +21,8 @@ const vedal = {
 }
 
 const chat = {
-  ...neuro,
-  id: 'chat',
-  name: 'Chat',
-  color: '#9146FF',
-  image: 'chat.png',
+  ...chatBase,
+
   prompts: [
     ...neuroChat,
     ...vedalChat
