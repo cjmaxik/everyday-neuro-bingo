@@ -1,7 +1,8 @@
-import * as neuro from 'prompts/characters/neuro'
-import * as vedal from 'prompts/characters/vedal'
+import * as neuro from 'characters/neuro'
+import * as vedal from 'characters/vedal'
 
-import chatBase from 'prompts/characters/chat'
+import generic from 'characters/generic'
+import chatBase from 'characters/chat'
 
 const neuroKsp = {
   ...neuro.base,
@@ -16,12 +17,11 @@ const vedalKsp = {
 }
 
 const ksp = {
-  ...neuro.base,
+  ...generic,
 
   id: 'ksp',
   name: 'KSP',
   color: '#0504c2',
-  assetsFolder: 'neuro',
 
   prompts: [
     'Neuro mentions Miyu',

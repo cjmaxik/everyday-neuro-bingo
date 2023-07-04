@@ -7,7 +7,7 @@ export const featured = 'ksp'
 
 // Main block, always visible
 export const mainBlock = [
-  { to: 'ksp', text: 'Vedal Space Program' },
+  { to: 'ksp', text: 'Vedal Space Program', color: '#0504c2' },
   { to: 'neuro', text: 'Neuro-sama solo' },
   { to: 'xVedal', text: 'Streams with Vedal', color: '#266941' },
   { to: 'evil', text: 'Evil Neuro solo', color: '#700b1b' },

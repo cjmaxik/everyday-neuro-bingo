@@ -1,6 +1,6 @@
-import * as neuro from 'prompts/characters/neuro'
-import * as vedal from 'prompts/characters/vedal'
-import chat from 'prompts/characters/chat'
+import * as neuro from 'characters/neuro'
+import * as vedal from 'characters/vedal'
+import chat from 'characters/chat'
 
 const neuroPrompts = {
   ...neuro.base,

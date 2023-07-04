@@ -1,5 +1,5 @@
-import * as neuro from 'prompts/characters/neuro'
-import chatBase from 'prompts/characters/chat'
+import * as neuro from 'characters/neuro'
+import chatBase from 'characters/chat'
 
 const regularNeuro = {
   ...neuro.base,

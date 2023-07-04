@@ -32,6 +32,9 @@
       "prompts": [
         "src/prompts/*"
       ],
+      "characters": [
+        "src/prompts/characters/*"
+      ],
       "conf": [
         "src/conf/*"
       ],
