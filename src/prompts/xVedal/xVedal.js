@@ -1,31 +1,26 @@
-import neuroBase, {
-  regularPrompts as neuroPrompts,
-  chatPrompts as neuroChat
-} from 'prompts/characters/neuro'
+import * as neuro from 'prompts/characters/neuro'
+import * as vedal from 'prompts/characters/vedal'
+import chat from 'prompts/characters/chat'
 
-import vedalBase, {
-  regularPrompts as vedalPrompts,
-  chatPrompts as vedalChat
-} from 'prompts/characters/vedal'
+const neuroPrompts = {
+  ...neuro.base,
 
-import chatBase from 'prompts/characters/chat'
-
-const neuro = {
-  ...neuroBase,
-  prompts: neuroPrompts
+  prompts: neuro.regularPrompts
 }
 
-const vedal = {
-  ...vedalBase,
-  prompts: vedalPrompts
+const vedalPrompts = {
+  ...vedal.base,
+
+  prompts: vedal.regularPrompts
 }
 
-const chat = {
-  ...chatBase,
+const chatPrompts = {
+  ...chat,
 
   prompts: [
-    ...neuroChat,
-    ...vedalChat
+    ...neuro.chatPrompts,
+    ...vedal.chatPrompts,
+    ...chat.prompts
   ]
 }
 
@@ -33,6 +28,6 @@ export default {
   name: 'Neuro and Vedal',
   image: 'vedal/vedalCorpa.png',
   participants: [
-    neuro, vedal, chat
+    neuroPrompts, vedalPrompts, chatPrompts
   ]
 }
