@@ -34,7 +34,7 @@ export const regularPrompts = [
   'properly responds to\xa0Neuro',
 
   // mentions
-  'mentions Anny',
+  'mentions anny',
   'mentions random Vtuber',
   'mentions Abandoned Archive'
 ]
