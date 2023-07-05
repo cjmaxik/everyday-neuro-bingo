@@ -61,6 +61,8 @@
 </template>
 
 <script setup>
+// @ts-check
+
 // vue-related
 import { onBeforeMount, onBeforeUnmount } from 'vue'
 import { useQuasar } from 'quasar'

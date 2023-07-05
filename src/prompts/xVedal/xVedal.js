@@ -26,8 +26,6 @@ const chatPrompts = {
   )
 }
 
-console.log(chatPrompts)
-
 export default {
   name: 'Neuro and Vedal',
   image: 'vedal/vedalCorpa.png',

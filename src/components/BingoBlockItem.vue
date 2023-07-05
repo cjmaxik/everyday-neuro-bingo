@@ -42,6 +42,8 @@
 </template>
 
 <script setup>
+// @ts-check
+
 // vue related
 import { computed } from 'vue'
 import { useWindowFocus } from '@vueuse/core'

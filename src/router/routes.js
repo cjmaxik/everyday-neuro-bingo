@@ -1,3 +1,5 @@
+// @ts-check
+
 export default [
   {
     path: '/',
@@ -5,13 +7,13 @@ export default [
     children: [
       {
         path: '/',
-        component: () => import('src/pages/IndexPage.vue')
+        component: () => import('pages/IndexPage.vue')
       },
 
       {
         path: '/:type',
         props: true,
-        component: () => import('src/pages/BingoPage.vue')
+        component: () => import('pages/BingoPage.vue')
       }
     ]
   },

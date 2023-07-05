@@ -1,3 +1,5 @@
+// @ts-check
+
 // vue-related
 import { defineStore, acceptHMRUpdate } from 'pinia'
 import { useLocalStorage, usePreferredReducedMotion } from '@vueuse/core'
@@ -28,6 +30,5 @@ export const useGameSettingsStore = defineStore('gameSettings', {
   }
 })
 
-if (import.meta.hot) {
-  import.meta.hot.accept(acceptHMRUpdate(useGameSettingsStore, import.meta.hot))
-}
+// @ts-ignore
+if (import.meta.hot) import.meta.hot.accept(acceptHMRUpdate(useGameSettingsStore, import.meta.hot))

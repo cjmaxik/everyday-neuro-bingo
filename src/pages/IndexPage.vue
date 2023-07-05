@@ -19,6 +19,8 @@
 </template>
 
 <script setup>
+// @ts-check
+
 import AboutModal from 'components/AboutModal.vue'
 import StreamTypeLinks from 'components/StreamTypeLinks.vue'
 

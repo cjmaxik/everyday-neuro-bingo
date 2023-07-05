@@ -1,3 +1,6 @@
+// @ts-check
+import * as Types from 'helpers/types.d'
+
 // vue-related
 import { defineStore, acceptHMRUpdate } from 'pinia'
 import { useLocalStorage } from '@vueuse/core'
@@ -55,18 +58,7 @@ export const useGameStateStore = (id) => defineStore(`gameState-${id}`, {
     },
 
     /**
-     * @typedef StreamData
-     * @type {Object}
-     * @property {string} image
-     * @property {string} name
-     * @property {Object} participants
-     * @property {string} participants.participantId
-     * @property {Array<string>} participants.prompts
-     * @property {boolean?} random
-     */
-
-    /**
-     * @param {StreamData} streamData Prompts
+     * @param {Types.StreamData} streamData Prompts
      * @param {number} version Dataset version
     */
     generateBoard (streamData, version) {
@@ -111,7 +103,7 @@ export const useGameStateStore = (id) => defineStore(`gameState-${id}`, {
       this.participants = participants
 
       if (streamData.image.includes('{x}')) {
-        streamData.image = streamData.image.replace('{x}', Math.abs(newSeed % 10))
+        streamData.image = streamData.image.replace('{x}', Math.abs(newSeed % 10).toString())
       }
       this.freeBlockImage = `${assetsPath}/images/${streamData.image}`
 
@@ -120,8 +112,7 @@ export const useGameStateStore = (id) => defineStore(`gameState-${id}`, {
         if (this.ready) {
           if (
             this.version === version &&
-            this.seed === newSeed &&
-            this.streamType === streamData.streamType
+            this.seed === newSeed
           ) return
         }
       }
@@ -203,6 +194,5 @@ export const useGameStateStore = (id) => defineStore(`gameState-${id}`, {
   }
 })()
 
-if (import.meta.hot) {
-  import.meta.hot.accept(acceptHMRUpdate(useGameStateStore, import.meta.hot))
-}
+// @ts-ignore
+if (import.meta.hot) import.meta.hot.accept(acceptHMRUpdate(useGameStateStore, import.meta.hot))

@@ -1,21 +1,14 @@
-// see `./emotes.md` for details
+// @ts-check
+import * as Types from 'helpers/types.d'
 
+// see `./emotes.md` for details
 import emotes from './emotesList.json'
 const assetsURL = '/assets/images/emotes'
 
 /**
- * @typedef Emote Emote object with URLs
- * @type {Object}
- * @property {string} name Emote name
- * @property {Object} src URLs
- * @property {string} src.animated Animated emote URL
- * @property {string} src.static Static emote URL
- */
-
-/**
  * Generate an emote object with URLs from the list
  * @param {string} name Emote name
- * @returns {(Emote|null)} Emote object or null
+ * @returns {?Types.Emote} Emote object or null
  */
 export const generateEmote = (name) => {
   const emoteId = emotes[name]

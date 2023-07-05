@@ -72,6 +72,8 @@
 </template>
 
 <script setup>
+// @ts-check
+
 // vue related
 import { ref, watch } from 'vue'
 import { useQuasar } from 'quasar'

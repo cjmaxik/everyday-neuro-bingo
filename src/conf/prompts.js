@@ -1,3 +1,5 @@
+// @ts-check
+
 /**
  * 1. The object key is the route path
  * 2. Add the route to ./indexMenu.js

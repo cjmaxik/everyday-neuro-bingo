@@ -1,3 +1,5 @@
+// @ts-check
+
 /**
  * Index menu for StreamTypeLinks.vue
  */

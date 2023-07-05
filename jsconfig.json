@@ -1,6 +1,9 @@
 {
   "compilerOptions": {
     "target": "ESNext",
+    "moduleResolution": "node",
+    "module": "NodeNext",
+    "resolveJsonModule": true,
     "baseUrl": ".",
     "paths": {
       "src/*": [
@@ -30,13 +33,13 @@
       "helpers/*": [
         "src/helpers/*"
       ],
-      "prompts": [
+      "prompts/*": [
         "src/prompts/*"
       ],
-      "characters": [
+      "characters/*": [
         "src/prompts/characters/*"
       ],
-      "conf": [
+      "conf/*": [
         "src/conf/*"
       ],
       "vue$": [

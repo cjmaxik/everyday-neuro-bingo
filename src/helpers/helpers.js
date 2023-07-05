@@ -1,18 +1,5 @@
-// Types
-
-/**
- * @typedef ParticipantData
- * @type {Object}
- * @property {string} participantId
- * @property {Array<string>} prompts
- */
-
-/**
- * @typedef Prompt
- * @type {Object}
- * @property {string} id
- * @property {string} text
- */
+// @ts-check
+import * as Types from 'helpers/types.d'
 
 /**
  * Split array into chunks
@@ -69,17 +56,17 @@ export const deepCopy = (array) => JSON.parse(JSON.stringify(array))
 
 /**
  * Merge arrays and deduplicate entries
- * @param  {...String} arrays
+ * @param  {...string[]} arrays
  * @returns {string[]}
  */
 export const mergeUnique = (...arrays) => [...new Set([].concat(...arrays))]
 
 /**
  * Generate 48 prompts for the board
- * @param {Array<ParticipantData>} allPrompts
+ * @param {Types.ParticipantData[]} allPrompts
  * @param {number} seed
  * @param {number} boardSize
- * @returns {Array<Prompt>}
+ * @returns {Types.Prompt[]}
  */
 export const generatePrompts = (allPrompts, seed, boardSize) => {
   const participantsCount = allPrompts.length
@@ -143,7 +130,7 @@ export const getRandomInt = (min, max) => {
 export const generateBrowserSeed = () => ''.concat(
   window.navigator?.userAgent ?? 'The Swarm',
   window.navigator?.languages.toString() ?? 'en-US',
-  new Date().getUTCDate()
+  new Date().getUTCDate().toString()
 ).replaceAll(' ', '')
 
 /**

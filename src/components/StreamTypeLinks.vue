@@ -37,6 +37,8 @@
 </template>
 
 <script setup>
+// @ts-check
+
 // project-related
 import StreamTypeItem from 'components/StreamTypeItem.vue'
 import { featured, mainBlock, collabBlock } from 'conf/indexMenu'
