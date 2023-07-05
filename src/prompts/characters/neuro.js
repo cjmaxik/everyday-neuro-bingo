@@ -31,16 +31,18 @@ export const base = {
 
 // Here goes very general prompts, which can be applied to every single stream
 export const regularPrompts = [
+  // classics
+  'wink',
+  'heart',
+
   'stares',
   'makes sussy\xa0noise',
-  'W RIZZ',
   'dies',
   'cries',
   'funny joke',
   '"Filtered."',
   'leaves',
   'cites random link',
-  'tries to sing',
   'spams',
   'goes schizo',
   '#ad / corpa',
@@ -71,25 +73,9 @@ export const regularPrompts = [
   'denies being evil',
   'asks existential question',
   'asks one question on repeat',
-  'problem with her\xa0AI',
-
-  // emote prompts
-  // NOTE: do not use inline emotes here - Neuro spells them out as text!
-  'wink',
-  'plink / plonk / winky',
-  'POG / poggers',
-  'noted',
-  'KEKW',
-  'KEKWa',
-  'gigachad',
-  'heart',
-  'gymbag',
-  'donowalled',
-  'meow',
-  'bedge',
-  '1984',
-  'UwU',
-  'Erm',
+  '"There is a\xa0problem with\xa0my\xa0AI"',
+  'hbd Shiro~',
+  'claims her birthday is soon',
 
   // vedal related
   'loves Vedal',
@@ -112,7 +98,26 @@ export const specificPrompts = [
   'D',
   '3',
   'meaning of life',
-  'whats *emote*?'
+  'whats *emote*?',
+  'tries to sing',
+  'W RIZZ',
+
+  // emote prompts
+  // NOTE: do not use inline emotes here - Neuro spells them out as text!
+  'plink / plonk / winky',
+  'POG / poggers',
+  'noted',
+  'KEKW',
+  'KEKWa',
+  'gigachad',
+  'heart',
+  'gymbag',
+  'donowalled',
+  'meow',
+  'bedge',
+  '1984',
+  'UwU',
+  'Erm'
 ]
 
 // Any stuff Neuro can mention prompted or unprompted

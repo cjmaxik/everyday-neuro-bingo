@@ -14,29 +14,29 @@ export const base = {
 }
 
 export const regularPrompts = [
-  '"WHAT?"',
-  '"Shut up!"',
+  'WHAT?',
+  'Shut up!',
   '#ad / corpa',
   'cringe joke',
   'tutel noises',
   'leaks something',
   'gets competitive',
   'That\'s crazy :Tutel:',
-  'i have no idea',
-  '"why X doesn\'t work?"',
-  '"I\'m stupid"',
-  '"We\'ll fix it x2"',
+  'I have no idea',
+  'Why X doesn\'t work?',
+  'I\'m stupid',
+  'We\'ll fix it x2',
 
   // neuro related
   'argues with Neuro',
-  'gets hit on by Neuro',
   'hates Neuro',
   'loves Neuro',
+  'properly responds to\xa0Neuro',
 
   // mentions
   'mentions anny',
-  'mentions Abandoned Archive',
-  'mentions BO3 / PUBG'
+  'mentions random Vtuber',
+  'mentions Abandoned Archive'
 ]
 
 // chat related

@@ -68,6 +68,13 @@ export const shuffle = (array, seed) => {
 export const deepCopy = (array) => JSON.parse(JSON.stringify(array))
 
 /**
+ * Merge arrays and deduplicate entries
+ * @param  {...String} arrays
+ * @returns {string[]}
+ */
+export const mergeUnique = (...arrays) => [...new Set([].concat(...arrays))]
+
+/**
  * Generate 48 prompts for the board
  * @param {Array<ParticipantData>} allPrompts
  * @param {number} seed
