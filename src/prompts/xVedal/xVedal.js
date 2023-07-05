@@ -1,6 +1,8 @@
+import { mergeUnique } from 'helpers/helpers'
+
 import * as neuro from 'characters/neuro'
 import * as vedal from 'characters/vedal'
-import chat from 'characters/chat'
+import * as chat from 'characters/chat'
 
 const neuroPrompts = {
   ...neuro.base,
@@ -15,14 +17,16 @@ const vedalPrompts = {
 }
 
 const chatPrompts = {
-  ...chat,
+  ...chat.base,
 
-  prompts: [
-    ...neuro.chatPrompts,
-    ...vedal.chatPrompts,
-    ...chat.prompts
-  ]
+  prompts: mergeUnique(
+    neuro.chatPrompts,
+    vedal.chatPrompts,
+    chat.chatPrompts
+  )
 }
+
+console.log(chatPrompts)
 
 export default {
   name: 'Neuro and Vedal',

@@ -1,8 +1,10 @@
+import { mergeUnique } from 'helpers/helpers'
+
 import * as neuro from 'characters/neuro'
 import * as vedal from 'characters/vedal'
 
 import generic from 'characters/generic'
-import chatBase from 'characters/chat'
+import * as chat from 'characters/chat'
 
 const neuroKsp = {
   ...neuro.base,
@@ -16,7 +18,7 @@ const vedalKsp = {
   prompts: vedal.regularPrompts
 }
 
-const ksp = {
+const specificKsp = {
   ...generic,
 
   id: 'ksp',
@@ -41,21 +43,21 @@ const ksp = {
   ]
 }
 
-const chat = {
-  ...chatBase,
+const chatKsp = {
+  ...chat.base,
 
-  prompts: [
-    ...chatBase.prompts,
-    ...neuro.chatPrompts,
-    ...vedal.chatPrompts
-  ]
+  prompts: mergeUnique(
+    neuro.chatPrompts,
+    vedal.chatPrompts,
+    chat.chatPrompts
+  )
 }
 
 export default {
   name: 'Vedal Space Program',
   image: 'vedal/vedalSpaceProgram.png',
   participants: [
-    neuroKsp, chat,
-    ksp, vedalKsp
+    neuroKsp, chatKsp,
+    specificKsp, vedalKsp
   ]
 }
