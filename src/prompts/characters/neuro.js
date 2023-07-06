@@ -110,7 +110,6 @@ export const specificPrompts = [
   'KEKW',
   'KEKWa',
   'gigachad',
-  'heart',
   'gymbag',
   'donowalled',
   'meow',
