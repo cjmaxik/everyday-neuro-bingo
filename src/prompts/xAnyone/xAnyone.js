@@ -7,7 +7,7 @@ import * as chat from 'characters/chat'
 const genericCharacter = {
   ...genericCollab.base,
 
-  prompts: genericCollab.collabPrompts()
+  prompts: genericCollab.collabPrompts
 }
 
 const neuroCollab = {
