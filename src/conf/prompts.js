@@ -22,5 +22,6 @@ export default {
   family: () => import('prompts/family/family'),
 
   // Tests
-  emoteTest: () => import('prompts/solo/emoteTest')
+  emoteTest: () => import('prompts/tests/emote'),
+  genericCollab: () => import('prompts/tests/genericCollab')
 }
