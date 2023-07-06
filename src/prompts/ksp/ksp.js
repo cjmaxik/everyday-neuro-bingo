@@ -39,7 +39,8 @@ const specificKsp = {
     'forgot parachutes',
     'kerbonaut in open space',
     'chat spams :PANIC:',
-    'chat spams :o7:'
+    'chat spams :o7:',
+    'chat spams :VedalSpaceProgram:'
   ]
 }
 
