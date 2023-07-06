@@ -23,5 +23,6 @@ export const collabBlock = [
   { to: 'xMiyune', text: 'Miyune', color: '#007caa' },
   { to: 'xFilian', text: 'filian', color: '#be01fe' },
   { to: 'xShylily', text: 'Shylily', color: '#5a69ca' },
-  { to: 'family', text: 'Family' }
+  { to: 'family', text: 'Family' },
+  { to: 'xAnyone', text: 'Others', color: '#000' }
 ]

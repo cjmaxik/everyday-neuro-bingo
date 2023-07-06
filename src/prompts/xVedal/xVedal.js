@@ -3,17 +3,28 @@ import { mergeUnique } from 'helpers/helpers'
 import * as neuro from 'characters/neuro'
 import * as vedal from 'characters/vedal'
 import * as chat from 'characters/chat'
+import * as genericCollab from 'characters/genericCollab'
 
-const neuroPrompts = {
+const neuroRegular = {
   ...neuro.base,
 
   prompts: neuro.regularPrompts
 }
 
-const vedalPrompts = {
+const neuroCollab = {
+  ...neuro.base,
+
+  prompts: neuro.collabPrompts('Vedal')
+    .map(x => x.replace('Vedal Vedal', 'Vedal Veedal/Vidal/ etc.'))
+}
+
+const vedalRegular = {
   ...vedal.base,
 
-  prompts: vedal.regularPrompts
+  prompts: mergeUnique(
+    vedal.regularPrompts,
+    genericCollab.collabPrompts
+  )
 }
 
 const chatPrompts = {
@@ -30,6 +41,6 @@ export default {
   name: 'Neuro and Vedal',
   image: 'vedal/vedalCorpa.png',
   participants: [
-    neuroPrompts, vedalPrompts, chatPrompts
+    neuroRegular, vedalRegular, chatPrompts, neuroCollab
   ]
 }
