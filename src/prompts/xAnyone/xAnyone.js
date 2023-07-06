@@ -32,8 +32,8 @@ const chatPrompts = {
 }
 
 export default {
-  name: 'Generic collab test',
-  image: 'vedal/vedal.png',
+  name: 'Neuro-sama collab',
+  image: 'neuro/neuro.png',
   participants: [
     genericCharacter, neuroCollab,
     chatPrompts, neuroRegular

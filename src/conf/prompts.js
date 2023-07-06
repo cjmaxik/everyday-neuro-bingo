@@ -20,8 +20,8 @@ export default {
   xFilian: () => import('prompts/xFilian/xFilian'),
   xShylily: () => import('prompts/xShylily/xShylily'),
   family: () => import('prompts/family/family'),
+  xAnyone: () => import('prompts/xAnyone/xAnyone'),
 
   // Tests
-  emoteTest: () => import('prompts/tests/emote'),
-  genericCollab: () => import('prompts/tests/genericCollab')
+  emoteTest: () => import('prompts/tests/emote')
 }
