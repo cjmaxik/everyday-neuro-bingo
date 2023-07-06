@@ -9,7 +9,7 @@
       leave-active-class="animated fadeOut"
     >
       <div
-        v-show="!state.ready"
+        v-if="!state.ready || !state.readyToShow"
         :key="0"
         class="absolute-top"
       >
@@ -28,7 +28,7 @@
       </div>
 
       <div
-        v-show="state.ready"
+        v-else
         :key="1"
         class="bingo-card shadow-5"
         :class="{ fullscreen: $q.fullscreen.isActive }"

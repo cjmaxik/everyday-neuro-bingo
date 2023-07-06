@@ -28,6 +28,7 @@ export const useGameStateStore = (id) => defineStore(`gameState-${id}`, {
     // application data
     version: useLocalStorage(`version-${id}`, 3),
     ready: useLocalStorage(`ready-${id}`, false),
+    readyToShow: false,
 
     // game data
     streamName: null,
@@ -114,7 +115,11 @@ export const useGameStateStore = (id) => defineStore(`gameState-${id}`, {
           if (
             this.version === version &&
             this.seed === newSeed
-          ) return
+          ) {
+            this.readyToShow = true
+
+            return
+          }
         }
       }
 
@@ -146,6 +151,7 @@ export const useGameStateStore = (id) => defineStore(`gameState-${id}`, {
       }
 
       this.ready = true
+      this.readyToShow = true
     },
 
     increment (index, hideTally) {
