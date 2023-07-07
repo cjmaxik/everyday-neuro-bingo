@@ -22,6 +22,7 @@ const centerBlock = Math.floor(boardSize / 2)
 /**
  * Generates the game state store
  * @param {string} id Store ID
+ * @returns {import('pinia').Store<string, Types.GameStateStore, Object, Object>}
  */
 export const useGameStateStore = (id) => defineStore(`gameState-${id}`, {
   /**
@@ -45,9 +46,9 @@ export const useGameStateStore = (id) => defineStore(`gameState-${id}`, {
   }),
 
   getters: {
-    getBoardState: (state) => state.board,
-    getTally: (state) => (index) => state.board[index].tally,
-    isFree: (state) => (index) => state.board[index].free
+    getTally: (state) => (/** @type {number} */ index) => state.board[index].tally,
+    fullyReady: (state) => state.ready && state.readyToShow,
+    enoughParticipants: (state) => Object.keys(state.participants).length > 1
   },
 
   actions: {

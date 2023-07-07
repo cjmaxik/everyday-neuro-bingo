@@ -9,11 +9,9 @@ const preferredMotion = usePreferredReducedMotion()
 
 /**
  * Generates the game settings store
+ * @returns {import('pinia').Store<Types.GameSettingsStore, Object, Object>}
  */
 export const useGameSettingsStore = defineStore('gameSettings', {
-  /**
-   * @returns {Types.GameSettingsStore}
-   */
   state: () => ({
     removeFont: useLocalStorage('removeFont', false),
     disableSound: useLocalStorage('disableSound', false),

@@ -54,6 +54,11 @@
  */
 
 /**
+ * @typedef GameBoard Game board
+ * @type {BoardBlock[]}
+ */
+
+/**
  * @typedef GameStateStore Game state store
  * @type {Object}
  * @property {CoreTypes.RemovableRef<number>} version
@@ -63,7 +68,7 @@
  * @property {?string} freeBlockImage
  * @property {CoreTypes.RemovableRef<number>} seed
  * @property {Object.<string, Types.Character>} participants
- * @property {CoreTypes.RemovableRef<BoardBlock[]>} board
+ * @property {CoreTypes.RemovableRef<GameBoard>} board
  * @property {CoreTypes.RemovableRef<Array>} bingo
  * @property {CoreTypes.RemovableRef<Array>} streakCount
  * @property {CoreTypes.RemovableRef<number>} previousWin
@@ -75,7 +80,7 @@
  * @property {CoreTypes.RemovableRef<boolean>} removeFont
  * @property {CoreTypes.RemovableRef<boolean>} disableSound
  * @property {CoreTypes.RemovableRef<boolean>} hideTally
- * @property {CoreTypes.RemovableRef<("static"|"animated")>} emotes
+ * @property {CoreTypes.RemovableRef<("animated"|"static"|"text")>} emotes
  * @property {?string} streamName
  */
 
