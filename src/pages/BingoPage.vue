@@ -34,20 +34,27 @@
         :class="{ fullscreen: $q.fullscreen.isActive }"
       >
         <template
-          v-for="block in state.board"
+          v-for="block in state.board "
           :key="block.index"
         >
           <div
             v-if="block.free"
             class="bingo-block free"
-            :class="{ win: block.win }"
+            :class="{ win: block.win, 'dimmed': hoveredParticipant !== null }"
             :style="{ backgroundImage: `url(${state.freeBlockImage ?? '/assets/images/gymbag.png'})` }"
           />
 
           <BingoBlockItem
             v-else
             :block="block"
-            :class="`${block.participantId}-block`"
+            class="shadow-transition"
+            :class="[
+              `${block.participantId}-block`,
+              {
+                'shadow-24': isHighligted(block.participantId),
+                'dimmed': hoveredParticipant !== null && !isHighligted(block.participantId)
+              }
+            ]"
             :emotes="settings.emotes"
             :hide-tally="settings.hideTally"
             :participant="state.participants[block.participantId]"
@@ -65,15 +72,20 @@
         <div>
           Legend:
           <template
-            v-for="participant in state.participants"
+            v-for=" participant in state.participants "
             :key="participant.id"
           >
-            <q-badge
-              class="legend q-mr-xs shadow-2"
-              :style="{ backgroundColor: participant.color }"
+            <span
+              @mouseleave="hoveredParticipant = null"
+              @mouseover="hoveredParticipant = participant.id"
             >
-              {{ participant['name'] }}
-            </q-badge>
+              <q-badge
+                class="legend q-mr-xs shadow-2"
+                :style="{ backgroundColor: participant.color }"
+              >
+                {{ participant['name'] }}
+              </q-badge>
+            </span>
           </template>
         </div>
 
@@ -90,7 +102,7 @@
 // @ts-check
 
 // vue-related
-import { onBeforeMount, onBeforeUnmount } from 'vue'
+import { ref, onBeforeMount, onBeforeUnmount } from 'vue'
 import { useQuasar } from 'quasar'
 
 // project-related
@@ -110,6 +122,9 @@ const props = defineProps({
     default: 'neuro'
   }
 })
+
+const hoveredParticipant = ref(null)
+const isHighligted = (/** @type {string} */ id) => hoveredParticipant.value === id
 
 const streamType = props.type === '' ? 'neuro' : props.type
 if (!Object.keys(prompts).includes(streamType)) location.replace('/')
