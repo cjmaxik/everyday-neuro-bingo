@@ -32,6 +32,26 @@
           />
         </div>
       </q-expansion-item>
+
+      <q-expansion-item
+        v-if="collabBlock.length"
+        expand-icon-class="collab-toggle"
+        group="collab"
+        header-class="text-gymbag"
+        label="Archived"
+        toggle
+      >
+        <div class="collabs row">
+          <StreamTypeItem
+            v-for="stream in archivedBlock"
+            :key="stream.to"
+            class="col-6 col-grow"
+            :color="stream.color"
+            :text="stream.text"
+            :to="stream.to"
+          />
+        </div>
+      </q-expansion-item>
     </q-list>
   </div>
 </template>
@@ -41,5 +61,5 @@
 
 // project-related
 import StreamTypeItem from 'components/StreamTypeItem.vue'
-import { featured, mainBlock, collabBlock } from 'conf/indexMenu'
+import { featured, mainBlock, collabBlock, archivedBlock } from 'conf/indexMenu'
 </script>

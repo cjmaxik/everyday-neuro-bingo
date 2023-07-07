@@ -28,6 +28,8 @@ export const chatPrompts = [
   'chat spams :monkaW:',
   'chat spams :neuroplushsittingverycomfortablewhilesheroastsaporowithherfriends:',
   'chat spams :NOOOO:',
+  'chat spams :NOTED:',
+  'chat spams :notNOTED:',
   'chat spams :NOWAYING:',
   'chat spams :nuero: :nwero: :eliv:',
   'chat spams :ok:',

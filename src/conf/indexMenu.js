@@ -12,8 +12,7 @@ export const mainBlock = [
   { to: 'ksp', text: 'Vedal Space Program', color: '#0504c2' },
   { to: 'neuro', text: 'Neuro-sama solo' },
   { to: 'xVedal', text: 'Streams with Vedal', color: '#266941' },
-  { to: 'evil', text: 'Evil Neuro solo', color: '#700b1b' },
-  { to: 'miNeuro', text: 'Neuro plays Minecraft' }
+  { to: 'evil', text: 'Evil Neuro solo', color: '#700b1b' }
 ]
 
 // Collabs block, under expandable element
@@ -25,4 +24,10 @@ export const collabBlock = [
   { to: 'xShylily', text: 'Shylily', color: '#5a69ca' },
   { to: 'family', text: 'Family' },
   { to: 'xAnyone', text: 'Others', color: '#000' }
+]
+
+// Archived block, under expandable element
+export const archivedBlock = [
+  { to: 'miNeuro', text: 'Neuro plays Minecraft' },
+  { to: 'vedal', text: 'Vedal solo', color: '#266941' }
 ]
