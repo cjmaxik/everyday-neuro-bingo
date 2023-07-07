@@ -1,3 +1,7 @@
+// @ts-check
+// eslint-disable-next-line no-unused-vars
+import * as Types from 'helpers/types.d'
+
 // vue-related
 import { defineStore, acceptHMRUpdate } from 'pinia'
 import { useLocalStorage } from '@vueuse/core'
@@ -9,7 +13,7 @@ import {
   deepCopy,
   winningLines,
   generateBrowserSeed
-} from '../helpers/helpers'
+} from 'helpers/helpers'
 
 const streakCount = 7
 const boardSize = Math.pow(streakCount, 2)
@@ -18,12 +22,17 @@ const centerBlock = Math.floor(boardSize / 2)
 /**
  * Generates the game state store
  * @param {string} id Store ID
+ * @returns {import('pinia').Store<string, Types.GameStateStore, Object, Object>}
  */
 export const useGameStateStore = (id) => defineStore(`gameState-${id}`, {
+  /**
+   * @returns {Types.GameStateStore}
+   */
   state: () => ({
     // application data
     version: useLocalStorage(`version-${id}`, 3),
     ready: useLocalStorage(`ready-${id}`, false),
+    readyToShow: false,
 
     // game data
     streamName: null,
@@ -37,9 +46,9 @@ export const useGameStateStore = (id) => defineStore(`gameState-${id}`, {
   }),
 
   getters: {
-    getBoardState: (state) => state.board,
-    getTally: (state) => (index) => state.board[index].tally,
-    isFree: (state) => (index) => state.board[index].free
+    getTally: (state) => (/** @type {number} */ index) => state.board[index].tally,
+    fullyReady: (state) => state.ready && state.readyToShow,
+    enoughParticipants: (state) => Object.keys(state.participants).length > 1
   },
 
   actions: {
@@ -55,16 +64,7 @@ export const useGameStateStore = (id) => defineStore(`gameState-${id}`, {
     },
 
     /**
-     * @typedef StreamData
-     * @type {Object}
-     * @property {string} image
-     * @property {string} name
-     * @property {ParticipantData[]} participants
-     * @property {boolean?} random
-     */
-
-    /**
-     * @param {StreamData} streamData Prompts
+     * @param {Types.StreamData} streamData Prompts
      * @param {number} version Dataset version
     */
     generateBoard (streamData, version) {
@@ -84,6 +84,7 @@ export const useGameStateStore = (id) => defineStore(`gameState-${id}`, {
       const assetsPath = '/assets'
 
       console.group('Initializing prompts...')
+
       streamData.participants.forEach(data => {
         // participants
         participants[data.id] = {
@@ -108,7 +109,7 @@ export const useGameStateStore = (id) => defineStore(`gameState-${id}`, {
       this.participants = participants
 
       if (streamData.image.includes('{x}')) {
-        streamData.image = streamData.image.replace('{x}', Math.abs(newSeed % 10))
+        streamData.image = streamData.image.replace('{x}', Math.abs(newSeed % 10).toString())
       }
       this.freeBlockImage = `${assetsPath}/images/${streamData.image}`
 
@@ -117,9 +118,12 @@ export const useGameStateStore = (id) => defineStore(`gameState-${id}`, {
         if (this.ready) {
           if (
             this.version === version &&
-            this.seed === newSeed &&
-            this.streamType === streamData.streamType
-          ) return
+            this.seed === newSeed
+          ) {
+            this.readyToShow = true
+
+            return
+          }
         }
       }
 
@@ -134,6 +138,7 @@ export const useGameStateStore = (id) => defineStore(`gameState-${id}`, {
       this.board = []
 
       let promptIndex = 0
+
       for (let index = 0; index < boardSize; index++) {
         const free = index === centerBlock
 
@@ -150,6 +155,7 @@ export const useGameStateStore = (id) => defineStore(`gameState-${id}`, {
       }
 
       this.ready = true
+      this.readyToShow = true
     },
 
     increment (index, hideTally) {
@@ -199,6 +205,5 @@ export const useGameStateStore = (id) => defineStore(`gameState-${id}`, {
   }
 })()
 
-if (import.meta.hot) {
-  import.meta.hot.accept(acceptHMRUpdate(useGameStateStore, import.meta.hot))
-}
+// @ts-ignore
+if (import.meta.hot) import.meta.hot.accept(acceptHMRUpdate(useGameStateStore, import.meta.hot))

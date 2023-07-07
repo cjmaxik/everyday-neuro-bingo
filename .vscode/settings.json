@@ -2,7 +2,6 @@
   "editor.bracketPairColorization.enabled": true,
   "editor.guides.bracketPairs": true,
   "editor.formatOnSave": true,
-  "editor.defaultFormatter": "dbaeumer.vscode-eslint",
   "editor.codeActionsOnSave": [
     "source.fixAll.eslint"
   ],
@@ -18,10 +17,10 @@
   "[scss]": {
     "editor.defaultFormatter": "vscode.css-language-features"
   },
-  "[jsonc]": {
-    "editor.defaultFormatter": "vscode.json-language-features"
+  "[javascript]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
   },
   "html.format.wrapAttributes": "force-expand-multiline",
   "html.format.indentInnerHtml": false,
-  "eslint.format.enable": true
+  "eslint.format.enable": true,
 }

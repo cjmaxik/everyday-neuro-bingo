@@ -86,7 +86,7 @@
           label="Clear the board"
           no-caps
           text-color="white"
-          @click="clearBoard(currentRoute)"
+          @click="clearBoard()"
         />
 
         <q-btn
@@ -102,13 +102,15 @@
 </template>
 
 <script setup>
+// @ts-check
+
 // vue-related
 import { ref, onMounted, watch } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 
 // game settings
-import { useGameStateStore } from '../stores/gameState'
-import { useGameSettingsStore } from '../stores/gameSettings'
+import { useGameStateStore } from 'stores/gameState'
+import { useGameSettingsStore } from 'stores/gameSettings'
 
 // route
 const route = useRoute()
@@ -138,7 +140,7 @@ const clearBoard = () => {
   openSettingsModal.value = false
   if (confirm('Do you really want to clear this board state?')) {
     state.clearAll()
-    router.go()
+    router.go(0)
   }
 }
 

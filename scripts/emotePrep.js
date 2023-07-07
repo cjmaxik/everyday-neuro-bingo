@@ -1,3 +1,5 @@
+// @ts-check
+
 const fs = require('fs')
 const path = require('path')
 const axios = require('axios').default
@@ -6,6 +8,10 @@ const emotes = require('../src/helpers/emotesList.json')
 const assetsPath = path.resolve(__dirname, '../public/assets/images/emotes')
 const apiUrl = 'https://wsrv.nl/?url=cdn.7tv.app/emote'
 
+/**
+ * Download emote by name
+ * @param {string} name
+ */
 const downloadEmote = (name) => {
   let emoteId = emotes[name]
   if (!emoteId) return null
@@ -37,6 +43,12 @@ const downloadEmote = (name) => {
   }
 }
 
+/**
+ * Download and save emote file to disk
+ * @param {string} fileName
+ * @param {string} fileUrl
+ * @param {string} downloadPath
+ */
 const downloadFile = async (fileName, fileUrl, downloadPath) => {
   try {
     const response = await axios({
@@ -54,6 +66,9 @@ const downloadFile = async (fileName, fileUrl, downloadPath) => {
   }
 }
 
+/**
+ * Main function
+ */
 const main = async () => {
   // remove all emotes from the `assetsPath` folder (if any)
   fs.readdir(assetsPath, (err, files) => {

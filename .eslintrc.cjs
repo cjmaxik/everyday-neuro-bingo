@@ -33,7 +33,6 @@ module.exports = {
     // https://eslint.vuejs.org/user-guide/#why-doesn-t-it-work-on-vue-files
     // required to lint *.vue files
     'vue'
-
   ],
 
   globals: {
@@ -89,7 +88,6 @@ module.exports = {
 
     // allow debugger during development only
     'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
-    'no-unused-vars': process.env.NODE_ENV === 'production' ? 'error' : 'off',
 
     'padding-line-between-statements': ['error',
       { blankLine: 'always', prev: '*', next: 'return' }

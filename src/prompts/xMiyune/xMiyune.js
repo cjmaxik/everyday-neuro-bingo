@@ -1,5 +1,5 @@
 import neuro from './neuro'
-import miyune from 'prompts/characters/miyune'
+import miyune from 'characters/miyune'
 
 export default {
   name: 'Neuro x Miyune collab',

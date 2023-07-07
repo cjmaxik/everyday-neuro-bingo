@@ -1,39 +1,48 @@
-import neuroBase, {
-  regularPrompts as neuroPrompts,
-  chatPrompts as neuroChat
-} from 'prompts/characters/neuro'
+import { mergeUnique } from 'helpers/helpers'
 
-import vedalBase, {
-  regularPrompts as vedalPrompts,
-  chatPrompts as vedalChat
-} from 'prompts/characters/vedal'
+import * as neuro from 'characters/neuro'
+import * as vedal from 'characters/vedal'
+import * as chat from 'characters/chat'
+import * as genericCollab from 'characters/genericCollab'
 
-const neuro = {
-  ...neuroBase,
-  prompts: neuroPrompts
+const neuroRegular = {
+  ...neuro.base,
+
+  prompts: neuro.regularPrompts
 }
 
-const vedal = {
-  ...vedalBase,
-  prompts: vedalPrompts
+const neuroCollab = {
+  ...neuro.base,
+
+  prompts: neuro.collabPrompts('Vedal')
+    .map(x => x.replace('Vedal Vedal', 'Vedal Veedal/Vidal/ etc.'))
 }
 
-const chat = {
-  ...neuro,
-  id: 'chat',
-  name: 'Chat',
-  color: '#9146FF',
-  image: 'chat.png',
-  prompts: [
-    ...neuroChat,
-    ...vedalChat
-  ]
+const vedalRegular = {
+  ...vedal.base,
+
+  prompts: mergeUnique(
+    vedal.regularPrompts,
+    vedal.mentionPrompts,
+    vedal.collabPrompts,
+    genericCollab.collabPrompts
+  )
+}
+
+const chatPrompts = {
+  ...chat.base,
+
+  prompts: mergeUnique(
+    neuro.chatPrompts,
+    vedal.chatPrompts,
+    chat.chatPrompts
+  )
 }
 
 export default {
   name: 'Neuro and Vedal',
   image: 'vedal/vedalCorpa.png',
   participants: [
-    neuro, vedal, chat
+    neuroRegular, vedalRegular, chatPrompts, neuroCollab
   ]
 }

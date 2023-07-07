@@ -9,7 +9,7 @@
       leave-active-class="animated fadeOut"
     >
       <div
-        v-show="!state.ready"
+        v-if="!state.fullyReady"
         :key="0"
         class="absolute-top"
       >
@@ -28,7 +28,7 @@
       </div>
 
       <div
-        v-show="state.ready"
+        v-if="state.fullyReady"
         :key="1"
         class="bingo-card shadow-5"
         :class="{ fullscreen: $q.fullscreen.isActive }"
@@ -56,11 +56,39 @@
           />
         </template>
       </div>
+
+      <div
+        v-if="state.fullyReady && state.enoughParticipants"
+        :key="2"
+        class="bingo-legend row q-pt-lg"
+      >
+        <div>
+          Legend:
+          <template
+            v-for="participant in state.participants"
+            :key="participant.id"
+          >
+            <q-badge
+              class="legend q-mr-xs shadow-2"
+              :style="{ backgroundColor: participant.color }"
+            >
+              {{ participant['name'] }}
+            </q-badge>
+          </template>
+        </div>
+
+        <q-space />
+        <div v-show="$q.platform.is.desktop">
+          Hint: Ctrl+Click to undo the tally
+        </div>
+      </div>
     </transition-group>
   </q-page>
 </template>
 
 <script setup>
+// @ts-check
+
 // vue-related
 import { onBeforeMount, onBeforeUnmount } from 'vue'
 import { useQuasar } from 'quasar'

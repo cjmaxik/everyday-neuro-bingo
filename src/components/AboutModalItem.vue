@@ -23,6 +23,8 @@
 </template>
 
 <script setup>
+// @ts-check
+
 // vue-related
 import { ref } from 'vue'
 

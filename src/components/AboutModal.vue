@@ -113,6 +113,8 @@
 </template>
 
 <script setup>
+// @ts-check
+
 import HowToPlayPanel from './HowToPlayPanel.vue'
 
 defineProps({

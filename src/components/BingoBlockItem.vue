@@ -18,6 +18,7 @@
             >
               <img
                 :alt="emote.name"
+                class="q-px-xs"
                 :src="(emotes === 'animated' && focusedPage) ? emote.src.animated : emote.src.static"
               >
             </template>
@@ -42,12 +43,14 @@
 </template>
 
 <script setup>
+// @ts-check
+
 // vue related
 import { computed } from 'vue'
 import { useWindowFocus } from '@vueuse/core'
 
 // project related
-import { generateEmote, prepareBaseText } from 'src/helpers/emotes'
+import { generateEmote, prepareBaseText } from 'helpers/emotes'
 
 const props = defineProps({
   block: {

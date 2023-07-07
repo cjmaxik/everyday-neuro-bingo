@@ -22,6 +22,8 @@
 </template>
 
 <script setup>
+// @ts-check
+
 defineProps({
   to: {
     type: String,
