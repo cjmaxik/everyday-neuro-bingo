@@ -10,7 +10,7 @@ const prepareEmotes = () => {
   const emotes = []
 
   for (const key in emotesList) {
-    emotes.push(`:${key}:`)
+    emotes.push(`:${key}: :${key}:`)
   }
 
   return emotes

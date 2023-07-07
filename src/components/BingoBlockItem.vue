@@ -18,6 +18,7 @@
             >
               <img
                 :alt="emote.name"
+                class="q-px-xs"
                 :src="(emotes === 'animated' && focusedPage) ? emote.src.animated : emote.src.static"
               >
             </template>

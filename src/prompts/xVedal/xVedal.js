@@ -23,6 +23,8 @@ const vedalRegular = {
 
   prompts: mergeUnique(
     vedal.regularPrompts,
+    vedal.mentionPrompts,
+    vedal.collabPrompts,
     genericCollab.collabPrompts
   )
 }
