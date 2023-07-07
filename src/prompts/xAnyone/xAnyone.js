@@ -7,6 +7,7 @@ import * as chat from 'characters/chat'
 const genericCharacter = {
   ...genericCollab.base,
 
+  name: 'Partner',
   prompts: genericCollab.collabPrompts
 }
 
