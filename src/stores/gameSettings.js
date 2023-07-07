@@ -1,4 +1,6 @@
 // @ts-check
+// eslint-disable-next-line no-unused-vars
+import * as Types from 'helpers/types.d'
 
 // vue-related
 import { defineStore, acceptHMRUpdate } from 'pinia'
@@ -9,6 +11,9 @@ const preferredMotion = usePreferredReducedMotion()
  * Generates the game settings store
  */
 export const useGameSettingsStore = defineStore('gameSettings', {
+  /**
+   * @returns {Types.GameSettingsStore}
+   */
   state: () => ({
     removeFont: useLocalStorage('removeFont', false),
     disableSound: useLocalStorage('disableSound', false),

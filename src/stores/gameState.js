@@ -24,6 +24,9 @@ const centerBlock = Math.floor(boardSize / 2)
  * @param {string} id Store ID
  */
 export const useGameStateStore = (id) => defineStore(`gameState-${id}`, {
+  /**
+   * @returns {Types.GameStateStore}
+   */
   state: () => ({
     // application data
     version: useLocalStorage(`version-${id}`, 3),
