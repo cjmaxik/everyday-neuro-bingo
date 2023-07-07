@@ -15,6 +15,8 @@ import {
   generateBrowserSeed
 } from 'helpers/helpers'
 
+const version = 4
+
 const streakCount = 7
 const boardSize = Math.pow(streakCount, 2)
 const centerBlock = Math.floor(boardSize / 2)
@@ -30,7 +32,7 @@ export const useGameStateStore = (id) => defineStore(`gameState-${id}`, {
    */
   state: () => ({
     // application data
-    version: useLocalStorage(`version-${id}`, 3),
+    version: useLocalStorage(`version-${id}`, version),
     ready: useLocalStorage(`ready-${id}`, false),
     readyToShow: false,
 
@@ -55,7 +57,7 @@ export const useGameStateStore = (id) => defineStore(`gameState-${id}`, {
     clearAll () {
       this.ready = false
 
-      this.version = 3
+      this.version = version
       this.seed = 0
       this.board = []
       this.bingo = []
@@ -158,6 +160,10 @@ export const useGameStateStore = (id) => defineStore(`gameState-${id}`, {
       this.readyToShow = true
     },
 
+    /**
+     * @param {number} index
+     * @param {boolean} hideTally
+     */
     increment (index, hideTally) {
       const currentTally = this.board[index].tally
 
@@ -171,6 +177,9 @@ export const useGameStateStore = (id) => defineStore(`gameState-${id}`, {
       return true
     },
 
+    /**
+     * @param {number} index
+     */
     decrement (index) {
       if (this.board[index].tally <= 1) {
         this.board[index].tally = 0

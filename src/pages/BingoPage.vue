@@ -121,7 +121,7 @@ const settings = useGameSettingsStore()
 const $q = useQuasar()
 
 // Init data
-const version = 3
+const version = 4
 const streamData = prompts[streamType]
 
 onBeforeMount(() => {
