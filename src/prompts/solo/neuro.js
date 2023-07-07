@@ -5,7 +5,7 @@ const regularNeuro = {
   ...neuro.base,
 
   id: 'regularNeuro',
-  name: 'Neuro Regular',
+  name: 'Regular prompts',
 
   prompts: neuro.regularPrompts
 }
@@ -14,7 +14,7 @@ const specificNeuro = {
   ...neuro.base,
 
   id: 'specificNeuro',
-  name: 'Neuro Specific',
+  name: 'Specific prompts',
 
   prompts: neuro.specificPrompts
 }
@@ -24,7 +24,7 @@ const mentions = {
 
   id: 'mentions',
   color: '#420069',
-  name: 'Neuro Mentions',
+  name: 'Mentions',
 
   prompts: neuro.mentionPrompts
 }
