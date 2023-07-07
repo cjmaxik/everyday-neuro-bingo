@@ -1,4 +1,4 @@
-import neuro from 'prompts/characters/neuro'
+import neuro from 'characters/neuro'
 
 export default {
   ...neuro,

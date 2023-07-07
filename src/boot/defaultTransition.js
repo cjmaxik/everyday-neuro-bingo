@@ -1,3 +1,5 @@
+// @ts-check
+
 import { boot } from 'quasar/wrappers'
 import DefaultTransition from '../components/DefaultTransition.vue'
 

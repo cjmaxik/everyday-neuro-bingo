@@ -16,6 +16,8 @@
 </template>
 
 <script setup>
+// @ts-check
+
 // project-related
-import PageToolbar from '../components/PageToolbar.vue'
+import PageToolbar from 'components/PageToolbar.vue'
 </script>

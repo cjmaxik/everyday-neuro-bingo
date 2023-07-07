@@ -84,6 +84,7 @@ module.exports = configure(function (/* ctx */) {
       alias: {
         conf: path.join(__dirname, './src/conf'),
         prompts: path.join(__dirname, './src/prompts'),
+        characters: path.join(__dirname, './src/prompts/characters'),
         helpers: path.join(__dirname, './src/helpers')
       },
 

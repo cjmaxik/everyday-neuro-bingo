@@ -135,8 +135,8 @@ body:not(.remove-font) {
       padding: 4px 2px 0px 4px;
     }
 
-    .bingo-emotes :not(:last-child) {
-      margin-right: 5px;
+    .bingo-emotes {
+      filter: drop-shadow(.5px .5px .5px $gymbag);
     }
 
     &:nth-child(-n+7) {
@@ -191,5 +191,17 @@ body:not(.remove-font) {
 
   &:nth-child(odd) {
     border-right: 1px solid rgba(0, 0, 0, 0.12);
+  }
+}
+
+.bingo-legend {
+  margin: auto;
+  width: 1024px;
+  font-size: 15px;
+
+  .legend {
+    font-size: 15px;
+    padding-top: 4px;
+    padding-bottom: 4px;
   }
 }

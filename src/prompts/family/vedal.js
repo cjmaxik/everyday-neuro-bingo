@@ -1,4 +1,4 @@
-import vedal from 'prompts/characters/vedal'
+import vedal from 'characters/vedal'
 
 export default {
   ...vedal,

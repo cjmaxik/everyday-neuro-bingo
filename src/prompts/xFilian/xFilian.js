@@ -1,5 +1,5 @@
-import neuro from 'prompts/characters/neuro'
-import filian from 'prompts/characters/filian'
+import neuro from 'characters/neuro'
+import filian from 'characters/filian'
 
 export default {
   name: 'Neuro x filian collab',

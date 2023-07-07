@@ -3,14 +3,14 @@
  * Available ONLY via direct link (see `prompts.js`)
  */
 
-import neuro from 'prompts/characters/neuro'
+import neuro from 'characters/neuro'
 import emotesList from 'helpers/emotesList.json'
 
 const prepareEmotes = () => {
   const emotes = []
 
   for (const key in emotesList) {
-    emotes.push(`:${key}:`)
+    emotes.push(`:${key}: :${key}:`)
   }
 
   return emotes

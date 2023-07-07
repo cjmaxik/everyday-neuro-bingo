@@ -1,17 +1,48 @@
+export const base = {
+  id: 'neuro',
+  name: 'Neuro-sama',
+
+  // text color
+  color: '#843a49',
+
+  // assets folder
+  assetsFolder: 'neuro',
+
+  // tally background image
+  image: 'gymbag.png',
+
+  // tally sounds, will be chosen at random
+  sounds: [
+    'gymbag',
+    'heart',
+    'KEKWA',
+    'meow',
+    'meow_meow_lol',
+    'no',
+    'pog',
+    'wink',
+    'aaah_goodbye',
+    'erm',
+    'ermErm'
+  ].map(x => `${x}.mp3`)
+}
+
 // TODO: Make a better split between prompts, add more to each section
 
 // Here goes very general prompts, which can be applied to every single stream
 export const regularPrompts = [
+  // classics
+  'wink',
+  'heart',
+
   'stares',
   'makes sussy\xa0noise',
-  'W RIZZ',
   'dies',
   'cries',
   'funny joke',
   '"Filtered."',
   'leaves',
   'cites random link',
-  'tries to sing',
   'spams',
   'goes schizo',
   '#ad / corpa',
@@ -42,25 +73,9 @@ export const regularPrompts = [
   'denies being evil',
   'asks existential question',
   'asks one question on repeat',
-  'problem with her\xa0AI',
-
-  // emote prompts
-  // NOTE: do not use inline emotes here - Neuro spells them out as text!
-  'wink',
-  'plink / plonk / winky',
-  'POG / poggers',
-  'noted',
-  'KEKW',
-  'KEKWa',
-  'gigachad',
-  'heart',
-  'gymbag',
-  'donowalled',
-  'meow',
-  'bedge',
-  '1984',
-  'UwU',
-  'Erm',
+  '"There is a\xa0problem with\xa0my\xa0AI"',
+  'hbd Shiro~',
+  'claims her birthday is soon',
 
   // vedal related
   'loves Vedal',
@@ -83,7 +98,25 @@ export const specificPrompts = [
   'D',
   '3',
   'meaning of life',
-  'whats *emote*?'
+  'whats *emote*?',
+  'tries to sing',
+  'W RIZZ',
+
+  // emote prompts
+  // NOTE: do not use inline emotes here - Neuro spells them out as text!
+  'plink / plonk / winky',
+  'POG / poggers',
+  'noted',
+  'KEKW',
+  'KEKWa',
+  'gigachad',
+  'gymbag',
+  'donowalled',
+  'meow',
+  'bedge',
+  '1984',
+  'UwU',
+  'Erm'
 ]
 
 // Any stuff Neuro can mention prompted or unprompted
@@ -112,74 +145,28 @@ export const chatPrompts = [
   'chat spams copypasta',
   'chat prays',
   'chat L\'s\xa0Neuro',
-  'chat W\'s\xa0Neuro',
-
-  // chat related emotes spams
-  // please keep the list in alphabetical order
-  'chat spams :5neuros:',
-  'chat spams :Aware:',
-  'chat spams :AYAYA:',
-  'chat spams :Bedge:',
-  'chat spams :cabbage:',
-  'chat spams :Classic:',
-  'chat spams :Clueless:',
-  'chat spams :Erm:',
-  'chat spams :Flushed:',
-  'chat spams :GIGACHAD: :GIGANEURO:',
-  'chat spams :hiyori:',
-  'chat spams :HUH:',
-  'chat spams :KEKW:',
-  'chat spams :meow:',
-  'chat spams :monkaTOS:',
-  'chat spams :monkaW:',
-  'chat spams :neuroplushsittingverycomfortablewhilesheroastsaporowithherfriends:',
-  'chat spams :NOOOO:',
-  'chat spams :NOWAYING:',
-  'chat spams :nuero: :nwero: :eliv:',
-  'chat spams :ok:',
-  'chat spams :PauseSama:',
-  'chat spams :POG: :poggers:',
-  'chat spams :reallyGunPull: :vedalPls:',
-  'chat spams :RIGGED:',
-  'chat spams :RIPBOZO:',
-  'chat spams :SCHIZO:',
-  'chat spams :SNIFFA:',
-  'chat spams :SoCute:',
-  'chat spams :Susge:',
-  'chat spams :Tutel:',
-  'chat spams :WAYTOODANK:',
-
-  // twitch meta
-  'raiding / raided by anny'
+  'chat W\'s\xa0Neuro'
 ]
 
+export const collabPrompts = (name = 'them') => [
+  'argues with {x}',
+  'donowalls {x}',
+  'calls {x} an\xa0AI',
+  'calls {x} small/short',
+  'calls {x} Vedal',
+  'gaslights {x}',
+  'hates {x}',
+  'invents new nickname for\xa0{x}',
+  'keeps {x} as\xa0a pet',
+  'loves {x}',
+  'misgenders {x}',
+  'roasts {x}',
+  'shames {x}',
+  'W RIZZ'
+].map(x => x.replaceAll('{x}', name))
+
 export default {
-  id: 'neuro',
-  name: 'Neuro-sama',
-
-  // text color
-  color: '#843a49',
-
-  // assets folder
-  assetsFolder: 'neuro',
-
-  // tally background image
-  image: 'gymbag.png',
-
-  // tally sounds, will be chosen at random
-  sounds: [
-    'gymbag',
-    'heart',
-    'KEKWA',
-    'meow',
-    'meow_meow_lol',
-    'no',
-    'pog',
-    'wink',
-    'aaah_goodbye',
-    'erm',
-    'ermErm'
-  ].map(x => `${x}.mp3`),
+  ...base,
 
   prompts: [
     // Include regular prompts
