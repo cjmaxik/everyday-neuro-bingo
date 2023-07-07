@@ -72,16 +72,18 @@
 </template>
 
 <script setup>
+// @ts-check
+
 // vue related
 import { ref, watch } from 'vue'
 import { useQuasar } from 'quasar'
 
 // project-related
 import SettingsPanel from './SettingsPanel.vue'
-import AboutModalItem from '../components/AboutModalItem.vue'
+import AboutModalItem from 'components/AboutModalItem.vue'
 
 // settings store
-import { useGameSettingsStore } from 'src/stores/gameSettings'
+import { useGameSettingsStore } from 'stores/gameSettings'
 const settings = useGameSettingsStore()
 
 const realStreamName = ref(settings.streamName)

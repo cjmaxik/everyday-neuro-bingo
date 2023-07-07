@@ -9,8 +9,27 @@
       leave-active-class="animated fadeOut"
     >
       <div
-        v-show="state.ready"
+        v-if="!state.fullyReady"
         :key="0"
+        class="absolute-top"
+      >
+        <div class="row justify-center items-center">
+          <div class="text-center q-pa-xs">
+            <img
+              alt="Loading..."
+              src="/assets/images/gymbag.png"
+            >
+
+            <h2 class="text-gymbag no-margin">
+              Stay tuned...
+            </h2>
+          </div>
+        </div>
+      </div>
+
+      <div
+        v-if="state.fullyReady"
+        :key="1"
         class="bingo-card shadow-5"
         :class="{ fullscreen: $q.fullscreen.isActive }"
       >
@@ -22,7 +41,7 @@
             v-if="block.free"
             class="bingo-block free"
             :class="{ win: block.win }"
-            :style="{ backgroundImage: `url(${state.freeBlockImage ?? '/assets/iamges/gymbag.png'})` }"
+            :style="{ backgroundImage: `url(${state.freeBlockImage ?? '/assets/images/gymbag.png'})` }"
           />
 
           <BingoBlockItem
@@ -39,65 +58,60 @@
       </div>
 
       <div
-        v-show="!state.ready"
-        :key="1"
+        v-if="state.fullyReady && state.enoughParticipants"
+        :key="2"
+        class="bingo-legend row q-pt-lg"
       >
-        <div class="row justify-center items-center">
-          <div class="text-center q-pa-xs">
-            <img
-              alt="Loading..."
-              src="/assets/images/gymbag.png"
+        <div>
+          Legend:
+          <template
+            v-for="participant in state.participants"
+            :key="participant.id"
+          >
+            <q-badge
+              class="legend q-mr-xs shadow-2"
+              :style="{ backgroundColor: participant.color }"
             >
-            <h2 class="text-gymbag">
-              Stay tuned...
-            </h2>
-          </div>
+              {{ participant['name'] }}
+            </q-badge>
+          </template>
+        </div>
+
+        <q-space />
+        <div v-show="$q.platform.is.desktop">
+          Hint: Ctrl+Click to undo the tally
         </div>
       </div>
     </transition-group>
-
-    <q-banner
-      v-if="streamData.random"
-      class="random-info bg-primary text-white text-center shadow-5"
-      padding
-      rounded
-    >
-      <p>
-        <strong>NOTE:</strong> This is a randomized board created specifically for you. It is based on your current
-        browser, supported languages, and current date. If you have any issues with the board (namely, that it changes
-        after every page reload), please reach out in the "Everyday Neuro Bingo" discussion of Neurocord.
-      </p>
-      <p class="no-margin">
-        Everyday Neuro Bingo website does not collect your data. Everything is stored on your device.
-      </p>
-    </q-banner>
   </q-page>
 </template>
 
 <script setup>
+// @ts-check
+
 // vue-related
-import { onBeforeUnmount, onMounted } from 'vue'
+import { onBeforeMount, onBeforeUnmount } from 'vue'
 import { useQuasar } from 'quasar'
 
 // project-related
-import BingoBlockItem from '../components/BingoBlockItem.vue'
+import BingoBlockItem from 'components/BingoBlockItem.vue'
 
-import { getRandomInt } from 'src/helpers/helpers'
-import prompts from '../prompts/prompts'
+import { getRandomInt } from 'helpers/helpers'
+import prompts from 'conf/prompts'
 
 // states
-import { useGameStateStore } from '../stores/gameState'
-import { useGameSettingsStore } from '../stores/gameSettings'
+import { useGameStateStore } from 'stores/gameState'
+import { useGameSettingsStore } from 'stores/gameSettings'
 
 // props
 const props = defineProps({
   type: {
     type: String,
-    default: 'justChatting'
+    default: 'neuro'
   }
 })
 
-const streamType = props.type === '' ? 'justChatting' : props.type
+const streamType = props.type === '' ? 'neuro' : props.type
 if (!Object.keys(prompts).includes(streamType)) location.replace('/')
 
 const state = useGameStateStore(streamType)
@@ -106,36 +120,45 @@ const settings = useGameSettingsStore()
 // Quasar object
 const $q = useQuasar()
 
+// Init data
 const version = 3
 const streamData = prompts[streamType]
 
-// page title
-settings.streamName = streamData.name
-document.title = `${streamData.name} | Everyday Neuro Bingo`
-onBeforeUnmount(() => {
-  document.title = 'Everyday Neuro Bingo'
-})
+onBeforeMount(() => {
+  // Load stream data
+  streamData().then(module => {
+    const data = module?.default
 
-state.generateBoard(streamData, version)
+    // Generate state
+    state.generateBoard(data, version)
 
-// styles
-onMounted(async () => {
-  document.getElementById('participantsStyles')?.remove()
+    // Rename title
+    settings.streamName = data.name
+    document.title = `${data.name} | Everyday Neuro Bingo`
 
-  const style = document.createElement('style')
-  style.id = 'participantsStyles'
+    // Apply CSS stuff
+    document.getElementById('participantsStyles')?.remove()
 
-  for (const id in state.participants) {
-    const participant = state.participants[id]
-    style.innerHTML += `
+    const style = document.createElement('style')
+    style.id = 'participantsStyles'
+
+    for (const id in state.participants) {
+      const participant = state.participants[id]
+      style.innerHTML += `
       .${participant.id}-block {
-        --tally-image: url(${participant.image ?? '/assets/iamges/gymbag.png'});
+        --tally-image: url(${participant.image ?? '/assets/images/gymbag.png'});
         --text-color: ${participant.color ?? '#000'};
       }
     `
-  }
+    }
 
-  document.getElementsByTagName('head')[0].appendChild(style)
+    document.getElementsByTagName('head')[0].appendChild(style)
+  })
+})
+
+// page title
+onBeforeUnmount(() => {
+  document.title = 'Everyday Neuro Bingo'
 })
 
 // game logic
@@ -195,6 +218,10 @@ const notifyForUndo = (block) => {
         handler: () => {
           decrement(block)
         }
+      },
+      {
+        label: 'Dismiss',
+        color: 'white'
       }
     ]
   })

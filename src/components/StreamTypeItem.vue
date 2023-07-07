@@ -1,11 +1,12 @@
 <template>
   <q-item
-    :class="{ 'bg-kekwa-half': featured }"
+    :class="{ 'bg-kekwa-half': featured, 'text-gymbag': color === null }"
     clickable
     exact
+    :style="{ color }"
     :to="to"
   >
-    <q-item-section class="text-gymbag">
+    <q-item-section>
       <q-item-label
         v-if="featured"
         caption
@@ -21,6 +22,8 @@
 </template>
 
 <script setup>
+// @ts-check
+
 defineProps({
   to: {
     type: String,
@@ -33,6 +36,10 @@ defineProps({
   featured: {
     type: Boolean,
     default: false
+  },
+  color: {
+    type: String,
+    default: null
   }
 })
 </script>

@@ -1,41 +1,25 @@
-// see `./emotesList.js` for details
+// @ts-check
+// eslint-disable-next-line no-unused-vars
+import * as Types from 'helpers/types.d'
 
-import emotes from './emotesList'
-const apiUrl = 'https://wsrv.nl/?url=cdn.7tv.app/emote'
-
-/**
- * @typedef Emote Emote object with URLs
- * @type {Object}
- * @property {string} name Emote name
- * @property {Object} src URLs
- * @property {string} src.animated Animated emote URL
- * @property {string} src.static Static emote URL
- */
+// see `./emotes.md` for details
+import emotes from './emotesList.json'
+const assetsURL = '/assets/images/emotes'
 
 /**
  * Generate an emote object with URLs from the list
  * @param {string} name Emote name
- * @returns {(Emote|null)} Emote object or null
+ * @returns {?Types.Emote} Emote object or null
  */
 export const generateEmote = (name) => {
-  let emoteId = emotes[name]
+  const emoteId = emotes[name]
   if (!emoteId) return null
-
-  let page = -1
-  if (emoteId.includes('_')) {
-    const emoteWithPage = emoteId.split('_')
-
-    emoteId = emoteWithPage[0]
-    page = emoteWithPage[1]
-  }
-
-  const url = `${apiUrl}/${emoteId}/1x.webp`
 
   return {
     name,
     src: {
-      animated: `${url}&n=-1`,
-      static: `${url}&page=${page}`
+      animated: `${assetsURL}/${name}_a.webp`,
+      static: `${assetsURL}/${name}_s.webp`
     }
   }
 }

@@ -1,5 +1,9 @@
 {
   "compilerOptions": {
+    "target": "ESNext",
+    "moduleResolution": "node",
+    "module": "NodeNext",
+    "resolveJsonModule": true,
     "baseUrl": ".",
     "paths": {
       "src/*": [
@@ -29,8 +33,14 @@
       "helpers/*": [
         "src/helpers/*"
       ],
-      "propmts": [
-        "src/propmts/*"
+      "prompts/*": [
+        "src/prompts/*"
+      ],
+      "characters/*": [
+        "src/prompts/characters/*"
+      ],
+      "conf/*": [
+        "src/conf/*"
       ],
       "vue$": [
         "node_modules/vue/dist/vue.runtime.esm-bundler.js"

@@ -1,18 +1,6 @@
-// Types
-
-/**
- * @typedef ParticipantData
- * @type {Object}
- * @property {string} participantId
- * @property {Array<string>} prompts
- */
-
-/**
- * @typedef Prompt
- * @type {Object}
- * @property {string} id
- * @property {string} text
- */
+// @ts-check
+// eslint-disable-next-line no-unused-vars
+import * as Types from 'helpers/types.d'
 
 /**
  * Split array into chunks
@@ -68,21 +56,33 @@ export const shuffle = (array, seed) => {
 export const deepCopy = (array) => JSON.parse(JSON.stringify(array))
 
 /**
+ * Merge arrays and deduplicate entries
+ * @param  {...string[]} arrays
+ * @returns {string[]}
+ */
+export const mergeUnique = (...arrays) => [...new Set([].concat(...arrays))]
+
+/**
  * Generate 48 prompts for the board
- * @param {Array<ParticipantData>} allPrompts
+ * @param {Types.ParticipantData[]} allPrompts
  * @param {number} seed
  * @param {number} boardSize
- * @returns {Array<Prompt>}
+ * @returns {Types.Prompt[]}
  */
 export const generatePrompts = (allPrompts, seed, boardSize) => {
   const participantsCount = allPrompts.length
   const countForParticipiant = Math.floor((boardSize - 1) / participantsCount)
+  console.debug(`Expecting ${countForParticipiant} prompts for each participant...`)
 
   let finalPrompts = []
   finalPrompts = Array.from(new Array(participantsCount), () => [])
 
   allPrompts.forEach((data, index) => {
     const prompts = shuffle(data.prompts, seed).slice(0, countForParticipiant)
+
+    if (prompts.length < countForParticipiant) {
+      throw Error(`Not enough propmts for ${data.participantId}`)
+    }
 
     prompts.forEach(text => {
       finalPrompts[index].push({
@@ -125,23 +125,13 @@ export const getRandomInt = (min, max) => {
 }
 
 /**
- * Generates seed phrase based on a current date in UTC timezone
- * @returns {string} Seed phrase
- */
-export const generateDailySeed = () => ''.concat(
-  new Date().getUTCDate(),
-  new Date().getUTCMonth(),
-  new Date().getUTCFullYear()
-)
-
-/**
  * Generates seed phrase based on a browser + current date in UTC timezone
  * @returns {string} Seed phrase
  */
 export const generateBrowserSeed = () => ''.concat(
   window.navigator?.userAgent ?? 'The Swarm',
   window.navigator?.languages.toString() ?? 'en-US',
-  new Date().getUTCDate()
+  new Date().getUTCDate().toString()
 ).replaceAll(' ', '')
 
 /**

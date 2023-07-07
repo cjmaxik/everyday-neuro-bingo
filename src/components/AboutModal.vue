@@ -43,7 +43,7 @@
 
       <p>
         Includes art by Rune, 2Pfrog, niceaccoun, lingyou, anny, Beyumi, M3gur3n, Kaz, shouu_kyun, dmaxcustom,
-        MapleNephthys, Bungee and other distinguished&nbsp;artists.<br>Source code is available on <a
+        MapleNephthys, Bungee, why, mmeizterr, and other distinguished&nbsp;artists.<br>Source code is available on <a
           ref="noopener noreferrer"
           href="https://github.com/cjmaxik/everyday-neuro-bingo?ref=neuro-bingo"
           target="_blank"
@@ -113,6 +113,8 @@
 </template>
 
 <script setup>
+// @ts-check
+
 import HowToPlayPanel from './HowToPlayPanel.vue'
 
 defineProps({

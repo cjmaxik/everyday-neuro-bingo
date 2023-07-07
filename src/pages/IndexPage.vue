@@ -19,11 +19,13 @@
 </template>
 
 <script setup>
-import AboutModal from 'src/components/AboutModal.vue'
-import StreamTypeLinks from 'src/components/StreamTypeLinks.vue'
+// @ts-check
+
+import AboutModal from 'components/AboutModal.vue'
+import StreamTypeLinks from 'components/StreamTypeLinks.vue'
 
 // settings store
-import { useGameSettingsStore } from 'src/stores/gameSettings'
+import { useGameSettingsStore } from 'stores/gameSettings'
 const settings = useGameSettingsStore()
 settings.streamName = null
 </script>

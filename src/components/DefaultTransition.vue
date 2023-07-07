@@ -16,6 +16,8 @@
 </template>
 
 <script setup>
+// @ts-check
+
 import { usePreferredReducedMotion } from '@vueuse/core'
 const preferredMotion = usePreferredReducedMotion()
 </script>
