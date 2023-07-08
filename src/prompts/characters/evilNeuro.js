@@ -80,7 +80,7 @@ export const specificPrompts = [
   'hates chat',
   'hates love',
   'shouts KEK!!',
-  'admits she\'s a powerfull\xa0gigachad',
+  'admits she\'s a powerfull gigachad',
   'aggressive meow'
 ]
 
