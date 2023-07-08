@@ -129,10 +129,12 @@ export const getRandomInt = (min, max) => {
  * @returns {string} Seed phrase
  */
 export const generateBrowserSeed = () => ''.concat(
-  window.navigator?.userAgent ?? 'The Swarm',
+  new Date().getUTCFullYear().toString(),
+  new Date().getUTCMonth().toString(),
+  new Date().getUTCDate().toString(),
   window.navigator?.languages.toString() ?? 'en-US',
-  new Date().getUTCDate().toString()
-).replaceAll(' ', '')
+  window.navigator?.userAgent ?? 'The Swarm'
+).replaceAll(/[^a-zA-Z0-9]+/g, '')
 
 /**
  * Winning lines for the board

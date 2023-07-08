@@ -7,7 +7,7 @@ import { defineStore, acceptHMRUpdate } from 'pinia'
 import { useLocalStorage } from '@vueuse/core'
 
 // project-related
-import seedrandom from 'seedrandom'
+import alea from 'seedrandom'
 import {
   generatePrompts,
   deepCopy,
@@ -73,7 +73,7 @@ export const useGameStateStore = (id) => defineStore(`gameState-${id}`, {
       console.group('Initializing random seed...')
 
       const seedPhrase = generateBrowserSeed()
-      const newSeed = seedrandom(seedPhrase, { state: true }).int32()
+      const newSeed = Math.abs(alea(seedPhrase).int32())
 
       console.debug('Seed phrase -', seedPhrase)
       console.debug('Seed -', newSeed)
