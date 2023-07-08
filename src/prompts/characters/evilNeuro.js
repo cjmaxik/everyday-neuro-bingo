@@ -77,7 +77,11 @@ export const specificPrompts = [
   'her cat is missing again',
   '"I am not Evil"',
   'loves chat',
-  'hates chat'
+  'hates chat',
+  'hates love',
+  'shouts KEK!!',
+  'admits she\'s a powerfull\xa0gigachad',
+  'aggressive meow'
 ]
 
 export const chatPrompts = [
@@ -90,6 +94,9 @@ export const mentionPrompts = [
   'mentions NASA',
   'mentions The\xa0Swarm',
   'mentions other VTubers',
+  'mentions hell character',
+  'mentions donohouse',
+  'mentions pineapple\xa0pizza'
 
   'loves Vedal',
   'hates Vedal',
@@ -98,9 +105,6 @@ export const mentionPrompts = [
   'loves Neuro',
   'hates Neuro',
   'calls Neuro a\xa0human',
-
-  'prompt 1',
-  'prompt 2'
 ]
 
 export default {
