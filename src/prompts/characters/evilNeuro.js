@@ -96,7 +96,7 @@ export const mentionPrompts = [
   'mentions other VTubers',
   'mentions hell character',
   'mentions donohouse',
-  'mentions pineapple\xa0pizza'
+  'mentions pineapple\xa0pizza',
 
   'loves Vedal',
   'hates Vedal',
@@ -104,7 +104,7 @@ export const mentionPrompts = [
 
   'loves Neuro',
   'hates Neuro',
-  'calls Neuro a\xa0human',
+  'calls Neuro a\xa0human'
 ]
 
 export default {
