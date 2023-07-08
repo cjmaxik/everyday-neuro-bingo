@@ -97,16 +97,14 @@ export const useGameStateStore = (id) => defineStore(`gameState-${id}`, {
       }
       this.freeBlockImage = `${assetsPath}/images/${streamData.image}`
 
-      // Check if the version, seed and/or stream type has changed
-      // if (process.env.NODE_ENV !== 'development') {
-      if (this.ready) {
-        if (this.seed === newSeed) {
+      // Check if the seed has changed
+      if (process.env.NODE_ENV !== 'development') {
+        if (this.ready && this.seed === newSeed) {
           this.readyToShow = true
 
           return
         }
       }
-      // }
 
       console.log('Seed has changes - clearing everything...')
       this.clearAll()
