@@ -6,11 +6,12 @@ export const base = {
   image: 'tutel.png',
 
   sounds: [
-    'meow.mp3',
-    'femboy.mp3',
-    'tequila.mp3',
-    'ayaya.mp3'
-  ]
+    'meow',
+    'femboy',
+    'tequila',
+    'ayaya',
+    'yep'
+  ].map(x => `${x}.mp3`)
 }
 
 export const regularPrompts = [
