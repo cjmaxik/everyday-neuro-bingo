@@ -204,9 +204,9 @@ body:not(.remove-font) {
   margin: auto;
   width: 1024px;
   font-size: 15px;
+  user-select: none;
 
   .legend {
-    cursor: pointer;
     font-size: 15px;
     padding-top: 4px;
     padding-bottom: 4px;
