@@ -23,7 +23,9 @@ export const base = {
     'wink',
     'aaah_goodbye',
     'erm',
-    'ermErm'
+    'ermErm',
+    'yep1',
+    'yep2'
   ].map(x => `${x}.mp3`)
 }
 
