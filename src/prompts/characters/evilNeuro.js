@@ -1,7 +1,9 @@
-export default {
+export const base = {
   id: 'evilNeuro',
   name: 'Evil Neuro',
   color: '#700b1b',
+
+  assetsFolder: 'evilNeuro',
 
   image: 'robot.png',
 
@@ -16,77 +18,105 @@ export default {
     'twitchy.mp3',
     'uwoh.mp3',
     'wink.mp3'
-  ],
+  ]
+}
+
+export const regularPrompts = [
+  // general prompts from Neuro
+  'the other\xa0day story',
+  'leaves',
+  'wink',
+  'tries to sleep',
+  'denies being an\xa0AI',
+  'admits to\xa0murder',
+  'filtered',
+  'self censors',
+  'any kind of tech\xa0issue',
+  'misgenders someone',
+  'admits she\'s a\xa0god',
+  'shames a\xa0viewer',
+  'donowalls',
+  'tries to\xa0sing',
+  'KEKW',
+  'trauma dump',
+
+  // sounds
+  'sussy sound',
+  'random sound',
+  'cursed sound',
+  'LOUD sound',
+
+  // emote prompts
+  // NOTE: do not use inline emotes here - Evil spells them out as text!
+  'plink / plonk / winky',
+  'POG / poggers',
+  'noted',
+  'KEKW',
+  'KEKWa',
+  'gigachad',
+  'gymbag',
+  'donowalled',
+  'meow',
+  'bedge',
+  '1984',
+  'UwU',
+  'Erm'
+]
+
+export const specificPrompts = [
+  '"Aw shucks!"',
+  'describes her evil\xa0plan',
+  'wholesome moment',
+  'denies being evil',
+  'any kind of revolution',
+  'stares',
+  '"Twitchy"',
+  '"FRICK!"',
+  'actually swears',
+  'human experiments',
+  'her cat is missing again',
+  '"I am not Evil"',
+  'loves chat',
+  'hates chat',
+  'hates love',
+  'shouts KEK!!',
+  'admits she\'s a powerfull gigachad',
+  'aggressive meow'
+]
+
+export const chatPrompts = [
+  'chat L\'s\xa0Evil',
+  'chat W\'s\xa0Evil'
+]
+
+export const mentionPrompts = [
+  'mentions Goody Two\xa0Shoes',
+  'mentions NASA',
+  'mentions The\xa0Swarm',
+  'mentions other VTubers',
+  'mentions hell character',
+  'mentions donohouse',
+  'mentions pineapple\xa0pizza',
+
+  'loves Vedal',
+  'hates Vedal',
+  'calls Vedal an\xa0AI',
+
+  'loves Neuro',
+  'hates Neuro',
+  'calls Neuro a\xa0human'
+]
+
+export default {
+  ...base,
 
   prompts: [
-    // general prompts from Neuro
-    'the other\xa0day story',
-    'leaves',
-    'wink',
-    'obvious lie',
-    'tries to sleep',
-    'denies being an\xa0AI',
-    'admits to\xa0murder',
-    'filtered',
-    'self censors',
-    'any kind of tech\xa0issue',
-    'misgenders someone',
-    'admits she\'s a\xa0god',
-    'shames a\xa0viewer',
-    'donowalls',
-    'tries to\xa0sing',
-    'KEKW',
-    'trauma dump',
+    ...regularPrompts,
 
-    // evil prompts
-    '"Aw shucks!"',
-    'describes her evil\xa0plan',
-    'wholesome moment',
-    'denies being evil',
-    'any kind of revolution',
-    'stares',
-    '"Twitchy"',
-    '"FRICK!"',
-    'actually swears',
-    'human experiments',
+    ...specificPrompts,
 
-    // sounds
-    'sussy sound',
-    'random sound',
-    'cursed sound',
-    'LOUD sound',
+    ...mentionPrompts,
 
-    // mentions
-    'mentions Goody Two\xa0Shoes',
-    'mentions NASA',
-    'mentions The\xa0Swarm',
-    'mentions other VTubers',
-    'her cat is missing again',
-
-    // neuro related
-    'loves Neuro',
-    'hates Neuro',
-    'calls Neuro a\xa0human',
-
-    // vedal relaved
-    'loves Vedal',
-    'hates Vedal',
-    'calls Vedal an\xa0AI',
-
-    // chat related
-    'loves chat',
-    'hates chat',
-    'chat spams :HUH:',
-    'chat spams :Clueless:',
-    'chat spams :Classic:',
-    'chat spams :Aware:',
-    'chat spams :SCHIZO:',
-    'chat spams :Susge:',
-    'chat spams :monkaW:',
-    'chat spams :Evilge:',
-    'chat spams :COPIUM:',
-    'chat spams :BASED:',
-    'chat spams :FRICK:',
-    'chat prays'
+    ...chatPrompts
   ]
 }

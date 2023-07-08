@@ -34,20 +34,27 @@
         :class="{ fullscreen: $q.fullscreen.isActive }"
       >
         <template
-          v-for="block in state.board"
+          v-for="block in state.board "
           :key="block.index"
         >
           <div
             v-if="block.free"
             class="bingo-block free"
-            :class="{ win: block.win }"
+            :class="{ win: block.win, 'dimmed': hoveredParticipant !== null }"
             :style="{ backgroundImage: `url(${state.freeBlockImage ?? '/assets/images/gymbag.png'})` }"
           />
 
           <BingoBlockItem
             v-else
             :block="block"
-            :class="`${block.participantId}-block`"
+            class="shadow-transition"
+            :class="[
+              `${block.participantId}-block`,
+              {
+                'shadow-24': isHighligted(block.participantId),
+                'dimmed': hoveredParticipant !== null && !isHighligted(block.participantId)
+              }
+            ]"
             :emotes="settings.emotes"
             :hide-tally="settings.hideTally"
             :participant="state.participants[block.participantId]"
@@ -65,15 +72,20 @@
         <div>
           Legend:
           <template
-            v-for="participant in state.participants"
+            v-for=" participant in state.participants "
             :key="participant.id"
           >
-            <q-badge
-              class="legend q-mr-xs shadow-2"
-              :style="{ backgroundColor: participant.color }"
+            <span
+              @mouseleave="hoveredParticipant = null"
+              @mouseover="hoveredParticipant = participant.id"
             >
-              {{ participant['name'] }}
-            </q-badge>
+              <q-badge
+                class="legend q-mr-xs shadow-2"
+                :style="{ backgroundColor: participant.color }"
+              >
+                {{ participant['name'] }}
+              </q-badge>
+            </span>
           </template>
         </div>
 
@@ -88,9 +100,11 @@
 
 <script setup>
 // @ts-check
+// eslint-disable-next-line no-unused-vars
+import * as Types from 'helpers/types.d'
 
 // vue-related
-import { onBeforeMount, onBeforeUnmount } from 'vue'
+import { ref, onBeforeMount, onBeforeUnmount } from 'vue'
 import { useQuasar } from 'quasar'
 
 // project-related
@@ -111,6 +125,9 @@ const props = defineProps({
   }
 })
 
+const hoveredParticipant = ref(null)
+const isHighligted = (/** @type {string} */ id) => hoveredParticipant.value === id
+
 const streamType = props.type === '' ? 'neuro' : props.type
 if (!Object.keys(prompts).includes(streamType)) location.replace('/')
 
@@ -121,7 +138,7 @@ const settings = useGameSettingsStore()
 const $q = useQuasar()
 
 // Init data
-const version = 3
+const version = 4
 const streamData = prompts[streamType]
 
 onBeforeMount(() => {
@@ -161,7 +178,10 @@ onBeforeUnmount(() => {
   document.title = 'Everyday Neuro Bingo'
 })
 
-// game logic
+/**
+ * Increment the tally
+ * @param {Types.BoardBlock} block
+ */
 const increment = (block) => {
   const hasUpdated = state.increment(block.index, settings.hideTally)
   if (hasUpdated) {
@@ -170,6 +190,10 @@ const increment = (block) => {
   }
 }
 
+/**
+ * Decrement the tally
+ * @param {Types.BoardBlock} block
+ */
 const decrement = (block) => {
   state.decrement(block.index)
   checkForWin(block, true)
@@ -177,6 +201,12 @@ const decrement = (block) => {
 
 const soundsPath = '../assets/sounds'
 const winSound = new Audio(`${soundsPath}/vine-boom.mp3`)
+
+/**
+ * Check for winning state
+ * @param {Types.BoardBlock} block
+ * @param {?boolean} [decrement=false]
+ */
 const checkForWin = (block, decrement = false) => {
   const index = block.index
   const participantId = block.participantId
@@ -197,12 +227,19 @@ const checkForWin = (block, decrement = false) => {
   state.previousWin = win.length
 }
 
-// sound logic
+/**
+ * Sound logic
+ * @param {HTMLAudioElement} audio
+ * @param {boolean} isActive
+ */
 const playSound = (audio, isActive) => {
   if (isActive) audio.play()
 }
 
-// undo logic
+/**
+ * Undo logic for the toast notification)
+ * @param {Types.BoardBlock} block
+ */
 const notifyForUndo = (block) => {
   $q.notify({
     message: 'Made a mistake?',

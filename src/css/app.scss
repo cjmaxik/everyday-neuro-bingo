@@ -65,19 +65,25 @@ body:not(.remove-font) {
     }
   }
 
+
   .bingo-block {
     border-width: 2px;
     border-color: $gymbag;
     border-style: solid;
 
     position: relative;
-    background: white;
+    background-color: white;
+
+    &.dimmed {
+      background-color: #ccaab7;
+    }
+
     min-height: 100px;
     min-width: 128px;
 
     line-height: min(3vh, 20px);
 
-    transition: background-color .25s ease;
+    transition: background-color .25s ease !important;
 
     &:before {
       @extend .center-image;
@@ -198,6 +204,7 @@ body:not(.remove-font) {
   margin: auto;
   width: 1024px;
   font-size: 15px;
+  user-select: none;
 
   .legend {
     font-size: 15px;
