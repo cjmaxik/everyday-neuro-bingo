@@ -1,5 +1,5 @@
 import * as neuro from 'characters/neuro'
-import chatBase from 'characters/chat'
+import * as chat from 'characters/chat'
 
 const regularNeuro = {
   ...neuro.base,
@@ -29,12 +29,12 @@ const mentions = {
   prompts: neuro.mentionPrompts
 }
 
-const chat = {
-  ...chatBase,
+const chatPrompts = {
+  ...chat.base,
 
   prompts: [
     ...neuro.chatPrompts,
-    ...chatBase.prompts
+    ...chat.chatPrompts
   ]
 }
 
@@ -42,6 +42,6 @@ export default {
   name: 'Neuro-sama solo',
   image: 'neuro/random/neuro{x}.png',
   participants: [
-    regularNeuro, mentions, specificNeuro, chat
+    regularNeuro, mentions, specificNeuro, chatPrompts
   ]
 }
