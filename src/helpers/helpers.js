@@ -126,9 +126,11 @@ export const getRandomInt = (min, max) => {
 
 /**
  * Generates seed phrase based on a browser + current date in UTC timezone
+ * @param {number} version
  * @returns {string} Seed phrase
  */
-export const generateBrowserSeed = () => ''.concat(
+export const generateBrowserSeed = (version) => ''.concat(
+  version.toString(),
   new Date().getUTCFullYear().toString(),
   new Date().getUTCMonth().toString(),
   new Date().getUTCDate().toString(),

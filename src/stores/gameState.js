@@ -15,8 +15,6 @@ import {
   generateBrowserSeed
 } from 'helpers/helpers'
 
-const version = 4
-
 const streakCount = 7
 const boardSize = Math.pow(streakCount, 2)
 const centerBlock = Math.floor(boardSize / 2)
@@ -27,12 +25,8 @@ const centerBlock = Math.floor(boardSize / 2)
  * @returns {import('pinia').Store<string, Types.GameStateStore, Object, Object>}
  */
 export const useGameStateStore = (id) => defineStore(`gameState-${id}`, {
-  /**
-   * @returns {Types.GameStateStore}
-   */
   state: () => ({
     // application data
-    version: useLocalStorage(`version-${id}`, version),
     ready: useLocalStorage(`ready-${id}`, false),
     readyToShow: false,
 
@@ -57,7 +51,6 @@ export const useGameStateStore = (id) => defineStore(`gameState-${id}`, {
     clearAll () {
       this.ready = false
 
-      this.version = version
       this.seed = 0
       this.board = []
       this.bingo = []
@@ -72,7 +65,7 @@ export const useGameStateStore = (id) => defineStore(`gameState-${id}`, {
     generateBoard (streamData, version) {
       console.group('Initializing random seed...')
 
-      const seedPhrase = generateBrowserSeed()
+      const seedPhrase = generateBrowserSeed(version)
       const newSeed = Math.abs(alea(seedPhrase).int32())
 
       console.debug('Seed phrase -', seedPhrase)
@@ -85,8 +78,6 @@ export const useGameStateStore = (id) => defineStore(`gameState-${id}`, {
 
       const assetsPath = '/assets'
 
-      console.group('Initializing prompts...')
-
       streamData.participants.forEach(data => {
         // participants
         participants[data.id] = {
@@ -96,16 +87,7 @@ export const useGameStateStore = (id) => defineStore(`gameState-${id}`, {
           image: `${assetsPath}/images/${data.assetsFolder ?? data.id}/${data.image}`,
           sounds: data.sounds.map(x => new Audio(`${assetsPath}/sounds/${data.assetsFolder ?? data.id}/${x}`))
         }
-
-        console.debug(`${data.name} - ${data.prompts.length} prompts.`)
-
-        // prompts
-        allPrompts.push({
-          participantId: data.id,
-          prompts: deepCopy(data.prompts)
-        })
       })
-      console.groupEnd()
 
       this.streamName = streamData.name
       this.participants = participants
@@ -116,21 +98,30 @@ export const useGameStateStore = (id) => defineStore(`gameState-${id}`, {
       this.freeBlockImage = `${assetsPath}/images/${streamData.image}`
 
       // Check if the version, seed and/or stream type has changed
-      if (process.env.NODE_ENV !== 'development') {
-        if (this.ready) {
-          if (
-            this.version === version &&
-            this.seed === newSeed
-          ) {
-            this.readyToShow = true
+      // if (process.env.NODE_ENV !== 'development') {
+      if (this.ready) {
+        if (this.seed === newSeed) {
+          this.readyToShow = true
 
-            return
-          }
+          return
         }
       }
+      // }
 
       console.log('Seed has changes - clearing everything...')
       this.clearAll()
+
+      console.group('Initializing prompts...')
+      streamData.participants.forEach(data => {
+        // prompts
+        allPrompts.push({
+          participantId: data.id,
+          prompts: deepCopy(data.prompts)
+        })
+
+        console.debug(`${data.name} - ${data.prompts.length} prompts.`)
+      })
+      console.groupEnd()
 
       const seededPrompts = generatePrompts(allPrompts, newSeed, boardSize)
 
