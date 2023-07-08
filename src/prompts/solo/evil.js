@@ -42,6 +42,7 @@ const chatPrompts = {
 
 export default {
   name: 'Evil Neuro solo',
+  image: 'evilNeuro/evilStare.png',
   participants: [
     regularEvil, mentionPrompts, specificEvil, chatPrompts
   ]
