@@ -5,13 +5,13 @@
  */
 
 // Highlighted option
-export const featured = 'evil'
+export const featured = null
 
 // Main block, always visible
 export const mainBlock = [
-  { to: 'evil', text: 'Evil Neuro solo', color: '#700b1b' },
   { to: 'neuro', text: 'Neuro-sama solo' },
-  { to: 'xVedal', text: 'Streams with Vedal', color: '#266941' }
+  { to: 'xVedal', text: 'Streams with Vedal', color: '#266941' },
+  { to: 'evil', text: 'Evil Neuro solo', color: '#700b1b' }
 ]
 
 // Collabs block, under expandable element
