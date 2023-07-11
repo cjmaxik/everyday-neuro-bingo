@@ -8,7 +8,7 @@ import * as chat from 'characters/chat'
 const miEvil = {
   ...evil.base,
 
-  prompts: neuro.regularPrompts
+  prompts: evil.regularPrompts
 }
 
 const specificEvil = {
@@ -38,6 +38,6 @@ export default {
   image: 'evilNeuro/MinecraftEvil.png',
   participants: [
     miEvil, chatEvil,
-    specificEvil, 
+    specificEvil
   ]
 }
