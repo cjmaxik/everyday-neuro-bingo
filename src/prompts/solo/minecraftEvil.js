@@ -1,43 +1,49 @@
-import { mergeUnique } from 'helpers/helpers'
+import { mergeUnique } from 'src/helpers/helpers'
 
-import * as evil from 'characters/evilNeuro'
-
-import generic from 'characters/generic'
+import * as evilNeuro from 'characters/evilNeuro'
 import * as chat from 'characters/chat'
 
-const miEvil = {
-  ...evil.base,
+const regularEvil = {
+  ...evilNeuro.base,
 
-  prompts: evil.regularPrompts
+  id: 'regularEvil',
+  name: 'Regular prompts',
+
+  prompts: evilNeuro.regularPrompts
 }
 
 const specificEvil = {
-  ...generic,
+  ...evilNeuro.base,
 
-  id: 'miEvil',
-  name: 'miEvil',
-  color: '#0504c2',
+  id: 'specificNeuro',
+  name: 'Specific prompts',
 
-  image: '../evilNeuro/minecraft/MineEvil.png',
-
-  prompts: [
-  ]
+  prompts: evilNeuro.specificPrompts
 }
 
-const chatEvil = {
+const mentionPrompts = {
+  ...evilNeuro.base,
+
+  id: 'mentions',
+  color: '#420069',
+  name: 'Mentions',
+
+  prompts: evilNeuro.mentionPrompts
+}
+
+const chatPrompts = {
   ...chat.base,
 
   prompts: mergeUnique(
-    evil.chatPrompts,
+    evilNeuro.chatPrompts,
     chat.chatPrompts
   )
 }
 
 export default {
-  name: 'Evil Plays Minecraft',
-  image: 'evilNeuro/MinecraftEvil.png',
+  name: 'Evil plays Minecraft',
+  image: 'evilNeuro/evilStare.png',
   participants: [
-    miEvil, chatEvil,
-    specificEvil
+    regularEvil, mentionPrompts, specificEvil, chatPrompts
   ]
 }
