@@ -12,6 +12,7 @@ export default {
   miNeuro: () => import('prompts/solo/minecraftNeuro'),
   ksp: () => import('prompts/ksp/ksp'),
   vedal: () => import('prompts/solo/vedal'),
+  miEvil: () => import('prompts/solo/minecraftEvil'),
 
   // Collabs
   xVedal: () => import('prompts/xVedal/xVedal'),
