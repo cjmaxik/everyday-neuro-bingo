@@ -5,7 +5,8 @@ export const base = {
 
   assetsFolder: 'evilNeuro',
 
-  image: 'robot.png',
+  //image: 'robot.png',
+  image:'evilminehead.png',
 
   sounds: [
     'aaand.mp3',

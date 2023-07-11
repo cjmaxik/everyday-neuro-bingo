@@ -42,7 +42,7 @@ const chatPrompts = {
 
 export default {
   name: 'Evil plays Minecraft',
-  image: 'evilNeuro/evilStare.png',
+  image: 'evilNeuro/evilMinecraftChad.png',
   participants: [
     regularEvil, mentionPrompts, specificEvil, chatPrompts
   ]
