@@ -3,13 +3,46 @@ import { mergeUnique } from 'src/helpers/helpers'
 import * as evilNeuro from 'characters/evilNeuro'
 import * as chat from 'characters/chat'
 
+const minecraftPrompts = {
+  ...evilNeuro.base,
+
+  id: 'minecraft',
+  name: 'Minecraft',
+
+  color: '#477A1E',
+
+  prompts: [
+    // minecraft prompts
+    'dies in lava',
+    'dies from fall\xa0damage',
+    'digs straight down',
+    'drowns',
+    'gets killed by\xa0Vedal',
+    'mines bedrock',
+    'dies from hostile\xa0mob',
+    'accidental Nether trip',
+    'punches air',
+    'throws away rare item',
+    'Minecraft lags',
+
+    // hand-minable stuff
+    'hand-mines obsidian',
+    'hand-mines diamond ore',
+    'hand-mines gold ore',
+    'hand-mines furnace'
+  ]
+}
+
 const regularEvil = {
   ...evilNeuro.base,
 
   id: 'regularEvil',
   name: 'Regular prompts',
 
-  prompts: evilNeuro.regularPrompts
+  prompts: mergeUnique(
+    evilNeuro.regularPrompts,
+    evilNeuro.mentionPrompts
+  )
 }
 
 const specificEvil = {
@@ -19,16 +52,6 @@ const specificEvil = {
   name: 'Specific prompts',
 
   prompts: evilNeuro.specificPrompts
-}
-
-const mentionPrompts = {
-  ...evilNeuro.base,
-
-  id: 'mentions',
-  color: '#420069',
-  name: 'Mentions',
-
-  prompts: evilNeuro.mentionPrompts
 }
 
 const chatPrompts = {
@@ -42,8 +65,8 @@ const chatPrompts = {
 
 export default {
   name: 'Evil plays Minecraft',
-  image: 'evilNeuro/minecraft/evilMinecraftChad.png',
+  image: 'evilNeuro/evilMinecraftChad.png',
   participants: [
-    regularEvil, mentionPrompts, specificEvil, chatPrompts
+    regularEvil, specificEvil, chatPrompts, minecraftPrompts
   ]
 }

@@ -3,8 +3,8 @@ export const base = {
   name: 'Evil Neuro',
   color: '#700b1b',
 
-  // assetsFolder: 'evilNeuro',
-  assetsFolder: 'evilNeuro/minecraft',
+  // TODO: Decouple assetsFolder from sounds
+  assetsFolder: 'evilNeuro',
 
   // image: 'robot.png',
   image: 'evilminehead.png',
