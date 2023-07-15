@@ -3,9 +3,11 @@ export const base = {
   name: 'Evil Neuro',
   color: '#700b1b',
 
+  // TODO: Decouple assetsFolder from sounds
   assetsFolder: 'evilNeuro',
 
-  image: 'robot.png',
+  // image: 'robot.png',
+  image: 'evilminehead.png',
 
   sounds: [
     'aaand.mp3',
@@ -17,7 +19,12 @@ export const base = {
     'owo.mp3',
     'twitchy.mp3',
     'uwoh.mp3',
-    'wink.mp3'
+    'wink.mp3',
+    'evilfrick.mp3',
+    'evilfrickyou.mp3',
+    'evilKEEEEEEEK.mp3',
+    'evilKEK.mp3',
+    'evilKEKWA.mp3'
   ]
 }
 
