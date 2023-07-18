@@ -6,26 +6,25 @@ export const base = {
   // TODO: Decouple assetsFolder from sounds
   assetsFolder: 'evilNeuro',
 
-  // image: 'robot.png',
-  image: 'evilminehead.png',
+  image: 'robot.png',
 
   sounds: [
-    'aaand.mp3',
-    'doom_doom_doom.mp3',
-    'heart.mp3',
-    'noise.mp3',
-    'noise2.mp3',
-    'oh_okay.mp3',
-    'owo.mp3',
-    'twitchy.mp3',
-    'uwoh.mp3',
-    'wink.mp3',
-    'evilfrick.mp3',
-    'evilfrickyou.mp3',
-    'evilKEEEEEEEK.mp3',
-    'evilKEK.mp3',
-    'evilKEKWA.mp3'
-  ]
+    'aaand',
+    'doom_doom_doom',
+    'heart',
+    'noise',
+    'noise2',
+    'oh_okay',
+    'owo',
+    'twitchy',
+    'uwoh',
+    'wink',
+    'evilfrick',
+    'evilfrickyou',
+    'evilKEEEEEEEK',
+    'evilKEK',
+    'evilKEKWA'
+  ].map(x => `${x}.mp3`)
 }
 
 export const regularPrompts = [
