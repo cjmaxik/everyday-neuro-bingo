@@ -33,6 +33,7 @@ export const chatPrompts = [
   'Classic',
   'Clueless',
   'COPIUM',
+  'DIESOFCRINGE',
   'Erm',
   'Evilge',
   'Flushed',
@@ -63,11 +64,7 @@ export const chatPrompts = [
   'Susge',
   'Tutel',
   'WAYTOODANK'
-]
-  .map(x => x.replace(' ', ': :'))
-  .map(x => `chat spams :${x}:`)
-
-console.log(chatPrompts)
+].map(x => `chat spams :${x.replaceAll(' ', ': :')}:`)
 
 export default {
   ...base,
