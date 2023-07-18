@@ -9,7 +9,8 @@ const evilCollab = {
 
   prompts: mergeUnique(
     'hits on Numi',
-    'down bad for Numi',
+    'down bad for\xa0Numi',
+    'forgets where she is',
 
     evil.collabPrompts('Numi')
   )
@@ -30,13 +31,11 @@ const numiPrompts = {
 const chatPrompts = {
   ...chat.base,
 
-  prompts: [
-    'chat spams :BOOBA:',
-
-    ...numi.chatPrompts,
-    ...evil.chatPrompts,
-    ...chat.chatPrompts
-  ]
+  prompts: mergeUnique(
+    numi.chatPrompts,
+    evil.chatPrompts,
+    chat.chatPrompts
+  )
 }
 
 export default {

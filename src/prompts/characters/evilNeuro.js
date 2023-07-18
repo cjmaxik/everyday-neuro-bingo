@@ -50,15 +50,15 @@ export const regularPrompts = [
   'sussy sound',
   'random sound',
   'cursed sound',
-  'LOUD sound',
+  'LOUD sound'
+]
 
+export const emotePrompts = [
   // emote prompts
   // NOTE: do not use inline emotes here - Evil spells them out as text!
   'plink / plonk / winky',
   'POG / poggers',
   'noted',
-  'KEKW',
-  'KEKWa',
   'gigachad',
   'gymbag',
   'donowalled',
@@ -104,7 +104,7 @@ export const collabPrompts = (name = 'them') => [
   'misgenders {x}',
   'roasts {x}',
   'shames {x}',
-  'wants to hurt {x}',
+  'wants to hurt\xa0{x}',
   'W RIZZ'
 ].map(x => x.replaceAll('{x}', name))
 
@@ -140,6 +140,8 @@ export default {
     ...specificPrompts,
 
     ...mentionPrompts,
+
+    ...emotePrompts,
 
     ...chatPrompts
   ]

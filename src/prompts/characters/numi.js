@@ -32,39 +32,22 @@ export const regularPrompts = [
   'sussy noise',
   'asks Vedal for help',
   'dies from laughter',
-  'W RIZZ',
   'stutters',
   '"HUH?"',
   '"I hate it here!"',
-  'cringe joke/pickup\xa0line',
-  '2',
-  '3',
-  '4',
-  '5',
-  '6',
+  'cringe joke or\xa0pickup line',
+  'lewd joke',
+  'speechless',
+  'mentions the Baseball\xa0Bat Incident',
 
   // Evil related
-  '7',
-  '8',
-  '9',
-  '0',
-  '-',
-  '='
+  'W RIZZ',
+  'argues with Evil',
+  'tries to correct Evil',
+  'mentions random VTuber'
 ]
 
 export const chatPrompts = [
-  // chat related
-  'chat spams ehh↑ heh↑ ehh↑ *SNRK*',
-  'chat L\'s\xa0Numi',
-  'chat W\'s\xa0Numi'
+  'chat spams :BOOBA:',
+  'chat spams ehh↑ heh↑ ehh↑ *SNRK*'
 ]
-
-export default {
-  ...base,
-
-  prompts: [
-    ...regularPrompts,
-
-    ...chatPrompts
-  ]
-}
