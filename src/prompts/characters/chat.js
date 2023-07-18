@@ -9,46 +9,65 @@ export const base = {
   image: 'chat.png'
 }
 
+/**
+ * HOW TO USE:
+ * 2. Go to https://7tv.app/emotes and search for an emote
+ * 3. Copy the emote ID (random text at the end of URL) and the exact emote name
+ * 4. Paste them in `emotesList.json`
+ * 5. Run `npm run emotePrep` to obtain new emotes
+ * 6. Use `/emoteTest` board to evaluate the result
+ * Please keep the list in alphabetical order.
+ *
+ * STATIC EMOTE OVERRIDE:
+ * - Add `_` followed by the number of the frame at the end of the emote ID.
+ * - You will have to play with the numbers to choose a perfect frame number.
+ */
+
 export const chatPrompts = [
-  'chat spams :5neuros:',
-  'chat spams :Aware:',
-  'chat spams :AYAYA:',
-  'chat spams :BASED:',
-  'chat spams :Bedge:',
-  'chat spams :cabbage:',
-  'chat spams :Classic:',
-  'chat spams :Clueless:',
-  'chat spams :COPIUM:',
-  'chat spams :Erm:',
-  'chat spams :Evilge:',
-  'chat spams :Flushed:',
-  'chat spams :FRICK:',
-  'chat spams :GIGACHAD: :GIGANEURO:',
-  'chat spams :hiyori:',
-  'chat spams :HUH:',
-  'chat spams :KEKW:',
-  'chat spams :meow:',
-  'chat spams :monkaTOS:',
-  'chat spams :monkaW:',
-  'chat spams :neuroplushsittingverycomfortablewhilesheroastsaporowithherfriends:',
-  'chat spams :NOOOO:',
-  'chat spams :NOTED: :neuroNoted:',
-  'chat spams :notNOTED:',
-  'chat spams :NOWAYING:',
-  'chat spams :nuero: :nwero: :eliv:',
-  'chat spams :ok:',
-  'chat spams :PauseSama:',
-  'chat spams :POG: :poggers:',
-  'chat spams :reallyGunPull: :vedalPls:',
-  'chat spams :RIGGED:',
-  'chat spams :RIPBOZO:',
-  'chat spams :SCHIZO:',
-  'chat spams :SNIFFA:',
-  'chat spams :SoCute:',
-  'chat spams :Susge:',
-  'chat spams :Tutel:',
-  'chat spams :WAYTOODANK:'
+  '5neuros',
+  'Aware',
+  'AYAYA',
+  'BASED',
+  'Bedge',
+  'cabbage',
+  'Classic',
+  'Clueless',
+  'COPIUM',
+  'Erm',
+  'Evilge',
+  'Flushed',
+  'forsen',
+  'FRICK',
+  'GIGACHAD GIGANEURO',
+  'hiyori',
+  'HUH',
+  'KEKW',
+  'meow',
+  'monkaTOS',
+  'monkaW',
+  'neuroplushsittingverycomfortablewhilesheroastsaporowithherfriends',
+  'NOOOO',
+  'NOTED neuroNoted',
+  'notNOTED',
+  'NOWAYING',
+  'nuero nwero eliv',
+  'ok',
+  'PauseSama',
+  'POG poggers',
+  'reallyGunPull vedalPls',
+  'RIGGED',
+  'RIPBOZO',
+  'SCHIZO',
+  'SNIFFA',
+  'SoCute',
+  'Susge',
+  'Tutel',
+  'WAYTOODANK'
 ]
+  .map(x => x.replace(' ', ': :'))
+  .map(x => `chat spams :${x}:`)
+
+console.log(chatPrompts)
 
 export default {
   ...base,
