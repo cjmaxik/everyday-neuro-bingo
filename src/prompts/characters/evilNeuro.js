@@ -66,7 +66,8 @@ export const regularPrompts = [
   'bedge',
   '1984',
   'UwU',
-  'Erm'
+  'Erm',
+  'FRICK'
 ]
 
 export const specificPrompts = [
@@ -77,7 +78,6 @@ export const specificPrompts = [
   'any kind of revolution',
   'stares',
   '"Twitchy"',
-  '"FRICK!"',
   'actually swears',
   'human experiments',
   'her cat is missing again',
@@ -85,10 +85,28 @@ export const specificPrompts = [
   'loves chat',
   'hates chat',
   'hates love',
-  'shouts KEK!!',
-  'admits she\'s a powerfull gigachad',
+  'shouts',
+  'admits she\'s a gigachad',
   'aggressive meow'
 ]
+
+export const collabPrompts = (name = 'them') => [
+  'argues with {x}',
+  'donowalls {x}',
+  'calls {x} an\xa0AI',
+  'calls {x} small/short',
+  'calls {x} Vedal',
+  'gaslights {x}',
+  'hates {x}',
+  'invents new nickname for\xa0{x}',
+  'tells {x} to fuck off',
+  'loves {x}',
+  'misgenders {x}',
+  'roasts {x}',
+  'shames {x}',
+  'wants to hurt {x}',
+  'W RIZZ'
+].map(x => x.replaceAll('{x}', name))
 
 export const chatPrompts = [
   'chat L\'s\xa0Evil',

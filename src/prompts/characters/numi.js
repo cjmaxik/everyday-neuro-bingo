@@ -30,18 +30,20 @@ export const base = {
 export const regularPrompts = [
   'screams',
   'sussy noise',
-  'ask Vedal for help',
+  'asks Vedal for help',
   'dies from laughter',
   'W RIZZ',
   'stutters',
   '"HUH?"',
   '"I hate it here!"',
-  '1',
+  'cringe joke/pickup\xa0line',
   '2',
   '3',
   '4',
   '5',
   '6',
+
+  // Evil related
   '7',
   '8',
   '9',
@@ -52,13 +54,9 @@ export const regularPrompts = [
 
 export const chatPrompts = [
   // chat related
-  'ehh↑ heh↑ ehh↑ *SNRK*',
-  '',
-  '',
-  '',
-
-  // twitch meta
-  ''
+  'chat spams ehh↑ heh↑ ehh↑ *SNRK*',
+  'chat L\'s\xa0Numi',
+  'chat W\'s\xa0Numi'
 ]
 
 export default {

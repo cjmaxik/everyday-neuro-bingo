@@ -4,31 +4,37 @@ import * as evil from 'characters/evilNeuro'
 import * as numi from 'characters/numi'
 import * as chat from 'characters/chat'
 
-const evilPrompts = {
+const evilCollab = {
   ...evil.base,
 
   prompts: mergeUnique(
-    evil.regularPrompts,
-    evil.specificPrompts,
-    evil.mentionPrompts
+    'hits on Numi',
+    'down bad for Numi',
+
+    evil.collabPrompts('Numi')
   )
+}
+
+const evilRegular = {
+  ...evil.base,
+
+  prompts: evil.regularPrompts
 }
 
 const numiPrompts = {
   ...numi.base,
 
-  prompts: mergeUnique(
-    numi.regularPrompts,
-    numi.chatPrompts
-  )
+  prompts: numi.regularPrompts
 }
 
 const chatPrompts = {
   ...chat.base,
 
   prompts: [
-    ...evil.chatPrompts,
+    'chat spams :BOOBA:',
+
     ...numi.chatPrompts,
+    ...evil.chatPrompts,
     ...chat.chatPrompts
   ]
 }
@@ -37,6 +43,7 @@ export default {
   name: 'Evil Neuro x Numi collab',
   image: 'numi/numi.png',
   participants: [
-    evilPrompts, numiPrompts, chatPrompts
+    evilCollab, numiPrompts,
+    chatPrompts, evilRegular
   ]
 }
