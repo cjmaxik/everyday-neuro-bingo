@@ -9,11 +9,11 @@ export const featured = 'xNumi'
 
 // Main block, always visible
 export const mainBlock = [
-  { to: 'xNumi', text: 'Evil Neuro x Numi' },
-  { to: 'ksp', text: 'Vedal Space Program', color: '#0504c2' },
+  { to: 'xNumi', text: 'Evil Neuro x Numi', color: '' },
   { to: 'neuro', text: 'Neuro-sama solo' },
   { to: 'xVedal', text: 'Streams with Vedal', color: '#266941' },
-  { to: 'evil', text: 'Evil Neuro solo', color: '#700b1b' }
+  { to: 'evil', text: 'Evil Neuro solo', color: '#700b1b' },
+  { to: 'miEvil', text: 'Evil plays Minecraft', color: '#700b1b' }
 ]
 
 // Collabs block, under expandable element
@@ -30,6 +30,7 @@ export const collabBlock = [
 
 // Archived block, under expandable element
 export const archivedBlock = [
-  { to: 'miNeuro', text: 'Neuro plays Minecraft' },
+  { to: 'miNeuro', text: 'Minecraft' },
+  { to: 'ksp', text: 'KSP', color: '#0504c2' },
   { to: 'vedal', text: 'Vedal solo', color: '#266941' }
 ]

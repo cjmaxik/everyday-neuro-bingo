@@ -61,7 +61,6 @@
 /**
  * @typedef GameStateStore Game state store
  * @type {Object}
- * @property {CoreTypes.RemovableRef<number>} version
  * @property {CoreTypes.RemovableRef<boolean>} ready
  * @property {boolean} readyToShow
  * @property {?string} streamName
