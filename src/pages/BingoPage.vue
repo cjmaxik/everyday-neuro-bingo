@@ -213,14 +213,14 @@ const checkForWin = (block, decrement = false) => {
   const sounds = state.participants[participantId].sounds
 
   const win = state.checkForBingo()
-  const isSoundActive = !settings.disableSound && !decrement
+  const isSoundActive = !settings.disableSound && !decrement && (settings.volume !== 0)
 
   if (win.length && win.length !== state.previousWin) {
-    playSound(winSound, isSoundActive)
+    playSound(winSound, settings.volume, isSoundActive)
   } else {
     if (state.getTally(index) === 1) {
       const randomSound = sounds[getRandomInt(0, sounds.length - 1)]
-      playSound(randomSound, isSoundActive)
+      playSound(randomSound, settings.volume, isSoundActive)
     }
   }
 
@@ -230,10 +230,14 @@ const checkForWin = (block, decrement = false) => {
 /**
  * Sound logic
  * @param {HTMLAudioElement} audio
+ * @param {number} volume
  * @param {boolean} isActive
  */
-const playSound = (audio, isActive) => {
-  if (isActive) audio.play()
+const playSound = (audio, volume, isActive) => {
+  if (isActive) {
+    audio.volume = volume / 100
+    audio.play()
+  }
 }
 
 /**
