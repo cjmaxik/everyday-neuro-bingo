@@ -80,6 +80,7 @@
  * @property {CoreTypes.RemovableRef<boolean>} disableSound
  * @property {CoreTypes.RemovableRef<boolean>} hideTally
  * @property {CoreTypes.RemovableRef<("animated"|"static"|"text")>} emotes
+ * @property {CoreTypes.RemovableRef<number>} volume
  * @property {?string} streamName
  */
 
