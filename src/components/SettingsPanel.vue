@@ -31,18 +31,35 @@
 
         <q-item tag="label">
           <q-checkbox
+            v-model="settings.hideTally"
+            keep-color
+            label="Hide tally"
+          />
+        </q-item>
+
+        <q-item tag="label">
+          <q-checkbox
             v-model="settings.disableSound"
             keep-color
             label="Disable sound"
           />
         </q-item>
 
-        <q-item tag="label">
-          <q-checkbox
-            v-model="settings.hideTally"
-            keep-color
-            label="Hide tally"
-          />
+        <q-item>
+          <q-item-section class="text-center">
+            <q-item-label>
+              Sound volume
+            </q-item-label>
+
+            <q-slider
+              v-model="settings.volume"
+              :disable="settings.disableSound"
+              label
+              :max="100"
+              :min="0"
+              :step="5"
+            />
+          </q-item-section>
         </q-item>
       </q-card-section>
 
