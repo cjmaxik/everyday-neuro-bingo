@@ -5,10 +5,11 @@
  */
 
 // Highlighted option
-export const featured = 'neuro'
+export const featured = 'xNumi'
 
 // Main block, always visible
 export const mainBlock = [
+  { to: 'xNumi', text: 'Evil Neuro x Numi', color: '#504778' },
   { to: 'neuro', text: 'Neuro-sama solo' },
   { to: 'xVedal', text: 'Streams with Vedal', color: '#266941' },
   { to: 'evil', text: 'Evil Neuro solo', color: '#700b1b' },
@@ -22,6 +23,7 @@ export const collabBlock = [
   { to: 'xMiyune', text: 'Miyune', color: '#007caa' },
   { to: 'xFilian', text: 'filian', color: '#be01fe' },
   { to: 'xShylily', text: 'Shylily', color: '#5a69ca' },
+  { to: 'xNumi', text: 'Numi', color: '#504778' },
   { to: 'family', text: 'Family' },
   { to: 'xAnyone', text: 'Others', color: '#000' }
 ]
