@@ -5,12 +5,12 @@
  */
 
 // Highlighted option
-export const featured = 'xVedal'
+export const featured = 'neuro'
 
 // Main block, always visible
 export const mainBlock = [
-  { to: 'xVedal', text: 'Streams with Vedal', color: '#266941' },
   { to: 'neuro', text: 'Neuro-sama solo' },
+  { to: 'xVedal', text: 'Streams with Vedal', color: '#266941' },
   { to: 'evil', text: 'Evil Neuro solo', color: '#700b1b' },
   { to: 'miEvil', text: 'Evil plays Minecraft', color: '#700b1b' }
 ]
