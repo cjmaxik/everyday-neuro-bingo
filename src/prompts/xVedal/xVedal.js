@@ -5,16 +5,19 @@ import * as vedal from 'characters/vedal'
 import * as chat from 'characters/chat'
 import * as genericCollab from 'characters/genericCollab'
 
+const collabPrompts = neuro.collabPrompts('Vedal')
+
 const neuroRegular = {
   ...neuro.base,
 
   prompts: neuro.regularPrompts
+    .filter(x => !collabPrompts.includes(x)) // removes duplicated Vedal prompts
 }
 
 const neuroCollab = {
   ...neuro.base,
 
-  prompts: neuro.collabPrompts('Vedal')
+  prompts: collabPrompts
     .map(x => x.replace('Vedal Vedal', 'Vedal Veedal/Vidal/ etc.'))
 }
 
