@@ -2,6 +2,7 @@
 
 // Main block, always visible
 const rootBlock = [
+  { to: 'piNeuro', text: 'Neuro Pirate', color: '#006994' },
   { to: 'neuro', text: 'Neuro-sama solo' },
   { to: 'evil', text: 'Evil Neuro solo', color: '#700b1b' },
   { to: 'xVedal', text: 'Streams with Vedal', color: '#266941' }
@@ -25,8 +26,7 @@ const collabBlock = [
 ]
 
 const othersBlock = [
-  { to: 'vedal', text: 'Vedal solo', color: '#266941' },
-  { to: 'piNeuro', text: 'Neuro Pirate', color: '#006994' }
+  { to: 'vedal', text: 'Vedal solo', color: '#266941' }
 ]
 
 /**
