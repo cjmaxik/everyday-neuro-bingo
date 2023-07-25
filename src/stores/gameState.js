@@ -125,7 +125,6 @@ export const useGameStateStore = (id) => defineStore(`gameState-${id}`, {
 
       // Push the board
       this.seed = newSeed
-      this.version = version
       this.board = []
 
       let promptIndex = 0

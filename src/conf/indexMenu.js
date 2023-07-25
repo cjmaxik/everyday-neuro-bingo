@@ -5,7 +5,7 @@
  */
 
 // Highlighted option
-export const featured = 'neuro'
+export const featured = null
 
 // Main block, always visible
 export const mainBlock = [
