@@ -7,7 +7,7 @@ const piratePrompts = {
   ...Neuro.base,
 
   id: 'pirateNeuro',
-  name: 'pirateNeuro',
+  name: 'Pirate prompts',
 
   color: '#006994',
 
