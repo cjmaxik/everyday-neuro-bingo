@@ -25,7 +25,8 @@ const collabBlock = [
 ]
 
 const othersBlock = [
-  { to: 'vedal', text: 'Vedal solo', color: '#266941' }
+  { to: 'vedal', text: 'Vedal solo', color: '#266941' },
+  { to: 'piNeuro', text: 'Neuro Pirate', color: '#006994' }
 ]
 
 /**
@@ -33,7 +34,7 @@ const othersBlock = [
  */
 
 // Highlighted option
-export const featured = null
+export const featured = 'piNeuro'
 
 // Menu
 export const indexMenu = [
