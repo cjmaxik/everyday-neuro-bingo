@@ -1,9 +1,8 @@
 <template>
   <q-item
-    :class="{ 'bg-kekwa-half': featured, 'text-gymbag': color === null }"
+    :class="{ 'bg-kekwa-half': featured }"
     clickable
     exact
-    :style="{ color }"
     :to="to"
   >
     <q-item-section>
@@ -14,7 +13,10 @@
         Featured
       </q-item-label>
 
-      <q-item-label>
+      <q-item-label
+        :class="{ 'text-gymbag': !color }"
+        :style="{ color }"
+      >
         {{ text }}
       </q-item-label>
     </q-item-section>

@@ -1,22 +1,19 @@
 // @ts-check
 
-/**
- * Index menu for StreamTypeLinks.vue
- */
-
-// Highlighted option
-export const featured = null
-
 // Main block, always visible
-export const mainBlock = [
+const rootBlock = [
   { to: 'neuro', text: 'Neuro-sama solo' },
-  { to: 'xVedal', text: 'Streams with Vedal', color: '#266941' },
   { to: 'evil', text: 'Evil Neuro solo', color: '#700b1b' },
-  { to: 'miEvil', text: 'Evil plays Minecraft', color: '#700b1b' }
+  { to: 'xVedal', text: 'Streams with Vedal', color: '#266941' }
 ]
 
-// Collabs block, under expandable element
-export const collabBlock = [
+const gamesBlock = [
+  { to: 'miNeuro', text: 'Neuro Minecraft' },
+  { to: 'miEvil', text: 'Evil Minecraft', color: '#700b1b' },
+  { to: 'ksp', text: 'Vedal KSP', color: '#0504c2' }
+]
+
+const collabBlock = [
   { to: 'xEvil', text: 'Evil Neuro', color: '#700b1b' },
   { to: 'xAnny', text: 'anny', color: '#f37b97' },
   { to: 'xMiyune', text: 'Miyune', color: '#007caa' },
@@ -27,9 +24,33 @@ export const collabBlock = [
   { to: 'xAnyone', text: 'Others', color: '#000' }
 ]
 
-// Archived block, under expandable element
-export const archivedBlock = [
-  { to: 'miNeuro', text: 'Minecraft' },
-  { to: 'ksp', text: 'KSP', color: '#0504c2' },
+const othersBlock = [
   { to: 'vedal', text: 'Vedal solo', color: '#266941' }
+]
+
+/**
+ * Menu structure
+ */
+
+// Highlighted option
+export const featured = null
+
+// Menu
+export const indexMenu = [
+  {
+    name: null,
+    entries: rootBlock
+  },
+  {
+    name: 'Games',
+    entries: gamesBlock
+  },
+  {
+    name: 'Collabs',
+    entries: collabBlock
+  },
+  {
+    name: 'Other streams',
+    entries: othersBlock
+  }
 ]
