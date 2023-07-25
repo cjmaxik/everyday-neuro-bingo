@@ -9,10 +9,12 @@ const piratePrompts = {
   id: 'pirateNeuro',
   name: 'pirateNeuro',
 
-  color: '#477A1E',
+  color: '#006994',
 
   prompts: [
     // pirate prompts
+    'pirate song',
+    '"arr!"',
     '',
     '',
     '',
@@ -21,13 +23,13 @@ const piratePrompts = {
     '',
     '',
     '',
-    '',
-    '',
-    '',
-    '',
-    '',
-    '',
-    ''
+
+    // mentions
+    'mentions Jack\xa0Sparrow',
+    'mentions Aqua\xa0Man',
+    'mentions Black\xa0Pearl',
+    'mentions parrot',
+    'mentions Ocean\xa0Man'
   ]
 }
 
@@ -63,7 +65,7 @@ const chatPrompts = {
 
 export default {
   name: 'Neuro pirate adventure',
-  image: 'neuro/evilMinecraftChad.png',
+  image: 'neuro/DeepfriedPirateNeuro.png',
   participants: [
     regularNeuro, specificNeuro, chatPrompts, piratePrompts
   ]
