@@ -24,8 +24,8 @@ const piratePrompts = {
     'pirate natter nah already on the board',
     'wants booty / loot / treasure',
     'tells a pirate\xa0tale',
-    'wants rum / grog',
-    'names her ship "Vedal"',
+    'wants rum or\xa0grog',
+    'names her ship\xa0"Vedal"',
     'natters about sea creatures',
     'be afeared o\'\xa0storm',
 
