@@ -38,7 +38,7 @@ const specificKsp = {
     'fuel runs off',
     'forgot parachutes',
     'kerbonaut in open space',
-    'Jebediah Kerman returns home', //27.07.23 stream specific prompt
+    'Jebediah Kerman returns home', // 27.07.23 stream specific prompt
     'Neuro names craft excluding "VEDAL"',
     'Vedal save scums',
     'rescue mission needs a rescue',
@@ -48,7 +48,7 @@ const specificKsp = {
     '3 successful missions in a row',
     'successfully deploys space\xa0station',
 
-    //chat related
+    // chat related
     'chat spams :PANIC:',
     'chat spams :o7:',
     'chat spams :VedalSpaceProgram:',
