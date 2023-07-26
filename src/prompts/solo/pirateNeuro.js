@@ -15,21 +15,21 @@ const piratePrompts = {
     // pirate prompts
     'pirate song',
     '"arr!"',
-    '',
-    '',
-    '',
-    '',
-    '',
-    '',
-    '',
-    '',
+    'want to find a treasure',
+    'tells a pirate\xa0story',
+    'wants some rum',
+    'names her ship "Vedal"',
+    'talks about sea creatures',
+    'is afraid of storm',
 
     // mentions
     'mentions Jack\xa0Sparrow',
     'mentions Aqua\xa0Man',
     'mentions Black\xa0Pearl',
     'mentions parrot',
-    'mentions Ocean\xa0Man'
+    'mentions Ocean\xa0Man',
+    'mentions sea-related Vtuber',
+    'mentions internet\xa0piracy'
   ]
 }
 
@@ -65,7 +65,7 @@ const chatPrompts = {
 
 export default {
   name: 'Neuro pirate adventure',
-  image: 'neuro/DeepfriedPirateNeuro.png',
+  image: 'neuro/pirate/DeepfriedPirateNeuro.png',
   participants: [
     regularNeuro, specificNeuro, chatPrompts, piratePrompts
   ]
