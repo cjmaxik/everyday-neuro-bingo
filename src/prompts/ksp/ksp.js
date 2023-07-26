@@ -38,9 +38,23 @@ const specificKsp = {
     'fuel runs off',
     'forgot parachutes',
     'kerbonaut in open space',
+    'Jebediah Kerman returns home', //27.07.23 stream specific prompt
+    'Neuro names craft excluding "VEDAL"',
+    'Vedal save scums',
+    'rescue mission needs a rescue',
+    'successful Mun landing',
+    'successful Minmus landing',
+    '2 successful missions in a row',
+    '3 successful missions in a row',
+    'successfully deploys space\xa0station',
+
+    //chat related
     'chat spams :PANIC:',
     'chat spams :o7:',
-    'chat spams :VedalSpaceProgram:'
+    'chat spams :VedalSpaceProgram:',
+    'chat spams :EZ: :Clap:',
+    'chat spams :peepoCheer:',
+    'chat spams :neuro7:'
   ]
 }
 
