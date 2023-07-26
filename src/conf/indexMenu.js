@@ -2,7 +2,7 @@
 
 // Main block, always visible
 const rootBlock = [
-  { to: 'piNeuro', text: 'Neuro Pirate', color: '#006994' },
+  { to: 'piNeuro', text: 'Neuro-sama Pirate Stream', color: '#006994', featured: true },
   { to: 'neuro', text: 'Neuro-sama solo' },
   { to: 'evil', text: 'Evil Neuro solo', color: '#700b1b' },
   { to: 'xVedal', text: 'Streams with Vedal', color: '#266941' }
@@ -32,12 +32,7 @@ const othersBlock = [
 /**
  * Menu structure
  */
-
-// Highlighted option
-export const featured = 'piNeuro'
-
-// Menu
-export const indexMenu = [
+export default [
   {
     name: null,
     entries: rootBlock

@@ -71,7 +71,7 @@ const chatPrompts = {
 }
 
 export default {
-  name: 'Neuro pirate adventure',
+  name: 'Neuro-sama Pirate Stream',
   image: 'neuro/pirate/DeepfriedPirateNeuro.png',
   participants: [
     regularNeuro, piratePrompts, specificNeuro, chatPrompts
