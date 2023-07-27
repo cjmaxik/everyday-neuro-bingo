@@ -25,18 +25,14 @@ const collabBlock = [
 ]
 
 const othersBlock = [
-  { to: 'vedal', text: 'Vedal solo', color: '#266941' }
+  { to: 'vedal', text: 'Vedal solo', color: '#266941' },
+  { to: 'piNeuro', text: 'Neuro-sama Pirate Stream', color: '#006994' }
 ]
 
 /**
  * Menu structure
  */
-
-// Highlighted option
-export const featured = null
-
-// Menu
-export const indexMenu = [
+export default [
   {
     name: null,
     entries: rootBlock

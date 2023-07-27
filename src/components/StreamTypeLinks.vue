@@ -40,5 +40,5 @@
 
 // project-related
 import StreamTypeItem from 'components/StreamTypeItem.vue'
-import { indexMenu } from 'conf/indexMenu'
+import indexMenu from 'conf/indexMenu'
 </script>
