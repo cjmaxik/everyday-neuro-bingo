@@ -49,7 +49,7 @@ export const regularPrompts = [
   'goes schizo',
   '#ad / corpa',
   'says how old she\xa0is',
-  'invents new nickname',
+  'invents new name to herself',
   'no~',
   'self censors',
   'FUN AI',
@@ -76,8 +76,6 @@ export const regularPrompts = [
   'asks existential question',
   'asks one question on repeat',
   '"There is a\xa0problem with\xa0my\xa0AI"',
-  'hbd Shiro~',
-  'claims her birthday is soon',
 
   // vedal related
   'loves Vedal',
@@ -103,6 +101,8 @@ export const specificPrompts = [
   'whats *emote*?',
   'tries to sing',
   'W RIZZ',
+  'claims her birthday is soon',
+  'hbd Shiro~',
 
   // emote prompts
   // NOTE: do not use inline emotes here - Neuro spells them out as text!
