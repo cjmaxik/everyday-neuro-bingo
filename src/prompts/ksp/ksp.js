@@ -18,6 +18,14 @@ const vedalKsp = {
   prompts: vedal.regularPrompts
 }
 
+const chatPrompts = [
+  'chat spams :PANIC:',
+  'chat spams :VedalSpaceProgram:',
+  'chat spams :EZ: :Clap:',
+  'chat spams :peepoCheer:',
+  'chat spams :o7: :neuro7:'
+]
+
 const specificKsp = {
   ...generic,
 
@@ -31,30 +39,28 @@ const specificKsp = {
     'Neuro mentions Miyu',
     'Neuro says in\u2011game\xa0name',
     'Neuro wants to go to space',
-    'rocket blows up on the pad',
+    'ship blows up on the pad',
+    'ship blows up mid-air',
     'The Kraken strikes',
-    'game crashed / froze',
+    'game crashed',
     'faulty staging',
-    'fuel runs off',
-    'forgot parachutes',
+    'fuel runs\xa0off',
+    'power runs\xa0off',
+    'no parachutes',
     'kerbonaut in open space',
-    'Jebediah Kerman returns home', // 27.07.23 stream specific prompt
-    'Neuro names craft excluding "VEDAL"',
-    'Vedal save scums',
-    'rescue mission needs a rescue',
-    'successful Mun landing',
-    'successful Minmus landing',
-    '2 successful missions in a row',
-    '3 successful missions in a row',
-    'successfully deploys space\xa0station',
+    'Jeb returns\xa0home', // 27.07.23 stream specific prompt
+    'new ship is named after Vedal',
+    'Neuro refuses to give new ship a name',
+    'rescue mission needs a rescue mission',
+    'successful landing to other planet',
+    'successful mission',
+    'loads a save',
+    'successfully deploys a space\xa0station',
+    'boosters hit the ship after separation',
+    'Neuro and Vedal repeat after each other',
+    'stream lasts more that 3 hours',
 
-    // chat related
-    'chat spams :PANIC:',
-    'chat spams :o7:',
-    'chat spams :VedalSpaceProgram:',
-    'chat spams :EZ: :Clap:',
-    'chat spams :peepoCheer:',
-    'chat spams :neuro7:'
+    ...chatPrompts
   ]
 }
 
@@ -65,7 +71,7 @@ const chatKsp = {
     neuro.chatPrompts,
     vedal.chatPrompts,
     chat.chatPrompts
-  )
+  ).filter(x => !chatPrompts.includes(x)) // removes duplicated chat prompts
 }
 
 export default {
