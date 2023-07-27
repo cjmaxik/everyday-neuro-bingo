@@ -40,7 +40,7 @@ const specificKsp = {
     'Neuro says in\u2011game\xa0name',
     'Neuro wants to go to space',
     'ship blows up on the pad',
-    'ship blows up mid-air',
+    'ship blows up in mid-air',
     'The Kraken strikes',
     'game crashed',
     'faulty staging',
@@ -58,7 +58,7 @@ const specificKsp = {
     'successfully deploys a space\xa0station',
     'boosters hit the ship after separation',
     'Neuro and Vedal repeat after each other',
-    'stream lasts more that 3 hours',
+    'stream lasts more than 3 hours',
 
     ...chatPrompts
   ]
