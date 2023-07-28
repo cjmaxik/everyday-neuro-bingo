@@ -1,15 +1,25 @@
 <template>
+  <q-btn
+    class="absolute-left"
+    color="white"
+    icon="keyboard_arrow_left"
+    padding="xs"
+    style="height: 100%; z-index:999;"
+    text-color="gymbag"
+    @click="$emit('returnToSelection')"
+  />
+
+  <div
+    class="q-ml-md text-h5 q-my-md text-center"
+    :class="`text-${id}`"
+  >
+    {{ characterName }} streams
+  </div>
+
   <q-list
-    class="q-mt-sm text-center text-h6 no-scroll"
+    class="q-ml-md q-mt-sm text-center text-h6 no-scroll"
     separator
   >
-    <div
-      class="text-h5 q-my-md"
-      :class="`text-${id}`"
-    >
-      {{ characterName }} streams
-    </div>
-
     <template v-for="{ name, entries } in streams">
       <q-expansion-item
         v-if="name !== null"
@@ -60,4 +70,6 @@ defineProps({
     required: true
   }
 })
+
+defineEmits(['returnToSelection'])
 </script>

@@ -45,20 +45,11 @@
         :name="2"
         title="Select stream"
       >
-        <StreamTypeLinks v-bind="indexMenu[currentCharacter]" />
+        <StreamTypeLinks
+          v-bind="indexMenu[currentCharacter]"
+          @return-to-selection="returnToSelection"
+        />
       </q-step>
-
-      <template #navigation>
-        <q-stepper-navigation v-if="step > 1">
-          <q-btn
-            class="q-mt-lg"
-            color="primary"
-            flat
-            label="Back"
-            @click="returnToSelection()"
-          />
-        </q-stepper-navigation>
-      </template>
     </q-stepper>
 
     <div class="q-pt-sm text-center">
