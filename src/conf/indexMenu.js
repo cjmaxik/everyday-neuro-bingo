@@ -38,6 +38,20 @@ export default {
     ]
   },
 
+  vedal: {
+    id: 'vedal',
+    name: 'Vedal',
+    streams: [
+      {
+        name: null,
+        entries: [
+          { to: 'xVedal', text: 'Dev streams with Neuro', color: '#266941' },
+          { to: 'ksp', text: 'Vedal Space Program', color: '#0504c2' }
+        ]
+      }
+    ]
+  },
+
   evil: {
     id: 'evil',
     name: 'Evil Neuro',
@@ -48,20 +62,6 @@ export default {
           { to: 'evil', text: 'Solo streams', color: '#700b1b' },
           { to: 'miEvil', text: 'Minecraft', color: '#700b1b' },
           { to: 'xNumi', text: 'Collab with Numi', color: '#504778' }
-        ]
-      }
-    ]
-  },
-
-  vedal: {
-    id: 'vedal',
-    name: 'Vedal',
-    streams: [
-      {
-        name: null,
-        entries: [
-          { to: 'xVedal', text: 'Dev streams with Neuro', color: '#266941' },
-          { to: 'ksp', text: 'Vedal Space Program', color: '#0504c2' }
         ]
       }
     ]
