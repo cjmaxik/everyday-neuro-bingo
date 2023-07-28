@@ -2,7 +2,6 @@
 
 // Main block, always visible
 const rootBlock = [
-  { to: 'ksp', text: 'Vedal Space Program', color: '#0504c2', featured: true },
   { to: 'neuro', text: 'Neuro-sama solo' },
   { to: 'evil', text: 'Evil Neuro solo', color: '#700b1b' },
   { to: 'xVedal', text: 'Streams with Vedal', color: '#266941' }
