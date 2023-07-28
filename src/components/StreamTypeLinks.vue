@@ -5,12 +5,12 @@
   >
     <div
       class="text-h5 q-my-md"
-      :class="`text-${character}`"
+      :class="`text-${id}`"
     >
-      {{ indexMenu[character].name }} streams
+      {{ characterName }} streams
     </div>
 
-    <template v-for="{ name, entries } in indexMenu[character].streams">
+    <template v-for="{ name, entries } in streams">
       <q-expansion-item
         v-if="name !== null"
         :key="name"
@@ -47,12 +47,16 @@
 import StreamTypeItem from 'components/StreamTypeItem.vue'
 
 defineProps({
-  indexMenu: {
-    type: Object,
+  id: {
+    type: String,
     required: true
   },
-  character: {
+  characterName: {
     type: String,
+    required: true
+  },
+  streams: {
+    type: Object,
     required: true
   }
 })

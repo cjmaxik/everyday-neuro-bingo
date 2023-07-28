@@ -45,10 +45,7 @@
         :name="2"
         title="Select stream"
       >
-        <StreamTypeLinks
-          :character="currentCharacter"
-          :index-menu="indexMenu"
-        />
+        <StreamTypeLinks v-bind="indexMenu[currentCharacter]" />
       </q-step>
 
       <template #navigation>

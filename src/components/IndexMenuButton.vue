@@ -12,7 +12,7 @@
       />
 
       <span class="no-margin no-padding">
-        {{ name }}
+        {{ characterName }}
       </span>
     </q-btn>
   </div>
@@ -24,7 +24,7 @@ defineProps({
     type: String,
     required: true
   },
-  name: {
+  characterName: {
     type: String,
     required: true
   }

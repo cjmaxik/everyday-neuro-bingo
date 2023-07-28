@@ -6,7 +6,7 @@
 export default {
   neuro: {
     id: 'neuro',
-    name: 'Neuro-sama',
+    characterName: 'Neuro-sama',
     streams: [
       {
         name: null,
@@ -40,7 +40,7 @@ export default {
 
   vedal: {
     id: 'vedal',
-    name: 'Vedal',
+    characterName: 'Vedal',
     streams: [
       {
         name: null,
@@ -54,7 +54,7 @@ export default {
 
   evil: {
     id: 'evil',
-    name: 'Evil Neuro',
+    characterName: 'Evil Neuro',
     streams: [
       {
         name: null,
