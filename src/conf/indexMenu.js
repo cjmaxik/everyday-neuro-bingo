@@ -45,7 +45,7 @@ export default {
       {
         name: null,
         entries: [
-          { to: 'xVedal', text: 'Dev streams with Neuro', color: '#266941' },
+          { to: 'dev', text: 'Dev streams with Neuro', color: '#266941' },
           { to: 'ksp', text: 'Vedal Space Program', color: '#0504c2' }
         ]
       }
