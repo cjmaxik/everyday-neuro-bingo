@@ -17,6 +17,9 @@ $gymbag: #843a49;
 $kekwa: #f58796;
 $wink: #76c8d0;
 $filtered: #db4a73;
+$evil: #700b1b;
+$vedal: #266941;
+$neuro: $gymbag;
 
 $primary: $gymbag;
 $secondary: $wink;
@@ -36,7 +39,10 @@ $new-colors: (
   "gymbag": $gymbag,
   "kekwa": $kekwa,
   "wink": $wink,
-  "filtered": $filtered
+  "filtered": $filtered,
+  "evil": $evil,
+  "vedal": $vedal,
+  "neuro": $neuro,
 );
 
 @each $name,
