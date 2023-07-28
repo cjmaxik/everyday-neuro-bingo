@@ -1,6 +1,7 @@
 <template>
   <div class="col text-center">
     <q-btn
+      v-ripple
       class="full-width"
       no-caps
       :text-color="id"

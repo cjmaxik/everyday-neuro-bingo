@@ -10,14 +10,14 @@
   />
 
   <div
-    class="q-ml-md text-h5 q-my-md text-center"
+    class="q-ml-sm text-h5 q-my-sm text-center"
     :class="`text-${id}`"
   >
     {{ characterName }} streams
   </div>
 
   <q-list
-    class="q-ml-md q-mt-sm text-center text-h6 no-scroll"
+    class="q-ml-sm q-mt-sm text-center text-h6 no-scroll"
     separator
   >
     <template v-for="{ name, entries } in streams">

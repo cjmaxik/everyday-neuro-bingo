@@ -24,11 +24,11 @@
         :name="1"
         title="Select character"
       >
-        <div class="text-h5 q-mt-md text-center text-gymbag">
+        <div class="text-h5 q-my-sm text-center text-gymbag">
           Select character
         </div>
 
-        <div class="row q-gutter-lg q-pa-lg">
+        <div class="row q-gutter-sm q-pa-sm">
           <IndexMenuButton
             v-for="character in indexMenu"
             :key="character.id"
