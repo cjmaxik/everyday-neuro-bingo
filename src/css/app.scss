@@ -212,3 +212,17 @@ body:not(.remove-font) {
     padding-bottom: 4px;
   }
 }
+
+div.q-stepper__header {
+  display: none;
+}
+
+div.index-menu-step {
+  div.q-stepper__step-inner {
+    padding: 0;
+
+    div.q-list--separator {
+      margin-top: 0;
+    }
+  }
+}

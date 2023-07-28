@@ -6,26 +6,37 @@
  */
 
 export default {
-  // Solo streams
-  neuro: () => import('prompts/solo/neuro'),
-  evil: () => import('prompts/solo/evil'),
-  miNeuro: () => import('prompts/solo/minecraftNeuro'),
-  ksp: () => import('prompts/ksp/ksp'),
-  vedal: () => import('prompts/solo/vedal'),
-  miEvil: () => import('prompts/solo/minecraftEvil'),
-  piNeuro: () => import('prompts/solo/pirateNeuro'),
+  /**
+   * Neuro-sama
+   */
+  // Solo
+  neuro: () => import('streams/neuro/solo'),
+  miNeuro: () => import('streams/neuro/minecraftNeuro'),
+  piNeuro: () => import('streams/neuro/pirateNeuro'),
 
   // Collabs
-  xVedal: () => import('prompts/xVedal/xVedal'),
-  xEvil: () => import('prompts/xEvil/xEvil'),
-  xAnny: () => import('prompts/xAnny/xAnny'),
-  xMiyune: () => import('prompts/xMiyune/xMiyune'),
-  xFilian: () => import('prompts/xFilian/xFilian'),
-  xShylily: () => import('prompts/xShylily/xShylily'),
-  xNumi: () => import('prompts/xNumi/xNumi'),
-  family: () => import('prompts/family/family'),
-  xAnyone: () => import('prompts/xAnyone/xAnyone'),
+  xEvil: () => import('streams/neuro/xEvil/xEvil'),
+  xAnny: () => import('streams/neuro/xAnny/xAnny'),
+  xMiyune: () => import('streams/neuro/xMiyune/xMiyune'),
+  xFilian: () => import('streams/neuro/xFilian/xFilian'),
+  xShylily: () => import('streams/neuro/xShylily/xShylily'),
+  family: () => import('streams/neuro/family/family'),
+  xAnyone: () => import('streams/neuro/xAnyone/xAnyone'),
+
+  /**
+   * Vedal
+   */
+  dev: () => import('streams/vedal/xNeuro'),
+  ksp: () => import('streams/vedal/ksp'),
+  vedal: () => import('streams/vedal/solo'),
+
+  /**
+   * Evil Neuro
+   */
+  evil: () => import('streams/evil/solo'),
+  miEvil: () => import('streams/evil/minecraftEvil'),
+  xNumi: () => import('streams/evil/xNumi/xNumi'),
 
   // Tests
-  emoteTest: () => import('prompts/tests/emote')
+  emoteTest: () => import('streams/tests/emote')
 }
