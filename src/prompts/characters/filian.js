@@ -36,7 +36,7 @@ export const regularPrompts = [
   'camera goes crazy',
   'falls from ledge',
   'VR gear bugs out',
-  'breaks character', 
+  'breaks character',
   'hits the wall',
   'admits she\'s a fussy\xa0baby',
 
