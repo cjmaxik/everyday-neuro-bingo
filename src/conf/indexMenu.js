@@ -61,6 +61,7 @@ export default {
         entries: [
           { to: 'evil', text: 'Solo streams', color: '#700b1b' },
           { to: 'miEvil', text: 'Minecraft', color: '#700b1b' },
+          { to: 'evilXfilian', text: 'Collab with filian', color: '#be01fe' },
           { to: 'xNumi', text: 'Collab with Numi', color: '#504778' }
         ]
       }
