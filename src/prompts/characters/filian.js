@@ -6,7 +6,13 @@ export const base = {
   image: 'fruitSnacks.png',
 
   sounds: [
-    'fruitSnacks.mp3'
+    'fruitSnacks.mp3',
+    'stopppp.mp3',
+    'sike.mp3',
+    'Eeee spaghetti.mp3',
+    'whatthefrick.mp3',
+    'Rekson.mp3',
+    'Imfalt.mp3'
   ]
 }
 
@@ -15,10 +21,10 @@ export const regularPrompts = [
   'does a flip',
   'flash bang',
   'begs Vedal for help',
-  'roasts Neuro',
+  'successful roast',
   'deez nuts joke',
   'drops headset',
-  'gaslights Neuro',
+  'successful gaslight',
   '"STOP!"',
   'effin dies',
   'makes strange noise',
@@ -30,8 +36,9 @@ export const regularPrompts = [
   'camera goes crazy',
   'falls from ledge',
   'VR gear bugs out',
-  'breaks characater',
+  'breaks character', 
   'hits the wall',
+  'admits she\'s a fussy\xa0baby',
 
   // model related
   'bunny girl model',

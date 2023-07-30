@@ -6,7 +6,7 @@ export const base = {
   // TODO: Decouple assetsFolder from sounds
   assetsFolder: 'evilNeuro',
 
-  image: 'robot.png',
+  image: 'madevil.png',
 
   sounds: [
     'aaand',
@@ -210,6 +210,7 @@ export const mentionPrompts = [
   'mentions hell character',
   'mentions donohouse',
   'mentions pineapple\xa0pizza',
+  'mentions MyBraza',
 
   'loves Vedal',
   'hates Vedal',
