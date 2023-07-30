@@ -26,6 +26,7 @@ const filianPrompts = {
   ...filian.base,
 
   prompts: filian.regularPrompts
+    .map(x => x.replaceAll('Neuro', 'Evil'))
 }
 
 const chatPrompts = {
