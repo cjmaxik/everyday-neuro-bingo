@@ -41,7 +41,7 @@ const chatPrompts = {
 
 export default {
   name: 'Evil Neuro x Filian collab',
-  image: 'fillypointatevilfumo.png',
+  image: 'filian/fillypointatevilfumo.png',
   participants: [
     evilCollab, filianPrompts,
     chatPrompts, evilRegular
