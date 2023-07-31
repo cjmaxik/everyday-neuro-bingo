@@ -35,8 +35,6 @@ const vedalRegular = {
   )
 }
 
-console.log(evilRegular.prompts, evilCollab.prompts)
-
 const chatPrompts = {
   ...chat.base,
 
@@ -48,7 +46,7 @@ const chatPrompts = {
 }
 
 export default {
-  name: 'Evil and Vedal',
+  name: 'Evil Neuro and Vedal',
   image: 'vedal/neuroEvil.png',
   participants: [
     evilRegular, vedalRegular, chatPrompts, evilCollab
