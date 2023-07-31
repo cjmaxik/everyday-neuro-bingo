@@ -6,14 +6,14 @@ export const base = {
   image: 'fruitSnacks.png',
 
   sounds: [
-    'fruitSnacks.mp3',
-    'stopppp.mp3',
-    'sike.mp3',
-    'Eeee spaghetti.mp3',
-    'whatthefrick.mp3',
-    'Rekson.mp3',
-    'Imfalt.mp3'
-  ]
+    'fruitSnacks',
+    'stopppp',
+    'sike',
+    'uuhuuh',
+    'whatthefrick',
+    'Rekson',
+    'Imfalt'
+  ].map(x => `${x}.mp3`)
 }
 
 export const regularPrompts = [
