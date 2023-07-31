@@ -36,7 +36,6 @@ export const regularPrompts = [
   // classics
   'wink',
   'heart',
-
   'stares',
   'makes sussy\xa0noise',
   'dies',
@@ -51,7 +50,6 @@ export const regularPrompts = [
   'says how old she\xa0is',
   'invents new name to herself',
   'no~',
-  'self censors',
   'FUN AI',
   'admits to murder',
   'rants',
@@ -88,9 +86,7 @@ export const specificPrompts = [
   'shames a\xa0viewer',
   '"Flushed means blushing"',
   'randomly indroduces herself',
-  'talks about nightmares',
   'cat story',
-  'donowalls LomiBox specifically',
   'consistent',
   'feel free to ask me anything',
   '1984 is a great book/movie',
@@ -139,7 +135,8 @@ export const mentionPrompts = [
   'mentions her\xa0height',
   'mentions osu!',
   'mentions Evil\xa0Neuro',
-  'mentions becoming an engineer'
+  'mentions becoming an engineer',
+  'mentions Forsen'
 ]
 
 export const chatPrompts = [

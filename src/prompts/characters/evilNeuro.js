@@ -134,6 +134,7 @@ export const regularPrompts = [
   'tries to\xa0sing',
   'KEKW',
   'trauma dump',
+  'speaks chinese',
 
   // sounds
   'sussy sound',
