@@ -4,7 +4,7 @@ export const base = {
   ...generic
 }
 
-export const collabPrompts = [
+export const collabPrompts = (name = 'Neuro') => [
   // generic prompts
   'dies from laughter',
   'funny joke',
@@ -13,12 +13,12 @@ export const collabPrompts = [
   'meow~',
 
   // Neuro-related
-  'praises Neuro',
-  'argues with Neuro',
-  'gaslights Neuro',
-  'loves Neuro',
-  'hates Neuro',
-  'roasts Neuro',
-  'shames Neuro',
+  'praises {x}',
+  'argues with {x}',
+  'gaslights {x}',
+  'loves {x}',
+  'hates {x}',
+  'roasts {x}',
+  'shames {x}',
   'W RIZZ'
-]
+].map(x => x.replaceAll('{x}', name))
