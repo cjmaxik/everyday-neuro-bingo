@@ -44,13 +44,12 @@ export const mentionPrompts = [
   'hbd Shiro~'
 ]
 
-export const collabPrompts = [
-  // neuro related
-  'argues with Neuro',
-  'hates Neuro',
-  'loves Neuro',
-  'properly responds to\xa0Neuro'
-]
+export const collabPrompts = (name = 'Neuro') => [
+  'argues with {x}',
+  'hates {x}',
+  'loves {x}',
+  'properly responds to\xa0 {x}'
+].map(x => x.replaceAll('{x}', name))
 
 // chat related
 export const chatPrompts = [
