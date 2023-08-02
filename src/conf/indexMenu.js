@@ -1,9 +1,13 @@
 // @ts-check
+/**
+ * Upcoming stream
+ */
+export const upcoming = null
 
 /**
  * Menu structure
  */
-export default {
+export const indexMenu = {
   neuro: {
     id: 'neuro',
     characterName: 'Neuro-sama',
