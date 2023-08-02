@@ -1,9 +1,17 @@
 // @ts-check
+/**
+ * Upcoming stream
+ */
+export const upcoming = {
+  to: 'neuro',
+  text: 'Chill stream with Neuro',
+  date: 'Thursday, 7 PM BST / 6 PM UTC'
+}
 
 /**
  * Menu structure
  */
-export default {
+export const indexMenu = {
   neuro: {
     id: 'neuro',
     characterName: 'Neuro-sama',
@@ -46,6 +54,7 @@ export default {
         name: null,
         entries: [
           { to: 'dev', text: 'Dev streams with Neuro', color: '#266941' },
+          { to: 'devEvil', text: 'Dev streams with Evil Neuro', color: '#266941' },
           { to: 'ksp', text: 'Vedal Space Program', color: '#0504c2' }
         ]
       }

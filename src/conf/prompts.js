@@ -27,6 +27,7 @@ export default {
    * Vedal
    */
   dev: () => import('streams/vedal/xNeuro'),
+  devEvil: () => import('streams/vedal/xEvil'),
   ksp: () => import('streams/vedal/ksp'),
   vedal: () => import('streams/vedal/solo'),
 

@@ -6,19 +6,22 @@ import * as chat from 'characters/chat'
 import * as genericCollab from 'characters/genericCollab'
 
 const collabPrompts = neuro.collabPrompts('Vedal')
+const vedalCollabPrompts = vedal.collabPrompts('Neuro')
+const genericCollabPrompts = genericCollab.collabPrompts('Neuro')
 
 const neuroRegular = {
   ...neuro.base,
 
   prompts: neuro.regularPrompts
     .filter(x => !collabPrompts.includes(x)) // removes duplicated Vedal prompts
+    .filter(x => !vedalCollabPrompts.includes(x)) // removes duplicated Neuro prompts
 }
 
 const neuroCollab = {
   ...neuro.base,
 
   prompts: collabPrompts
-    .map(x => x.replace('Vedal Vedal', 'Vedal Veedal/Vidal/ etc.'))
+    .map(x => x.replace('Vedal Vedal', 'mispronounses Vedal\'s name'))
 }
 
 const vedalRegular = {
@@ -27,8 +30,8 @@ const vedalRegular = {
   prompts: mergeUnique(
     vedal.regularPrompts,
     vedal.mentionPrompts,
-    vedal.collabPrompts,
-    genericCollab.collabPrompts
+    vedalCollabPrompts,
+    genericCollabPrompts
   )
 }
 

@@ -1,8 +1,7 @@
 <template>
   <q-page class="index">
     <q-banner
-      class="bg-gymbag text-white text-center"
-      inline-actions
+      class="bg-gymbag text-white text-center shadow-5 shadow-transition"
       rounded
     >
       <span class="text-h5">
@@ -10,11 +9,19 @@
       </span>
     </q-banner>
 
+    <StreamTypeItem
+      v-if="upcoming"
+      v-bind="upcoming"
+      class="q-my-sm shadow-4 shadow-transition rounded-borders"
+      :upcoming="true"
+    />
+
     <q-stepper
       ref="stepper"
       v-model="step"
       animated
-      class="q-mt-sm bg-white shadow-5 shadow-transition "
+      class="bg-white shadow-3 shadow-transition"
+      :class="{ 'q-mt-sm': !upcoming }"
       color="primary"
     >
       <q-step
@@ -63,9 +70,10 @@
 import { ref } from 'vue'
 import AboutModal from 'components/AboutModal.vue'
 import StreamTypeLinks from 'components/StreamTypeLinks.vue'
+import StreamTypeItem from 'components/StreamTypeItem.vue'
 import IndexMenuButton from 'src/components/IndexMenuButton.vue'
 
-import indexMenu from 'conf/indexMenu'
+import { upcoming, indexMenu } from 'conf/indexMenu'
 
 // settings store
 import { useGameSettingsStore } from 'stores/gameSettings'
