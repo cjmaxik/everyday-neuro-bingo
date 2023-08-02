@@ -112,7 +112,13 @@ export const base = {
     'new/wink_17',
     'new/wink_18',
     'new/yay',
-    'new/yes'
+    'new/yes',
+    'new/bleh',
+    'new/dangerous',
+    'new/HEH',
+    'new/uhh',
+    'new/WEEEEE_short',
+    'new/what_2'
   ].map(x => `${x}.mp3`)
 }
 
