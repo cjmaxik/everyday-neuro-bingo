@@ -2,7 +2,12 @@
 /**
  * Upcoming stream
  */
-export const upcoming = null
+export const upcoming = {
+  to: 'evilXfilian',
+  text: 'Evil Neuro x filian',
+  color: '#be01fe',
+  date: 'Friday, 11PM BST / 10PM UTC'
+}
 
 /**
  * Menu structure

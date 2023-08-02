@@ -19,6 +19,13 @@
       >
         {{ text }}
       </q-item-label>
+
+      <q-item-label
+        v-if="upcoming && date"
+        caption
+      >
+        {{ date }}
+      </q-item-label>
     </q-item-section>
   </q-item>
 </template>
@@ -38,6 +45,10 @@ defineProps({
   upcoming: {
     type: Boolean,
     default: false
+  },
+  date: {
+    type: String,
+    default: null
   },
   color: {
     type: String,
