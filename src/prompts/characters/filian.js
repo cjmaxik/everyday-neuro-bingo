@@ -34,19 +34,16 @@ export const regularPrompts = [
   'rick rolled',
   'falls from chair',
   'camera goes crazy',
-  'falls from ledge',
   'VR gear bugs out',
   'breaks character',
   'hits the wall',
   'admits she\'s a fussy\xa0baby',
-
-  // model related
-  'bunny girl model',
-  'police filian model',
-  'kawaii filian model',
+  'admits she\'s a furry',
+  'screams very loud',
+  'roleplays',
+  'Gillian appears',
 
   // mentions
-  'mentions projektmelody',
   'mentions Fruit Snacks',
   'mentions Rekson'
 ]
