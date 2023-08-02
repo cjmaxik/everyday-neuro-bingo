@@ -17,7 +17,7 @@
   </div>
 
   <q-list
-    class="q-ml-sm q-mt-sm text-center text-h6 no-scroll"
+    class="q-ml-sm q-mt-sm text-center no-scroll"
     separator
   >
     <template v-for="{ name, entries } in streams">
