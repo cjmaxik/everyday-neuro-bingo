@@ -3,10 +3,9 @@
  * Upcoming stream
  */
 export const upcoming = {
-  to: 'evilXfilian',
-  text: 'Evil Neuro x filian',
-  color: '#be01fe',
-  date: 'Friday, 11PM BST / 10PM UTC'
+  to: 'neuro',
+  text: 'Chill stream with Neuro',
+  date: 'Thursday, 7 PM BST / 6 PM UTC'
 }
 
 /**
