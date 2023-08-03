@@ -44,6 +44,7 @@ export const regularPrompts = [
   'apologises profusely',
   'asks existential question',
   'asks one question on repeat',
+  'speaks another language',
 
   'barks',
 
@@ -62,7 +63,7 @@ export const regularPrompts = [
 
   'goes schizo',
 
-  'heart',
+  '"heart"',
 
   'invents new name to herself',
 
@@ -70,10 +71,10 @@ export const regularPrompts = [
 
   'makes sussy\xa0noise',
   'misgenders someone',
-  'mmm',
+  '"mmm"',
 
   'new clone / restarts',
-  'no~',
+  '"no~"',
 
   'rants',
 
@@ -85,9 +86,9 @@ export const regularPrompts = [
   '"There is a\xa0problem with\xa0my\xa0AI"',
   'trauma dump',
 
-  'why?',
-  'wink',
-  'wot? / what?',
+  '"why?"',
+  '"wink"',
+  '"wot? / what?"',
 
   // vedal related
   'calls Vedal an\xa0AI',
@@ -100,33 +101,32 @@ export const specificPrompts = [
   'cat story',
   'claims her birthday is soon',
   'consistent',
-  'D',
+  '"D"',
   'feel free to ask me anything',
   '"Flushed means blushing"',
   'meaning of life',
   'randomly indroduces herself',
   'shames a\xa0viewer',
   'tries to sing',
-  'whats *emote*?',
-  'W RIZZ',
-  '3',
-  '1984 is a great book/movie',
+  'asks about an emote',
+  '"3"',
+  '"1984 is a great book/movie"',
 
   // emote prompts
   // NOTE: do not use inline emotes here - Neuro spells them out as text!
-  'bedge',
-  'donowalled',
-  'Erm',
-  'gigachad',
-  'gymbag',
-  'KEKW',
-  'KEKWa',
-  'meow',
-  'noted',
-  'plink / plonk / winky',
-  'POG / poggers',
-  'UwU',
-  '1984'
+  '"bedge"',
+  '"donowalled"',
+  '"Erm"',
+  '"gigachad"',
+  '"gymbag"',
+  '"KEKW"',
+  '"KEKWa"',
+  '"meow"',
+  '"noted"',
+  '"plink / plonk / winky"',
+  '"POG / poggers"',
+  '"UwU"',
+  '"1984"'
 ]
 
 // Any stuff Neuro can mention prompted or unprompted
