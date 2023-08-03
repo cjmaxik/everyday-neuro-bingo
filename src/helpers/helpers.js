@@ -81,7 +81,7 @@ export const generatePrompts = (allPrompts, seed, boardSize) => {
     const prompts = shuffle(data.prompts, seed).slice(0, countForParticipiant)
 
     if (prompts.length < countForParticipiant) {
-      throw Error(`Not enough propmts for ${data.participantId}`)
+      throw Error(`Not enough propmts for ID: "${data.participantId}". We expect ${countForParticipiant}, we received ${prompts.length}`)
     }
 
     prompts.forEach(text => {
