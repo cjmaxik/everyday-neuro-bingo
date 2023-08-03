@@ -9,7 +9,7 @@
       leave-active-class="animated fadeOut"
     >
       <div
-        v-if="!state.fullyReady"
+        v-if="!state.fullyReady && !error"
         :key="0"
         class="absolute-top"
       >
@@ -26,6 +26,29 @@
           </div>
         </div>
       </div>
+
+      <q-banner
+        v-if="error"
+        class="text-white bg-gymbag"
+      >
+        <template #avatar>
+          <q-avatar square>
+            <img src="/assets/images/o7.png">
+          </q-avatar>
+        </template>
+
+        {{ error }}.<br>
+        <small>If you see this, please reach out to developers at Neurocord or on GitHub.</small>
+
+        <template #action>
+          <q-btn
+            color="white"
+            flat
+            label="Go back"
+            to="/"
+          />
+        </template>
+      </q-banner>
 
       <div
         v-if="state.fullyReady"
@@ -140,6 +163,7 @@ const $q = useQuasar()
 // Init data
 const version = 4
 const streamData = prompts[streamType]
+const error = ref(null)
 
 onBeforeMount(() => {
   // Load stream data
@@ -147,7 +171,12 @@ onBeforeMount(() => {
     const data = module?.default
 
     // Generate state
-    state.generateBoard(data, version)
+    try {
+      state.generateBoard(data, version)
+    } catch (e) {
+      error.value = e
+      console.error(e)
+    }
 
     // Rename title
     settings.streamName = data.name
