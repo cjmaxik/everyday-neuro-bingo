@@ -112,7 +112,6 @@ export const specificPrompts = [
   '3',
   '1984 is a great book/movie',
 
-
   // emote prompts
   // NOTE: do not use inline emotes here - Neuro spells them out as text!
   'bedge',
@@ -127,7 +126,7 @@ export const specificPrompts = [
   'plink / plonk / winky',
   'POG / poggers',
   'UwU',
-  '1984',
+  '1984'
 ]
 
 // Any stuff Neuro can mention prompted or unprompted
@@ -151,7 +150,7 @@ export const mentionPrompts = [
   'mentions Swarm',
   'mentions Time\xa0God',
   'mentions turtles',
-  'randomly mentions Vedal',
+  'randomly mentions Vedal'
 ]
 
 export const chatPrompts = [
