@@ -3,7 +3,7 @@
  * Available ONLY via direct link (see `prompts.js`)
  */
 
-import neuro from 'characters/neuro'
+import generic from 'characters/generic'
 import emotesList from 'helpers/emotesList.json'
 
 const prepareEmotes = () => {
@@ -20,7 +20,7 @@ const prompts = prepareEmotes()
 // const prompts = neuro.prompts.filter(x => x.includes(':'))
 
 const emoteTest = {
-  ...neuro,
+  ...generic,
 
   name: 'Emote test',
 
