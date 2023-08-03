@@ -26,7 +26,7 @@
         :key="name"
         expand-icon-class="collab-toggle"
         group="collab"
-        header-class="text-gymbag"
+        header-class="text-gymbag text-h6"
         :label="name"
         toggle
       >
