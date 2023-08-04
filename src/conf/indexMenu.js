@@ -2,11 +2,7 @@
 /**
  * Upcoming stream
  */
-export const upcoming = {
-  to: 'neuro',
-  text: 'Chill stream with Neuro',
-  date: 'Thursday, 7 PM BST / 6 PM UTC'
-}
+export const upcoming = null
 
 /**
  * Menu structure
