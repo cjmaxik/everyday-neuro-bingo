@@ -17,7 +17,7 @@ export const base = {
 export const regularPrompts = [
   '"WHAT?"',
   '"Shut up!"',
-  '#ad / corpa',
+  'ad / corpa',
   'good joke',
   'cringe joke',
   'tutel noises',

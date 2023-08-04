@@ -80,6 +80,7 @@ export const regularPrompts = [
 
   'says how old she\xa0is',
   'spams',
+  'speaks another language',
   'stares',
   'starts counting',
 

@@ -140,7 +140,7 @@ export const regularPrompts = [
   'tries to\xa0sing',
   'KEKW',
   'trauma dump',
-  'speaks chinese',
+  'emote gibberish',
 
   // sounds
   'sussy sound',
