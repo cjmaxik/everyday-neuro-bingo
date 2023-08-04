@@ -140,6 +140,7 @@ export const regularPrompts = [
   'tries to\xa0sing',
   'KEKW',
   'trauma dump',
+  'emote gibberish',
 
   // sounds
   'sussy sound',

@@ -17,7 +17,7 @@ export const base = {
 export const regularPrompts = [
   '"WHAT?"',
   '"Shut up!"',
-  '#ad / corpa',
+  'ad / corpa',
   'good joke',
   'cringe joke',
   'tutel noises',
@@ -25,7 +25,7 @@ export const regularPrompts = [
   'gets competitive',
   '"That\'s crazy" :Tutel:',
   '"I have no idea"',
-  '"Why it doesn\'t work?"',
+  '"Why doesn\'t it work?"',
   '"I am stupid"',
   '"We\'ll fix it" x2',
   'checks #starboard',
@@ -54,7 +54,6 @@ export const collabPrompts = (name = 'Neuro') => [
 // chat related
 export const chatPrompts = [
   'chat L\'s Vedal',
-  'chat spams :vedalPls:',
   'chat spams ZERO LATENCY',
   'chat spams :ICANT:',
   'chat spams :NOTED:',
