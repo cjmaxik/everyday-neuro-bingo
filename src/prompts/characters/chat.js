@@ -46,6 +46,8 @@ export const chatPrompts = [
   'meow',
   'monkaTOS',
   'monkaW',
+  'Life neuroLife',
+  'neuroNuke',
   'neuroplushsittingverycomfortablewhilesheroastsaporowithherfriends',
   'NOOOO',
   'NOTED neuroNoted',

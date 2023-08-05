@@ -3,29 +3,15 @@
  * Available ONLY via direct link (see `prompts.js`)
  */
 
-import generic from 'characters/generic'
-import emotesList from 'helpers/emotesList.json'
-
-const prepareEmotes = () => {
-  const emotes = []
-
-  for (const key in emotesList) {
-    emotes.push(`:${key}: :${key}:`)
-  }
-
-  return emotes
-}
-
-const prompts = prepareEmotes()
-// const prompts = neuro.prompts.filter(x => x.includes(':'))
+import * as chat from 'characters/chat'
 
 const emoteTest = {
-  ...generic,
+  ...chat.base,
 
   name: 'Emote test',
 
   prompts: Array.from({
-    ...prompts,
+    ...chat.chatPrompts,
     length: 48
   })
 }
