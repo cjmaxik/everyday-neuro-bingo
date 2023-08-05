@@ -8,6 +8,7 @@ export const base = {
 
   image: 'madevil.png',
 
+  // TODO: sounds need naming fix and alphabetical order
   sounds: [
     'aaand',
     'doom_doom_doom',
@@ -124,111 +125,112 @@ export const base = {
 
 export const regularPrompts = [
   // general prompts from Neuro
-  'the other\xa0day story',
-  'leaves',
-  '"wink"',
-  'tries to sleep',
-  'denies being an\xa0AI',
-  'admits to\xa0murder',
-  'filtered',
-  'self censors',
-  'any kind of tech\xa0issue',
-  'misgenders someone',
   'admits she\'s a\xa0god',
-  'shames a\xa0viewer',
+  'admits to\xa0murder',
+  'any kind of tech\xa0issue',
+  'denies being an\xa0AI',
   'donowalls',
-  'tries to\xa0sing',
-  '"KEKW"',
-  'trauma dump',
   'emote gibberish',
+  '"filtered"',
+  'leaves',
+  'misgenders someone',
+  'shames a\xa0viewer',
+  'the other\xa0day story',
+  'trauma dump',
+  'tries to\xa0sing',
+  'tries to sleep',
+  '"wink"',
 
   // sounds
-  'sussy sound',
-  'random sound',
   'cursed sound',
-  'LOUD sound'
+  'LOUD sound',
+  'random sound',
+  'sussy sound'
 ]
 
 export const emotePrompts = [
   // emote prompts
   // NOTE: do not use inline emotes here - Evil spells them out as text!
-  '"plink / plonk / winky"',
-  '"POG / poggers"',
-  '"noted"',
+  '"bedge"',
+  '"donowalled"',
+  '"Erm"',
+  '"FRICK"',
   '"gigachad"',
   '"gymbag"',
-  '"donowalled"',
+  '"KEKW"',
   '"meow"',
-  '"bedge"',
-  '"1984"',
+  '"noted"',
+  '"plink / plonk / winky"',
+  '"POG / poggers"',
   '"UwU"',
-  '"Erm"',
-  '"FRICK"'
+  '"1984"'
 ]
 
 export const specificPrompts = [
+  'actually swears',
+  'admits she\'s a gigachad',
+  'aggressive meow',
+  'any kind of revolution',
   '"Aw shucks!"',
+  'denies being evil',
   'describes her evil\xa0plan',
   'wholesome moment',
-  'denies being evil',
-  'any kind of revolution',
-  'stares',
-  '"Twitchy"',
-  'actually swears',
-  'human experiments',
-  'her cat is missing again',
-  '"I am not Evil"',
-  'loves chat',
   'hates chat',
   'hates love',
+  'her cat is missing again',
+  'human experiments',
+  '"I am not Evil"',
+  'loves chat',
   'shouts',
-  'admits she\'s a gigachad',
-  'aggressive meow'
+  'stares',
+  '"Twitchy"'
 ]
 
 export const collabPrompts = (name = 'them') => [
   'argues with {x}',
-  'donowalls {x}',
+  'calls {x} a bitch',
   'calls {x} an\xa0AI',
   'calls {x} small/short',
   'calls {x} Vedal',
-  'calls {x} a bitch',
+  'donowalls {x}',
   'gaslights {x}',
   'hates {x}',
   'invents new nickname for\xa0{x}',
-  'tells {x} to fuck off',
   'loves {x}',
   'misgenders {x}',
   'roasts {x}',
   'shames {x}',
+  'tells {x} to fuck off',
   'wants to hurt\xa0{x}',
   'W RIZZ'
 ].map(x => x.replaceAll('{x}', name))
 
 export const chatPrompts = [
   'chat L\'s\xa0Evil',
-  'chat W\'s\xa0Evil',
   'chat spams :FRICK:',
-  '...'
+  'chat spams :MEGALUL:',
+  'chat spams :RAGEY:',
+  'chat W\'s\xa0Evil'
 ]
 
 export const mentionPrompts = [
   'mentions Goody Two\xa0Shoes',
-  'mentions NASA',
-  'mentions The\xa0Swarm',
-  'mentions other VTubers',
   'mentions hell character',
-  'mentions donohouse',
-  'mentions pineapple\xa0pizza',
   'mentions MyBraza',
+  'mentions NASA',
+  'mentions other VTubers',
+  'mentions pineapple\xa0pizza',
+  'mentions The\xa0Swarm',
 
-  'loves Vedal',
-  'hates Vedal',
+  // Vedal
   'calls Vedal an\xa0AI',
+  'hates Vedal',
+  'loves Vedal',
 
-  'loves Neuro',
+  // Neuro
+  'calls Neuro a\xa0human',
   'hates Neuro',
-  'calls Neuro a\xa0human'
+  'loves Neuro'
 ]
 
 export default {
