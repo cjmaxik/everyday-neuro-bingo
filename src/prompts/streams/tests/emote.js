@@ -18,7 +18,7 @@ const emoteTest = {
 
 export default {
   name: 'Emote test',
-  image: 'vedal/vedal.png',
+  image: 'chat/chatting.png',
   participants: [
     emoteTest
   ]

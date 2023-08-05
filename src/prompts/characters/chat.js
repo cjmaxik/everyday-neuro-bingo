@@ -6,7 +6,8 @@ export const base = {
   id: 'chat',
   name: 'Chat',
   color: '#9146FF',
-  image: 'chat.png'
+  assetsFolder: 'chat',
+  image: 'chatting.png'
 }
 
 /**
