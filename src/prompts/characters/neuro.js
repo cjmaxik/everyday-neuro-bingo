@@ -156,10 +156,11 @@ export const mentionPrompts = [
 
 export const chatPrompts = [
   // chat related
+  'chat W\'s\xa0Neuro',
   'chat L\'s\xa0Neuro',
   'chat prays',
   'chat spams copypasta',
-  'chat W\'s\xa0Neuro'
+  'chat spams :Life: :neuroLife:'
 ]
 
 export const collabPrompts = (name = 'them') => [
@@ -176,6 +177,7 @@ export const collabPrompts = (name = 'them') => [
   'misgenders {x}',
   'roasts {x}',
   'shames {x}',
+  'wants to marry {x}',
   'W RIZZ'
 ].map(x => x.replaceAll('{x}', name))
 

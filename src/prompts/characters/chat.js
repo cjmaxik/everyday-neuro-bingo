@@ -46,6 +46,8 @@ export const chatPrompts = [
   'meow',
   'monkaTOS',
   'monkaW',
+  'Life neuroLife',
+  'neuroNuke',
   'neuroplushsittingverycomfortablewhilesheroastsaporowithherfriends',
   'NOOOO',
   'NOTED neuroNoted',
@@ -55,6 +57,7 @@ export const chatPrompts = [
   'ok',
   'PauseSama',
   'POG poggers',
+  'pogs',
   'reallyGunPull vedalPls',
   'RIGGED',
   'RIPBOZO',
@@ -62,8 +65,10 @@ export const chatPrompts = [
   'SNIFFA',
   'SoCute',
   'Susge',
+  'Tomfoolery',
   'Tutel',
-  'WAYTOODANK'
+  'WAYTOODANK',
+  'xdx xdding'
 ].map(x => `chat spams :${x.replaceAll(' ', ': :')}:`)
 
 export default {
