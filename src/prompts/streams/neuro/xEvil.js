@@ -4,6 +4,12 @@ import * as neuro from 'characters/neuro'
 import * as evil from 'characters/evilNeuro'
 import * as chat from 'characters/chat'
 
+const neuroBase = {
+  ...neuro.base,
+
+  image: 'madNeuro.png'
+}
+
 const evilBase = {
   ...evil.base,
 
@@ -11,13 +17,13 @@ const evilBase = {
 }
 
 const neuroRegular = {
-  ...neuro.base,
+  ...neuroBase,
 
   prompts: neuro.regularPrompts
 }
 
 const neuroCollab = {
-  ...neuro.base,
+  ...neuroBase,
 
   prompts: neuro.collabPrompts('Evil')
 }
