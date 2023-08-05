@@ -53,7 +53,7 @@ const chatPrompts2 = {
 
 export default {
   name: 'Neuro x Evil Neuro collab',
-  image: 'evilNeuro/evilNeuro2.png',
+  image: 'neuro/neuroEvilCollab.png',
   participants: [
     evilRegular, chatPrompts1,
     evilCollab, neuroRegular,
