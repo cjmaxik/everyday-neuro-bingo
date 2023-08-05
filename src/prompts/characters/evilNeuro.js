@@ -126,7 +126,7 @@ export const regularPrompts = [
   // general prompts from Neuro
   'the other\xa0day story',
   'leaves',
-  'wink',
+  '"wink"',
   'tries to sleep',
   'denies being an\xa0AI',
   'admits to\xa0murder',
@@ -138,7 +138,7 @@ export const regularPrompts = [
   'shames a\xa0viewer',
   'donowalls',
   'tries to\xa0sing',
-  'KEKW',
+  '"KEKW"',
   'trauma dump',
   'emote gibberish',
 
@@ -152,18 +152,18 @@ export const regularPrompts = [
 export const emotePrompts = [
   // emote prompts
   // NOTE: do not use inline emotes here - Evil spells them out as text!
-  'plink / plonk / winky',
-  'POG / poggers',
-  'noted',
-  'gigachad',
-  'gymbag',
-  'donowalled',
-  'meow',
-  'bedge',
-  '1984',
-  'UwU',
-  'Erm',
-  'FRICK'
+  '"plink / plonk / winky"',
+  '"POG / poggers"',
+  '"noted"',
+  '"gigachad"',
+  '"gymbag"',
+  '"donowalled"',
+  '"meow"',
+  '"bedge"',
+  '"1984"',
+  '"UwU"',
+  '"Erm"',
+  '"FRICK"'
 ]
 
 export const specificPrompts = [
@@ -192,6 +192,7 @@ export const collabPrompts = (name = 'them') => [
   'calls {x} an\xa0AI',
   'calls {x} small/short',
   'calls {x} Vedal',
+  'calls {x} a bitch',
   'gaslights {x}',
   'hates {x}',
   'invents new nickname for\xa0{x}',
@@ -206,7 +207,9 @@ export const collabPrompts = (name = 'them') => [
 
 export const chatPrompts = [
   'chat L\'s\xa0Evil',
-  'chat W\'s\xa0Evil'
+  'chat W\'s\xa0Evil',
+  'chat spams :FRICK:',
+  '...'
 ]
 
 export const mentionPrompts = [

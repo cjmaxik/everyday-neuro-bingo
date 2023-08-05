@@ -176,6 +176,7 @@ export const collabPrompts = (name = 'them') => [
   'misgenders {x}',
   'roasts {x}',
   'shames {x}',
+  'wants to marry {x}',
   'W RIZZ'
 ].map(x => x.replaceAll('{x}', name))
 

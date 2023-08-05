@@ -15,7 +15,7 @@ export default {
   piNeuro: () => import('streams/neuro/pirateNeuro'),
 
   // Collabs
-  xEvil: () => import('streams/neuro/xEvil/xEvil'),
+  xEvil: () => import('streams/neuro/xEvil'),
   xAnny: () => import('streams/neuro/xAnny/xAnny'),
   xMiyune: () => import('streams/neuro/xMiyune/xMiyune'),
   xFilian: () => import('streams/neuro/xFilian/xFilian'),
