@@ -188,10 +188,12 @@ export const specificPrompts = [
 
 export const collabPrompts = (name = 'them') => [
   'argues with {x}',
-  'calls {x} a bitch',
+  'calls {x} a\xa0bitch',
   'calls {x} an\xa0AI',
   'calls {x} small/short',
   'calls {x} Vedal',
+  'calls {x} a\xa0loser',
+  'calls {x} a\xa0good boy',
   'donowalls {x}',
   'gaslights {x}',
   'hates {x}',
