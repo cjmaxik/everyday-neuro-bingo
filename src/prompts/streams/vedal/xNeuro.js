@@ -48,7 +48,7 @@ const chatPrompts = {
 
 export default {
   name: 'Neuro and Vedal',
-  image: 'vedal/vedalCorpa.png',
+  image: 'vedal/random/neuroVedal{x}.png',
   participants: [
     neuroRegular, vedalRegular, chatPrompts, neuroCollab
   ]
