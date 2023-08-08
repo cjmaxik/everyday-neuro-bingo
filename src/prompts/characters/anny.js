@@ -42,6 +42,6 @@ export default {
     'chat spams :AnnyLebronJam:',
     'chat spams :LUBBERS:',
     'chat spams :BOOBA:',
-    'chat dies from cringe',
+    'chat dies from cringe'
   ]
 }

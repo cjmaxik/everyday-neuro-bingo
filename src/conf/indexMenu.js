@@ -2,11 +2,7 @@
 /**
  * Upcoming stream
  */
-export const upcoming = {
-  to: 'dev',
-  text: 'Dev stream with Neuro-sama',
-  color: '#266941'
-}
+export const upcoming = null
 
 /**
  * Menu structure

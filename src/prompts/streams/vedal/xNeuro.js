@@ -21,7 +21,8 @@ const neuroCollab = {
   ...neuro.base,
 
   prompts: collabPrompts
-    .map(x => x.replace('Vedal Vedal', 'mispronounses Vedal\'s name'))
+    .map(x => x.replace('calls Vedal Vedal', 'mispronounses Vedal\'s name'))
+    .map(x => x.replace('wants to marry Vedal', 'demands love from Vedal'))
 }
 
 const vedalRegular = {
@@ -47,7 +48,7 @@ const chatPrompts = {
 
 export default {
   name: 'Neuro and Vedal',
-  image: 'vedal/vedalCorpa.png',
+  image: 'vedal/random/neuroVedal{x}.png',
   participants: [
     neuroRegular, vedalRegular, chatPrompts, neuroCollab
   ]
