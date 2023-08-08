@@ -168,6 +168,8 @@ export const collabPrompts = (name = 'them') => [
   'calls {x} an\xa0AI',
   'calls {x} small/short',
   'calls {x} Vedal',
+  'calls {x} a\xa0silly goose',
+  'calls {x} insane',
   'donowalls {x}',
   'gaslights {x}',
   'hates {x}',
