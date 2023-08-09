@@ -1,7 +1,7 @@
 ---
 name: New Collab stream board
-about: Collab with <NAME> / <DATE>
-title: ''
+about: Adds a new issue for a new Collab stream board
+title: Collab with <NAME> / <DATE>
 labels: prompts
 assignees: cjmaxik, tioopental
 
