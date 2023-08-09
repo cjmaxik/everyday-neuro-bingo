@@ -21,6 +21,7 @@ const piratePrompts = {
     '"Matey"',
     '"Yo-ho-ho!"',
     'banishes someone t\'\xa0the\xa0plank',
+    'banishes Vedal t\'\xa0the\xa0plank',
     'pirate natter nah already on the board',
     'wants booty / loot / treasure',
     'tells a pirate\xa0tale',
