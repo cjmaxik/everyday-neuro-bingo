@@ -27,7 +27,7 @@ const piratePrompts = {
     'TTS shouts "AHOY!"',
     'repeats "arr" multiple times',
 
-    'banishes random VTuber t\'\xa0the\xa0plank',
+    'banishes chatter t\'\xa0the\xa0plank',
     'banishes Vedal or anny t\'\xa0the\xa0plank',
     'wants booty / loot / treasure',
     'tells a pirate\xa0tale',
