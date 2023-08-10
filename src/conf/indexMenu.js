@@ -6,7 +6,11 @@ import * as Types from 'helpers/types.d'
  * Upcoming stream
  * @type {Types.StreamMenuData}
  */
-export const upcoming = null
+export const upcoming = {
+  to: 'eloNeuro',
+  text: 'The Ranked Stream',
+  date: 'Sunday, 7PM BST / 6PM UTC'
+}
 
 /**
  * Menu structure
