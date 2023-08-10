@@ -18,10 +18,11 @@ const piratePrompts = {
     '"aye"',
     '"matey"',
     '"yo-ho-ho!"',
-    '"mewl!"',
+    '"mewl / mew"',
     '"landlubber"',
     '"scallywag"',
     '"me hearties"',
+    '"lubs you"',
     '"filtered by me own hand"',
     'TTS shouts "AHOY!"',
     'repeats "arr" multiple times',
@@ -31,11 +32,11 @@ const piratePrompts = {
     'wants booty / loot / treasure',
     'tells a pirate\xa0tale',
     'wants rum or\xa0grog',
-    'ship is called \xa0"Vedal"',
-    'ship is called \xa0"SS Neuron-sama"',
     'natters about sea creatures',
-    'calls Vedal the cap\'n',
+    'calls Vedal the\xa0cap\'n',
     'be afeared o\'\xa0storm',
+    'ship\'s name has "Vedal" in\xa0it',
+    'ship\'s name has "Neuro" in\xa0it',
 
     // mentions
     'mentions Jack\xa0Sparrow',
@@ -82,8 +83,6 @@ const chatPrompts = {
     chat.chatPrompts
   )
 }
-
-console.log(chatPrompts)
 
 export default {
   name: 'Evil Pirate Stream',
