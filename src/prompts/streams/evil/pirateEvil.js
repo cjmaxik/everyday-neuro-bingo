@@ -24,6 +24,7 @@ const piratePrompts = {
     '"me hearties"',
     '"lubs you"',
     '"filtered by me own hand"',
+    '"shiver me timbers"',
     'TTS shouts "AHOY!"',
     'repeats "arr" multiple times',
 
