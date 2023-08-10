@@ -14,13 +14,13 @@ const eloNeuro = {
     'refuses to\xa0rank',
     'eleventy hundred billion',
     'infinite rank',
-    '',
-    '',
-    '',
-    '',
-    '',
-    '',
-    ''
+    'mentions League of Legends',
+    'wants chat to rank her',
+    'ITS OVER 9000',
+    'ranks in stars',
+    'ranks in metals',
+    'chat spams pay\xa0to\xa0win',
+    'grants rank for wishlisting AA'
   ]
 }
 
@@ -53,7 +53,7 @@ const chatPrompts = {
 
 export default {
   name: 'The Ranked Stream',
-  image: 'neuro/random/neuro{x}.png',
+  image: 'neuro/neuroEloStream.png',
   participants: [
     regularNeuro, eloNeuro, specificNeuro, chatPrompts
   ]
