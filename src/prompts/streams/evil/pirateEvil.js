@@ -12,22 +12,29 @@ const piratePrompts = {
   color: '#006994',
 
   prompts: [
-    // pirate prompts
-    'pirate chantey',
-    '"arr / yarr / gar"',
+    '"erf"',
     '"ahoy!"',
     '"oi!"',
-    '"Aye"',
-    '"Matey"',
-    '"Yo-ho-ho!"',
-    'banishes someone t\'\xa0the\xa0plank',
-    'banishes Vedal t\'\xa0the\xa0plank',
-    'pirate natter nah already on the board',
+    '"aye"',
+    '"matey"',
+    '"yo-ho-ho!"',
+    '"mewl!"',
+    '"landlubber"',
+    '"scallywag"',
+    '"me hearties"',
+    '"filtered by me own hand"',
+    'TTS shouts "AHOY!"',
+    'repeats "arr" multiple times',
+
+    'banishes random VTuber t\'\xa0the\xa0plank',
+    'banishes Vedal or anny t\'\xa0the\xa0plank',
     'wants booty / loot / treasure',
     'tells a pirate\xa0tale',
     'wants rum or\xa0grog',
-    'names her ship\xa0"Vedal"',
+    'ship is called \xa0"Vedal"',
+    'ship is called \xa0"SS Neuron-sama"',
     'natters about sea creatures',
+    'calls Vedal the cap\'n',
     'be afeared o\'\xa0storm',
 
     // mentions
@@ -37,7 +44,8 @@ const piratePrompts = {
     'mentions parrot',
     'mentions Ocean\xa0Man',
     'mentions sea-related Vtuber',
-    'mentions Internet piracy'
+    'mentions Internet piracy',
+    'mentions Davy\xa0Jones'
   ]
 }
 
@@ -66,10 +74,16 @@ const chatPrompts = {
   ...chat.base,
 
   prompts: mergeUnique(
+    [
+      'chat spams :erf:',
+      'chat spams :1984: :1684:'
+    ],
     evil.chatPrompts,
     chat.chatPrompts
   )
 }
+
+console.log(chatPrompts)
 
 export default {
   name: 'Evil Pirate Stream',
