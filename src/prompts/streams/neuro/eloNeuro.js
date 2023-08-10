@@ -1,6 +1,29 @@
 import * as neuro from 'characters/neuro'
 import * as chat from 'characters/chat'
 
+const eloNeuro = {
+  ...neuro.base,
+
+  id: 'ranks',
+  color: '#420069',
+  name: 'Ranks',
+
+  prompts: [
+    'rank is more than 1000',
+    'rank is less than 0',
+    'refuses to\xa0rank',
+    'eleventy hundred billion',
+    'infinite rank',
+    '',
+    '',
+    '',
+    '',
+    '',
+    '',
+    ''
+  ]
+}
+
 const regularNeuro = {
   ...neuro.base,
 
@@ -19,16 +42,6 @@ const specificNeuro = {
   prompts: neuro.specificPrompts
 }
 
-const mentions = {
-  ...neuro.base,
-
-  id: 'mentions',
-  color: '#420069',
-  name: 'Mentions',
-
-  prompts: neuro.mentionPrompts
-}
-
 const chatPrompts = {
   ...chat.base,
 
@@ -42,6 +55,6 @@ export default {
   name: 'The Ranked Stream',
   image: 'neuro/random/neuro{x}.png',
   participants: [
-    regularNeuro, mentions, specificNeuro, chatPrompts
+    regularNeuro, eloNeuro, specificNeuro, chatPrompts
   ]
 }
