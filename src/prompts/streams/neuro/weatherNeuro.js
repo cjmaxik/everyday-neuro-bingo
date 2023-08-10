@@ -53,7 +53,7 @@ const chatPrompts = {
 
 export default {
   name: 'Weather Report Stream',
-  image: 'neuro/random/neuro{x}.png',
+  image: 'neuro/weatherNeuro.png',
   participants: [
     regularNeuro, weatherNeuro, specificNeuro, chatPrompts
   ]
