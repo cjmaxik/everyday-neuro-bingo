@@ -15,7 +15,7 @@ const weatherNeuro = {
     '69°',
     'degree Celsius',
     'degree Fahrenheit',
-    'degree Kelvin',
+    'degree Kelvin :ICANT:',
     'weather is unknown',
     'reasonable forecast',
     'weather in Vedaltopia',
