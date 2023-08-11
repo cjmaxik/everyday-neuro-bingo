@@ -46,6 +46,7 @@ export const indexMenu = {
         name: 'Other streams',
         entries: [
           { to: 'piNeuro', text: 'Pirate Neuro', color: '#006994' },
+          { to: 'weatherNeuro', text: 'Weather Report', color: '#0000ff' },
           { to: 'miNeuro', text: 'Minecraft' }
         ]
       }
