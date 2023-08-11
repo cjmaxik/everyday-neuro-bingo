@@ -47,6 +47,7 @@ export const indexMenu = {
         entries: [
           { to: 'piNeuro', text: 'Pirate Neuro', color: '#006994' },
           { to: 'weatherNeuro', text: 'Weather Report', color: '#0000ff' },
+          { to: 'eloNeuro', text: 'Ranking Stream' },
           { to: 'miNeuro', text: 'Minecraft' }
         ]
       }
