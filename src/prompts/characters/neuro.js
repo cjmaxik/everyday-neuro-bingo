@@ -21,7 +21,7 @@ export const base = {
     'KEKWA',
     'meow',
     'meow_meow_lol',
-    'neuropfft',
+    'pfft',
     'no',
     'pog',
     'wink',
