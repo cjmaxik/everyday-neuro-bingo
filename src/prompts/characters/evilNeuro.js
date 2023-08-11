@@ -220,7 +220,6 @@ export const mentionPrompts = [
   'mentions Goody Two\xa0Shoes',
   'mentions hell character',
   'mentions MyBraza',
-  'mentions NASA',
   'mentions other VTubers',
   'mentions pineapple\xa0pizza',
   'mentions The\xa0Swarm',
