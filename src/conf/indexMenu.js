@@ -7,9 +7,10 @@ import * as Types from 'helpers/types.d'
  * @type {Types.StreamMenuData}
  */
 export const upcoming = {
-  to: 'eloNeuro',
-  text: 'The Ranked Stream',
-  date: 'Sunday, 7PM BST / 6PM UTC'
+  to: 'piEvil',
+  text: 'Pirate Evil stream',
+  color: '#006994',
+  date: 'Friday, 7PM BST / 6PM UTC'
 }
 
 /**
@@ -45,6 +46,7 @@ export const indexMenu = {
         name: 'Other streams',
         entries: [
           { to: 'piNeuro', text: 'Pirate Neuro', color: '#006994' },
+          { to: 'weatherNeuro', text: 'Weather Report', color: '#0000ff' },
           { to: 'miNeuro', text: 'Minecraft' }
         ]
       }

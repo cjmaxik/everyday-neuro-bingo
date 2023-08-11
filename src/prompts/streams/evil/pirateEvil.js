@@ -1,10 +1,10 @@
 import { mergeUnique } from 'src/helpers/helpers'
 
-import * as neuro from 'characters/neuro'
+import * as evil from 'characters/evilNeuro'
 import * as chat from 'characters/chat'
 
 const piratePrompts = {
-  ...neuro.base,
+  ...evil.base,
 
   id: 'pirateNeuro',
   name: 'Pirate prompts',
@@ -12,22 +12,32 @@ const piratePrompts = {
   color: '#006994',
 
   prompts: [
-    // pirate prompts
-    'pirate chantey',
-    '"arr / yarr / gar"',
+    '"erf"',
     '"ahoy!"',
     '"oi!"',
-    '"Aye"',
-    '"Matey"',
-    '"Yo-ho-ho!"',
-    'banishes someone t\'\xa0the\xa0plank',
-    'pirate natter nah already on the board',
+    '"aye"',
+    '"matey"',
+    '"yo-ho-ho!"',
+    '"mewl / mew"',
+    '"landlubber"',
+    '"scallywag"',
+    '"me hearties"',
+    '"lubs you"',
+    '"filtered by me own hand"',
+    '"shiver me timbers"',
+    'TTS shouts "AHOY!"',
+    'repeats "arr" multiple times',
+
+    'banishes chatter t\'\xa0the\xa0plank',
+    'banishes Vedal or anny t\'\xa0the\xa0plank',
     'wants booty / loot / treasure',
     'tells a pirate\xa0tale',
     'wants rum or\xa0grog',
-    'names her ship\xa0"Vedal"',
     'natters about sea creatures',
+    'calls Vedal the\xa0cap\'n',
     'be afeared o\'\xa0storm',
+    'ship\'s name has "Vedal" in\xa0it',
+    'ship\'s name has "Neuro" in\xa0it',
 
     // mentions
     'mentions Jack\xa0Sparrow',
@@ -36,43 +46,48 @@ const piratePrompts = {
     'mentions parrot',
     'mentions Ocean\xa0Man',
     'mentions sea-related Vtuber',
-    'mentions Internet piracy'
+    'mentions Internet piracy',
+    'mentions Davy\xa0Jones'
   ]
 }
 
 const regularNeuro = {
-  ...neuro.base,
+  ...evil.base,
 
   id: 'regularNeuro',
   name: 'Regular prompts',
 
   prompts: mergeUnique(
-    neuro.regularPrompts,
-    neuro.mentionPrompts
+    evil.regularPrompts,
+    evil.mentionPrompts
   )
 }
 
 const specificNeuro = {
-  ...neuro.base,
+  ...evil.base,
 
   id: 'specificNeuro',
   name: 'Specific prompts',
 
-  prompts: neuro.specificPrompts
+  prompts: evil.specificPrompts
 }
 
 const chatPrompts = {
   ...chat.base,
 
   prompts: mergeUnique(
-    neuro.chatPrompts,
+    [
+      'chat spams :erf:',
+      'chat spams :1984: :1684:'
+    ],
+    evil.chatPrompts,
     chat.chatPrompts
   )
 }
 
 export default {
-  name: 'Neuro-sama Pirate Stream',
-  image: 'neuro/pirate/DeepfriedPirateNeuro.png',
+  name: 'Evil Pirate Stream',
+  image: 'neuro/pirate.png',
   participants: [
     regularNeuro, piratePrompts, specificNeuro, chatPrompts
   ]

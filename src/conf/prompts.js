@@ -13,6 +13,7 @@ export default {
   neuro: () => import('streams/neuro/solo'),
   miNeuro: () => import('streams/neuro/minecraftNeuro'),
   piNeuro: () => import('streams/neuro/pirateNeuro'),
+  weatherNeuro: () => import('streams/neuro/weatherNeuro'),
   eloNeuro: () => import('streams/neuro/eloNeuro'),
 
   // Collabs
@@ -39,6 +40,7 @@ export default {
   miEvil: () => import('streams/evil/minecraftEvil'),
   xNumi: () => import('streams/evil/xNumi/xNumi'),
   evilXfilian: () => import('streams/evil/xFilian/xFilian'),
+  piEvil: () => import('streams/evil/pirateEvil'),
 
   // Tests
   emoteTest: () => import('streams/tests/emote')
