@@ -39,6 +39,7 @@ export default {
   miEvil: () => import('streams/evil/minecraftEvil'),
   xNumi: () => import('streams/evil/xNumi/xNumi'),
   evilXfilian: () => import('streams/evil/xFilian/xFilian'),
+  piEvil: () => import('streams/evil/pirateEvil'),
 
   // Tests
   emoteTest: () => import('streams/tests/emote')
