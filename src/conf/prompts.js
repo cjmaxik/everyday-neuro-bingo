@@ -14,6 +14,7 @@ export default {
   miNeuro: () => import('streams/neuro/minecraftNeuro'),
   piNeuro: () => import('streams/neuro/pirateNeuro'),
   weatherNeuro: () => import('streams/neuro/weatherNeuro'),
+  eloNeuro: () => import('streams/neuro/eloNeuro'),
 
   // Collabs
   xEvil: () => import('streams/neuro/xEvil'),
