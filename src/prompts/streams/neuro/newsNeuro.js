@@ -28,7 +28,9 @@ const newsNeuro = {
     'ad break',
     'traffic news',
     'radio voice',
-    'informs about real events'
+    'informs about real events',
+    'interview with Evil / Vedal',
+    'Evil / Hiyori cameo'
   ]
 }
 
