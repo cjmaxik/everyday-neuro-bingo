@@ -13,7 +13,7 @@ export default {
   neuro: () => import('streams/neuro/solo'),
   miNeuro: () => import('streams/neuro/minecraftNeuro'),
   piNeuro: () => import('streams/neuro/pirateNeuro'),
-  weatherNeuro: () => import('streams/neuro/weatherNeuro'),
+  newsNeuro: () => import('streams/neuro/newsNeuro'),
   eloNeuro: () => import('streams/neuro/eloNeuro'),
 
   // Collabs
