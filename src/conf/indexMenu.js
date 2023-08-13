@@ -7,9 +7,10 @@ import * as Types from 'helpers/types.d'
  * @type {Types.StreamMenuData}
  */
 export const upcoming = {
-  to: 'eloNeuro',
-  text: 'Ranking Stream',
-  date: 'Sunday, 7PM BST / 6PM UTC'
+  to: 'dev',
+  text: 'Typical Dev Stream',
+  color: '#266941',
+  date: 'Monday, 7PM BST / 6PM UTC'
 }
 
 /**
