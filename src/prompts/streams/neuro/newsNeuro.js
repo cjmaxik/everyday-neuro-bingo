@@ -1,5 +1,6 @@
 import * as neuro from 'characters/neuro'
 import * as chat from 'characters/chat'
+import { mergeUnique } from 'src/helpers/helpers'
 
 const newsNeuro = {
   ...neuro.base,
@@ -55,10 +56,10 @@ const specificNeuro = {
 const chatPrompts = {
   ...chat.base,
 
-  prompts: [
-    ...neuro.chatPrompts,
-    ...chat.chatPrompts
-  ]
+  prompts: mergeUnique(
+    neuro.chatPrompts,
+    chat.chatPrompts
+  )
 }
 
 export default {
