@@ -141,8 +141,8 @@
         </q-card-section>
 
         <q-card-section class="q-pt-none">
-          Do not bait Neuro into saying things from the board with donations and highligted messages. This is not how
-          Bingo supposed to be played.<br>Please enjoy the content first.
+          Do not bait Neuro into saying things on the board with donations and highlighted messages. This is not how Bingo
+          is supposed to be played.<br>Please enjoy the content first.
           <div class="text-right">
             - CJMAXiK
           </div>
