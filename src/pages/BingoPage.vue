@@ -195,16 +195,17 @@ const $q = useQuasar()
 const version = 4
 const streamData = prompts[streamType]
 const error = ref(null)
-const baitModal = ref(true)
+const baitModal = ref(false)
 
 onBeforeMount(() => {
   // Load stream data
-  streamData().then(module => {
+  streamData().then((/** @type {Object} */ module) => {
     const data = module?.default
 
     // Generate state
     try {
       state.generateBoard(data, version)
+      baitModal.value = true
     } catch (e) {
       error.value = e
       console.error(e)
