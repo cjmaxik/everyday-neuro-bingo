@@ -118,6 +118,37 @@
         </div>
       </div>
     </transition-group>
+
+    <q-dialog
+      v-model="baitModal"
+      persistent
+      transition-hide="flip-up"
+      transition-show="flip-down"
+    >
+      <q-card class="bg-primary text-white">
+        <q-card-section class="row items-center q-pb-none">
+          <div class="text-h6">
+            Dear neurons!
+          </div>
+          <q-space />
+          <q-btn
+            v-close-popup
+            dense
+            flat
+            icon="close"
+            round
+          />
+        </q-card-section>
+
+        <q-card-section class="q-pt-none">
+          Do not bait Neuro into saying things from the board with donations and highligted messages. This is not how
+          Bingo supposed to be played.<br>Please enjoy the content first.
+          <div class="text-right">
+            - CJMAXiK
+          </div>
+        </q-card-section>
+      </q-card>
+    </q-dialog>
   </q-page>
 </template>
 
@@ -164,6 +195,7 @@ const $q = useQuasar()
 const version = 4
 const streamData = prompts[streamType]
 const error = ref(null)
+const baitModal = ref(true)
 
 onBeforeMount(() => {
   // Load stream data
