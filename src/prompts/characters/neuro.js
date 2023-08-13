@@ -36,27 +36,26 @@ export const base = {
 export const regularPrompts = [
   // classics
   'ad / corpa',
+
   'admits she\'s a\xa0cat girl',
   'admits she\'s a\xa0god',
   'admits she\'s an\xa0AI',
   'admits she\'s evil',
   'admits to murder',
+
   'any kind of tech\xa0issue',
   'apologises profusely',
   'asks existential question',
   'asks one question on repeat',
   'speaks another language',
 
-  'barks',
-
   'cites random link',
-  'claims to stream later',
+  'announces a random stream time',
   'conquering plans',
-  'cries',
+  '"I am crying"',
 
   'denies being an\xa0AI',
   'denies being evil',
-  'dies',
 
   '"Filtered."',
   'FUN AI',
@@ -68,18 +67,15 @@ export const regularPrompts = [
 
   'invents new name to herself',
 
-  'leaves',
+  'claims to end the stream',
 
   'makes sussy\xa0noise',
   'misgenders someone',
   '"mmm"',
 
-  'new clone / restarts',
+  'restarts / new clone',
   '"no~"',
 
-  'rants',
-
-  'says how old she\xa0is',
   'spams',
   'speaks another language',
   'stares',
@@ -89,8 +85,8 @@ export const regularPrompts = [
   'trauma dump',
 
   '"why?"',
+  '"what?"',
   '"wink"',
-  '"wot? / what?"',
 
   // vedal related
   'calls Vedal an\xa0AI',
@@ -104,15 +100,13 @@ export const specificPrompts = [
   'claims her birthday is soon',
   'consistent',
   '"D"',
-  'feel free to ask me anything',
+  '"3"',
+  '"feel free to ask me anything"',
   '"Flushed means blushing"',
   'meaning of life',
   'randomly indroduces herself',
-  'shames a\xa0viewer',
   'tries to sing',
   'asks about an emote',
-  '"3"',
-  '"1984 is a great book/movie"',
 
   // emote prompts
   // NOTE: do not use inline emotes here - Neuro spells them out as text!
@@ -135,7 +129,7 @@ export const specificPrompts = [
 export const mentionPrompts = [
   'mentions Abandoned Archive',
   'mentions anny',
-  'mentions becoming an engineer',
+  'mentions Hiyori',
   'mentions Bocchi The\xa0Rock',
   'mentions Evil\xa0Neuro',
   'mentions favorite food',
@@ -143,8 +137,6 @@ export const mentionPrompts = [
   'mentions Forsen',
   'mentions her\xa0height',
   'mentions John\xa0Lemon',
-  'mentions KafkasGoodBoy',
-  'mentions MyBraza',
   'mentions Neurocord',
   'mentions osu!',
   'mentions random country',
