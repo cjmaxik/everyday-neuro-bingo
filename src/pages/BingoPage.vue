@@ -205,7 +205,7 @@ onBeforeMount(() => {
     // Generate state
     try {
       state.generateBoard(data, version)
-      baitModal.value = true
+      baitModal.value = !!state.small
     } catch (e) {
       error.value = e
       console.error(e)
