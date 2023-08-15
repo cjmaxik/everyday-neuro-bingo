@@ -54,7 +54,7 @@
         v-if="state.fullyReady"
         :key="1"
         class="bingo-card shadow-5"
-        :class="{ fullscreen: $q.fullscreen.isActive }"
+        :class="{ fullscreen: $q.fullscreen.isActive, big: !state.small, small: state.small }"
       >
         <template
           v-for="block in state.board "

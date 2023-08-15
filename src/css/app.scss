@@ -35,23 +35,76 @@ body:not(.remove-font) {
   background-position: center;
 }
 
-.random-info {
-  margin: auto;
-  width: 1024px;
-  margin-top: 20px;
-}
-
 .bingo-card {
+  .bingo-block {
+
+    &.free,
+    &:before {
+      @extend .center-image;
+    }
+  }
+
   display: grid;
-  grid-template-columns: repeat(7, 1fr);
-  grid-template-rows: repeat(7, 1fr);
   grid-column-gap: 0;
   grid-row-gap: 0;
   margin: auto;
   width: 1024px;
   height: 100%;
   user-select: none;
-  font-size: 20px;
+
+  &.big {
+    font-size: 20px;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: repeat(7, 1fr);
+
+    .bingo-block {
+      min-height: 100px;
+
+      &:nth-child(-n+7) {
+        border-top-width: 4px;
+      }
+
+      &:nth-last-child(-n+7),
+      &:nth-child(43) {
+        border-bottom-width: 4px;
+      }
+
+      &:nth-child(7n-6) {
+        border-left-width: 4px;
+      }
+
+      &:nth-child(7n) {
+        border-right-width: 4px;
+      }
+    }
+  }
+
+  &.small {
+    font-size: 25px;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+
+    .bingo-block {
+      min-height: 130px;
+
+      &:nth-child(-n+5) {
+        border-top-width: 4px;
+      }
+
+      &:nth-last-child(-n+5),
+      &:nth-child(23) {
+        border-bottom-width: 4px;
+      }
+
+      &:nth-child(5n-4) {
+        border-left-width: 4px;
+      }
+
+      &:nth-child(5n) {
+        border-right-width: 4px;
+      }
+    }
+  }
 
   &.fullscreen {
     overflow: auto;
@@ -59,34 +112,23 @@ body:not(.remove-font) {
     .bingo-block {
       line-height: max(3.5vh, 20px);
     }
-
-    @media(min-width: $breakpoint-md-min) {
-      font-size: 2vw;
-    }
   }
-
 
   .bingo-block {
     border-width: 2px;
     border-color: $gymbag;
     border-style: solid;
-
     position: relative;
     background-color: white;
+    min-width: 128px;
+    line-height: min(3vh, 25px);
+    transition: background-color 0.25s ease !important;
 
     &.dimmed {
       background-color: #ccaab7;
     }
 
-    min-height: 100px;
-    min-width: 128px;
-
-    line-height: min(3vh, 20px);
-
-    transition: background-color .25s ease !important;
-
     &:before {
-      @extend .center-image;
       background-image: var(--tally-image);
       content: "";
       display: block;
@@ -97,11 +139,10 @@ body:not(.remove-font) {
       width: 100%;
       opacity: 0;
       transition: all 0.25s ease;
-      @extend .center-image;
     }
 
     .bingo-block-text {
-      color: var(--text-color)
+      color: var(--text-color);
     }
 
     &.win {
@@ -121,10 +162,6 @@ body:not(.remove-font) {
       opacity: 0.2;
     }
 
-    &.free {
-      @extend .center-image;
-    }
-
     &:not(.free) {
       cursor: pointer;
     }
@@ -142,47 +179,58 @@ body:not(.remove-font) {
     }
 
     .bingo-emotes {
-      filter: drop-shadow(.5px .5px .5px $gymbag);
-    }
-
-    &:nth-child(-n+7) {
-      border-top-width: 4px;
-    }
-
-    &:nth-last-child(-n+7),
-    &:nth-child(43) {
-      border-bottom-width: 4px;
-    }
-
-    &:nth-child(7n-6) {
-      border-left-width: 4px;
-    }
-
-    &:nth-child(7n) {
-      border-right-width: 4px;
+      filter: drop-shadow(0.5px 0.5px 0.5px $gymbag);
     }
   }
 
   &:not(.bingo-card.fullscreen) {
     border-radius: 10px;
 
-    .bingo-block {
-      &:first-child {
-        border-top-left-radius: 10px;
-      }
+    &.big {
+      .bingo-block {
+        &:first-child {
+          border-top-left-radius: 10px;
+        }
 
-      &:nth-child(7) {
-        border-top-right-radius: 10px;
-      }
+        &:nth-child(7) {
+          border-top-right-radius: 10px;
+        }
 
-      &:nth-child(43) {
-        border-bottom-left-radius: 10px;
-      }
+        &:nth-child(43) {
+          border-bottom-left-radius: 10px;
+        }
 
-      &:last-child {
-        border-bottom-right-radius: 10px;
+        &:last-child {
+          border-bottom-right-radius: 10px;
+        }
       }
     }
+
+    &.small {
+      .bingo-block {
+        &:first-child {
+          border-top-left-radius: 10px;
+        }
+
+        &:nth-child(5) {
+          border-top-right-radius: 10px;
+        }
+
+        &:nth-child(21) {
+          border-bottom-left-radius: 10px;
+        }
+
+        &:last-child {
+          border-bottom-right-radius: 10px;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+  .bingo-card.fullscreen {
+    font-size: 2vw;
   }
 }
 
@@ -213,12 +261,12 @@ body:not(.remove-font) {
   }
 }
 
-div.q-stepper__header {
-  display: none;
-}
+div {
+  &.q-stepper__header {
+    display: none;
+  }
 
-div.index-menu-step {
-  div.q-stepper__step-inner {
+  &.index-menu-step div.q-stepper__step-inner {
     padding: 0;
 
     div.q-list--separator {

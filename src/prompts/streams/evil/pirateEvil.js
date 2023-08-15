@@ -88,6 +88,7 @@ const chatPrompts = {
 export default {
   name: 'Evil Pirate Stream',
   image: 'neuro/pirate.png',
+  small: true,
   participants: [
     regularNeuro, piratePrompts, specificNeuro, chatPrompts
   ]

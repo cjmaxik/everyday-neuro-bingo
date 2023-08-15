@@ -65,6 +65,7 @@ const chatPrompts = {
 export default {
   name: 'Breaking News Stream',
   image: 'neuro/newsNeuro.png',
+  small: true,
   participants: [
     regularNeuro, newsNeuro, specificNeuro, chatPrompts
   ]
