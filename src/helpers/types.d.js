@@ -30,7 +30,7 @@
  * @property {string} image
  * @property {string} name
  * @property {Character[]} participants
- * @property {boolean} [random]
+ * @property {boolean} [small]
 */
 
 /**
@@ -69,7 +69,6 @@
  * @property {Object.<string, Types.Character>} participants
  * @property {CoreTypes.RemovableRef<GameBoard>} board
  * @property {CoreTypes.RemovableRef<Array>} bingo
- * @property {CoreTypes.RemovableRef<Array>} streakCount
  * @property {CoreTypes.RemovableRef<number>} previousWin
  */
 

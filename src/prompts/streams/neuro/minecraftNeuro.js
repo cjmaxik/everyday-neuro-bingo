@@ -78,6 +78,7 @@ const minecraftNeuro = {
 export default {
   name: 'Neuro-sama plays Minecraft',
   image: 'neuro/minecraft/neuroLava.png',
+  small: true,
   participants: [
     minecraftNeuro
   ]

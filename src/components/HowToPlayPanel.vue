@@ -2,7 +2,7 @@
   <q-card>
     <q-card-section>
       <p>
-        Examine the board before the stream. It has 48 randomly generated prompts that we expect <span
+        Examine the board before the stream. It has 25 or 48 randomly generated prompts that we expect <span
           class="text-gymbag text-bold"
         >Neuro-sama</span> or her partners to say, do, or mention. Once they do, click on the appropriate prompt to mark
         it out. Mind the color of the prompts: collab streams have separate prompts for each partner.

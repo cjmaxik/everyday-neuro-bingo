@@ -6,12 +6,7 @@ import * as Types from 'helpers/types.d'
  * Upcoming stream
  * @type {Types.StreamMenuData}
  */
-export const upcoming = {
-  to: 'dev',
-  text: 'Typical Dev Stream',
-  color: '#266941',
-  date: 'Monday, 7PM BST / 6PM UTC'
-}
+export const upcoming = null
 
 /**
  * Menu structure
