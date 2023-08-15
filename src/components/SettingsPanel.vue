@@ -141,7 +141,6 @@ if (isBingoPage.value) {
 }
 
 const settings = useGameSettingsStore()
-
 const openSettingsModal = ref(false)
 
 // font
