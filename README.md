@@ -17,6 +17,7 @@ Includes art by Rune, 2Pfrog, niceaccoun, lingyou, anny, Beyumi, M3gur3n, Kaz, s
 ### Special thanks
 - **Frontrider** - additional prompts and extensive feedback
 - **#neurotic-neurons of [Neurocord](https://discord.gg/neurosama?ref=neuro-bingo)** - additional prompts, feedback and moral support
+- [**Contrubitors**](https://github.com/cjmaxik/everyday-neuro-bingo/graphs/contributors)
 
 ---
 

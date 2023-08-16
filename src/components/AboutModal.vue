@@ -39,6 +39,13 @@
             target="_blank"
           >tioopental</a> - Lead Prompt Editor
         </li>
+        <li>
+          <a
+            ref="noopener noreferrer"
+            href="https://github.com/cjmaxik/everyday-neuro-bingo/graphs/contributors?ref=neuro-bingo"
+            target="_blank"
+          >Contributors</a> - Various help
+        </li>
       </ul>
 
       <p>
