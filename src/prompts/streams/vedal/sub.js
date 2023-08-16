@@ -17,12 +17,9 @@ const vedalSub = {
 
   prompts: vedal.regularPrompts
 }
-//  REPLACE THIS
 const chatPrompts = [
   'chat spams :PANIC:',
-  'chat spams :VedalSpaceProgram:',
   'chat spams :EZ: :Clap:',
-  'chat spams :peepoCheer:',
   'chat spams :o7: :neuro7:'
 ]
 
