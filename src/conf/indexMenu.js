@@ -47,7 +47,8 @@ export default {
         entries: [
           { to: 'dev', text: 'Dev streams with Neuro', color: '#266941' },
           { to: 'devEvil', text: 'Dev streams with Evil Neuro', color: '#266941' },
-          { to: 'ksp', text: 'Vedal Space Program', color: '#0504c2' }
+          { to: 'ksp', text: 'Vedal Space Program', color: '#0504c2' },
+          { to: 'sub', text: 'Subnautica', color: '#008B8B' }
         ]
       }
     ]
