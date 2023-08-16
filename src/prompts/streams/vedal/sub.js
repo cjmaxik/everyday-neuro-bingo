@@ -64,7 +64,7 @@ const chatSub = {
 
 export default {
   name: 'Vedal plays Subnautica',
-  image: 'vedal/neurovedalsubmarine.png',
+  image: 'vedal/sub.png',
   participants: [
     neuroSub, chatSub,
     specificSub, vedalSub
