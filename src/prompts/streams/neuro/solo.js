@@ -1,3 +1,5 @@
+import { mergeUnique } from 'src/helpers/helpers'
+
 import * as neuro from 'characters/neuro'
 import * as chat from 'characters/chat'
 
@@ -32,10 +34,10 @@ const mentions = {
 const chatPrompts = {
   ...chat.base,
 
-  prompts: [
+  prompts: mergeUnique(
     ...neuro.chatPrompts,
     ...chat.chatPrompts
-  ]
+  )
 }
 
 export default {
