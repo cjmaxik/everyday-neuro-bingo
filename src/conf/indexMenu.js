@@ -6,7 +6,12 @@ import * as Types from 'helpers/types.d'
  * Upcoming stream
  * @type {Types.StreamMenuData}
  */
-export const upcoming = null
+export const upcoming = {
+  to: 'sub',
+  text: 'Vedal plays Subnautica',
+  color: '#008B8B',
+  date: 'Thursday, 7PM BST / 8PM UTC'
+}
 
 /**
  * Menu structure
