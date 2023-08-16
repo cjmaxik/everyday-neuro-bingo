@@ -6,7 +6,11 @@ export const base = {
   id: 'chat',
   name: 'Chat',
   color: '#9146FF',
-  image: 'chat.png'
+  assetsFolder: 'chat',
+  image: 'chatting.png',
+  sounds: [
+    'generic.mp3'
+  ]
 }
 
 /**
@@ -46,6 +50,8 @@ export const chatPrompts = [
   'meow',
   'monkaTOS',
   'monkaW',
+  'Life neuroLife',
+  'neuroNuke',
   'neuroplushsittingverycomfortablewhilesheroastsaporowithherfriends',
   'NOOOO',
   'NOTED neuroNoted',
@@ -55,6 +61,7 @@ export const chatPrompts = [
   'ok',
   'PauseSama',
   'POG poggers',
+  'pogs',
   'reallyGunPull vedalPls',
   'RIGGED',
   'RIPBOZO',
@@ -62,8 +69,10 @@ export const chatPrompts = [
   'SNIFFA',
   'SoCute',
   'Susge',
+  'Tomfoolery',
   'Tutel',
-  'WAYTOODANK'
+  'WAYTOODANK',
+  'xdx xdding'
 ].map(x => `chat spams :${x.replaceAll(' ', ': :')}:`)
 
 export default {

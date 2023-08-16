@@ -1,16 +1,16 @@
 <template>
   <q-item
-    :class="{ 'bg-kekwa-half': featured }"
+    class="text-center text-h6 bg-white"
     clickable
     exact
     :to="to"
   >
     <q-item-section>
       <q-item-label
-        v-if="featured"
+        v-if="upcoming"
         caption
       >
-        Featured
+        Upcoming
       </q-item-label>
 
       <q-item-label
@@ -18,6 +18,13 @@
         :style="{ color }"
       >
         {{ text }}
+      </q-item-label>
+
+      <q-item-label
+        v-if="upcoming && date"
+        caption
+      >
+        {{ date }}
       </q-item-label>
     </q-item-section>
   </q-item>
@@ -35,9 +42,13 @@ defineProps({
     type: String,
     required: true
   },
-  featured: {
+  upcoming: {
     type: Boolean,
     default: false
+  },
+  date: {
+    type: String,
+    default: null
   },
   color: {
     type: String,

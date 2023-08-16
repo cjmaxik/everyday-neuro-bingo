@@ -13,17 +13,18 @@ export const base = {
 
   // tally sounds, will be chosen at random
   sounds: [
+    'aaah_goodbye',
+    'erm',
+    'ermErm',
     'gymbag',
     'heart',
     'KEKWA',
     'meow',
     'meow_meow_lol',
+    'pfft',
     'no',
     'pog',
     'wink',
-    'aaah_goodbye',
-    'erm',
-    'ermErm',
     'yep1',
     'yep2'
   ].map(x => `${x}.mp3`)
@@ -34,128 +35,135 @@ export const base = {
 // Here goes very general prompts, which can be applied to every single stream
 export const regularPrompts = [
   // classics
-  'wink',
-  'heart',
+  'ad / corpa',
 
-  'stares',
-  'makes sussy\xa0noise',
-  'dies',
-  'cries',
-  'funny joke',
-  '"Filtered."',
-  'leaves',
-  'cites random link',
-  'spams',
-  'goes schizo',
-  '#ad / corpa',
-  'says how old she\xa0is',
-  'invents new name to herself',
-  'no~',
-  'self censors',
-  'FUN AI',
-  'admits to murder',
-  'rants',
-  'new clone / restarts',
-  'denies being an\xa0AI',
-  'wot? / what?',
-  'claims to stream later',
+  'admits she\'s a\xa0cat girl',
+  'admits she\'s a\xa0god',
   'admits she\'s an\xa0AI',
-  'why?',
-  'conquering plans',
+  'admits she\'s evil',
+  'admits to murder',
+
   'any kind of tech\xa0issue',
   'apologises profusely',
-  'misgenders someone',
-  'starts counting',
-  'admits she\'s a\xa0god',
-  'trauma dump',
-  'admits she is a\xa0cat girl',
-  'mmm',
-  'barks',
-  'admits she\'s evil',
-  'denies being evil',
   'asks existential question',
   'asks one question on repeat',
+  'speaks another language',
+
+  'cites random link',
+  'announces a random stream time',
+  'conquering plans',
+  '"I am crying"',
+
+  'denies being an\xa0AI',
+  'denies being evil',
+
+  '"Filtered."',
+  'FUN AI',
+  'funny joke',
+
+  'goes schizo',
+
+  '"heart"',
+
+  'invents new name to herself',
+
+  'claims to end the stream',
+
+  'makes sussy\xa0noise',
+  'misgenders someone',
+  '"mmm"',
+
+  'restarts / new clone',
+  '"no~"',
+
+  'spams',
+  'speaks another language',
+  'stares',
+  'starts counting',
+
   '"There is a\xa0problem with\xa0my\xa0AI"',
+  'trauma dump',
+
+  '"why?"',
+  '"what?"',
+  '"wink"',
 
   // vedal related
-  'loves Vedal',
+  'calls Vedal an\xa0AI',
   'hates Vedal',
-  'calls Vedal an\xa0AI'
+  'loves Vedal'
 ]
 
 // Here goes prompts which only applies when Neuro is talking to the chat directly
 export const specificPrompts = [
-  'shames a\xa0viewer',
-  '"Flushed means blushing"',
-  'randomly indroduces herself',
-  'talks about nightmares',
   'cat story',
-  'donowalls LomiBox specifically',
-  'consistent',
-  'feel free to ask me anything',
-  '1984 is a great book/movie',
-  'cursed TTS\xa0sound',
-  'D',
-  '3',
-  'meaning of life',
-  'whats *emote*?',
-  'tries to sing',
-  'W RIZZ',
   'claims her birthday is soon',
-  'hbd Shiro~',
+  'consistent',
+  '"D"',
+  '"3"',
+  '"feel free to ask me anything"',
+  '"Flushed means blushing"',
+  'meaning of life',
+  'randomly indroduces herself',
+  'tries to sing',
+  'asks about an emote',
 
   // emote prompts
   // NOTE: do not use inline emotes here - Neuro spells them out as text!
-  'plink / plonk / winky',
-  'POG / poggers',
-  'noted',
-  'KEKW',
-  'KEKWa',
-  'gigachad',
-  'gymbag',
-  'donowalled',
-  'meow',
-  'bedge',
-  '1984',
-  'UwU',
-  'Erm'
+  '"bedge"',
+  '"donowalled"',
+  '"Erm"',
+  '"gigachad"',
+  '"gymbag"',
+  '"KEKW"',
+  '"KEKWa"',
+  '"meow"',
+  '"noted"',
+  '"plink / plonk / winky"',
+  '"POG / poggers"',
+  '"UwU"',
+  '"1984"'
 ]
 
 // Any stuff Neuro can mention prompted or unprompted
 export const mentionPrompts = [
-  'randomly mentions Vedal',
-  'mentions anny',
   'mentions Abandoned Archive',
+  'mentions anny',
+  'mentions Hiyori',
   'mentions Bocchi The\xa0Rock',
-  'mentions John\xa0Lemon',
-  'mentions turtles',
-  'mentions random country',
-  'mentions Time\xa0God',
-  'mentions favorite food',
-  'mentions random VTuber',
-  'mentions Filipino boy',
-  'mentions Neurocord',
-  'mentions Swarm',
-  'mentions her\xa0height',
-  'mentions osu!',
   'mentions Evil\xa0Neuro',
-  'mentions becoming an engineer'
+  'mentions favorite food',
+  'mentions Filipino boy',
+  'mentions Forsen',
+  'mentions her\xa0height',
+  'mentions John\xa0Lemon',
+  'mentions Neurocord',
+  'mentions osu!',
+  'mentions random country',
+  'mentions random VTuber',
+  'mentions Swarm',
+  'mentions Time\xa0God',
+  'mentions turtles',
+  'randomly mentions Vedal'
 ]
 
 export const chatPrompts = [
   // chat related
-  'chat spams copypasta',
-  'chat prays',
+  'chat W\'s\xa0Neuro',
   'chat L\'s\xa0Neuro',
-  'chat W\'s\xa0Neuro'
+  'chat prays',
+  'chat spams copypasta',
+  'chat spams :Life: :neuroLife:'
 ]
 
 export const collabPrompts = (name = 'them') => [
   'argues with {x}',
-  'donowalls {x}',
   'calls {x} an\xa0AI',
   'calls {x} small/short',
   'calls {x} Vedal',
+  'calls {x} a\xa0silly goose',
+  'calls {x} insane',
+  'donowalls {x}',
   'gaslights {x}',
   'hates {x}',
   'invents new nickname for\xa0{x}',
@@ -164,6 +172,7 @@ export const collabPrompts = (name = 'them') => [
   'misgenders {x}',
   'roasts {x}',
   'shames {x}',
+  'wants to marry {x}',
   'W RIZZ'
 ].map(x => x.replaceAll('{x}', name))
 

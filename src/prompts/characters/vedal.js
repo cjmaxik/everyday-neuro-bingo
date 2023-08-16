@@ -17,7 +17,7 @@ export const base = {
 export const regularPrompts = [
   '"WHAT?"',
   '"Shut up!"',
-  '#ad / corpa',
+  'ad / corpa',
   'good joke',
   'cringe joke',
   'tutel noises',
@@ -25,7 +25,7 @@ export const regularPrompts = [
   'gets competitive',
   '"That\'s crazy" :Tutel:',
   '"I have no idea"',
-  '"Why it doesn\'t work?"',
+  '"Why doesn\'t it work?"',
   '"I am stupid"',
   '"We\'ll fix it" x2',
   'checks #starboard',
@@ -44,18 +44,16 @@ export const mentionPrompts = [
   'hbd Shiro~'
 ]
 
-export const collabPrompts = [
-  // neuro related
-  'argues with Neuro',
-  'hates Neuro',
-  'loves Neuro',
-  'properly responds to\xa0Neuro'
-]
+export const collabPrompts = (name = 'Neuro') => [
+  'argues with {x}',
+  'hates {x}',
+  'loves {x}',
+  'properly responds to\xa0 {x}'
+].map(x => x.replaceAll('{x}', name))
 
 // chat related
 export const chatPrompts = [
   'chat L\'s Vedal',
-  'chat spams :vedalPls:',
   'chat spams ZERO LATENCY',
   'chat spams :ICANT:',
   'chat spams :NOTED:',

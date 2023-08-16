@@ -1,5 +1,4 @@
 // @ts-check
-
 const fs = require('fs')
 const path = require('path')
 const axios = require('axios').default
@@ -11,8 +10,9 @@ const apiUrl = 'https://wsrv.nl/?url=cdn.7tv.app/emote'
 /**
  * Download emote by name
  * @param {string} name
+ * @param {boolean} printUrl
  */
-const downloadEmote = (name) => {
+const downloadEmote = (name, printUrl = false) => {
   let emoteId = emotes[name]
   if (!emoteId) return null
 
@@ -34,6 +34,10 @@ const downloadEmote = (name) => {
   for (const emoteType in urls) {
     const typeName = emoteType.substring(0, 1)
     const fileName = `${name}_${typeName}.webp`
+
+    if (printUrl) {
+      console.log(`Link to the ${name} ${emoteType} emote: ${urls[emoteType]}`)
+    }
 
     downloadFile(
       fileName,
@@ -70,20 +74,28 @@ const downloadFile = async (fileName, fileUrl, downloadPath) => {
  * Main function
  */
 const main = async () => {
-  // remove all emotes from the `assetsPath` folder (if any)
-  fs.readdir(assetsPath, (err, files) => {
-    if (err) throw err
+  const emoteToUpdate = process.argv[2] ?? null
 
-    for (const file of files) {
-      fs.unlink(path.join(assetsPath, file), (err) => {
-        if (err) throw err
-      })
-    }
-  })
+  // remove all emotes from the `assetsPath` folder (if any)
+  if (!emoteToUpdate) {
+    fs.readdir(assetsPath, (err, files) => {
+      if (err) throw err
+
+      for (const file of files) {
+        fs.unlink(path.join(assetsPath, file), (err) => {
+          if (err) throw err
+        })
+      }
+    })
+  }
 
   // download again
-  for (const emoteName in emotes) {
-    await downloadEmote(emoteName)
+  if (emoteToUpdate) {
+    await downloadEmote(emoteToUpdate, true)
+  } else {
+    for (const emoteName in emotes) {
+      await downloadEmote(emoteName)
+    }
   }
 }
 

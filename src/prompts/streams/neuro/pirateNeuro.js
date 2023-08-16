@@ -1,10 +1,10 @@
 import { mergeUnique } from 'src/helpers/helpers'
 
-import * as Neuro from 'characters/neuro'
+import * as neuro from 'characters/neuro'
 import * as chat from 'characters/chat'
 
 const piratePrompts = {
-  ...Neuro.base,
+  ...neuro.base,
 
   id: 'pirateNeuro',
   name: 'Pirate prompts',
@@ -41,31 +41,31 @@ const piratePrompts = {
 }
 
 const regularNeuro = {
-  ...Neuro.base,
+  ...neuro.base,
 
   id: 'regularNeuro',
   name: 'Regular prompts',
 
   prompts: mergeUnique(
-    Neuro.regularPrompts,
-    Neuro.mentionPrompts
+    neuro.regularPrompts,
+    neuro.mentionPrompts
   )
 }
 
 const specificNeuro = {
-  ...Neuro.base,
+  ...neuro.base,
 
   id: 'specificNeuro',
   name: 'Specific prompts',
 
-  prompts: Neuro.specificPrompts
+  prompts: neuro.specificPrompts
 }
 
 const chatPrompts = {
   ...chat.base,
 
   prompts: mergeUnique(
-    Neuro.chatPrompts,
+    neuro.chatPrompts,
     chat.chatPrompts
   )
 }
@@ -73,6 +73,7 @@ const chatPrompts = {
 export default {
   name: 'Neuro-sama Pirate Stream',
   image: 'neuro/pirate/DeepfriedPirateNeuro.png',
+  small: true,
   participants: [
     regularNeuro, piratePrompts, specificNeuro, chatPrompts
   ]

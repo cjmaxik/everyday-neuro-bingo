@@ -9,7 +9,7 @@
       leave-active-class="animated fadeOut"
     >
       <div
-        v-if="!state.fullyReady"
+        v-if="!state.fullyReady && !error"
         :key="0"
         class="absolute-top"
       >
@@ -27,11 +27,34 @@
         </div>
       </div>
 
+      <q-banner
+        v-if="error"
+        class="text-white bg-gymbag"
+      >
+        <template #avatar>
+          <q-avatar square>
+            <img src="/assets/images/o7.png">
+          </q-avatar>
+        </template>
+
+        {{ error }}.<br>
+        <small>If you see this, please reach out to developers at Neurocord or on GitHub.</small>
+
+        <template #action>
+          <q-btn
+            color="white"
+            flat
+            label="Go back"
+            to="/"
+          />
+        </template>
+      </q-banner>
+
       <div
         v-if="state.fullyReady"
         :key="1"
         class="bingo-card shadow-5"
-        :class="{ fullscreen: $q.fullscreen.isActive }"
+        :class="{ fullscreen: $q.fullscreen.isActive, big: !state.small, small: state.small }"
       >
         <template
           v-for="block in state.board "
@@ -95,6 +118,37 @@
         </div>
       </div>
     </transition-group>
+
+    <q-dialog
+      v-model="baitModal"
+      persistent
+      transition-hide="flip-up"
+      transition-show="flip-down"
+    >
+      <q-card class="bg-primary text-white">
+        <q-card-section class="row items-center q-pb-none">
+          <div class="text-h6">
+            Dear neurons!
+          </div>
+          <q-space />
+          <q-btn
+            v-close-popup
+            dense
+            flat
+            icon="close"
+            round
+          />
+        </q-card-section>
+
+        <q-card-section class="q-pt-none">
+          Do not bait Neuro into saying things on the board with donations and highlighted messages. This is not how Bingo
+          is supposed to be played.<br>Please enjoy the content first.
+          <div class="text-right">
+            - CJMAXiK
+          </div>
+        </q-card-section>
+      </q-card>
+    </q-dialog>
   </q-page>
 </template>
 
@@ -140,14 +194,22 @@ const $q = useQuasar()
 // Init data
 const version = 4
 const streamData = prompts[streamType]
+const error = ref(null)
+const baitModal = ref(false)
 
 onBeforeMount(() => {
   // Load stream data
-  streamData().then(module => {
+  streamData().then((/** @type {Object} */ module) => {
     const data = module?.default
 
     // Generate state
-    state.generateBoard(data, version)
+    try {
+      state.generateBoard(data, version)
+      baitModal.value = !!state.small
+    } catch (e) {
+      error.value = e
+      console.error(e)
+    }
 
     // Rename title
     settings.streamName = data.name

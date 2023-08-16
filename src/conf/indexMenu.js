@@ -1,9 +1,18 @@
 // @ts-check
+// eslint-disable-next-line no-unused-vars
+import * as Types from 'helpers/types.d'
+
+/**
+ * Upcoming stream
+ * @type {Types.StreamMenuData}
+ */
+export const upcoming = null
 
 /**
  * Menu structure
+ * @type {Types.IndexMenu}
  */
-export default {
+export const indexMenu = {
   neuro: {
     id: 'neuro',
     characterName: 'Neuro-sama',
@@ -32,6 +41,7 @@ export default {
         name: 'Other streams',
         entries: [
           { to: 'piNeuro', text: 'Pirate Neuro', color: '#006994' },
+          { to: 'newsNeuro', text: 'Weather Report', color: '#0000ff' },
           { to: 'miNeuro', text: 'Minecraft' }
         ]
       }
@@ -62,7 +72,9 @@ export default {
         name: null,
         entries: [
           { to: 'evil', text: 'Solo streams', color: '#700b1b' },
+          { to: 'piEvil', text: 'Pirate Evil', color: '#006994' },
           { to: 'miEvil', text: 'Minecraft', color: '#700b1b' },
+          { to: 'evilXfilian', text: 'Collab with filian', color: '#be01fe' },
           { to: 'xNumi', text: 'Collab with Numi', color: '#504778' }
         ]
       }

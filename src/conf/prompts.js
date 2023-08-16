@@ -13,9 +13,10 @@ export default {
   neuro: () => import('streams/neuro/solo'),
   miNeuro: () => import('streams/neuro/minecraftNeuro'),
   piNeuro: () => import('streams/neuro/pirateNeuro'),
+  newsNeuro: () => import('streams/neuro/newsNeuro'),
 
   // Collabs
-  xEvil: () => import('streams/neuro/xEvil/xEvil'),
+  xEvil: () => import('streams/neuro/xEvil'),
   xAnny: () => import('streams/neuro/xAnny/xAnny'),
   xMiyune: () => import('streams/neuro/xMiyune/xMiyune'),
   xFilian: () => import('streams/neuro/xFilian/xFilian'),
@@ -38,6 +39,8 @@ export default {
   evil: () => import('streams/evil/solo'),
   miEvil: () => import('streams/evil/minecraftEvil'),
   xNumi: () => import('streams/evil/xNumi/xNumi'),
+  evilXfilian: () => import('streams/evil/xFilian/xFilian'),
+  piEvil: () => import('streams/evil/pirateEvil'),
 
   // Tests
   emoteTest: () => import('streams/tests/emote')

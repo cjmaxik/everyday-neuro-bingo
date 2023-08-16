@@ -15,10 +15,6 @@ import {
   generateBrowserSeed
 } from 'helpers/helpers'
 
-const streakCount = 7
-const boardSize = Math.pow(streakCount, 2)
-const centerBlock = Math.floor(boardSize / 2)
-
 /**
  * Generates the game state store
  * @param {string} id Store ID
@@ -35,9 +31,9 @@ export const useGameStateStore = (id) => defineStore(`gameState-${id}`, {
     freeBlockImage: null,
     seed: useLocalStorage(`seed-${id}`, 0),
     participants: {},
+    small: useLocalStorage(`small-${id}`, false),
     board: useLocalStorage(`board-${id}`, []),
     bingo: useLocalStorage(`bingo-${id}`, []),
-    streakCount: useLocalStorage(`streakCount-${id}`, streakCount),
     previousWin: useLocalStorage(`previousWin-${id}`, 0)
   }),
 
@@ -52,9 +48,9 @@ export const useGameStateStore = (id) => defineStore(`gameState-${id}`, {
       this.ready = false
 
       this.seed = 0
+      this.small = false
       this.board = []
       this.bingo = []
-      this.streakCount = streakCount
       this.previousWin = 0
     },
 
@@ -121,6 +117,10 @@ export const useGameStateStore = (id) => defineStore(`gameState-${id}`, {
       })
       console.groupEnd()
 
+      this.small = !!streamData.small
+      const boardSize = streamData.small ? 25 : 49
+      const centerBlock = Math.floor(boardSize / 2)
+
       const seededPrompts = generatePrompts(allPrompts, newSeed, boardSize)
 
       // Push the board
@@ -177,9 +177,10 @@ export const useGameStateStore = (id) => defineStore(`gameState-${id}`, {
     },
 
     checkForBingo () {
+      const boardSize = this.small ? 'small' : 'big'
       const blocksWithTally = this.board.filter(x => x.tally).map((x) => x.index)
 
-      let winningCombination = winningLines.filter(
+      let winningCombination = winningLines[boardSize].filter(
         winner => winner.every(x => blocksWithTally.includes(x))
       ).flat()
       winningCombination = [...new Set(winningCombination)]

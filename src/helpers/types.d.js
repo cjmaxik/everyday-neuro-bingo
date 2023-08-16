@@ -30,7 +30,7 @@
  * @property {string} image
  * @property {string} name
  * @property {Character[]} participants
- * @property {?boolean} random
+ * @property {boolean} [small]
 */
 
 /**
@@ -63,13 +63,12 @@
  * @type {Object}
  * @property {CoreTypes.RemovableRef<boolean>} ready
  * @property {boolean} readyToShow
- * @property {?string} streamName
- * @property {?string} freeBlockImage
+ * @property {string} [streamName]
+ * @property {string} [freeBlockImage]
  * @property {CoreTypes.RemovableRef<number>} seed
  * @property {Object.<string, Types.Character>} participants
  * @property {CoreTypes.RemovableRef<GameBoard>} board
  * @property {CoreTypes.RemovableRef<Array>} bingo
- * @property {CoreTypes.RemovableRef<Array>} streakCount
  * @property {CoreTypes.RemovableRef<number>} previousWin
  */
 
@@ -81,7 +80,34 @@
  * @property {CoreTypes.RemovableRef<boolean>} hideTally
  * @property {CoreTypes.RemovableRef<("animated"|"static"|"text")>} emotes
  * @property {CoreTypes.RemovableRef<number>} volume
- * @property {?string} streamName
+ * @property {string} [streamName]
+ */
+
+/**
+ * @typedef StreamMenuData Upcoming stream data
+ * @type {Object}
+ * @property {string} to
+ * @property {string} text
+ * @property {string} [color]
+ * @property {string} [date]
+ */
+
+/**
+ * @typedef CharacterMenuData Character menu data
+ * @type {Object}
+ * @property {string} id
+ * @property {string} characterName
+ * @property {Object[]} streams
+ * @property {string} streams.name
+ * @property {StreamMenuData[]} streams.entries
+ */
+
+/**
+ * @typedef IndexMenu Index menu structure
+ * @type {Object[]}
+ * @property {CharacterMenuData} neuro
+ * @property {CharacterMenuData} evil
+ * @property {CharacterMenuData} vedal
  */
 
 export {}
