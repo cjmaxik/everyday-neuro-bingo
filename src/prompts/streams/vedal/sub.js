@@ -33,7 +33,7 @@ const specificSub = {
   name: 'Subnautica',
   color: '#008B8B',
 
-  image: '../vedal/ksp/kerbal.png',
+  image: '../vedal/tutel.png',
 
   prompts: [
     'roasts vedal for dying',
