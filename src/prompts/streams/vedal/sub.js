@@ -45,7 +45,7 @@ const specificSub = {
     'finds a leviathan',
     'forgets where he is',
     'stuck inside a cave',
-    'Neuro complains with Vedal',
+    'misspells in-game name',
     'stream lasts more than 3\xa0hours',
 
     ...chatPrompts
@@ -64,7 +64,7 @@ const chatSub = {
 
 export default {
   name: 'Vedal plays Subnautica',
-  image: 'vedal/sub.png',
+  image: 'vedal/jaws.png',
   participants: [
     neuroSub, chatSub,
     specificSub, vedalSub
