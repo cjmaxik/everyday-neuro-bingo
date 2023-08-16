@@ -17,6 +17,7 @@ const vedalSub = {
 
   prompts: vedal.regularPrompts
 }
+
 const chatPrompts = [
   'chat spams :PANIC:',
   'chat spams :EZ: :Clap:',
@@ -33,19 +34,19 @@ const specificSub = {
   image: '../vedal/tutel.png',
 
   prompts: [
-    'roasts vedal for dying',
-    'Neuro wants to go to the sea',
-    'gets killed by fish',
+    'roasts Vedal for dying',
+    'Neuro wants to go to\xa0the\xa0sea',
+    'gets killed by\xa0fish',
     'game crashed',
-    'runs out of oxygen and dies',
-    'gets jumpscared',
+    'runs out of\xa0oxygen',
+    'jumpscared',
     'dies of starvation',
     'dies of hydration',
     'finds a leviathan',
     'forgets where he is',
-    'gets stuck inside a cave',
+    'stuck inside a cave',
     'Neuro complains with Vedal',
-    'stream lasts more than 3 hours',
+    'stream lasts more than 3\xa0hours',
 
     ...chatPrompts
   ]
@@ -62,7 +63,7 @@ const chatSub = {
 }
 
 export default {
-  name: 'Subnautica',
+  name: 'Vedal plays Subnautica',
   image: 'vedal/neurovedalsubmarine.png',
   participants: [
     neuroSub, chatSub,

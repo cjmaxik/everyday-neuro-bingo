@@ -57,8 +57,7 @@ export const chatPrompts = [
   'chat spams ZERO LATENCY',
   'chat spams :ICANT:',
   'chat spams :NOTED:',
-  'chat spams :notNOTED:',
-  'argues with chat'
+  'chat spams :notNOTED:'
 ]
 
 export default {
