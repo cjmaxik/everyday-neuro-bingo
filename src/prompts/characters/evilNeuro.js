@@ -168,7 +168,6 @@ export const emotePrompts = [
 
 export const specificPrompts = [
   'actually swears',
-  'admits she\'s a gigachad',
   'aggressive meow',
   'any kind of revolution',
   '"Aw shucks!"',
@@ -219,7 +218,6 @@ export const chatPrompts = [
 export const mentionPrompts = [
   'mentions Goody Two\xa0Shoes',
   'mentions hell character',
-  'mentions MyBraza',
   'mentions other VTubers',
   'mentions pineapple\xa0pizza',
   'mentions The\xa0Swarm',
