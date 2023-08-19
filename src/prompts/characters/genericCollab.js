@@ -4,6 +4,9 @@ export const base = {
   ...generic
 }
 
+/**
+ * @param {string} name
+ */
 export const collabPrompts = (name = 'Neuro') => [
   // generic prompts
   'dies from laughter',

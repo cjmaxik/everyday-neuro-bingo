@@ -179,6 +179,7 @@ const props = defineProps({
   }
 })
 
+console.groupEnd()
 const hoveredParticipant = ref(null)
 const isHighligted = (/** @type {string} */ id) => hoveredParticipant.value === id
 

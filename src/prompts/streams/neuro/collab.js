@@ -8,7 +8,7 @@ const genericCharacter = {
   ...genericCollab.base,
 
   name: 'Partner',
-  prompts: genericCollab.collabPrompts
+  prompts: genericCollab.collabPrompts()
 }
 
 const neuroCollab = {

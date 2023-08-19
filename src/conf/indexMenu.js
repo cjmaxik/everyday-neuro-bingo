@@ -39,7 +39,7 @@ export const indexMenu = {
           { to: 'xFilian', text: 'filian', color: '#be01fe' },
           { to: 'xShylily', text: 'Shylily', color: '#5a69ca' },
           { to: 'family', text: 'Family' },
-          { to: 'xAnyone', text: 'Others', color: '#000' }
+          { to: 'collab', text: 'Others', color: '#000' }
         ]
       },
 

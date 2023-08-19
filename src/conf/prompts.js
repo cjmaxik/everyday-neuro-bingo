@@ -22,7 +22,7 @@ export default {
   xFilian: () => import('streams/neuro/xFilian/xFilian'),
   xShylily: () => import('streams/neuro/xShylily/xShylily'),
   family: () => import('streams/neuro/family/family'),
-  xAnyone: () => import('streams/neuro/xAnyone/xAnyone'),
+  collab: () => import('streams/neuro/collab'),
 
   /**
    * Vedal

@@ -156,6 +156,9 @@ export const chatPrompts = [
   'chat spams :Life: :neuroLife:'
 ]
 
+/**
+ * @param {string} name
+ */
 export const collabPrompts = (name = 'them') => [
   'argues with {x}',
   'calls {x} an\xa0AI',
