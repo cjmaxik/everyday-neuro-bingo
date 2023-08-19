@@ -107,6 +107,7 @@ export const specificPrompts = [
   'randomly indroduces herself',
   'tries to sing',
   'asks about an emote',
+  'actually says 5th step',
 
   // emote prompts
   // NOTE: do not use inline emotes here - Neuro spells them out as text!

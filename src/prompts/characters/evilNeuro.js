@@ -182,7 +182,8 @@ export const specificPrompts = [
   'loves chat',
   'shouts',
   'stares',
-  '"Twitchy"'
+  '"Twitchy"',
+  'actually says 5th step'
 ]
 
 export const collabPrompts = (name = 'them') => [
