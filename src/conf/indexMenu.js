@@ -81,7 +81,8 @@ export const indexMenu = {
           { to: 'piEvil', text: 'Pirate Evil', color: '#006994' },
           { to: 'miEvil', text: 'Minecraft', color: '#700b1b' },
           { to: 'evilXfilian', text: 'Collab with filian', color: '#be01fe' },
-          { to: 'xNumi', text: 'Collab with Numi', color: '#504778' }
+          { to: 'xNumi', text: 'Collab with Numi', color: '#504778' },
+          { to: 'xZen', text: 'Collab with Zentreya', color: '#d4233f' }
         ]
       }
     ]

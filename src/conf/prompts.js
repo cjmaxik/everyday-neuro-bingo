@@ -39,6 +39,7 @@ export default {
   evil: () => import('streams/evil/solo'),
   miEvil: () => import('streams/evil/minecraftEvil'),
   xNumi: () => import('streams/evil/xNumi/xNumi'),
+  xZen: () => import('streams/evil/xZen'),
   evilXfilian: () => import('streams/evil/xFilian/xFilian'),
   piEvil: () => import('streams/evil/pirateEvil'),
 
