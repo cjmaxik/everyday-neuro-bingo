@@ -3,9 +3,18 @@ export const base = {
   name: 'Zentreya',
   color: '#d4233f',
 
-  image: '',
+  image: 'gecko.png',
 
-  sounds: []
+  sounds: [
+    'chill_out',
+    'huh',
+    'its_fine',
+    'listen',
+    'oh_boy',
+    'okay',
+    'that',
+    'we_dont'
+  ].map(x => `${x}.mp3`)
 }
 
 export const regularPrompts = [
