@@ -130,11 +130,9 @@ export const regularPrompts = [
   'any kind of tech\xa0issue',
   'denies being an\xa0AI',
   'donowalls',
-  'emote gibberish',
   '"filtered"',
   'leaves',
   'misgenders someone',
-  'shames a\xa0viewer',
   'the other\xa0day story',
   'trauma dump',
   'tries to\xa0sing',
@@ -183,7 +181,9 @@ export const specificPrompts = [
   'shouts',
   'stares',
   '"Twitchy"',
-  'actually says 5th step'
+  'actually says 5th step',
+  'shames a\xa0viewer',
+  'emote gibberish'
 ]
 
 export const collabPrompts = (name = 'them') => [
