@@ -13,6 +13,7 @@ const evilCollab = {
     'forgets where she is',
     'makes Zen her kitchen utencil',
     'makes Zen cookies',
+    'calls Zen fat',
 
     evil.collabPrompts('Zen')
   )

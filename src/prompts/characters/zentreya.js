@@ -21,9 +21,11 @@ export const regularPrompts = [
   // generic prompts
   'dies from laughter',
   'funny joke',
-  'cringe joke',
-  'sussy noise',
+  'strange TTS\xa0noise',
+  'TTS slip\xa0up',
   'meow~',
+  '"what?"',
+  'NO!',
 
   // Neuro-related
   'praises Neuro',
@@ -33,13 +35,17 @@ export const regularPrompts = [
   'hates Neuro',
   'roasts Neuro',
   'shames Neuro',
-  'W RIZZ'
+  'W RIZZ',
+
+  // mentions
+  'mentions toaster',
+  'mentions gecko'
 ]
 
 export const chatPrompts = [
   // chat related
-  'chat L\'s Zen',
-  'chat W\'s Zen',
+  'chat L\'s\xa0Zen',
+  'chat W\'s\xa0Zen',
   'chat dies of cringe'
 ]
 
