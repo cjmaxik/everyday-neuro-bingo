@@ -142,8 +142,7 @@ export const regularPrompts = [
   // sounds
   'cursed sound',
   'LOUD sound',
-  'random sound',
-  'sussy sound'
+  'random sound'
 ]
 
 export const emotePrompts = [

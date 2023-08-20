@@ -69,7 +69,6 @@ export const regularPrompts = [
 
   'claims to end the stream',
 
-  'makes sussy\xa0noise',
   'misgenders someone',
   '"mmm"',
 
