@@ -25,7 +25,7 @@ export const regularPrompts = [
   'TTS slip\xa0up',
   'meow~',
   '"what?"',
-  'NO!',
+  '"NO!"',
 
   // Neuro-related
   'praises Neuro',

@@ -204,6 +204,7 @@ export const collabPrompts = (name = 'them') => [
   'shames {x}',
   'tells {x} to fuck off',
   'wants to hurt\xa0{x}',
+  'Vedal catches strays',
   'W RIZZ'
 ].map(x => x.replaceAll('{x}', name))
 
