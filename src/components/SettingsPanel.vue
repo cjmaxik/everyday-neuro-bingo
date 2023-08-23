@@ -128,11 +128,15 @@ import { useRoute, useRouter } from 'vue-router'
 // game settings
 import { useGameStateStore } from 'stores/gameState'
 import { useGameSettingsStore } from 'stores/gameSettings'
+import { routeNorm } from 'helpers/helpers'
+
+// init
+const settings = useGameSettingsStore()
 
 // route
 const route = useRoute()
 const router = useRouter()
-const currentRoute = ref(route.path.replace('/', ''))
+const currentRoute = ref(routeNorm(route.path))
 const isBingoPage = ref(currentRoute.value !== '')
 
 let state = null
@@ -140,7 +144,7 @@ if (isBingoPage.value) {
   state = useGameStateStore(currentRoute.value)
 }
 
-const settings = useGameSettingsStore()
+// local refs
 const openSettingsModal = ref(false)
 
 // font
@@ -176,7 +180,7 @@ onMounted(() => {
 
   watch(
     () => route.path, (_newRoute) => {
-      currentRoute.value = route.path.replace('/', '')
+      currentRoute.value = routeNorm(route.path)
 
       if (currentRoute.value !== '') {
         state = useGameStateStore(currentRoute.value)

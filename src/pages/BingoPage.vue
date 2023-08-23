@@ -54,7 +54,10 @@
         v-if="state.fullyReady"
         :key="1"
         class="bingo-card shadow-5"
-        :class="{ fullscreen: $q.fullscreen.isActive, big: !state.small, small: state.small }"
+        :class="[
+          { fullscreen: $q.fullscreen.isActive },
+          state.big ? 'big' : 'small'
+        ]"
       >
         <template
           v-for="block in state.board "
@@ -63,7 +66,7 @@
           <div
             v-if="block.free"
             class="bingo-block free"
-            :class="{ win: block.win, 'dimmed': hoveredParticipant !== null }"
+            :class="{ win: block.win }"
             :style="{ backgroundImage: `url(${state.freeBlockImage ?? '/assets/images/gymbag.png'})` }"
           />
 
@@ -156,6 +159,7 @@
 // @ts-check
 // eslint-disable-next-line no-unused-vars
 import * as Types from 'helpers/types.d'
+console.groupEnd()
 
 // vue-related
 import { ref, onBeforeMount, onBeforeUnmount } from 'vue'
@@ -164,7 +168,7 @@ import { useQuasar } from 'quasar'
 // project-related
 import BingoBlockItem from 'components/BingoBlockItem.vue'
 
-import { getRandomInt } from 'helpers/helpers'
+import { get, getRandomInt } from 'helpers/helpers'
 import prompts from 'conf/prompts'
 
 // states
@@ -173,18 +177,19 @@ import { useGameSettingsStore } from 'stores/gameSettings'
 
 // props
 const props = defineProps({
-  type: {
+  character: {
     type: String,
     default: 'neuro'
+  },
+  type: {
+    type: String,
+    default: 'solo'
   }
 })
 
-console.groupEnd()
-const hoveredParticipant = ref(null)
-const isHighligted = (/** @type {string} */ id) => hoveredParticipant.value === id
-
-const streamType = props.type === '' ? 'neuro' : props.type
-if (!Object.keys(prompts).includes(streamType)) location.replace('/')
+const streamType = `${props.character}.${props.type}`
+const streamData = get(prompts, streamType)
+if (streamData === undefined) location.replace('/404')
 
 const state = useGameStateStore(streamType)
 const settings = useGameSettingsStore()
@@ -193,10 +198,12 @@ const settings = useGameSettingsStore()
 const $q = useQuasar()
 
 // Init data
-const version = 4
-const streamData = prompts[streamType]
+const version = 5
+
+// Refs
 const error = ref(null)
 const baitModal = ref(false)
+const hoveredParticipant = ref(null)
 
 onBeforeMount(() => {
   // Load stream data
@@ -206,7 +213,7 @@ onBeforeMount(() => {
     // Generate state
     try {
       state.generateBoard(data, version)
-      baitModal.value = !!state.small
+      baitModal.value = !!data.bait
     } catch (e) {
       error.value = e
       console.error(e)
@@ -330,4 +337,7 @@ const notifyForUndo = (block) => {
     ]
   })
 }
+
+// Participant highlight
+const isHighligted = (/** @type {string} */ id) => hoveredParticipant.value === id
 </script>

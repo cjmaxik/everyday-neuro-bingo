@@ -30,7 +30,8 @@
  * @property {string} image
  * @property {string} name
  * @property {Character[]} participants
- * @property {boolean} [small]
+ * @property {boolean} [big]
+ * @property {boolean} [baitModal]
 */
 
 /**

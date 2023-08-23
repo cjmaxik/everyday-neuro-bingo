@@ -25,7 +25,15 @@ const evilRegular = {
 const numiPrompts = {
   ...numi.base,
 
-  prompts: numi.regularPrompts
+  prompts: mergeUnique(
+    [
+      'W RIZZ',
+      'argues with Evil',
+      'tries to correct Evil'
+    ],
+
+    numi.regularPrompts
+  )
 }
 
 const chatPrompts = {

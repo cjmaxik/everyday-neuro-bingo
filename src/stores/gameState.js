@@ -31,7 +31,7 @@ export const useGameStateStore = (id) => defineStore(`gameState-${id}`, {
     freeBlockImage: null,
     seed: useLocalStorage(`seed-${id}`, 0),
     participants: {},
-    small: useLocalStorage(`small-${id}`, false),
+    big: useLocalStorage(`big-${id}`, false),
     board: useLocalStorage(`board-${id}`, []),
     bingo: useLocalStorage(`bingo-${id}`, []),
     previousWin: useLocalStorage(`previousWin-${id}`, 0)
@@ -48,7 +48,7 @@ export const useGameStateStore = (id) => defineStore(`gameState-${id}`, {
       this.ready = false
 
       this.seed = 0
-      this.small = false
+      this.big = false
       this.board = []
       this.bingo = []
       this.previousWin = 0
@@ -117,8 +117,8 @@ export const useGameStateStore = (id) => defineStore(`gameState-${id}`, {
       })
       console.groupEnd()
 
-      this.small = !!streamData.small
-      const boardSize = streamData.small ? 25 : 49
+      this.big = !!streamData.big
+      const boardSize = streamData.big ? 49 : 25
       const centerBlock = Math.floor(boardSize / 2)
 
       const seededPrompts = generatePrompts(allPrompts, newSeed, boardSize)
@@ -177,7 +177,7 @@ export const useGameStateStore = (id) => defineStore(`gameState-${id}`, {
     },
 
     checkForBingo () {
-      const boardSize = this.small ? 'small' : 'big'
+      const boardSize = this.big ? 'big' : 'small'
       const blocksWithTally = this.board.filter(x => x.tally).map((x) => x.index)
 
       let winningCombination = winningLines[boardSize].filter(

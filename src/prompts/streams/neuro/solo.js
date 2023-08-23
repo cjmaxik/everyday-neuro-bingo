@@ -43,7 +43,7 @@ const chatPrompts = {
 export default {
   name: 'Neuro-sama solo',
   image: 'neuro/random/neuro{x}.png',
-  small: true,
+  bait: true,
   participants: [
     regularNeuro, mentions, specificNeuro, chatPrompts
   ]

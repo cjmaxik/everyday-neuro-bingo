@@ -6,13 +6,13 @@ import * as Types from 'helpers/types.d'
  * Upcoming stream
  * @type {Types.StreamMenuData}
  */
-export const upcoming = null
-// export const upcoming = {
-//   to: '',
-//   text: '',
-//   color: '',
-//   date: ', 7PM BST / 8PM UTC'
-// }
+// export const upcoming = null
+export const upcoming = {
+  to: 'neuro/numi',
+  text: 'Date Night with Numi',
+  color: '#504778',
+  date: 'Friday, 7PM BST / 8PM UTC'
+}
 
 /**
  * Menu structure
@@ -26,18 +26,19 @@ export const indexMenu = {
       {
         name: null,
         entries: [
-          { to: 'neuro', text: 'Solo streams' }
+          { to: 'solo', text: 'Solo streams' }
         ]
       },
 
       {
         name: 'Collabs',
         entries: [
-          { to: 'xEvil', text: 'Evil Neuro', color: '#700b1b' },
-          { to: 'xAnny', text: 'anny', color: '#f37b97' },
-          { to: 'xMiyune', text: 'Miyune', color: '#007caa' },
-          { to: 'xFilian', text: 'filian', color: '#be01fe' },
-          { to: 'xShylily', text: 'Shylily', color: '#5a69ca' },
+          { to: 'evil', text: 'Evil Neuro', color: '#700b1b' },
+          { to: 'anny', text: 'anny', color: '#f37b97' },
+          { to: 'miyu', text: 'Miyune', color: '#007caa' },
+          { to: 'filian', text: 'filian', color: '#be01fe' },
+          { to: 'lily', text: 'Shylily', color: '#5a69ca' },
+          { to: 'numi', text: 'Numi', color: '#504778' },
           { to: 'family', text: 'Family' },
           { to: 'collab', text: 'Others', color: '#000' }
         ]
@@ -46,9 +47,9 @@ export const indexMenu = {
       {
         name: 'Other streams',
         entries: [
-          { to: 'piNeuro', text: 'Pirate Neuro', color: '#006994' },
-          { to: 'newsNeuro', text: 'Weather Report', color: '#0000ff' },
-          { to: 'miNeuro', text: 'Minecraft' }
+          { to: 'pirate', text: 'Pirate Neuro', color: '#006994' },
+          { to: 'news', text: 'Weather Report', color: '#0000ff' },
+          { to: 'minecraft', text: 'Minecraft' }
         ]
       }
     ]
@@ -61,8 +62,8 @@ export const indexMenu = {
       {
         name: null,
         entries: [
-          { to: 'dev', text: 'Dev streams with Neuro', color: '#266941' },
-          { to: 'devEvil', text: 'Dev streams with Evil Neuro', color: '#266941' },
+          { to: 'neuro', text: 'Dev streams with Neuro', color: '#266941' },
+          { to: 'evil', text: 'Dev streams with Evil', color: '#266941' },
           { to: 'ksp', text: 'Vedal Space Program', color: '#0504c2' },
           { to: 'sub', text: 'Subnautica', color: '#008B8B' }
         ]
@@ -77,12 +78,12 @@ export const indexMenu = {
       {
         name: null,
         entries: [
-          { to: 'evil', text: 'Solo streams', color: '#700b1b' },
-          { to: 'piEvil', text: 'Pirate Evil', color: '#006994' },
-          { to: 'miEvil', text: 'Minecraft', color: '#700b1b' },
-          { to: 'evilXfilian', text: 'Collab with filian', color: '#be01fe' },
-          { to: 'xNumi', text: 'Collab with Numi', color: '#504778' },
-          { to: 'xZen', text: 'Collab with Zentreya', color: '#d4233f' }
+          { to: 'solo', text: 'Solo streams', color: '#700b1b' },
+          { to: 'pirate', text: 'Pirate Evil', color: '#006994' },
+          { to: 'minecraft', text: 'Minecraft', color: '#700b1b' },
+          { to: 'filian', text: 'Collab with filian', color: '#be01fe' },
+          { to: 'numi', text: 'Collab with Numi', color: '#504778' },
+          { to: 'zen', text: 'Collab with Zentreya', color: '#d4233f' }
         ]
       }
     ]

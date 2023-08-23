@@ -37,9 +37,9 @@
 
         <div class="row q-gutter-sm q-pa-sm">
           <IndexMenuButton
-            v-for="character in indexMenu"
-            :key="character.id"
-            v-bind="character"
+            v-for="char in indexMenu"
+            :key="char.id"
+            v-bind="char"
             @select-character="selectCharacter"
           />
         </div>
@@ -85,10 +85,10 @@ const step = ref(1)
 const currentCharacter = ref(null)
 
 /**
- * @param {string} selectedCharacter
+ * @param {string} character
  */
-const selectCharacter = (selectedCharacter) => {
-  currentCharacter.value = selectedCharacter
+const selectCharacter = (character) => {
+  currentCharacter.value = character
   step.value = 2
 }
 

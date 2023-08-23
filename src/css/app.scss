@@ -166,6 +166,10 @@ body:not(.remove-font) {
       cursor: pointer;
     }
 
+    &.free {
+      z-index: 2;
+    }
+
     .bingo-tally {
       position: absolute;
       bottom: 0;
