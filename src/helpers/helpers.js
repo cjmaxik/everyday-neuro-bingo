@@ -147,6 +147,13 @@ export const get = (object, path) =>
   path.split('.').reduce((r, k) => r?.[k], object)
 
 /**
+ * Normalize path to board object key
+ * @param {string} path
+ */
+export const routeNorm = (path) =>
+  path.slice(1).replaceAll('/', '.')
+
+/**
  * Winning lines for the board
  */
 export const winningLines = {

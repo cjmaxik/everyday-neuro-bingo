@@ -73,6 +73,10 @@ defineProps({
   }
 })
 
+/**
+ * @param {string} id
+ * @param {string} to
+ */
 const toLink = (id, to) => {
   return `${id}/${to}`
 }
