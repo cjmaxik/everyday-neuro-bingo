@@ -177,7 +177,7 @@ export const useGameStateStore = (id) => defineStore(`gameState-${id}`, {
     },
 
     checkForBingo () {
-      const boardSize = this.small ? 'small' : 'big'
+      const boardSize = this.big ? 'big' : 'small'
       const blocksWithTally = this.board.filter(x => x.tally).map((x) => x.index)
 
       let winningCombination = winningLines[boardSize].filter(

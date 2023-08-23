@@ -137,7 +137,7 @@ const settings = useGameSettingsStore()
 const route = useRoute()
 const router = useRouter()
 const currentRoute = ref(routeNorm(route.path))
-const isBingoPage = ref(settings.streamName !== '')
+const isBingoPage = ref(currentRoute.value !== '')
 
 let state = null
 if (isBingoPage.value) {
