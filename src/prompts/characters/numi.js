@@ -30,7 +30,7 @@ export const base = {
 export const regularPrompts = [
   'screams',
   'sussy noise',
-  'asks Vedal for help',
+  'asks Vedal for\xa0help',
   'dies from laughter',
   'stutters',
   '"HUH?"',
