@@ -21,7 +21,7 @@ const numiPrompts = {
 
 export default {
   name: 'Date night with Numi',
-  image: 'numi/numi.png',
+  image: 'numi/neuroNumi.png',
   participants: [
     neuroCollab, numiPrompts
   ]
