@@ -39,11 +39,6 @@ export const regularPrompts = [
   'lewd joke',
   'speechless',
   'mentions the Baseball\xa0Bat Incident',
-
-  // Evil related
-  'W RIZZ',
-  'argues with Evil',
-  'tries to correct Evil',
   'mentions random VTuber'
 ]
 

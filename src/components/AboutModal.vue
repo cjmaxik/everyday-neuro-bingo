@@ -39,7 +39,7 @@
             target="_blank"
           >tioopental</a> - Lead Prompt Editor
         </li>
-        <li>
+        <li v-if="!isIndex">
           <a
             ref="noopener noreferrer"
             href="https://github.com/cjmaxik/everyday-neuro-bingo/graphs/contributors?ref=neuro-bingo"
@@ -48,7 +48,7 @@
         </li>
       </ul>
 
-      <p>
+      <p v-if="!isIndex">
         Includes art by Rune, 2Pfrog, niceaccoun, lingyou, anny, Beyumi, M3gur3n, Kaz, shouu_kyun, dmaxcustom,
         MapleNephthys, Bungee, why, mmeizterr, DarkShowArt, merryhime, Laroche, Redston, Kat Taiger, Berry, SomeOldGuy,
         paccha, 0CROWNED, and other distinguished&nbsp;artists.<br>Source code is available on <a
@@ -58,6 +58,14 @@
         >GitHub</a>.
       </p>
 
+      <p v-else>
+        Full credits are available <a
+          ref="noopener noreferrer"
+          href="https://github.com/cjmaxik/everyday-neuro-bingo#credits?ref=neuro-bingo"
+          target="_blank"
+        >here</a> and in the About section.
+      </p>
+
       <hr>
 
       <p class="text-center">
@@ -65,7 +73,7 @@
           ref="noopener noreferrer"
           href="https://vedal.xyz/?ref=neuro-bingo"
           target="_blank"
-        >Vedal</a>. She can chat,
+        >Vedal</a>.<br>She can chat,
         sing, react to videos, and play games.
       </p>
 

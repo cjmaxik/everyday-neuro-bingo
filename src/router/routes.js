@@ -11,7 +11,7 @@ export default [
       },
 
       {
-        path: '/:type',
+        path: '/:character/:type',
         props: true,
         component: () => import('pages/BingoPage.vue')
       }

@@ -36,6 +36,7 @@
             v-bind="stream"
             :key="stream.to"
             class="col-6 col-grow"
+            :to="toLink(id, stream.to)"
           />
         </div>
       </q-expansion-item>
@@ -45,6 +46,7 @@
         v-else
         v-bind="stream"
         :key="stream.to"
+        :to="toLink(id, stream.to)"
       />
     </template>
   </q-list>
@@ -70,6 +72,10 @@ defineProps({
     required: true
   }
 })
+
+const toLink = (id, to) => {
+  return `${id}/${to}`
+}
 
 defineEmits(['returnToSelection'])
 </script>

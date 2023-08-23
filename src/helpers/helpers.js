@@ -139,6 +139,14 @@ export const generateBrowserSeed = (version) => ''.concat(
 ).replaceAll(/[^a-zA-Z0-9]+/g, '')
 
 /**
+ * Return a value from the path in an object
+ * @param {object} object
+ * @param {string} path
+ */
+export const get = (object, path) =>
+  path.split('.').reduce((r, k) => r?.[k], object)
+
+/**
  * Winning lines for the board
  */
 export const winningLines = {

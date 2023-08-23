@@ -164,7 +164,7 @@ import { useQuasar } from 'quasar'
 // project-related
 import BingoBlockItem from 'components/BingoBlockItem.vue'
 
-import { getRandomInt } from 'helpers/helpers'
+import { get, getRandomInt } from 'helpers/helpers'
 import prompts from 'conf/prompts'
 
 // states
@@ -173,18 +173,21 @@ import { useGameSettingsStore } from 'stores/gameSettings'
 
 // props
 const props = defineProps({
-  type: {
+  character: {
     type: String,
     default: 'neuro'
+  },
+  type: {
+    type: String,
+    default: 'solo'
   }
 })
 
 console.groupEnd()
-const hoveredParticipant = ref(null)
-const isHighligted = (/** @type {string} */ id) => hoveredParticipant.value === id
 
-const streamType = props.type === '' ? 'neuro' : props.type
-if (!Object.keys(prompts).includes(streamType)) location.replace('/')
+const streamType = `${props.character}.${props.type}`
+const streamData = get(prompts, streamType)
+if (streamData === undefined) location.replace('/404')
 
 const state = useGameStateStore(streamType)
 const settings = useGameSettingsStore()
@@ -193,10 +196,12 @@ const settings = useGameSettingsStore()
 const $q = useQuasar()
 
 // Init data
-const version = 4
-const streamData = prompts[streamType]
+const version = 5
+
+// Refs
 const error = ref(null)
 const baitModal = ref(false)
+const hoveredParticipant = ref(null)
 
 onBeforeMount(() => {
   // Load stream data
@@ -330,4 +335,7 @@ const notifyForUndo = (block) => {
     ]
   })
 }
+
+// Participant highlight
+const isHighligted = (/** @type {string} */ id) => hoveredParticipant.value === id
 </script>
