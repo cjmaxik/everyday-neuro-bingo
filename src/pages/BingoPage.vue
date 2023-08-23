@@ -54,7 +54,10 @@
         v-if="state.fullyReady"
         :key="1"
         class="bingo-card shadow-5"
-        :class="{ fullscreen: $q.fullscreen.isActive, big: !state.small, small: state.small }"
+        :class="[
+          { fullscreen: $q.fullscreen.isActive },
+          state.big ? 'big' : 'small'
+        ]"
       >
         <template
           v-for="block in state.board "
@@ -63,7 +66,7 @@
           <div
             v-if="block.free"
             class="bingo-block free"
-            :class="{ win: block.win, 'dimmed': hoveredParticipant !== null }"
+            :class="{ win: block.win }"
             :style="{ backgroundImage: `url(${state.freeBlockImage ?? '/assets/images/gymbag.png'})` }"
           />
 
@@ -156,6 +159,7 @@
 // @ts-check
 // eslint-disable-next-line no-unused-vars
 import * as Types from 'helpers/types.d'
+console.groupEnd()
 
 // vue-related
 import { ref, onBeforeMount, onBeforeUnmount } from 'vue'
@@ -183,8 +187,6 @@ const props = defineProps({
   }
 })
 
-console.groupEnd()
-
 const streamType = `${props.character}.${props.type}`
 const streamData = get(prompts, streamType)
 if (streamData === undefined) location.replace('/404')
@@ -211,7 +213,7 @@ onBeforeMount(() => {
     // Generate state
     try {
       state.generateBoard(data, version)
-      baitModal.value = !!state.small
+      baitModal.value = !!data.bait
     } catch (e) {
       error.value = e
       console.error(e)

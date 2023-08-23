@@ -66,7 +66,7 @@ const chatPrompts = {
 export default {
   name: 'Evil plays Minecraft',
   image: 'evilNeuro/evilMinecraftChad.png',
-  small: true,
+  bait: true,
   participants: [
     regularEvil, specificEvil, chatPrompts, minecraftPrompts
   ]

@@ -132,7 +132,7 @@ import { useGameSettingsStore } from 'stores/gameSettings'
 // route
 const route = useRoute()
 const router = useRouter()
-const currentRoute = ref(route.path.replace('/', ''))
+const currentRoute = ref(route.path.slice(1).replaceAll('/', '.'))
 const isBingoPage = ref(currentRoute.value !== '')
 
 let state = null
