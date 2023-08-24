@@ -11,7 +11,7 @@ export const upcoming = {
   to: 'neuro/numi',
   text: 'Date Night with Numi',
   color: '#504778',
-  date: 'Friday, 7PM BST / 8PM UTC'
+  date: 'Friday, 9PM BST / 10PM UTC'
 }
 
 /**
