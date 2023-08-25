@@ -8,8 +8,8 @@ import * as Types from 'helpers/types.d'
  */
 // export const upcoming = null
 export const upcoming = {
-  to: '/',
-  text: 'Date Night with Numi',
+  to: 'evil/numi',
+  text: 'Date Night with Numi and Evil',
   color: '#504778',
   date: 'Friday, 9PM BST / 10PM UTC'
 }
