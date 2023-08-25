@@ -187,24 +187,25 @@ export const specificPrompts = [
 
 export const collabPrompts = (name = 'them') => [
   'argues with {x}',
-  'calls {x} a\xa0bitch',
-  'calls {x} an\xa0AI',
-  'calls {x} small/short',
-  'calls {x} Vedal',
-  'calls {x} a\xa0loser',
-  'calls {x} a\xa0good boy',
   'donowalls {x}',
   'gaslights {x}',
   'hates {x}',
-  'invents new nickname for\xa0{x}',
   'loves {x}',
   'misgenders {x}',
   'roasts {x}',
   'shames {x}',
   'tells {x} to fuck off',
   'wants to hurt\xa0{x}',
-  'Vedal catches strays',
-  'W RIZZ'
+  'Vedal catches\xa0strays',
+  'invents new nickname for\xa0{x}',
+  'W RIZZ',
+
+  'calls {x} a\xa0bitch',
+  'calls {x} an\xa0AI',
+  'calls {x} small/short',
+  'calls {x} Vedal',
+  'calls {x} a\xa0loser',
+  'calls {x} a\xa0good boy/girl'
 ].map(x => x.replaceAll('{x}', name))
 
 export const chatPrompts = [

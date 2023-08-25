@@ -27,17 +27,16 @@ export const base = {
   ].map(x => `${x}.mp3`)
 }
 
+// should NOT contain any generic collab prompts
 export const regularPrompts = [
   'screams',
-  'sussy noise',
-  'asks Vedal for\xa0help',
-  'dies from laughter',
   'stutters',
   '"HUH?"',
   '"I hate it here!"',
-  'cringe joke or\xa0pickup line',
+  '"so cute"',
   'lewd joke',
   'speechless',
+
   'mentions the Baseball\xa0Bat Incident',
   'mentions random VTuber'
 ]

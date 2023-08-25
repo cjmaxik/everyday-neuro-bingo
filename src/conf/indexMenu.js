@@ -8,7 +8,7 @@ import * as Types from 'helpers/types.d'
  */
 // export const upcoming = null
 export const upcoming = {
-  to: 'neuro/numi',
+  to: '/',
   text: 'Date Night with Numi',
   color: '#504778',
   date: 'Friday, 9PM BST / 10PM UTC'

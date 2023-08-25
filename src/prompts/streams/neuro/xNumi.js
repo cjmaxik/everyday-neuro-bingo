@@ -29,7 +29,7 @@ const numiCollab = {
 }
 
 export default {
-  name: 'Date night with Numi',
+  name: 'Date Night with Numi',
   image: 'numi/neuroNumi.png',
   participants: [
     neuroRegular, numiCollab,
