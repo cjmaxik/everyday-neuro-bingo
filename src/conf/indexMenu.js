@@ -8,10 +8,10 @@ import * as Types from 'helpers/types.d'
  */
 // export const upcoming = null
 export const upcoming = {
-  to: 'evil/numi',
-  text: 'Date Night with Numi and Evil',
-  color: '#504778',
-  date: 'Friday, 9PM BST / 10PM UTC'
+  to: 'neuro/collab',
+  text: 'Mystery collab with Neuro-sama 🦝',
+  color: '#000',
+  date: 'Saturday, 7PM BST / 8PM UTC'
 }
 
 /**
