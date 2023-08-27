@@ -37,19 +37,10 @@ const specificSub = {
     'forgets where he\xa0is',
     'stuck inside a\xa0cave',
     'misspells in-game\xa0name',
-    'stream lasts more than 3\xa0hours'
+    'stream lasts more than 3\xa0hours',
+    'Vedal does SNIFFA'
   ]
 }
-
-// const chatSub = {
-//   ...chat.base,
-
-//   prompts: mergeUnique(
-//     neuro.chatPrompts,
-//     vedal.chatPrompts,
-//     chat.chatPrompts
-//   ).filter(x => !chatPrompts.includes(x)) // removes duplicated chat prompts
-// }
 
 export default {
   name: 'Vedal plays Subnautica',
