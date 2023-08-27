@@ -35,6 +35,12 @@ body:not(.remove-font) {
   background-position: center;
 }
 
+.bingo-page {
+  min-width: 700px;
+  max-width: 1024px;
+  margin: auto;
+}
+
 .bingo-card {
   .bingo-block {
 
@@ -47,8 +53,6 @@ body:not(.remove-font) {
   display: grid;
   grid-column-gap: 0;
   grid-row-gap: 0;
-  margin: auto;
-  width: 1024px;
   height: 100%;
   user-select: none;
 
@@ -253,8 +257,6 @@ body:not(.remove-font) {
 }
 
 .bingo-legend {
-  margin: auto;
-  width: 1024px;
   font-size: 15px;
   user-select: none;
 
