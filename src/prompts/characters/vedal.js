@@ -25,7 +25,7 @@ export const regularPrompts = [
   'gets competitive',
   '"That\'s crazy" :Tutel:',
   '"I have no idea"',
-  '"Why doesn\'t it work?"',
+  '"Why doesn\'t it\xa0work?"',
   '"I am stupid"',
   '"We\'ll fix it" x2',
   'checks #starboard',

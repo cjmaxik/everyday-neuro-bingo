@@ -1,10 +1,9 @@
-import { mergeUnique } from 'helpers/helpers'
+// import { mergeUnique } from 'helpers/helpers'
 
 import * as neuro from 'characters/neuro'
 import * as vedal from 'characters/vedal'
-
 import generic from 'characters/generic'
-import * as chat from 'characters/chat'
+// import * as chat from 'characters/chat'
 
 const neuroSub = {
   ...neuro.base,
@@ -18,12 +17,6 @@ const vedalSub = {
   prompts: vedal.regularPrompts
 }
 
-const chatPrompts = [
-  'chat spams :PANIC:',
-  'chat spams :EZ: :Clap:',
-  'chat spams :o7: :neuro7:'
-]
-
 const specificSub = {
   ...generic,
 
@@ -34,39 +27,35 @@ const specificSub = {
   image: '../vedal/tutel.png',
 
   prompts: [
-    'roasts Vedal for dying',
-    'Neuro wants to go to\xa0the\xa0sea',
-    'gets killed by\xa0fish',
+    'gets killed by a\xa0fish',
     'game crashed',
-    'runs out of\xa0oxygen',
     'jumpscared',
+    'runs out of\xa0oxygen',
     'dies of starvation',
-    'dies of hydration',
-    'finds a leviathan',
-    'forgets where he is',
-    'stuck inside a cave',
-    'misspells in-game name',
-    'stream lasts more than 3\xa0hours',
-
-    ...chatPrompts
+    'dies of dehydration',
+    'finds a\xa0leviathan',
+    'forgets where he\xa0is',
+    'stuck inside a\xa0cave',
+    'misspells in-game\xa0name',
+    'stream lasts more than 3\xa0hours'
   ]
 }
 
-const chatSub = {
-  ...chat.base,
+// const chatSub = {
+//   ...chat.base,
 
-  prompts: mergeUnique(
-    neuro.chatPrompts,
-    vedal.chatPrompts,
-    chat.chatPrompts
-  ).filter(x => !chatPrompts.includes(x)) // removes duplicated chat prompts
-}
+//   prompts: mergeUnique(
+//     neuro.chatPrompts,
+//     vedal.chatPrompts,
+//     chat.chatPrompts
+//   ).filter(x => !chatPrompts.includes(x)) // removes duplicated chat prompts
+// }
 
 export default {
   name: 'Vedal plays Subnautica',
   image: 'vedal/jaws.png',
   participants: [
-    neuroSub, chatSub,
-    specificSub, vedalSub
+    neuroSub, specificSub,
+    vedalSub
   ]
 }

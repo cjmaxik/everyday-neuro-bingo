@@ -49,7 +49,7 @@ export const regularPrompts = [
   'asks one question on repeat',
   'speaks another language',
 
-  'cites random link',
+  'cites random\xa0link',
   'announces a random stream time',
   'conquering plans',
   '"I am crying"',
