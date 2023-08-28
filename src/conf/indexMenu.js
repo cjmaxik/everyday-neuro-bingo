@@ -6,13 +6,13 @@ import * as Types from 'helpers/types.d'
  * Upcoming stream
  * @type {Types.StreamMenuData}
  */
-// export const upcoming = null
-export const upcoming = {
-  to: 'vedal/sub',
-  text: 'Neuro-sama underwater adventures ft.\xa0Tutel',
-  color: '#008B8B',
-  date: 'Sunday, 7PM BST / 8PM UTC'
-}
+export const upcoming = null
+// export const upcoming = {
+//   to: 'vedal/sub',
+//   text: 'Neuro-sama underwater adventures ft.\xa0Tutel',
+//   color: '#008B8B',
+//   date: 'Sunday, 7PM BST / 8PM UTC'
+// }
 
 /**
  * Menu structure
