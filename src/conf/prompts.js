@@ -18,9 +18,9 @@ export default {
 
     // Collabs
     evil: () => import('streams/neuro/xEvil'),
-    anny: () => import('streams/neuro/xAnny/xAnny'),
+    anny: () => import('streams/neuro/xAnny'),
     miyu: () => import('streams/neuro/xMiyune/xMiyune'),
-    filian: () => import('streams/neuro/xFilian/xFilian'),
+    filian: () => import('streams/neuro/xFilian'),
     lily: () => import('streams/neuro/xShylily/xShylily'),
     numi: () => import('streams/neuro/xNumi'),
     family: () => import('streams/neuro/family/family'),
