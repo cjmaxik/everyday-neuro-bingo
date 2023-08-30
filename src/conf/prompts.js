@@ -50,7 +50,8 @@ export default {
     // Collabs
     numi: () => import('streams/evil/xNumi'),
     zen: () => import('streams/evil/xZen'),
-    filian: () => import('streams/evil/xFilian')
+    filian: () => import('streams/evil/xFilian'),
+    collab: () => import('streams/evil/collab')
   },
 
   /**

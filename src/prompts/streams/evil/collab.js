@@ -1,5 +1,5 @@
 import * as genericCollab from 'characters/genericCollab'
-import * as neuro from 'characters/neuro'
+import * as evil from 'characters/evilNeuro'
 
 const genericCharacter = {
   ...genericCollab.base,
@@ -9,14 +9,14 @@ const genericCharacter = {
 }
 
 const neuroCollab = {
-  ...neuro.base,
+  ...evil.base,
 
-  prompts: neuro.collabPrompts()
+  prompts: evil.collabPrompts()
 }
 
 export default {
-  name: 'Neuro-sama collab',
-  image: 'neuro/neuro.png',
+  name: 'Evil Neuro collab',
+  image: 'evilNeuro/evilStare.png',
   participants: [
     genericCharacter, neuroCollab
   ]

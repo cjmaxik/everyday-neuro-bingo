@@ -80,10 +80,17 @@ export const indexMenu = {
         entries: [
           { to: 'solo', text: 'Solo streams', color: '#700b1b' },
           { to: 'pirate', text: 'Pirate Evil', color: '#006994' },
-          { to: 'minecraft', text: 'Minecraft', color: '#700b1b' },
-          { to: 'filian', text: 'Collab with filian', color: '#be01fe' },
-          { to: 'numi', text: 'Collab with Numi', color: '#504778' },
-          { to: 'zen', text: 'Collab with Zentreya', color: '#d4233f' }
+          { to: 'minecraft', text: 'Minecraft', color: '#700b1b' }
+        ]
+      },
+
+      {
+        name: 'Collabs',
+        entries: [
+          { to: 'filian', text: 'filian', color: '#be01fe' },
+          { to: 'numi', text: 'Numi', color: '#504778' },
+          { to: 'zen', text: 'Zentreya', color: '#d4233f' },
+          { to: 'collab', text: 'Others', color: '#000' }
         ]
       }
     ]
