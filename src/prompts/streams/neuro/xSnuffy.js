@@ -30,7 +30,7 @@ const snuffyCollab = {
 
 export default {
   name: 'Adventures with Snuffy',
-  image: '',
+  image: 'snuffy/adventure.png',
   participants: [
     neuroRegular, snuffyCollab,
     neuroCollab, snuffyRegular
