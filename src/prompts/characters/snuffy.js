@@ -12,6 +12,6 @@ export const base = {
     'umumumum',
     'aweaewrawe',
     'brlbrllrb',
-    'smash',
+    'smash'
   ].map(x => `${x}.mp3`)
 }
