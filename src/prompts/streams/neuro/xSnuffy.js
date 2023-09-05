@@ -19,15 +19,16 @@ const neuroCollab = {
       'nat\xa020',
       'gaslights enemy',
       'gaslights civilian',
-      'nearly dies in\xa0story',
+      'nearly dies in\xa0a\xa0story',
       '"milk"',
       'spends all the money',
       'nat\xa01',
-      'tries to spare low hp enemy',
-      'casts useless spell',
-      'falls into a trap',
-      'summons a demon',
-      'equips useless weapon'
+      'tries to spare low\xa0hp\xa0enemy',
+      'casts useless\xa0spell',
+      'falls into a\xa0trap',
+      'summons a\xa0demon',
+      'equips useless weapon',
+      'breaks character (RP fail)'
     ]
 
     // TODO: make a smaller list of generic prompts or discard them completely
