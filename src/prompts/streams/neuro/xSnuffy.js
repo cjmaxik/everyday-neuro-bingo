@@ -23,11 +23,11 @@ const neuroCollab = {
       '"milk"',
       'spends all the money',
       'nat\xa01',
-      '',
-      '',
-      '',
-      '',
-      ''
+      'tries to spare low hp enemy',
+      'casts useless spell',
+      'falls into a trap',
+      'summons a demon',
+      'equips useless weapon'
     ]
 
     // TODO: make a smaller list of generic prompts or discard them completely
