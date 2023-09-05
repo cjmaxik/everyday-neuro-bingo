@@ -3,7 +3,7 @@ export const base = {
   name: 'Snuffy',
   color: '#161b4c',
 
-  image: '',
+  image: 'snuffle.png',
 
   sounds: [
     ''
