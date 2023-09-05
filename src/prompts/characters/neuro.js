@@ -72,7 +72,7 @@ export const regularPrompts = [
   'misgenders someone',
   '"mmm"',
 
-  'restarts / new clone',
+  'restart (new\xa0clone)',
   '"no~"',
 
   'spams',

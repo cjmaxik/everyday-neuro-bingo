@@ -1,4 +1,4 @@
-// import { mergeUnique } from 'helpers/helpers'
+import { mergeUnique } from 'helpers/helpers'
 
 import * as neuro from 'characters/neuro'
 import * as snuffy from 'characters/snuffy'
@@ -13,19 +13,39 @@ const neuroRegular = {
 const neuroCollab = {
   ...neuro.base,
 
-  prompts: neuro.collabPrompts('Snuffy')
-}
+  prompts: mergeUnique(
+    [
+      'kills civilian',
+      'nat\xa020',
+      'gaslights enemy',
+      'gaslights civilian',
+      'dies in story',
+      '"milk"',
+      'spends all the money',
+      '',
+      '',
+      '',
+      '',
+      '',
+      ''
+    ]
 
-const snuffyRegular = {
-  ...snuffy.base,
-
-  prompts: snuffy.regularPrompts
+    // TODO: make a smaller list of generic prompts or discard them completely
+    // neuro.collabPrompts('Snuffy')
+  )
 }
 
 const snuffyCollab = {
   ...snuffy.base,
 
-  prompts: genericCollab.collabPrompts('Neuro')
+  prompts: mergeUnique(
+    [
+      'ignores Neuro\'s\xa0choice'
+    ],
+
+    // TODO: make a smaller list of generic prompts or discard them completely
+    genericCollab.collabPrompts('Neuro')
+  )
 }
 
 export default {
@@ -33,6 +53,6 @@ export default {
   image: 'snuffy/adventure.png',
   participants: [
     neuroRegular, snuffyCollab,
-    neuroCollab, snuffyRegular
+    neuroCollab
   ]
 }

@@ -9,20 +9,3 @@ export const base = {
     ''
   ].map(x => `${x}.mp3`)
 }
-
-export const regularPrompts = [
-  '',
-  '',
-  '',
-  '',
-  '',
-  ''
-]
-
-export default {
-  ...base,
-
-  prompts: [
-    ...regularPrompts
-  ]
-}
