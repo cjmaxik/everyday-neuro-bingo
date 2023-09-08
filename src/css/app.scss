@@ -15,8 +15,8 @@ body {
   @extend .bg-kekwa;
 }
 
-body:not(.remove-font) {
-  font-family: "FirstCoffee", "Roboto", "-apple-system", "Helvetica Neue", Helvetica, Arial, sans-serif;
+.neuro-font {
+  font-family: "FirstCoffee" !important;
 }
 
 .main {

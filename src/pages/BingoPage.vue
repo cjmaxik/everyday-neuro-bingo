@@ -304,10 +304,12 @@ const checkForWin = (block, decrement = false) => {
  * @param {boolean} isActive
  */
 const playSound = (audio, volume, isActive) => {
-  if (isActive) {
-    audio.volume = volume / 100
-    audio.play()
-  }
+  if (!isActive) return
+
+  audio.pause()
+  audio.currentTime = 0
+  audio.volume = volume / 100
+  audio.play()
 }
 
 /**

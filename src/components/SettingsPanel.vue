@@ -25,30 +25,36 @@
           <q-checkbox
             v-model="settings.removeFont"
             keep-color
-            label="Default font"
+            label="Basic font"
           />
         </q-item>
 
         <q-item tag="label">
           <q-checkbox
             v-model="settings.hideTally"
+            :false-value="true"
             keep-color
-            label="Hide tally"
+            label="Show tally"
+            :true-value="false"
           />
         </q-item>
+      </q-card-section>
 
+      <q-separator />
+
+      <q-card-section>
         <q-item tag="label">
           <q-checkbox
             v-model="settings.disableSound"
-            keep-color
-            label="Disable sound"
+            label="Disable sounds"
+            @update:model-value="testSound()"
           />
         </q-item>
 
         <q-item>
           <q-item-section class="text-center">
             <q-item-label>
-              Sound volume
+              Volume
             </q-item-label>
 
             <q-slider
@@ -58,6 +64,7 @@
               :max="100"
               :min="0"
               :step="5"
+              @change="testSound()"
             />
           </q-item-section>
         </q-item>
@@ -93,7 +100,21 @@
         class="text-center no-padding"
         style="padding-top: 8px !important;"
       >
-        <span>Current seed: {{ state.seed }}</span>
+        Current seed:
+        <q-chip
+          clickable
+          icon-right="content_copy"
+          style="cursor: pointer;"
+          @click="copySeed()"
+        >
+          {{ state.seed }}
+          <q-tooltip
+            anchor="top middle"
+            self="center middle"
+          >
+            {{ wasClicked ? 'Copied!' : 'Click to copy board info' }}
+          </q-tooltip>
+        </q-chip>
       </q-card-section>
 
       <q-card-actions vertical>
@@ -147,15 +168,6 @@ if (isBingoPage.value) {
 // local refs
 const openSettingsModal = ref(false)
 
-// font
-const updateFont = (removeFont) => {
-  if (removeFont) {
-    document.body.classList.add('remove-font')
-  } else {
-    document.body.classList.remove('remove-font')
-  }
-}
-
 const clearBoard = () => {
   openSettingsModal.value = false
   if (confirm('Do you really want to clear this board state?')) {
@@ -173,11 +185,29 @@ const clearAll = () => {
   }
 }
 
-onMounted(() => {
-  watch(settings, (settings) => {
-    updateFont(settings.removeFont)
-  })
+const testAudio = new Audio('/assets/sounds/neuro/wink.mp3')
+const testSound = () => {
+  if (settings.disableSound) return
 
+  testAudio.pause()
+  testAudio.currentTime = 0
+  testAudio.volume = settings.volume / 100
+  testAudio.play()
+}
+
+const wasClicked = ref(false)
+const copySeed = async () => {
+  try {
+    await navigator.clipboard.writeText(`Board: \`${route.path}\`\nSeed: \`${state.seed}\``)
+
+    wasClicked.value = true
+    setTimeout(() => { wasClicked.value = false }, 2000)
+  } catch (e) {
+    console.error(e)
+  }
+}
+
+onMounted(() => {
   watch(
     () => route.path, (_newRoute) => {
       currentRoute.value = routeNorm(route.path)
