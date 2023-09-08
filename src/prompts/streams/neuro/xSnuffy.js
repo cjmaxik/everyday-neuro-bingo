@@ -30,8 +30,7 @@ const neuroCollab = {
       'equips useless weapon',
       'breaks character (RP fail)',
       'tries to change class mid-game',
-      'tries to discard quest item',
-      'tries to take nonexisting\xa0thing'
+      'tries to discard quest item'
     ]
   )
 }
