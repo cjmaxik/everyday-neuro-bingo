@@ -28,11 +28,11 @@ const neuroCollab = {
       'falls into a\xa0trap',
       'summons a\xa0demon',
       'equips useless weapon',
-      'breaks character (RP fail)'
+      'breaks character (RP fail)',
+      'tries to change class mid-game',
+      'tries to discard quest item',
+      'tries to take nonexisting\xa0thing'
     ]
-
-    // TODO: make a smaller list of generic prompts or discard them completely
-    // neuro.collabPrompts('Snuffy')
   )
 }
 
@@ -41,7 +41,12 @@ const snuffyCollab = {
 
   prompts: mergeUnique(
     [
-      'ignores Neuro\'s\xa0choice'
+      'ignores Neuro\'s\xa0choice',
+      'get\'s backseated by Neuro',
+      'makes Neuro loot defeated enemies',
+      'brakes character (RP fail)',
+      'ignores dice outcome',
+      'gets annoyed by Neuro\'s\xa0choice'
     ],
 
     // TODO: make a smaller list of generic prompts or discard them completely
