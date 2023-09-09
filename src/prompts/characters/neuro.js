@@ -1,3 +1,5 @@
+import sounds from 'characters/sounds/neuro'
+
 export const base = {
   id: 'neuro',
   name: 'Neuro-sama',
@@ -12,23 +14,7 @@ export const base = {
   image: 'gymbag.png',
 
   // tally sounds, will be chosen at random
-  sounds: [
-    'erm',
-    'ermErm',
-    'gymbag',
-    'heart',
-    'KEKWA',
-    'meow',
-    'meow_meow_lol',
-    'pfft',
-    'no',
-    'pog',
-    'wink',
-    'yep1',
-    'yep2',
-    'water',
-    'yeap'
-  ].map(x => `${x}.mp3`)
+  sounds
 }
 
 // TODO: Make a better split between prompts, add more to each section

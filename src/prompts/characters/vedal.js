@@ -1,3 +1,5 @@
+import sounds from 'characters/sounds/vedal'
+
 export const base = {
   id: 'vedal',
   name: 'Vedal',
@@ -5,25 +7,7 @@ export const base = {
 
   image: 'tutel.png',
 
-  sounds: [
-    'Aww',
-    'ayaya',
-    'femboy',
-    'fire',
-    'HAA',
-    'huh',
-    'meow',
-    'noise_01',
-    'noise_03',
-    'oh_mhm_yep',
-    'okay',
-    'sure_bro',
-    'tequila',
-    'ummm',
-    'what',
-    'yeah',
-    'yep'
-  ].map(x => `${x}.mp3`)
+  sounds
 }
 
 export const regularPrompts = [
