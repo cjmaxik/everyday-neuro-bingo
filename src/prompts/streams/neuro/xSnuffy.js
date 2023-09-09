@@ -42,7 +42,7 @@ const snuffyCollab = {
       'brakes character (RP fail)',
       'ignores dice\xa0outcome',
       'annoyed by Neuro\'s\xa0choice',
-      'chat as the\xa0story\xa0character'
+      'chat as the story\xa0character'
     ],
 
     genericCollab.collabPrompts('Neuro')
