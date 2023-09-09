@@ -72,7 +72,7 @@ export const regularPrompts = [
   'misgenders someone',
   '"mmm"',
 
-  'restarts / new clone',
+  'restart (new\xa0clone)',
   '"no~"',
 
   'spams',
@@ -169,8 +169,6 @@ export const collabPrompts = (name = 'them') => [
   'roasts {x}',
   'shames {x}',
   'praises {x}',
-  'wants to marry\xa0{x}',
-  'keeps {x} as\xa0a\xa0pet',
   'invents new nickname for\xa0{x}',
   'W RIZZ',
 

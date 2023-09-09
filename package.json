@@ -6,9 +6,9 @@
   "author": "CJMAXiK <me@cjmaxik.ru>",
   "private": true,
   "scripts": {
-    "dev": "quasar clean && npm run emotePrep && quasar dev",
-    "build": "quasar clean && quasar build",
+    "dev": "quasar clean && quasar dev",
     "emotePrep": "node ./scripts/emotePrep.js",
+    "build": "quasar clean && quasar build",
     "lint": "eslint --ext .js,.vue ./",
     "lint-fix": "eslint --ext .js,.vue ./ --fix"
   },
