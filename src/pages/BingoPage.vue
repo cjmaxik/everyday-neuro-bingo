@@ -60,15 +60,17 @@
         ]"
       >
         <template
-          v-for="block in state.board "
+          v-for="block in state.board"
           :key="block.index"
         >
           <div
             v-if="block.free"
-            class="bingo-block free"
+            class="bingo-block free row justify-center items-end"
             :class="{ win: block.win }"
             :style="{ backgroundImage: `url(${state.freeBlockImage ?? '/assets/images/gymbag.png'})` }"
-          />
+          >
+            {{ forcedSeed ? state.seed : '' }}
+          </div>
 
           <BingoBlockItem
             v-else
@@ -164,6 +166,8 @@ console.groupEnd()
 // vue-related
 import { ref, onBeforeMount, onBeforeUnmount } from 'vue'
 import { useQuasar } from 'quasar'
+import { useRoute } from 'vue-router'
+const route = useRoute()
 
 // project-related
 import BingoBlockItem from 'components/BingoBlockItem.vue'
@@ -205,6 +209,8 @@ const error = ref(null)
 const baitModal = ref(false)
 const hoveredParticipant = ref(null)
 
+const forcedSeed = route.query.f ?? null
+
 onBeforeMount(() => {
   // Load stream data
   streamData().then((/** @type {Object} */ module) => {
@@ -212,7 +218,11 @@ onBeforeMount(() => {
 
     // Generate state
     try {
-      state.generateBoard(data, version)
+      if (forcedSeed) {
+        console.debug(`Forcing seed ${forcedSeed}`)
+      }
+
+      state.generateBoard(data, version, forcedSeed)
       baitModal.value = !!data.bait
     } catch (e) {
       error.value = e

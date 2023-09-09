@@ -57,12 +57,13 @@ export const useGameStateStore = (id) => defineStore(`gameState-${id}`, {
     /**
      * @param {Types.StreamData} streamData Prompts
      * @param {number} version Dataset version
+     * @param {number} [forceSeed] Seed to force
     */
-    generateBoard (streamData, version) {
+    generateBoard (streamData, version, forceSeed) {
       console.group('Initializing random seed...')
 
       const seedPhrase = generateBrowserSeed(version)
-      const newSeed = Math.abs(alea(seedPhrase).int32())
+      const newSeed = forceSeed ?? Math.abs(alea(seedPhrase).int32())
 
       console.debug('Seed phrase -', seedPhrase)
       console.debug('Seed -', newSeed)

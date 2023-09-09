@@ -185,7 +185,7 @@ const clearAll = () => {
   }
 }
 
-const testAudio = new Audio('/assets/sounds/neuro/wink.mp3')
+const testAudio = new Audio('../assets/sounds/neuro/wink.mp3')
 const testSound = () => {
   if (settings.disableSound) return
 
