@@ -4,12 +4,6 @@ import * as neuro from 'characters/neuro'
 import * as snuffy from 'characters/snuffy'
 import * as genericCollab from 'characters/genericCollab'
 
-const neuroRegular = {
-  ...neuro.base,
-
-  prompts: neuro.regularPrompts
-}
-
 const neuroCollab = {
   ...neuro.base,
 
@@ -21,7 +15,7 @@ const neuroCollab = {
       'gaslights civilian',
       'nearly dies in\xa0a\xa0story',
       '"milk"',
-      'spends all the money',
+      'spends all\xa0the\xa0money',
       'nat\xa01',
       'tries to spare low\xa0hp\xa0enemy',
       'casts useless\xa0spell',
@@ -31,7 +25,9 @@ const neuroCollab = {
       'breaks character (RP fail)',
       'tries to change class mid-game',
       'tries to discard quest item'
-    ]
+    ],
+
+    neuro.collabPrompts('Snuffy')
   )
 }
 
@@ -41,14 +37,14 @@ const snuffyCollab = {
   prompts: mergeUnique(
     [
       'ignores Neuro\'s\xa0choice',
-      'get\'s backseated by Neuro',
-      'makes Neuro loot defeated enemies',
+      'gets backseated by\xa0Neuro',
+      'forces Neuro to\xa0loot',
       'brakes character (RP fail)',
-      'ignores dice outcome',
-      'gets annoyed by Neuro\'s\xa0choice'
+      'ignores dice\xa0outcome',
+      'annoyed by Neuro\'s\xa0choice',
+      'chat as the\xa0story\xa0character'
     ],
 
-    // TODO: make a smaller list of generic prompts or discard them completely
     genericCollab.collabPrompts('Neuro')
   )
 }
@@ -57,7 +53,6 @@ export default {
   name: 'Adventures with Snuffy',
   image: 'snuffy/adventure.png',
   participants: [
-    neuroRegular, snuffyCollab,
-    neuroCollab
+    snuffyCollab, neuroCollab
   ]
 }
