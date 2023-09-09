@@ -13,7 +13,6 @@ export const collabPrompts = (name = 'Neuro') => [
   'cringe joke',
   'sussy noise',
   'meow~',
-  'asks Vedal for\xa0help',
 
   'praises {x}',
   'argues with {x}',
