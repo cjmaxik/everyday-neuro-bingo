@@ -11,7 +11,7 @@ export const upcoming = {
   to: 'neuro/snuffy',
   text: 'Neuro-sama adventures with Snuffy',
   color: '#161b4c',
-  date: 'TBD'
+  date: '???'
 }
 
 /**
