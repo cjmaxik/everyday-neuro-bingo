@@ -13,7 +13,6 @@ export const base = {
 
   // tally sounds, will be chosen at random
   sounds: [
-    'aaah_goodbye',
     'erm',
     'ermErm',
     'gymbag',
@@ -26,7 +25,9 @@ export const base = {
     'pog',
     'wink',
     'yep1',
-    'yep2'
+    'yep2',
+    'water',
+    'yeap'
   ].map(x => `${x}.mp3`)
 }
 
