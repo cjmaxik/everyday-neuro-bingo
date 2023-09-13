@@ -6,11 +6,11 @@ export const base = {
   image: '',
 
   sounds: [
-    'liawaah',
-    'liadisgusting',
-    'liamemewhenI',
-    'liafunnysong',
-    'liaAIfeet'
+    'waah',
+    'disgusting',
+    'memewhenI',
+    'funnysong',
+    'AIfeet'
   ].map(x => `${x}.mp3`)
 }
 
