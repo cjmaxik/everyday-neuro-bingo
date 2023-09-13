@@ -16,8 +16,8 @@ export const base = {
 
 // should NOT contain any generic collab prompts
 export const regularPrompts = [
-  '',
-  '',
+  'talks about feet',
+  'Freudian slips',
   '',
   '',
   '',
