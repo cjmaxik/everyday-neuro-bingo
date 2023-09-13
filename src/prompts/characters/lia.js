@@ -3,7 +3,7 @@ export const base = {
   name: 'Lia',
   color: '#a52174',
 
-  image: '',
+  image: 'virus.png',
 
   sounds: [
     'waah',
