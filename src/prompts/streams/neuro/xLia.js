@@ -30,7 +30,7 @@ const liaCollab = {
 
 export default {
   name: 'Collab with Lia',
-  image: '',
+  image: 'lia/xLia.png',
   participants: [
     neuroRegular, liaCollab,
     neuroCollab, liaRegular
