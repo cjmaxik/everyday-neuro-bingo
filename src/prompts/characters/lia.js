@@ -17,12 +17,11 @@ export const base = {
 // should NOT contain any generic collab prompts
 export const regularPrompts = [
   'talks about feet',
-  'Freudian slips',
+  'Freudian slip',
   'stutters',
   'screams',
   'speechless',
-  'lewd joke',
-  'AD time',
-  'gets donowalled',
+  '"NONONONO~"',
+  'coffee ad',
   'calls Neuro cute'
 ]
