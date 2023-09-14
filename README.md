@@ -1,3 +1,9 @@
+# HIATUS NOTICE
+
+The project is on a prolonged hiatus, no updates will be performed. Website is still accessible.
+
+---
+
 # Everyday Neuro Bingo
 
 New Bingo card for Neuro-sama every day! Watch Neuro-sama's streams and follow along.
@@ -5,8 +11,6 @@ New Bingo card for Neuro-sama every day! Watch Neuro-sama's streams and follow a
 --> [Play with us here!](https://bingo.nuero.fun/?ref=neuro-bingo) <--
 
 --> Discuss in [Neurocord](https://discord.com/channels/574720535888396288/1110199900114780182?ref=neuro-bingo) <--
-
----
 
 ## Credits
 

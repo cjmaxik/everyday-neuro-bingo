@@ -6,13 +6,13 @@ import * as Types from 'helpers/types.d'
  * Upcoming stream
  * @type {Types.StreamMenuData}
  */
-// export const upcoming = null
-export const upcoming = {
-  to: 'neuro/lia',
-  text: 'Collab with Lia',
-  color: '#a52174',
-  date: 'Friday, 3 PM EST / 7 PM UTC'
-}
+export const upcoming = null
+// export const upcoming = {
+//   to: 'neuro/lia',
+//   text: 'Collab with Lia',
+//   color: '#a52174',
+//   date: 'Friday, 3 PM EST / 7 PM UTC'
+// }
 
 /**
  * Menu structure

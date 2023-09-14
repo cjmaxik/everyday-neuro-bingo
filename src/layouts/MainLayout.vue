@@ -3,6 +3,13 @@
     <PageToolbar />
 
     <q-page-container>
+      <q-banner
+        class="text-center"
+        rounded
+      >
+        The project is on a prolonged hiatus, no updates will be performed. Website is still accessible.
+      </q-banner>
+
       <router-view v-slot="{ Component }">
         <DefaultTransition>
           <component
