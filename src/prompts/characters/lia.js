@@ -18,11 +18,11 @@ export const base = {
 export const regularPrompts = [
   'talks about feet',
   'Freudian slips',
-  '',
-  '',
-  '',
-  '',
-  '',
-  '',
-  ''
+  'stutters',
+  'screams',
+  'speechless',
+  'lewd joke',
+  'AD time',
+  'gets donowalled',
+  'calls Neuro cute'
 ]
