@@ -49,7 +49,7 @@
       </ul>
 
       <p v-if="!isIndex">
-        Includes art by Rune, 2Pfrog, niceaccoun, lingyou, anny, Beyumi, M3gur3n, Kaz, shouu_kyun, dmaxcustom, MapleNephthys, Bungee, why, mmeizterr, DarkShowArt, merryhime, Laroche, Redston, Kat Taiger, Berry, SomeOldGuy, paccha, 0CROWNED, Pixelstorm, celiere, and other distinguished&nbsp;artists.<br>
+        Includes art by Rune, 2Pfrog, niceaccoun, lingyou, anny, Beyumi, M3gur3n, Kaz, shouu_kyun, dmaxcustom, MapleNephthys, Bungee, why, mmeizterr, DarkShowArt, merryhime, Laroche, Redston, Kat Taiger, Berry, SomeOldGuy, paccha, 0CROWNED, Pixelstorm, celiere, mins, and other distinguished&nbsp;artists.<br>
         Source code is available on <a
           ref="noopener noreferrer"
           href="https://github.com/cjmaxik/everyday-neuro-bingo?ref=neuro-bingo"

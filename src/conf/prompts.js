@@ -24,6 +24,7 @@ export default {
     lily: () => import('streams/neuro/xShylily/xShylily'),
     numi: () => import('streams/neuro/xNumi'),
     snuffy: () => import('streams/neuro/xSnuffy'),
+    lia: () => import('streams/neuro/xLia'),
     family: () => import('streams/neuro/family/family'),
     collab: () => import('streams/neuro/collab')
   },

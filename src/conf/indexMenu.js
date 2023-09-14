@@ -6,13 +6,13 @@ import * as Types from 'helpers/types.d'
  * Upcoming stream
  * @type {Types.StreamMenuData}
  */
-export const upcoming = null
-// export const upcoming = {
-//   to: 'neuro/snuffy',
-//   text: 'Neuro-sama adventures with Snuffy',
-//   color: '#161b4c',
-//   date: '???'
-// }
+// export const upcoming = null
+export const upcoming = {
+  to: 'neuro/lia',
+  text: 'Collab with Lia',
+  color: '#a52174',
+  date: 'Thursday, 3 PM EST / 7 PM UTC'
+}
 
 /**
  * Menu structure
@@ -40,6 +40,7 @@ export const indexMenu = {
           { to: 'lily', text: 'Shylily', color: '#5a69ca' },
           { to: 'numi', text: 'Numi', color: '#504778' },
           { to: 'snuffy', text: 'Snuffy', color: '#161b4c' },
+          { to: 'lia', text: 'Lia', color: '#a52174' },
           { to: 'family', text: 'Family' },
           { to: 'collab', text: 'Others', color: '#000' }
         ]
